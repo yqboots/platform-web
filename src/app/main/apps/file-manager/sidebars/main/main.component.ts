@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'file-manager-main-sidebar',
+    selector: 'file-manager-main-sidebar',
     templateUrl: './main.component.html',
-    styleUrls  : ['./main.component.scss']
+    styleUrls: ['./main.component.scss']
 })
-export class FileManagerMainSidebarComponent
-{
+export class FileManagerMainSidebarComponent {
     selected: any;
 
-    constructor()
-    {
+    constructor() {
     }
 }

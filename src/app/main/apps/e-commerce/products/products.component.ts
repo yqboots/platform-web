@@ -1,24 +1,23 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
-import { DataSource } from '@angular/cdk/collections';
-import { BehaviorSubject, fromEvent, merge, Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {MatPaginator, MatSort} from '@angular/material';
+import {DataSource} from '@angular/cdk/collections';
+import {BehaviorSubject, fromEvent, merge, Observable, Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FuseUtils } from '@fuse/utils';
+import {fuseAnimations} from '@fuse/animations';
+import {FuseUtils} from '@fuse/utils';
 
-import { EcommerceProductsService } from 'app/main/apps/e-commerce/products/products.service';
-import { takeUntil } from 'rxjs/internal/operators';
+import {EcommerceProductsService} from 'app/main/apps/e-commerce/products/products.service';
+import {takeUntil} from 'rxjs/internal/operators';
 
 @Component({
-    selector     : 'e-commerce-products',
-    templateUrl  : './products.component.html',
-    styleUrls    : ['./products.component.scss'],
-    animations   : fuseAnimations,
+    selector: 'e-commerce-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.scss'],
+    animations: fuseAnimations,
     encapsulation: ViewEncapsulation.None
 })
-export class EcommerceProductsComponent implements OnInit
-{
+export class EcommerceProductsComponent implements OnInit {
     dataSource: FilesDataSource | null;
     displayedColumns = ['id', 'image', 'name', 'category', 'price', 'quantity', 'active'];
 
@@ -36,8 +35,7 @@ export class EcommerceProductsComponent implements OnInit
 
     constructor(
         private _ecommerceProductsService: EcommerceProductsService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -49,8 +47,7 @@ export class EcommerceProductsComponent implements OnInit
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.dataSource = new FilesDataSource(this._ecommerceProductsService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
@@ -60,8 +57,7 @@ export class EcommerceProductsComponent implements OnInit
                 distinctUntilChanged()
             )
             .subscribe(() => {
-                if ( !this.dataSource )
-                {
+                if (!this.dataSource) {
                     return;
                 }
 
@@ -70,8 +66,7 @@ export class EcommerceProductsComponent implements OnInit
     }
 }
 
-export class FilesDataSource extends DataSource<any>
-{
+export class FilesDataSource extends DataSource<any> {
     private _filterChange = new BehaviorSubject('');
     private _filteredDataChange = new BehaviorSubject('');
 
@@ -86,8 +81,7 @@ export class FilesDataSource extends DataSource<any>
         private _ecommerceProductsService: EcommerceProductsService,
         private _matPaginator: MatPaginator,
         private _matSort: MatSort
-    )
-    {
+    ) {
         super();
 
         this.filteredData = this._ecommerceProductsService.products;
@@ -98,8 +92,7 @@ export class FilesDataSource extends DataSource<any>
      *
      * @returns {Observable<any[]>}
      */
-    connect(): Observable<any[]>
-    {
+    connect(): Observable<any[]> {
         const displayDataChanges = [
             this._ecommerceProductsService.onProductsChanged,
             this._matPaginator.page,
@@ -130,24 +123,20 @@ export class FilesDataSource extends DataSource<any>
     // -----------------------------------------------------------------------------------------------------
 
     // Filtered data
-    get filteredData(): any
-    {
+    get filteredData(): any {
         return this._filteredDataChange.value;
     }
 
-    set filteredData(value: any)
-    {
+    set filteredData(value: any) {
         this._filteredDataChange.next(value);
     }
 
     // Filter
-    get filter(): string
-    {
+    get filter(): string {
         return this._filterChange.value;
     }
 
-    set filter(filter: string)
-    {
+    set filter(filter: string) {
         this._filterChange.next(filter);
     }
 
@@ -161,10 +150,8 @@ export class FilesDataSource extends DataSource<any>
      * @param data
      * @returns {any}
      */
-    filterData(data): any
-    {
-        if ( !this.filter )
-        {
+    filterData(data): any {
+        if (!this.filter) {
             return data;
         }
         return FuseUtils.filterArrayByString(data, this.filter);
@@ -176,10 +163,8 @@ export class FilesDataSource extends DataSource<any>
      * @param data
      * @returns {any[]}
      */
-    sortData(data): any[]
-    {
-        if ( !this._matSort.active || this._matSort.direction === '' )
-        {
+    sortData(data): any[] {
+        if (!this._matSort.active || this._matSort.direction === '') {
             return data;
         }
 
@@ -187,8 +172,7 @@ export class FilesDataSource extends DataSource<any>
             let propertyA: number | string = '';
             let propertyB: number | string = '';
 
-            switch ( this._matSort.active )
-            {
+            switch (this._matSort.active) {
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
@@ -219,7 +203,6 @@ export class FilesDataSource extends DataSource<any>
     /**
      * Disconnect
      */
-    disconnect(): void
-    {
+    disconnect(): void {
     }
 }

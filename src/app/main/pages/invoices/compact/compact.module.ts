@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { InvoiceService } from 'app/main/pages/invoices/invoice.service';
-import { InvoiceCompactComponent } from 'app/main/pages/invoices/compact/compact.component';
+import {InvoiceService} from 'app/main/pages/invoices/invoice.service';
+import {InvoiceCompactComponent} from 'app/main/pages/invoices/compact/compact.component';
 
 const routes = [
     {
-        path     : 'invoices/compact',
+        path: 'invoices/compact',
         component: InvoiceCompactComponent,
-        resolve  : {
+        resolve: {
             search: InvoiceService
         }
     }
@@ -20,15 +20,14 @@ const routes = [
     declarations: [
         InvoiceCompactComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         FuseSharedModule
     ],
-    providers   : [
+    providers: [
         InvoiceService
     ]
 })
-export class InvoiceCompactModule
-{
+export class InvoiceCompactModule {
 }

@@ -29,7 +29,7 @@
     <!-- Size Column -->
     <ng-container matColumnDef="size">
         <mat-header-cell *matHeaderCellDef fxHide.xs>Size</mat-header-cell>
-        <mat-cell *matCellDef="let row" fxHide.xs>{{row.size === '' ? '-': row.size}}</mat-cell>
+        <mat-cell *matCellDef="let row" fxHide.xs>{{row.size === '' ? '-' : row.size}}</mat-cell>
     </ng-container>
 
     <!-- Modified Column -->

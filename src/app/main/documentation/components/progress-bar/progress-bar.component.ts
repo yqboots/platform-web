@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-components-progress-bar',
+    selector: 'docs-components-progress-bar',
     templateUrl: './progress-bar.component.html',
-    styleUrls  : ['./progress-bar.component.scss']
+    styleUrls: ['./progress-bar.component.scss']
 })
-export class DocsComponentsProgressBarComponent
-{
+export class DocsComponentsProgressBarComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

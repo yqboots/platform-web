@@ -1,5 +1,4 @@
-export class Todo
-{
+export class Todo {
     id: string;
     title: string;
     notes: string;
@@ -23,8 +22,7 @@ export class Todo
      *
      * @param todo
      */
-    constructor(todo)
-    {
+    constructor(todo) {
         {
             this.id = todo.id;
             this.title = todo.title;
@@ -42,32 +40,28 @@ export class Todo
     /**
      * Toggle star
      */
-    toggleStar(): void
-    {
+    toggleStar(): void {
         this.starred = !this.starred;
     }
 
     /**
      * Toggle important
      */
-    toggleImportant(): void
-    {
+    toggleImportant(): void {
         this.important = !this.important;
     }
 
     /**
      * Toggle completed
      */
-    toggleCompleted(): void
-    {
+    toggleCompleted(): void {
         this.completed = !this.completed;
     }
 
     /**
      * Toggle deleted
      */
-    toggleDeleted(): void
-    {
+    toggleDeleted(): void {
         this.deleted = !this.deleted;
     }
 }

@@ -50,16 +50,16 @@
                 <textarea #source>
                     @mixin calendar-theme($theme) {
 
-                        $background: map-get($theme, background);
-                        $foreground: map-get($theme, foreground);
-                        $primary: map-get($theme, primary);
-                        $accent: map-get($theme, accent);
-                        $warn: map-get($theme, warn);
-                        $is-dark: map-get($theme, is-dark);
+                    $background: map-get($theme, background);
+                    $foreground: map-get($theme, foreground);
+                    $primary: map-get($theme, primary);
+                    $accent: map-get($theme, accent);
+                    $warn: map-get($theme, warn);
+                    $is-dark: map-get($theme, is-dark);
 
-                        // ...
-                        // The content of the mixin
-                        // ...
+                    // ...
+                    // The content of the mixin
+                    // ...
 
                     }
                 </textarea>
@@ -79,8 +79,8 @@
                     // Define a mixin for easier access
                     @mixin components-theme($theme) {
 
-                        // Include the imported calendar-theme mixin into the components-theme mixin
-                        @include calendar-theme($theme);
+                    // Include the imported calendar-theme mixin into the components-theme mixin
+                    @include calendar-theme($theme);
 
                     }
                 </textarea>

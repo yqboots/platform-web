@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { Observable, BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
-export class ScrumboardService implements Resolve<any>
-{
+export class ScrumboardService implements Resolve<any> {
     boards: any[];
     routeParams: any;
     board: any;
@@ -20,8 +19,7 @@ export class ScrumboardService implements Resolve<any>
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.onBoardsChanged = new BehaviorSubject([]);
         this.onBoardChanged = new BehaviorSubject([]);
@@ -34,8 +32,7 @@ export class ScrumboardService implements Resolve<any>
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
@@ -55,8 +52,7 @@ export class ScrumboardService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getBoards(): Promise<any>
-    {
+    getBoards(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/scrumboard-boards')
                 .subscribe((response: any) => {
@@ -73,8 +69,7 @@ export class ScrumboardService implements Resolve<any>
      * @param boardId
      * @returns {Promise<any>}
      */
-    getBoard(boardId): Promise<any>
-    {
+    getBoard(boardId): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/scrumboard-boards/' + boardId)
                 .subscribe((response: any) => {
@@ -92,11 +87,9 @@ export class ScrumboardService implements Resolve<any>
      * @param newCard
      * @returns {Promise<any>}
      */
-    addCard(listId, newCard): Promise<any>
-    {
+    addCard(listId, newCard): Promise<any> {
         this.board.lists.map((list) => {
-            if ( list.id === listId )
-            {
+            if (list.id === listId) {
                 return list.idCards.push(newCard.id);
             }
         });
@@ -112,8 +105,7 @@ export class ScrumboardService implements Resolve<any>
      * @param newList
      * @returns {Promise<any>}
      */
-    addList(newList): Promise<any>
-    {
+    addList(newList): Promise<any> {
         this.board.lists.push(newList);
 
         return this.updateBoard();
@@ -125,14 +117,12 @@ export class ScrumboardService implements Resolve<any>
      * @param listId
      * @returns {Promise<any>}
      */
-    removeList(listId): Promise<any>
-    {
+    removeList(listId): Promise<any> {
         const list = this.board.lists.find((_list) => {
             return _list.id === listId;
         });
 
-        for ( const cardId of list.idCards )
-        {
+        for (const cardId of list.idCards) {
             this.removeCard(cardId);
         }
 
@@ -149,14 +139,12 @@ export class ScrumboardService implements Resolve<any>
      * @param cardId
      * @param listId
      */
-    removeCard(cardId, listId?): void
-    {
+    removeCard(cardId, listId?): void {
         const card = this.board.cards.find((_card) => {
             return _card.id === cardId;
         });
 
-        if ( listId )
-        {
+        if (listId) {
             const list = this.board.lists.find((_list) => {
                 return listId === _list.id;
             });
@@ -173,8 +161,7 @@ export class ScrumboardService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    updateBoard(): Promise<any>
-    {
+    updateBoard(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.post('api/scrumboard-boards/' + this.board.id, this.board)
                 .subscribe(response => {
@@ -189,11 +176,9 @@ export class ScrumboardService implements Resolve<any>
      *
      * @param newCard
      */
-    updateCard(newCard): void
-    {
+    updateCard(newCard): void {
         this.board.cards.map((_card) => {
-            if ( _card.id === newCard.id )
-            {
+            if (_card.id === newCard.id) {
                 return newCard;
             }
         });
@@ -207,8 +192,7 @@ export class ScrumboardService implements Resolve<any>
      * @param board
      * @returns {Promise<any>}
      */
-    createNewBoard(board): Promise<any>
-    {
+    createNewBoard(board): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.post('api/scrumboard-boards/' + board.id, board)
                 .subscribe(response => {
@@ -219,8 +203,7 @@ export class ScrumboardService implements Resolve<any>
 }
 
 @Injectable()
-export class BoardResolve implements Resolve<any>
-{
+export class BoardResolve implements Resolve<any> {
     /**
      * Constructor
      *
@@ -228,8 +211,7 @@ export class BoardResolve implements Resolve<any>
      */
     constructor(
         private _scrumboardService: ScrumboardService
-    )
-    {
+    ) {
     }
 
     /**
@@ -238,8 +220,7 @@ export class BoardResolve implements Resolve<any>
      * @param {ActivatedRouteSnapshot} route
      * @returns {Promise<any>}
      */
-    resolve(route: ActivatedRouteSnapshot): Promise<any>
-    {
+    resolve(route: ActivatedRouteSnapshot): Promise<any> {
         return this._scrumboardService.getBoard(route.paramMap.get('boardId'));
     }
 }

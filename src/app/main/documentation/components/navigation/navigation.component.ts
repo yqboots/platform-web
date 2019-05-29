@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
+import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
 
 @Component({
-    selector   : 'docs-components-navigation',
+    selector: 'docs-components-navigation',
     templateUrl: './navigation.component.html',
-    styleUrls  : ['./navigation.component.scss']
+    styleUrls: ['./navigation.component.scss']
 })
-export class DocsComponentsNavigationComponent
-{
+export class DocsComponentsNavigationComponent {
     navigation: any;
     hidden: boolean;
 
@@ -17,8 +16,7 @@ export class DocsComponentsNavigationComponent
      */
     constructor(
         private _fuseNavigationService: FuseNavigationService
-    )
-    {
+    ) {
         // Set the defaults
         this.hidden = false;
     }
@@ -30,8 +28,7 @@ export class DocsComponentsNavigationComponent
     /**
      * Show/hide calendar menu item
      */
-    showHideCalendarMenuItem(): void
-    {
+    showHideCalendarMenuItem(): void {
         // Toggle the visibility
         this.hidden = !this.hidden;
 
@@ -44,27 +41,25 @@ export class DocsComponentsNavigationComponent
     /**
      * Update mail badge
      */
-    updateMailBadge(): void
-    {
+    updateMailBadge(): void {
         // Update the badge title
         this._fuseNavigationService.updateNavigationItem('mail', {
-                badge: {
-                    title: 35
-                }
+            badge: {
+                title: 35
+            }
         });
     }
 
     /**
      * Add subitem to the calendar
      */
-    addSubitemToCalendar(): void
-    {
+    addSubitemToCalendar(): void {
         // Prepare the new nav item
         const newNavItem = {
-            id   : 'sub-item',
+            id: 'sub-item',
             title: 'Sub Item',
-            type : 'item',
-            url  : '/apps/calendar'
+            type: 'item',
+            url: '/apps/calendar'
         };
 
         this._fuseNavigationService.updateNavigationItem('calendar', {
@@ -78,13 +73,12 @@ export class DocsComponentsNavigationComponent
     /**
      * Add a nav item with custom function
      */
-    addNavItemWithCustomFunction(): void
-    {
+    addNavItemWithCustomFunction(): void {
         // Prepare the new nav item
         const newNavItem = {
-            id      : 'custom-item',
-            title   : 'Custom Item',
-            type    : 'item',
+            id: 'custom-item',
+            title: 'Custom Item',
+            type: 'item',
             function: () => {
                 alert('Custom function!');
             }
@@ -97,58 +91,56 @@ export class DocsComponentsNavigationComponent
     /**
      * Remove the dashboard menu item
      */
-    removeDashboards(): void
-    {
+    removeDashboards(): void {
         this._fuseNavigationService.removeNavigationItem('dashboards');
     }
 
     /**
      * Register a new navigation and toggle to it
      */
-    registerNewNavigationAndToggle(): void
-    {
+    registerNewNavigationAndToggle(): void {
         const adminNav = [
             {
-                id      : 'admin',
-                title   : 'Admin',
-                type    : 'group',
-                icon    : 'apps',
+                id: 'admin',
+                title: 'Admin',
+                type: 'group',
+                icon: 'apps',
                 children: [
                     {
-                        id   : 'users',
+                        id: 'users',
                         title: 'Users',
-                        type : 'item',
-                        icon : 'person',
-                        url  : '/apps/dashboards/analytics'
+                        type: 'item',
+                        icon: 'person',
+                        url: '/apps/dashboards/analytics'
                     },
                     {
-                        id   : 'payments',
+                        id: 'payments',
                         title: 'Payments',
-                        type : 'item',
-                        icon : 'attach_money',
-                        url  : '/apps/academy'
+                        type: 'item',
+                        icon: 'attach_money',
+                        url: '/apps/academy'
                     }
                 ]
             },
             {
-                id      : 'control-panel',
-                title   : 'Control Panel',
-                type    : 'group',
-                icon    : 'apps',
+                id: 'control-panel',
+                title: 'Control Panel',
+                type: 'group',
+                icon: 'apps',
                 children: [
                     {
-                        id   : 'cron-jobs',
+                        id: 'cron-jobs',
                         title: 'Cron Jobs',
-                        type : 'item',
-                        icon : 'settings',
-                        url  : '/apps/file-manager'
+                        type: 'item',
+                        icon: 'settings',
+                        url: '/apps/file-manager'
                     },
                     {
-                        id   : 'maintenance-mode',
+                        id: 'maintenance-mode',
                         title: 'Maintenance Mode',
-                        type : 'item',
-                        icon : 'build',
-                        url  : '/apps/todo'
+                        type: 'item',
+                        icon: 'build',
+                        url: '/apps/todo'
                     }
                 ]
             }

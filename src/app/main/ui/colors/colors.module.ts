@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatIconModule, MatTabsModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {MatButtonModule, MatIconModule, MatTabsModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseDemoModule } from '@fuse/components/demo/demo.module';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseDemoModule} from '@fuse/components/demo/demo.module';
 
-import { ColorsComponent } from 'app/main/ui/colors/colors.component';
+import {ColorsComponent} from 'app/main/ui/colors/colors.component';
 
 const routes: Routes = [
     {
-        path     : 'colors',
+        path: 'colors',
         component: ColorsComponent
     }
 ];
@@ -18,7 +18,7 @@ const routes: Routes = [
     declarations: [
         ColorsComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -29,6 +29,5 @@ const routes: Routes = [
         FuseDemoModule
     ]
 })
-export class UIColorsModule
-{
+export class UIColorsModule {
 }

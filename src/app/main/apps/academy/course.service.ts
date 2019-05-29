@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
-export class AcademyCourseService implements Resolve<any>
-{
+export class AcademyCourseService implements Resolve<any> {
     onCourseChanged: BehaviorSubject<any>;
 
     /**
@@ -15,8 +14,7 @@ export class AcademyCourseService implements Resolve<any>
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.onCourseChanged = new BehaviorSubject({});
     }
@@ -32,8 +30,7 @@ export class AcademyCourseService implements Resolve<any>
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return new Promise((resolve, reject) => {
 
             Promise.all([
@@ -54,8 +51,7 @@ export class AcademyCourseService implements Resolve<any>
      * @param courseSlug
      * @returns {Promise<any>}
      */
-    getCourse(courseId, courseSlug): Promise<any>
-    {
+    getCourse(courseId, courseSlug): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/academy-course/' + courseId + '/' + courseSlug)
                 .subscribe((response: any) => {

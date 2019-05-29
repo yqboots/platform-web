@@ -1,20 +1,19 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { ChatService } from 'app/main/apps/chat/chat.service';
+import {ChatService} from 'app/main/apps/chat/chat.service';
 
 @Component({
-    selector     : 'chat',
-    templateUrl  : './chat.component.html',
-    styleUrls    : ['./chat.component.scss'],
+    selector: 'chat',
+    templateUrl: './chat.component.html',
+    styleUrls: ['./chat.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ChatComponent implements OnInit, OnDestroy
-{
+export class ChatComponent implements OnInit, OnDestroy {
     selectedChat: any;
 
     // Private
@@ -27,8 +26,7 @@ export class ChatComponent implements OnInit, OnDestroy
      */
     constructor(
         private _chatService: ChatService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -40,8 +38,7 @@ export class ChatComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._chatService.onChatSelected
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(chatData => {
@@ -52,8 +49,7 @@ export class ChatComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();

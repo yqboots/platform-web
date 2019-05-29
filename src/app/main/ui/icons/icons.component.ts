@@ -1,15 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 @Component({
-    selector   : 'icons',
+    selector: 'icons',
     templateUrl: './icons.component.html',
-    styleUrls  : ['./icons.component.scss']
+    styleUrls: ['./icons.component.scss']
 })
-export class IconsComponent implements OnInit, OnDestroy
-{
+export class IconsComponent implements OnInit, OnDestroy {
     icons: any[];
     filteredIcons: any[];
     loading: boolean;
@@ -24,8 +23,7 @@ export class IconsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.loading = true;
 
@@ -40,8 +38,7 @@ export class IconsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._httpClient.get('api/icons')
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((icons: any) => {
@@ -54,8 +51,7 @@ export class IconsComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -70,8 +66,7 @@ export class IconsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    filterIcons(event): void
-    {
+    filterIcons(event): void {
         const value = event.target.value;
 
         this.filteredIcons = this.icons.filter(icon => {

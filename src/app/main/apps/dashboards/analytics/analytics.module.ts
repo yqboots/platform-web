@@ -1,21 +1,28 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatMenuModule, MatSelectModule, MatTabsModule } from '@angular/material';
-import { AgmCoreModule } from '@agm/core';
-import { ChartsModule } from 'ng2-charts';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatTabsModule
+} from '@angular/material';
+import {AgmCoreModule} from '@agm/core';
+import {ChartsModule} from 'ng2-charts';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseWidgetModule} from '@fuse/components/widget/widget.module';
 
-import { AnalyticsDashboardComponent } from 'app/main/apps/dashboards/analytics/analytics.component';
-import { AnalyticsDashboardService } from 'app/main/apps/dashboards/analytics/analytics.service';
+import {AnalyticsDashboardComponent} from 'app/main/apps/dashboards/analytics/analytics.component';
+import {AnalyticsDashboardService} from 'app/main/apps/dashboards/analytics/analytics.service';
 
 const routes: Routes = [
     {
-        path     : '**',
+        path: '**',
         component: AnalyticsDashboardComponent,
-        resolve  : {
+        resolve: {
             data: AnalyticsDashboardService
         }
     }
@@ -25,7 +32,7 @@ const routes: Routes = [
     declarations: [
         AnalyticsDashboardComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -44,11 +51,10 @@ const routes: Routes = [
         FuseSharedModule,
         FuseWidgetModule
     ],
-    providers   : [
+    providers: [
         AnalyticsDashboardService
     ]
 })
-export class AnalyticsDashboardModule
-{
+export class AnalyticsDashboardModule {
 }
 

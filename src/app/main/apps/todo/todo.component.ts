@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations} from '@fuse/animations';
+import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import {Todo} from 'app/main/apps/todo/todo.model';
+import {TodoService} from 'app/main/apps/todo/todo.service';
 
 @Component({
-    selector     : 'todo',
-    templateUrl  : './todo.component.html',
-    styleUrls    : ['./todo.component.scss'],
+    selector: 'todo',
+    templateUrl: './todo.component.html',
+    styleUrls: ['./todo.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class TodoComponent implements OnInit, OnDestroy
-{
+export class TodoComponent implements OnInit, OnDestroy {
     hasSelectedTodos: boolean;
     isIndeterminate: boolean;
     filters: any[];
@@ -37,8 +36,7 @@ export class TodoComponent implements OnInit, OnDestroy
     constructor(
         private _fuseSidebarService: FuseSidebarService,
         private _todoService: TodoService
-    )
-    {
+    ) {
         // Set the defaults
         this.searchInput = new FormControl('');
 
@@ -53,8 +51,7 @@ export class TodoComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._todoService.onSelectedTodosChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(selectedTodos => {
@@ -90,12 +87,9 @@ export class TodoComponent implements OnInit, OnDestroy
         this._todoService.onCurrentTodoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(([currentTodo, formType]) => {
-                if ( !currentTodo )
-                {
+                if (!currentTodo) {
                     this.currentTodo = null;
-                }
-                else
-                {
+                } else {
                     this.currentTodo = currentTodo;
                 }
             });
@@ -104,8 +98,7 @@ export class TodoComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -118,16 +111,14 @@ export class TodoComponent implements OnInit, OnDestroy
     /**
      * Deselect current todo
      */
-    deselectCurrentTodo(): void
-    {
+    deselectCurrentTodo(): void {
         this._todoService.onCurrentTodoChanged.next([null, null]);
     }
 
     /**
      * Toggle select all
      */
-    toggleSelectAll(): void
-    {
+    toggleSelectAll(): void {
         this._todoService.toggleSelectAll();
     }
 
@@ -137,16 +128,14 @@ export class TodoComponent implements OnInit, OnDestroy
      * @param filterParameter
      * @param filterValue
      */
-    selectTodos(filterParameter?, filterValue?): void
-    {
+    selectTodos(filterParameter?, filterValue?): void {
         this._todoService.selectTodos(filterParameter, filterValue);
     }
 
     /**
      * Deselect todos
      */
-    deselectTodos(): void
-    {
+    deselectTodos(): void {
         this._todoService.deselectTodos();
     }
 
@@ -155,8 +144,7 @@ export class TodoComponent implements OnInit, OnDestroy
      *
      * @param tagId
      */
-    toggleTagOnSelectedTodos(tagId): void
-    {
+    toggleTagOnSelectedTodos(tagId): void {
         this._todoService.toggleTagOnSelectedTodos(tagId);
     }
 
@@ -165,8 +153,7 @@ export class TodoComponent implements OnInit, OnDestroy
      *
      * @param name
      */
-    toggleSidebar(name): void
-    {
+    toggleSidebar(name): void {
         this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
 }

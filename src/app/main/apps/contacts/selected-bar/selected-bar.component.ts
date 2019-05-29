@@ -1,19 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MatDialog, MatDialogRef} from '@angular/material';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { FuseConfirmDialogComponent } from '@fuse/components/confirm-dialog/confirm-dialog.component';
+import {FuseConfirmDialogComponent} from '@fuse/components/confirm-dialog/confirm-dialog.component';
 
-import { ContactsService } from 'app/main/apps/contacts/contacts.service';
+import {ContactsService} from 'app/main/apps/contacts/contacts.service';
 
 @Component({
-    selector   : 'selected-bar',
+    selector: 'selected-bar',
     templateUrl: './selected-bar.component.html',
-    styleUrls  : ['./selected-bar.component.scss']
+    styleUrls: ['./selected-bar.component.scss']
 })
-export class ContactsSelectedBarComponent implements OnInit, OnDestroy
-{
+export class ContactsSelectedBarComponent implements OnInit, OnDestroy {
     confirmDialogRef: MatDialogRef<FuseConfirmDialogComponent>;
     hasSelectedContacts: boolean;
     isIndeterminate: boolean;
@@ -31,8 +30,7 @@ export class ContactsSelectedBarComponent implements OnInit, OnDestroy
     constructor(
         private _contactsService: ContactsService,
         public _matDialog: MatDialog
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -44,8 +42,7 @@ export class ContactsSelectedBarComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._contactsService.onSelectedContactsChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(selectedContacts => {
@@ -60,8 +57,7 @@ export class ContactsSelectedBarComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -74,24 +70,21 @@ export class ContactsSelectedBarComponent implements OnInit, OnDestroy
     /**
      * Select all
      */
-    selectAll(): void
-    {
+    selectAll(): void {
         this._contactsService.selectContacts();
     }
 
     /**
      * Deselect all
      */
-    deselectAll(): void
-    {
+    deselectAll(): void {
         this._contactsService.deselectContacts();
     }
 
     /**
      * Delete selected contacts
      */
-    deleteSelectedContacts(): void
-    {
+    deleteSelectedContacts(): void {
         this.confirmDialogRef = this._matDialog.open(FuseConfirmDialogComponent, {
             disableClose: false
         });
@@ -100,8 +93,7 @@ export class ContactsSelectedBarComponent implements OnInit, OnDestroy
 
         this.confirmDialogRef.afterClosed()
             .subscribe(result => {
-                if ( result )
-                {
+                if (result) {
                     this._contactsService.deleteSelectedContacts();
                 }
                 this.confirmDialogRef = null;

@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { LockComponent } from 'app/main/pages/authentication/lock/lock.component';
+import {LockComponent} from 'app/main/pages/authentication/lock/lock.component';
 
 const routes = [
     {
-        path     : 'auth/lock',
+        path: 'auth/lock',
         component: LockComponent
     }
 ];
@@ -17,7 +17,7 @@ const routes = [
     declarations: [
         LockComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -28,6 +28,5 @@ const routes = [
         FuseSharedModule
     ]
 })
-export class LockModule
-{
+export class LockModule {
 }

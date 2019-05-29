@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
-export class AcademyCoursesService implements Resolve<any>
-{
+export class AcademyCoursesService implements Resolve<any> {
     onCategoriesChanged: BehaviorSubject<any>;
     onCoursesChanged: BehaviorSubject<any>;
 
@@ -16,8 +15,7 @@ export class AcademyCoursesService implements Resolve<any>
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.onCategoriesChanged = new BehaviorSubject({});
         this.onCoursesChanged = new BehaviorSubject({});
@@ -34,8 +32,7 @@ export class AcademyCoursesService implements Resolve<any>
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return new Promise((resolve, reject) => {
 
             Promise.all([
@@ -55,8 +52,7 @@ export class AcademyCoursesService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getCategories(): Promise<any>
-    {
+    getCategories(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/academy-categories')
                 .subscribe((response: any) => {
@@ -71,8 +67,7 @@ export class AcademyCoursesService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getCourses(): Promise<any>
-    {
+    getCourses(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/academy-courses')
                 .subscribe((response: any) => {

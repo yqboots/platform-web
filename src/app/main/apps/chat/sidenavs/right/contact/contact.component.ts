@@ -1,17 +1,16 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { ChatService } from 'app/main/apps/chat/chat.service';
+import {ChatService} from 'app/main/apps/chat/chat.service';
 
 @Component({
-    selector     : 'chat-contact-sidenav',
-    templateUrl  : './contact.component.html',
-    styleUrls    : ['./contact.component.scss'],
+    selector: 'chat-contact-sidenav',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ChatContactSidenavComponent implements OnInit, OnDestroy
-{
+export class ChatContactSidenavComponent implements OnInit, OnDestroy {
     contact: any;
 
     // Private
@@ -24,8 +23,7 @@ export class ChatContactSidenavComponent implements OnInit, OnDestroy
      */
     constructor(
         private _chatService: ChatService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -37,8 +35,7 @@ export class ChatContactSidenavComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._chatService.onContactSelected
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(contact => {
@@ -49,8 +46,7 @@ export class ChatContactSidenavComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();

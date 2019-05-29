@@ -13,6 +13,12 @@
         "paths": {
             "@fuse": [
                 "@fuse/"
+            ],
+            "@yqboots/core": [
+                "../dist/@yqboots/core"
+            ],
+            "@yqboots/core/*": [
+                "../dist/@yqboots/core/*"
             ]
         },
         "target": "es5",

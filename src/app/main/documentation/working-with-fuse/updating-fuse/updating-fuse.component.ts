@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-working-with-fuse-updating-fuse',
+    selector: 'docs-working-with-fuse-updating-fuse',
     templateUrl: './updating-fuse.component.html',
-    styleUrls  : ['./updating-fuse.component.scss']
+    styleUrls: ['./updating-fuse.component.scss']
 })
-export class DocsWorkingWithFuseUpdatingFuseComponent
-{
-    constructor()
-    {
+export class DocsWorkingWithFuseUpdatingFuseComponent {
+    constructor() {
     }
 }

@@ -1,14 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatStepperModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatStepperModule
+} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { FormsComponent } from 'app/main/ui/forms/forms.component';
+import {FormsComponent} from 'app/main/ui/forms/forms.component';
 
 const routes: Routes = [
     {
-        path     : 'forms',
+        path: 'forms',
         component: FormsComponent
     }
 ];
@@ -17,7 +24,7 @@ const routes: Routes = [
     declarations: [
         FormsComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -30,6 +37,5 @@ const routes: Routes = [
         FuseSharedModule,
     ]
 })
-export class UIFormsModule
-{
+export class UIFormsModule {
 }

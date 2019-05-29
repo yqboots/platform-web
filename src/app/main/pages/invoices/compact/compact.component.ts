@@ -1,17 +1,16 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { InvoiceService } from 'app/main/pages/invoices/invoice.service';
+import {InvoiceService} from 'app/main/pages/invoices/invoice.service';
 
 @Component({
-    selector     : 'invoice-compact',
-    templateUrl  : './compact.component.html',
-    styleUrls    : ['./compact.component.scss'],
+    selector: 'invoice-compact',
+    templateUrl: './compact.component.html',
+    styleUrls: ['./compact.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class InvoiceCompactComponent implements OnInit, OnDestroy
-{
+export class InvoiceCompactComponent implements OnInit, OnDestroy {
     invoice: any;
 
     // Private
@@ -19,8 +18,7 @@ export class InvoiceCompactComponent implements OnInit, OnDestroy
 
     constructor(
         private _invoiceService: InvoiceService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -32,8 +30,7 @@ export class InvoiceCompactComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._invoiceService.invoiceOnChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((invoice) => {
@@ -44,8 +41,7 @@ export class InvoiceCompactComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();

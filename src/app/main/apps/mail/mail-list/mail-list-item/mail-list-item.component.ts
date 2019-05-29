@@ -1,18 +1,17 @@
-import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { Mail } from 'app/main/apps/mail/mail.model';
-import { MailService } from 'app/main/apps/mail/mail.service';
+import {Mail} from 'app/main/apps/mail/mail.model';
+import {MailService} from 'app/main/apps/mail/mail.service';
 
 @Component({
-    selector     : 'mail-list-item',
-    templateUrl  : './mail-list-item.component.html',
-    styleUrls    : ['./mail-list-item.component.scss'],
+    selector: 'mail-list-item',
+    templateUrl: './mail-list-item.component.html',
+    styleUrls: ['./mail-list-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class MailListItemComponent implements OnInit, OnDestroy
-{
+export class MailListItemComponent implements OnInit, OnDestroy {
     @Input() mail: Mail;
     labels: any[];
 
@@ -29,8 +28,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
      */
     constructor(
         private _mailService: MailService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -42,8 +40,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Set the initial values
         this.mail = new Mail(this.mail);
 
@@ -53,12 +50,9 @@ export class MailListItemComponent implements OnInit, OnDestroy
             .subscribe(selectedMails => {
                 this.selected = false;
 
-                if ( selectedMails.length > 0 )
-                {
-                    for ( const mail of selectedMails )
-                    {
-                        if ( mail.id === this.mail.id )
-                        {
+                if (selectedMails.length > 0) {
+                    for (const mail of selectedMails) {
+                        if (mail.id === this.mail.id) {
                             this.selected = true;
                             break;
                         }
@@ -77,8 +71,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -91,8 +84,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
     /**
      * On selected change
      */
-    onSelectedChange(): void
-    {
+    onSelectedChange(): void {
         this._mailService.toggleSelectedMail(this.mail.id);
     }
 
@@ -101,8 +93,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleStar(event): void
-    {
+    toggleStar(event): void {
         event.stopPropagation();
 
         this.mail.toggleStar();
@@ -115,8 +106,7 @@ export class MailListItemComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleImportant(event): void
-    {
+    toggleImportant(event): void {
         event.stopPropagation();
 
         this.mail.toggleImportant();

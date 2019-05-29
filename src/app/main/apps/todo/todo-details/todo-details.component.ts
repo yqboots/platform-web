@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import { FuseUtils } from '@fuse/utils';
-import { fuseAnimations } from '@fuse/animations';
+import {FuseUtils} from '@fuse/utils';
+import {fuseAnimations} from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import {Todo} from 'app/main/apps/todo/todo.model';
+import {TodoService} from 'app/main/apps/todo/todo.service';
 
 @Component({
-    selector     : 'todo-details',
-    templateUrl  : './todo-details.component.html',
-    styleUrls    : ['./todo-details.component.scss'],
+    selector: 'todo-details',
+    templateUrl: './todo-details.component.html',
+    styleUrls: ['./todo-details.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class TodoDetailsComponent implements OnInit, OnDestroy
-{
+export class TodoDetailsComponent implements OnInit, OnDestroy {
     todo: Todo;
     tags: any[];
     formType: string;
@@ -38,8 +37,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     constructor(
         private _todoService: TodoService,
         private _formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -51,15 +49,13 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update the current todo
         this._todoService.onCurrentTodoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(([todo, formType]) => {
 
-                if ( todo && formType === 'edit' )
-                {
+                if (todo && formType === 'edit') {
                     this.formType = 'edit';
                     this.todo = todo;
                     this.todoForm = this.createTodoForm();
@@ -99,8 +95,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -113,8 +108,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     /**
      * Focus title field
      */
-    focusTitleField(): void
-    {
+    focusTitleField(): void {
         setTimeout(() => {
             this.titleInputField.nativeElement.focus();
         });
@@ -125,19 +119,18 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @returns {FormGroup}
      */
-    createTodoForm(): FormGroup
-    {
+    createTodoForm(): FormGroup {
         return this._formBuilder.group({
-            'id'       : [this.todo.id],
-            'title'    : [this.todo.title],
-            'notes'    : [this.todo.notes],
+            'id': [this.todo.id],
+            'title': [this.todo.title],
+            'notes': [this.todo.notes],
             'startDate': [this.todo.startDate],
-            'dueDate'  : [this.todo.dueDate],
+            'dueDate': [this.todo.dueDate],
             'completed': [this.todo.completed],
-            'starred'  : [this.todo.starred],
+            'starred': [this.todo.starred],
             'important': [this.todo.important],
-            'deleted'  : [this.todo.deleted],
-            'tags'     : [this.todo.tags]
+            'deleted': [this.todo.deleted],
+            'tags': [this.todo.tags]
         });
     }
 
@@ -146,8 +139,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleStar(event): void
-    {
+    toggleStar(event): void {
         event.stopPropagation();
         this.todo.toggleStar();
         this._todoService.updateTodo(this.todo);
@@ -158,8 +150,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleImportant(event): void
-    {
+    toggleImportant(event): void {
         event.stopPropagation();
         this.todo.toggleImportant();
         this._todoService.updateTodo(this.todo);
@@ -170,8 +161,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleCompleted(event): void
-    {
+    toggleCompleted(event): void {
         event.stopPropagation();
         this.todo.toggleCompleted();
         this._todoService.updateTodo(this.todo);
@@ -182,8 +172,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleDeleted(event): void
-    {
+    toggleDeleted(event): void {
         event.stopPropagation();
         this.todo.toggleDeleted();
         this._todoService.updateTodo(this.todo);
@@ -194,8 +183,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      *
      * @param tagId
      */
-    toggleTagOnTodo(tagId): void
-    {
+    toggleTagOnTodo(tagId): void {
         this._todoService.toggleTagOnTodo(tagId, this.todo);
     }
 
@@ -205,16 +193,14 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
      * @param tagId
      * @returns {any}
      */
-    hasTag(tagId): any
-    {
+    hasTag(tagId): any {
         return this._todoService.hasTag(tagId, this.todo);
     }
 
     /**
      * Add todo
      */
-    addTodo(): void
-    {
+    addTodo(): void {
         this._todoService.updateTodo(this.todoForm.getRawValue());
     }
 }

@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-components-search-bar',
+    selector: 'docs-components-search-bar',
     templateUrl: './search-bar.component.html',
-    styleUrls  : ['./search-bar.component.scss']
+    styleUrls: ['./search-bar.component.scss']
 })
-export class DocsComponentsSearchBarComponent
-{
+export class DocsComponentsSearchBarComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

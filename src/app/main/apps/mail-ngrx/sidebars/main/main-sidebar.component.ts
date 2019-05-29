@@ -1,22 +1,21 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { FormGroup } from '@angular/forms';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {FormGroup} from '@angular/forms';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
 
-import { MailNgrxService } from 'app/main/apps/mail-ngrx/mail.service';
+import {MailNgrxService} from 'app/main/apps/mail-ngrx/mail.service';
 import * as fromStore from 'app/main/apps/mail-ngrx/store';
-import { MailNgrxComposeDialogComponent } from 'app/main/apps/mail-ngrx/dialogs/compose/compose.component';
+import {MailNgrxComposeDialogComponent} from 'app/main/apps/mail-ngrx/dialogs/compose/compose.component';
 
 @Component({
-    selector       : 'mail-ngrx-main-sidebar',
-    templateUrl    : './main-sidebar.component.html',
-    styleUrls      : ['./main-sidebar.component.scss'],
+    selector: 'mail-ngrx-main-sidebar',
+    templateUrl: './main-sidebar.component.html',
+    styleUrls: ['./main-sidebar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation  : ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None
 })
-export class MailNgrxMainSidebarComponent
-{
+export class MailNgrxMainSidebarComponent {
     labels: any[];
     accounts: object;
     selectedAccount: string;
@@ -37,11 +36,10 @@ export class MailNgrxMainSidebarComponent
         private _mailNgrxService: MailNgrxService,
         private _matDialog: MatDialog,
         private _store: Store<fromStore.MailAppState>
-    )
-    {
+    ) {
         // Set the defaults
         this.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
+            'creapond': 'johndoe@creapond.com',
             'withinpixels': 'johndoe@withinpixels.com'
         };
         this.selectedAccount = 'creapond';
@@ -57,22 +55,19 @@ export class MailNgrxMainSidebarComponent
     /**
      * Compose dialog
      */
-    composeDialog(): void
-    {
+    composeDialog(): void {
         this.dialogRef = this._matDialog.open(MailNgrxComposeDialogComponent, {
             panelClass: 'mail-ngrx-compose-dialog'
         });
 
         this.dialogRef.afterClosed()
             .subscribe(response => {
-                if ( !response )
-                {
+                if (!response) {
                     return;
                 }
                 const actionType: string = response[0];
                 const formData: FormGroup = response[1];
-                switch ( actionType )
-                {
+                switch (actionType) {
                     /**
                      * Send
                      */

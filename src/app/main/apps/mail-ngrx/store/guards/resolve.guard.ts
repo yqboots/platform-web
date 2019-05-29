@@ -1,19 +1,23 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
-import { RouterStateSnapshot } from '@angular/router/src/router_state';
-import { select, Store } from '@ngrx/store';
+import {Injectable} from '@angular/core';
+import {ActivatedRouteSnapshot, CanActivate} from '@angular/router';
+import {RouterStateSnapshot} from '@angular/router/src/router_state';
+import {select, Store} from '@ngrx/store';
 
-import { Observable, forkJoin, of } from 'rxjs';
-import { map, switchMap, catchError, tap, take, filter } from 'rxjs/operators';
+import {forkJoin, Observable, of} from 'rxjs';
+import {catchError, filter, map, switchMap, take, tap} from 'rxjs/operators';
 
-import { MailAppState } from 'app/main/apps/mail-ngrx/store/reducers';
+import {MailAppState} from 'app/main/apps/mail-ngrx/store/reducers';
 import * as fromStore from 'app/main/apps/mail-ngrx/store';
-import { getFiltersLoaded, getFoldersLoaded, getLabelsLoaded, getMailsLoaded } from 'app/main/apps/mail-ngrx/store/selectors';
-import { getRouterState } from 'app/store/reducers';
+import {
+    getFiltersLoaded,
+    getFoldersLoaded,
+    getLabelsLoaded,
+    getMailsLoaded
+} from 'app/main/apps/mail-ngrx/store/selectors';
+import {getRouterState} from 'app/store/reducers';
 
 @Injectable()
-export class ResolveGuard implements CanActivate
-{
+export class ResolveGuard implements CanActivate {
     routerState: any;
 
     /**
@@ -23,13 +27,11 @@ export class ResolveGuard implements CanActivate
      */
     constructor(
         private _store: Store<MailAppState>
-    )
-    {
+    ) {
         this._store
             .pipe(select(getRouterState))
             .subscribe(routerState => {
-                if ( routerState )
-                {
+                if (routerState) {
                     this.routerState = routerState.state;
                 }
             });
@@ -42,8 +44,7 @@ export class ResolveGuard implements CanActivate
      * @param {RouterStateSnapshot} state
      * @returns {Observable<boolean>}
      */
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>
-    {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         return this.checkStore().pipe(
             switchMap(() => of(true)),
             catchError(() => of(false))
@@ -55,8 +56,7 @@ export class ResolveGuard implements CanActivate
      *
      * @returns {Observable<any>}
      */
-    checkStore(): Observable<any>
-    {
+    checkStore(): Observable<any> {
         return forkJoin(
             this.getFolders(),
             this.getFilters(),
@@ -77,13 +77,11 @@ export class ResolveGuard implements CanActivate
      *
      * @returns {Observable<any>}
      */
-    getFolders(): any
-    {
+    getFolders(): any {
         return this._store.pipe(
             select(getFoldersLoaded),
             tap(loaded => {
-                if ( !loaded )
-                {
+                if (!loaded) {
                     this._store.dispatch(new fromStore.GetFolders([]));
                 }
             }),
@@ -97,13 +95,11 @@ export class ResolveGuard implements CanActivate
      *
      * @returns {Observable<any>}
      */
-    getFilters(): any
-    {
+    getFilters(): any {
         return this._store.pipe(
             select(getFiltersLoaded),
             tap(loaded => {
-                if ( !loaded )
-                {
+                if (!loaded) {
                     this._store.dispatch(new fromStore.GetFilters([]));
                 }
             }),
@@ -116,13 +112,11 @@ export class ResolveGuard implements CanActivate
      * Get Labels
      * @returns {Observable<any>}
      */
-    getLabels(): any
-    {
+    getLabels(): any {
         return this._store.pipe(
             select(getLabelsLoaded),
             tap(loaded => {
-                if ( !loaded )
-                {
+                if (!loaded) {
                     this._store.dispatch(new fromStore.GetLabels([]));
                 }
             }),
@@ -136,14 +130,12 @@ export class ResolveGuard implements CanActivate
      *
      * @returns {Observable<any>}
      */
-    getMails(): any
-    {
+    getMails(): any {
         return this._store.pipe(
             select(getMailsLoaded),
             tap((loaded: any) => {
 
-                if ( !this.routerState.params[loaded.id] || this.routerState.params[loaded.id] !== loaded.value )
-                {
+                if (!this.routerState.params[loaded.id] || this.routerState.params[loaded.id] !== loaded.value) {
                     this._store.dispatch(new fromStore.GetMails());
                     this._store.dispatch(new fromStore.SetSearchText(''));
                     this._store.dispatch(new fromStore.DeselectAllMails());

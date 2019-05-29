@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { Effect, Actions, ofType } from '@ngrx/effects';
-import { tap, map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {Actions, Effect, ofType} from '@ngrx/effects';
+import {map, tap} from 'rxjs/operators';
 
 import * as RouterActions from 'app/store/actions/router.action';
 
 @Injectable()
-export class RouterEffects
-{
+export class RouterEffects {
     /**
      * Constructor
      *
@@ -20,8 +19,7 @@ export class RouterEffects
         private actions$: Actions,
         private router: Router,
         private location: Location
-    )
-    {
+    ) {
     }
 
     /**

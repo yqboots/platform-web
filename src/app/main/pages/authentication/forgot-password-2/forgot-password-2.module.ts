@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { ForgotPassword2Component } from 'app/main/pages/authentication/forgot-password-2/forgot-password-2.component';
+import {ForgotPassword2Component} from 'app/main/pages/authentication/forgot-password-2/forgot-password-2.component';
 
 const routes = [
     {
-        path     : 'auth/forgot-password-2',
+        path: 'auth/forgot-password-2',
         component: ForgotPassword2Component
     }
 ];
@@ -17,7 +17,7 @@ const routes = [
     declarations: [
         ForgotPassword2Component
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -28,6 +28,5 @@ const routes = [
         FuseSharedModule,
     ]
 })
-export class ForgotPassword2Module
-{
+export class ForgotPassword2Module {
 }

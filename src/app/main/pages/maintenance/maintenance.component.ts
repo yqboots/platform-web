@@ -1,17 +1,16 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
+import {FuseConfigService} from '@fuse/services/config.service';
+import {fuseAnimations} from '@fuse/animations';
 
 @Component({
-    selector     : 'maintenance',
-    templateUrl  : './maintenance.component.html',
-    styleUrls    : ['./maintenance.component.scss'],
+    selector: 'maintenance',
+    templateUrl: './maintenance.component.html',
+    styleUrls: ['./maintenance.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class MaintenanceComponent
-{
+export class MaintenanceComponent {
     /**
      * Constructor
      *
@@ -19,18 +18,17 @@ export class MaintenanceComponent
      */
     constructor(
         private _fuseConfigService: FuseConfigService
-    )
-    {
+    ) {
         // Configure the layout
         this._fuseConfigService.config = {
             layout: {
-                navbar   : {
+                navbar: {
                     hidden: true
                 },
-                toolbar  : {
+                toolbar: {
                     hidden: true
                 },
-                footer   : {
+                footer: {
                     hidden: true
                 },
                 sidepanel: {

@@ -1,7 +1,6 @@
 import * as LabelsActions from 'app/main/apps/mail-ngrx/store/actions/labels.actions';
 
-export interface LabelsState
-{
+export interface LabelsState {
     entities?: { [id: number]: any };
     loading: boolean;
     loaded: boolean;
@@ -9,19 +8,17 @@ export interface LabelsState
 
 export const LabelsInitialState: LabelsState = {
     entities: {},
-    loading : false,
-    loaded  : false
+    loading: false,
+    loaded: false
 };
 
-export function LabelsReducer(state = LabelsInitialState, action: LabelsActions.LabelsActionsAll): LabelsState
-{
-    switch ( action.type )
-    {
+export function LabelsReducer(state = LabelsInitialState, action: LabelsActions.LabelsActionsAll): LabelsState {
+    switch (action.type) {
         case LabelsActions.GET_LABELS:
             return {
                 ...state,
                 loading: true,
-                loaded : false
+                loaded: false
             };
         case LabelsActions.GET_LABELS_SUCCESS:
 
@@ -37,7 +34,7 @@ export function LabelsReducer(state = LabelsInitialState, action: LabelsActions.
             return {
                 ...state,
                 loading: false,
-                loaded : true,
+                loaded: true,
                 entities
             };
 
@@ -45,7 +42,7 @@ export function LabelsReducer(state = LabelsInitialState, action: LabelsActions.
             return {
                 ...state,
                 loading: false,
-                loaded : false
+                loaded: false
             };
         default:
             return state;

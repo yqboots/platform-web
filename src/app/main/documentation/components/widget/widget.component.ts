@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-components-widget',
+    selector: 'docs-components-widget',
     templateUrl: './widget.component.html',
-    styleUrls  : ['./widget.component.scss']
+    styleUrls: ['./widget.component.scss']
 })
-export class DocsComponentsWidgetComponent
-{
+export class DocsComponentsWidgetComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

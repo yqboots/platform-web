@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseHighlightModule } from '@fuse/components';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseHighlightModule} from '@fuse/components';
 
-import { DocsGettingStartedIntroductionComponent } from 'app/main/documentation/getting-started/introduction/introduction.component';
-import { DocsGettingStartedInstallationComponent } from 'app/main/documentation/getting-started/installation/installation.component';
+import {DocsGettingStartedIntroductionComponent} from 'app/main/documentation/getting-started/introduction/introduction.component';
+import {DocsGettingStartedInstallationComponent} from 'app/main/documentation/getting-started/installation/installation.component';
 
 const routes = [
     {
-        path     : 'introduction',
+        path: 'introduction',
         component: DocsGettingStartedIntroductionComponent
     },
     {
-        path     : 'installation',
+        path: 'installation',
         component: DocsGettingStartedInstallationComponent
     }
 ];
@@ -24,7 +24,7 @@ const routes = [
         DocsGettingStartedIntroductionComponent,
         DocsGettingStartedInstallationComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatIconModule,
@@ -33,6 +33,5 @@ const routes = [
         FuseHighlightModule
     ]
 })
-export class GettingStartedModule
-{
+export class GettingStartedModule {
 }

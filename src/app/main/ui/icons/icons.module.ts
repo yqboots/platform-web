@@ -1,14 +1,20 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule
+} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { IconsComponent } from 'app/main/ui/icons/icons.component';
+import {IconsComponent} from 'app/main/ui/icons/icons.component';
 
 const routes: Routes = [
     {
-        path     : 'icons',
+        path: 'icons',
         component: IconsComponent
     }
 ];
@@ -17,7 +23,7 @@ const routes: Routes = [
     declarations: [
         IconsComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -29,6 +35,5 @@ const routes: Routes = [
         FuseSharedModule
     ]
 })
-export class UIIconsModule
-{
+export class UIIconsModule {
 }

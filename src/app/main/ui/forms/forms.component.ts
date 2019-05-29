@@ -1,14 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Subject} from 'rxjs';
 
 @Component({
-    selector   : 'forms',
+    selector: 'forms',
     templateUrl: './forms.component.html',
-    styleUrls  : ['./forms.component.scss']
+    styleUrls: ['./forms.component.scss']
 })
-export class FormsComponent implements OnInit, OnDestroy
-{
+export class FormsComponent implements OnInit, OnDestroy {
     form: FormGroup;
 
     // Horizontal Stepper
@@ -31,8 +30,7 @@ export class FormsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -44,30 +42,29 @@ export class FormsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Reactive Form
         this.form = this._formBuilder.group({
-            company   : [
+            company: [
                 {
-                    value   : 'Google',
+                    value: 'Google',
                     disabled: true
                 }, Validators.required
             ],
-            firstName : ['', Validators.required],
-            lastName  : ['', Validators.required],
-            address   : ['', Validators.required],
-            address2  : ['', Validators.required],
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
+            address: ['', Validators.required],
+            address2: ['', Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
             postalCode: ['', [Validators.required, Validators.maxLength(5)]],
-            country   : ['', Validators.required]
+            country: ['', Validators.required]
         });
 
         // Horizontal Stepper form steps
         this.horizontalStepperStep1 = this._formBuilder.group({
             firstName: ['', Validators.required],
-            lastName : ['', Validators.required]
+            lastName: ['', Validators.required]
         });
 
         this.horizontalStepperStep2 = this._formBuilder.group({
@@ -75,15 +72,15 @@ export class FormsComponent implements OnInit, OnDestroy
         });
 
         this.horizontalStepperStep3 = this._formBuilder.group({
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
             postalCode: ['', [Validators.required, Validators.maxLength(5)]]
         });
 
         // Vertical Stepper form stepper
         this.verticalStepperStep1 = this._formBuilder.group({
             firstName: ['', Validators.required],
-            lastName : ['', Validators.required]
+            lastName: ['', Validators.required]
         });
 
         this.verticalStepperStep2 = this._formBuilder.group({
@@ -91,8 +88,8 @@ export class FormsComponent implements OnInit, OnDestroy
         });
 
         this.verticalStepperStep3 = this._formBuilder.group({
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
             postalCode: ['', [Validators.required, Validators.maxLength(5)]]
         });
     }
@@ -100,8 +97,7 @@ export class FormsComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -114,16 +110,14 @@ export class FormsComponent implements OnInit, OnDestroy
     /**
      * Finish the horizontal stepper
      */
-    finishHorizontalStepper(): void
-    {
+    finishHorizontalStepper(): void {
         alert('You have finished the horizontal stepper!');
     }
 
     /**
      * Finish the vertical stepper
      */
-    finishVerticalStepper(): void
-    {
+    finishVerticalStepper(): void {
         alert('You have finished the vertical stepper!');
     }
 }

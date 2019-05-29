@@ -1,38 +1,47 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {
-    MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatRippleModule, MatTableModule, MatToolbarModule
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatTableModule,
+    MatToolbarModule
 } from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseConfirmDialogModule, FuseSidebarModule } from '@fuse/components';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseConfirmDialogModule, FuseSidebarModule} from '@fuse/components';
 
-import { ContactsComponent } from 'app/main/apps/contacts/contacts.component';
-import { ContactsService } from 'app/main/apps/contacts/contacts.service';
-import { ContactsContactListComponent } from 'app/main/apps/contacts/contact-list/contact-list.component';
-import { ContactsSelectedBarComponent } from 'app/main/apps/contacts/selected-bar/selected-bar.component';
-import { ContactsMainSidebarComponent } from 'app/main/apps/contacts/sidebars/main/main.component';
-import { ContactsContactFormDialogComponent } from 'app/main/apps/contacts/contact-form/contact-form.component';
+import {ContactsComponent} from 'app/main/apps/contacts/contacts.component';
+import {ContactsService} from 'app/main/apps/contacts/contacts.service';
+import {ContactsContactListComponent} from 'app/main/apps/contacts/contact-list/contact-list.component';
+import {ContactsSelectedBarComponent} from 'app/main/apps/contacts/selected-bar/selected-bar.component';
+import {ContactsMainSidebarComponent} from 'app/main/apps/contacts/sidebars/main/main.component';
+import {ContactsContactFormDialogComponent} from 'app/main/apps/contacts/contact-form/contact-form.component';
 
 const routes: Routes = [
     {
-        path     : '**',
+        path: '**',
         component: ContactsComponent,
-        resolve  : {
+        resolve: {
             contacts: ContactsService
         }
     }
 ];
 
 @NgModule({
-    declarations   : [
+    declarations: [
         ContactsComponent,
         ContactsContactListComponent,
         ContactsSelectedBarComponent,
         ContactsMainSidebarComponent,
         ContactsContactFormDialogComponent
     ],
-    imports        : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -50,13 +59,12 @@ const routes: Routes = [
         FuseConfirmDialogModule,
         FuseSidebarModule
     ],
-    providers      : [
+    providers: [
         ContactsService
     ],
     entryComponents: [
         ContactsContactFormDialogComponent
     ]
 })
-export class ContactsModule
-{
+export class ContactsModule {
 }

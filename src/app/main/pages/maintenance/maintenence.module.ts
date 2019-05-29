@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { MaintenanceComponent } from 'app/main/pages/maintenance/maintenance.component';
+import {MaintenanceComponent} from 'app/main/pages/maintenance/maintenance.component';
 
 const routes = [
     {
-        path     : 'maintenance',
+        path: 'maintenance',
         component: MaintenanceComponent
     }
 ];
@@ -16,12 +16,11 @@ const routes = [
     declarations: [
         MaintenanceComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         FuseSharedModule
     ]
 })
-export class MaintenanceModule
-{
+export class MaintenanceModule {
 }

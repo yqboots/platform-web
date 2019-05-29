@@ -1,16 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'blank',
+    selector: 'blank',
     templateUrl: './blank.component.html',
-    styleUrls  : ['./blank.component.scss']
+    styleUrls: ['./blank.component.scss']
 })
-export class BlankComponent
-{
+export class BlankComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
     }
 }

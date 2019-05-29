@@ -1,19 +1,27 @@
-import { NgModule } from '@angular/core';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatRippleModule, MatTabsModule, MatTooltipModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRippleModule,
+    MatTabsModule,
+    MatTooltipModule
+} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { ChatPanelComponent } from 'app/layout/components/chat-panel/chat-panel.component';
-import { ChatPanelService } from 'app/layout/components/chat-panel/chat-panel.service';
+import {ChatPanelComponent} from 'app/layout/components/chat-panel/chat-panel.component';
+import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
 
 @NgModule({
     declarations: [
         ChatPanelComponent
     ],
-    providers   : [
+    providers: [
         ChatPanelService
     ],
-    imports     : [
+    imports: [
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
@@ -24,10 +32,9 @@ import { ChatPanelService } from 'app/layout/components/chat-panel/chat-panel.se
 
         FuseSharedModule
     ],
-    exports     : [
+    exports: [
         ChatPanelComponent
     ]
 })
-export class ChatPanelModule
-{
+export class ChatPanelModule {
 }

@@ -56,34 +56,34 @@
                                 <div class="customer mb-32">
                                     <table class="simple">
                                         <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Company</th>
-                                            </tr>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Company</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div fxLayout="row" fxLayoutAlign="start center">
-                                                        <img class="avatar" [src]="order.customer.avatar">
-                                                        <span class="name text-truncate">{{order.customer.firstName}}
-                                                            {{order.customer.lastName}}
+                                        <tr>
+                                            <td>
+                                                <div fxLayout="row" fxLayoutAlign="start center">
+                                                    <img class="avatar" [src]="order.customer.avatar">
+                                                    <span class="name text-truncate">{{order.customer.firstName}}
+                                                        {{order.customer.lastName}}
                                                         </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="email text-truncate">{{order.customer.email}}</span>
-                                                </td>
-                                                <td>
-                                                    <span class="phone text-truncate">{{order.customer.phone}}</span>
-                                                </td>
-                                                <td>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="email text-truncate">{{order.customer.email}}</span>
+                                            </td>
+                                            <td>
+                                                <span class="phone text-truncate">{{order.customer.phone}}</span>
+                                            </td>
+                                            <td>
                                                     <span class="company text-truncate">{{order.customer.company}}
                                                     </span>
-                                                </td>
-                                            </tr>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -143,25 +143,25 @@
 
                                 <table class="simple">
                                     <thead>
-                                        <tr>
-                                            <th>Status</th>
-                                            <th>Updated On</th>
-                                        </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Updated On</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
 
-                                        <tr *ngFor="let status of order.status">
-                                            <td>
+                                    <tr *ngFor="let status of order.status">
+                                        <td>
                                                 <span class="status h6 p-4" [ngClass]="status.color">
                                                     {{status.name}}
                                                 </span>
-                                            </td>
-                                            <td>
+                                        </td>
+                                        <td>
                                                 <span>
                                                     {{status.date | date}}
                                                 </span>
-                                            </td>
-                                        </tr>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
 
@@ -198,36 +198,36 @@
 
                                 <table class="simple">
                                     <thead>
-                                        <tr>
-                                            <th>TransactionID</th>
-                                            <th>Payment Method</th>
-                                            <th>Amount</th>
-                                            <th>Date</th>
-                                        </tr>
+                                    <tr>
+                                        <th>TransactionID</th>
+                                        <th>Payment Method</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
+                                    <tr>
+                                        <td>
                                                 <span class="text-truncate">
                                                     {{order.payment.transactionId}}
                                                 </span>
-                                            </td>
-                                            <td>
+                                        </td>
+                                        <td>
                                                 <span class="text-truncate">
                                                     {{order.payment.method}}
                                                 </span>
-                                            </td>
-                                            <td>
+                                        </td>
+                                        <td>
                                                 <span class="text-truncate">
                                                     {{order.payment.amount}}
                                                 </span>
-                                            </td>
-                                            <td>
+                                        </td>
+                                        <td>
                                                 <span class="text-truncate">
                                                     {{order.payment.date | date}}
                                                 </span>
-                                            </td>
-                                        </tr>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -242,32 +242,32 @@
 
                                 <table class="simple">
                                     <thead>
-                                        <tr>
-                                            <th>Tracking Code</th>
-                                            <th>Carrier</th>
-                                            <th>Weight</th>
-                                            <th>Fee</th>
-                                            <th>Date</th>
-                                        </tr>
+                                    <tr>
+                                        <th>Tracking Code</th>
+                                        <th>Carrier</th>
+                                        <th>Weight</th>
+                                        <th>Fee</th>
+                                        <th>Date</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let shipping of order.shippingDetails">
-                                            <td class="tracking-code">
-                                                {{shipping.tracking}}
-                                            </td>
-                                            <td>
-                                                {{shipping.carrier}}
-                                            </td>
-                                            <td>
-                                                {{shipping.weight}}
-                                            </td>
-                                            <td>
-                                                {{shipping.fee}}
-                                            </td>
-                                            <td>
-                                                {{shipping.date}}
-                                            </td>
-                                        </tr>
+                                    <tr *ngFor="let shipping of order.shippingDetails">
+                                        <td class="tracking-code">
+                                            {{shipping.tracking}}
+                                        </td>
+                                        <td>
+                                            {{shipping.carrier}}
+                                        </td>
+                                        <td>
+                                            {{shipping.weight}}
+                                        </td>
+                                        <td>
+                                            {{shipping.fee}}
+                                        </td>
+                                        <td>
+                                            {{shipping.date}}
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -279,34 +279,34 @@
                         <div class="products tab-content p-24" perfectScrollbar>
                             <table class="simple">
                                 <thead>
-                                    <tr>
-                                        <th class="w-80">ID</th>
-                                        <th class="w-120">Image</th>
-                                        <th>Name</th>
-                                        <th class="w-120">Price</th>
-                                        <th class="w-80">Quantity</th>
-                                    </tr>
+                                <tr>
+                                    <th class="w-80">ID</th>
+                                    <th class="w-120">Image</th>
+                                    <th>Name</th>
+                                    <th class="w-120">Price</th>
+                                    <th class="w-80">Quantity</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="product-row"
-                                        *ngFor="let product of order.products"
-                                        [routerLink]="'/apps/e-commerce/products/'+product.id+'/'+product.handle">
-                                        <td>
-                                            {{product.id}}
-                                        </td>
-                                        <td>
-                                            <img class="product-image" [src]="product.image">
-                                        </td>
-                                        <td>
-                                            {{product.name}}
-                                        </td>
-                                        <td>
-                                            {{product.price}}
-                                        </td>
-                                        <td>
-                                            {{product.quantity}}
-                                        </td>
-                                    </tr>
+                                <tr class="product-row"
+                                    *ngFor="let product of order.products"
+                                    [routerLink]="'/apps/e-commerce/products/'+product.id+'/'+product.handle">
+                                    <td>
+                                        {{product.id}}
+                                    </td>
+                                    <td>
+                                        <img class="product-image" [src]="product.image">
+                                    </td>
+                                    <td>
+                                        {{product.name}}
+                                    </td>
+                                    <td>
+                                        {{product.price}}
+                                    </td>
+                                    <td>
+                                        {{product.quantity}}
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -368,51 +368,51 @@
 
                                             <table class="simple invoice-table">
                                                 <thead>
-                                                    <tr>
-                                                        <th>PRODUCT</th>
-                                                        <th class="text-right">PRICE</th>
-                                                        <th class="text-right">QUANTITY</th>
-                                                        <th class="text-right">TOTAL</th>
-                                                    </tr>
+                                                <tr>
+                                                    <th>PRODUCT</th>
+                                                    <th class="text-right">PRICE</th>
+                                                    <th class="text-right">QUANTITY</th>
+                                                    <th class="text-right">TOTAL</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr *ngFor="let product of order.products">
-                                                        <td>
-                                                            <div class="title">
-                                                                {{product.name}}
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            {{product.price | currency:'USD':'symbol'}}
-                                                        </td>
-                                                        <td class="text-right">
-                                                            {{product.quantity}}
-                                                        </td>
-                                                        <td class="text-right">
-                                                            {{product.total | currency:'USD':'symbol'}}
-                                                        </td>
-                                                    </tr>
+                                                <tr *ngFor="let product of order.products">
+                                                    <td>
+                                                        <div class="title">
+                                                            {{product.name}}
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        {{product.price | currency:'USD':'symbol'}}
+                                                    </td>
+                                                    <td class="text-right">
+                                                        {{product.quantity}}
+                                                    </td>
+                                                    <td class="text-right">
+                                                        {{product.total | currency:'USD':'symbol'}}
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
 
                                             <table class="simple invoice-table-footer">
                                                 <tbody>
-                                                    <tr class="subtotal">
-                                                        <td>SUBTOTAL</td>
-                                                        <td>{{order.subtotal | currency:'USD':'symbol'}}</td>
-                                                    </tr>
-                                                    <tr class="tax">
-                                                        <td>TAX</td>
-                                                        <td>{{order.tax | currency:'USD':'symbol'}}</td>
-                                                    </tr>
-                                                    <tr class="discount">
-                                                        <td>DISCOUNT</td>
-                                                        <td>-{{order.discount | currency:'USD':'symbol'}}</td>
-                                                    </tr>
-                                                    <tr class="total">
-                                                        <td>TOTAL</td>
-                                                        <td>{{order.total | currency:'USD':'symbol'}}</td>
-                                                    </tr>
+                                                <tr class="subtotal">
+                                                    <td>SUBTOTAL</td>
+                                                    <td>{{order.subtotal | currency:'USD':'symbol'}}</td>
+                                                </tr>
+                                                <tr class="tax">
+                                                    <td>TAX</td>
+                                                    <td>{{order.tax | currency:'USD':'symbol'}}</td>
+                                                </tr>
+                                                <tr class="discount">
+                                                    <td>DISCOUNT</td>
+                                                    <td>-{{order.discount | currency:'USD':'symbol'}}</td>
+                                                </tr>
+                                                <tr class="total">
+                                                    <td>TOTAL</td>
+                                                    <td>{{order.total | currency:'USD':'symbol'}}</td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

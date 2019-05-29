@@ -17,7 +17,8 @@
             <div class="labels mt-8" fxLayout="row wrap">
                 <div class="label" *ngFor="let labelId of mail.labels"
                      fxLayout="row" fxLayoutAlign="start center">
-                    <div class="label-color" [ngStyle]="{'background-color': (labels$ | async) | getById:labelId:'color'}"></div>
+                    <div class="label-color"
+                         [ngStyle]="{'background-color': (labels$ | async) | getById:labelId:'color'}"></div>
                     <div class="label-title">{{(labels$ | async) | getById:labelId:'title'}}</div>
                 </div>
             </div>

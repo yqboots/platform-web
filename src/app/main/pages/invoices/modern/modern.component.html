@@ -91,54 +91,54 @@
             <div class="content">
                 <table class="simple invoice-table">
                     <thead>
-                        <tr>
-                            <th>SERVICE</th>
-                            <th>UNIT</th>
-                            <th class="text-right">UNIT PRICE</th>
-                            <th class="text-right">QUANTITY</th>
-                            <th class="text-right">TOTAL</th>
-                        </tr>
+                    <tr>
+                        <th>SERVICE</th>
+                        <th>UNIT</th>
+                        <th class="text-right">UNIT PRICE</th>
+                        <th class="text-right">QUANTITY</th>
+                        <th class="text-right">TOTAL</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let service of invoice.services">
-                            <td>
-                                <div class="title">{{service.title}}</div>
-                                <div class="detail">{{service.detail}}</div>
-                            </td>
-                            <td>
-                                {{service.unit}}
-                            </td>
-                            <td class="text-right">
-                                {{service.unitPrice | currency:'USD':'symbol'}}
-                            </td>
-                            <td class="text-right">
-                                {{service.quantity}}
-                            </td>
-                            <td class="text-right">
-                                {{service.total | currency:'USD':'symbol'}}
-                            </td>
-                        </tr>
+                    <tr *ngFor="let service of invoice.services">
+                        <td>
+                            <div class="title">{{service.title}}</div>
+                            <div class="detail">{{service.detail}}</div>
+                        </td>
+                        <td>
+                            {{service.unit}}
+                        </td>
+                        <td class="text-right">
+                            {{service.unitPrice | currency:'USD':'symbol'}}
+                        </td>
+                        <td class="text-right">
+                            {{service.quantity}}
+                        </td>
+                        <td class="text-right">
+                            {{service.total | currency:'USD':'symbol'}}
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
 
                 <table class="simple invoice-table-footer">
                     <tbody>
-                        <tr class="subtotal">
-                            <td>SUBTOTAL</td>
-                            <td>{{invoice.subtotal | currency:'USD':'symbol'}}</td>
-                        </tr>
-                        <tr class="tax">
-                            <td>TAX</td>
-                            <td>{{invoice.tax | currency:'USD':'symbol'}}</td>
-                        </tr>
-                        <tr class="discount">
-                            <td>DISCOUNT</td>
-                            <td>-{{invoice.discount | currency:'USD':'symbol'}}</td>
-                        </tr>
-                        <tr class="total">
-                            <td>TOTAL</td>
-                            <td>{{invoice.total | currency:'USD':'symbol'}}</td>
-                        </tr>
+                    <tr class="subtotal">
+                        <td>SUBTOTAL</td>
+                        <td>{{invoice.subtotal | currency:'USD':'symbol'}}</td>
+                    </tr>
+                    <tr class="tax">
+                        <td>TAX</td>
+                        <td>{{invoice.tax | currency:'USD':'symbol'}}</td>
+                    </tr>
+                    <tr class="discount">
+                        <td>DISCOUNT</td>
+                        <td>-{{invoice.discount | currency:'USD':'symbol'}}</td>
+                    </tr>
+                    <tr class="total">
+                        <td>TOTAL</td>
+                        <td>{{invoice.total | currency:'USD':'symbol'}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

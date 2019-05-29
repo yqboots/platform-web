@@ -30,16 +30,16 @@
 
                     export class SomeComponent implements OnInit
                     {
-                        constructor(
-                            private _fuseSplashScreenService: FuseSplashScreenService
-                        ) {}
+                    constructor(
+                        private _fuseSplashScreenService: FuseSplashScreenService
+                    ) {}
 
                         ngOnInit()
                         {
                             this._fuseSplashScreenService.show();
 
                             setTimeout(() => {
-                                this._fuseSplashScreenService.hide();
+                    this._fuseSplashScreenService.hide();
                             }, 3000);
                         }
                     }

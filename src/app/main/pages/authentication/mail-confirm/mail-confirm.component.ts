@@ -1,17 +1,16 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
+import {FuseConfigService} from '@fuse/services/config.service';
+import {fuseAnimations} from '@fuse/animations';
 
 @Component({
-    selector     : 'mail-confirm',
-    templateUrl  : './mail-confirm.component.html',
-    styleUrls    : ['./mail-confirm.component.scss'],
+    selector: 'mail-confirm',
+    templateUrl: './mail-confirm.component.html',
+    styleUrls: ['./mail-confirm.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class MailConfirmComponent
-{
+export class MailConfirmComponent {
     /**
      * Constructor
      *
@@ -19,18 +18,17 @@ export class MailConfirmComponent
      */
     constructor(
         private _fuseConfigService: FuseConfigService
-    )
-    {
+    ) {
         // Configure the layout
         this._fuseConfigService.config = {
             layout: {
-                navbar   : {
+                navbar: {
                     hidden: true
                 },
-                toolbar  : {
+                toolbar: {
                     hidden: true
                 },
-                footer   : {
+                footer: {
                     hidden: true
                 },
                 sidepanel: {

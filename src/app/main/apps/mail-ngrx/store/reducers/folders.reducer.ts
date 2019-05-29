@@ -1,7 +1,6 @@
 import * as FoldersActions from 'app/main/apps/mail-ngrx/store/actions/folders.actions';
 
-export interface FoldersState
-{
+export interface FoldersState {
     entities?: { [id: number]: any };
     loading: boolean;
     loaded: boolean;
@@ -9,19 +8,17 @@ export interface FoldersState
 
 export const FoldersInitialState: FoldersState = {
     entities: {},
-    loading : false,
-    loaded  : false
+    loading: false,
+    loaded: false
 };
 
-export function FoldersReducer(state = FoldersInitialState, action: FoldersActions.FoldersActionsAll): FoldersState
-{
-    switch ( action.type )
-    {
+export function FoldersReducer(state = FoldersInitialState, action: FoldersActions.FoldersActionsAll): FoldersState {
+    switch (action.type) {
         case FoldersActions.GET_FOLDERS:
             return {
                 ...state,
                 loading: true,
-                loaded : false
+                loaded: false
             };
         case FoldersActions.GET_FOLDERS_SUCCESS:
 
@@ -37,7 +34,7 @@ export function FoldersReducer(state = FoldersInitialState, action: FoldersActio
             return {
                 ...state,
                 loading: false,
-                loaded : true,
+                loaded: true,
                 entities
             };
 
@@ -45,7 +42,7 @@ export function FoldersReducer(state = FoldersInitialState, action: FoldersActio
             return {
                 ...state,
                 loading: false,
-                loaded : false
+                loaded: false
             };
         default:
             return state;

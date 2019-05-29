@@ -1,22 +1,21 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { MediaObserver } from '@angular/flex-layout';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {MediaObserver} from '@angular/flex-layout';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FuseMatSidenavHelperService } from '@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.service';
+import {fuseAnimations} from '@fuse/animations';
+import {FuseMatSidenavHelperService} from '@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.service';
 
-import { ChatService } from 'app/main/apps/chat/chat.service';
+import {ChatService} from 'app/main/apps/chat/chat.service';
 
 @Component({
-    selector     : 'chat-chats-sidenav',
-    templateUrl  : './chats.component.html',
-    styleUrls    : ['./chats.component.scss'],
+    selector: 'chat-chats-sidenav',
+    templateUrl: './chats.component.html',
+    styleUrls: ['./chats.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ChatChatsSidenavComponent implements OnInit, OnDestroy
-{
+export class ChatChatsSidenavComponent implements OnInit, OnDestroy {
     chats: any[];
     chatSearch: any;
     contacts: any[];
@@ -37,8 +36,7 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
         private _chatService: ChatService,
         private _fuseMatSidenavHelperService: FuseMatSidenavHelperService,
         public _mediaObserver: MediaObserver
-    )
-    {
+    ) {
         // Set the defaults
         this.chatSearch = {
             name: ''
@@ -56,8 +54,7 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.user = this._chatService.user;
         this.chats = this._chatService.chats;
         this.contacts = this._chatService.contacts;
@@ -78,8 +75,7 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -94,12 +90,10 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
      *
      * @param contact
      */
-    getChat(contact): void
-    {
+    getChat(contact): void {
         this._chatService.getChat(contact);
 
-        if ( !this._mediaObserver.isActive('gt-md') )
-        {
+        if (!this._mediaObserver.isActive('gt-md')) {
             this._fuseMatSidenavHelperService.getSidenav('chat-left-sidenav').toggle();
         }
     }
@@ -109,8 +103,7 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
      *
      * @param status
      */
-    setUserStatus(status): void
-    {
+    setUserStatus(status): void {
         this._chatService.setUserStatus(status);
     }
 
@@ -119,16 +112,14 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy
      *
      * @param view
      */
-    changeLeftSidenavView(view): void
-    {
+    changeLeftSidenavView(view): void {
         this._chatService.onLeftSidenavViewChanged.next(view);
     }
 
     /**
      * Logout
      */
-    logout(): void
-    {
+    logout(): void {
         console.log('logout triggered');
     }
 }

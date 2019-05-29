@@ -1,21 +1,20 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { Mail } from 'app/main/apps/mail/mail.model';
-import { MailService } from 'app/main/apps/mail/mail.service';
+import {Mail} from 'app/main/apps/mail/mail.model';
+import {MailService} from 'app/main/apps/mail/mail.service';
 
 @Component({
-    selector     : 'mail-details',
-    templateUrl  : './mail-details.component.html',
-    styleUrls    : ['./mail-details.component.scss'],
+    selector: 'mail-details',
+    templateUrl: './mail-details.component.html',
+    styleUrls: ['./mail-details.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class MailDetailsComponent implements OnInit, OnDestroy
-{
+export class MailDetailsComponent implements OnInit, OnDestroy {
     mail: Mail;
     labels: any[];
     showDetails: boolean;
@@ -30,8 +29,7 @@ export class MailDetailsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _mailService: MailService
-    )
-    {
+    ) {
         // Set the defaults
         this.showDetails = false;
 
@@ -46,8 +44,7 @@ export class MailDetailsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update the current mail
         this._mailService.onCurrentMailChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -66,8 +63,7 @@ export class MailDetailsComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -82,8 +78,7 @@ export class MailDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleStar(event): void
-    {
+    toggleStar(event): void {
         event.stopPropagation();
 
         this.mail.toggleStar();
@@ -96,8 +91,7 @@ export class MailDetailsComponent implements OnInit, OnDestroy
      *
      * @param event
      */
-    toggleImportant(event): void
-    {
+    toggleImportant(event): void {
         event.stopPropagation();
 
         this.mail.toggleImportant();

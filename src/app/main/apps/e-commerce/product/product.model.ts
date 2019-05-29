@@ -1,9 +1,8 @@
-import { MatChipInputEvent } from '@angular/material';
+import {MatChipInputEvent} from '@angular/material';
 
-import { FuseUtils } from '@fuse/utils';
+import {FuseUtils} from '@fuse/utils';
 
-export class Product
-{
+export class Product {
     id: string;
     name: string;
     handle: string;
@@ -34,8 +33,7 @@ export class Product
      *
      * @param product
      */
-    constructor(product?)
-    {
+    constructor(product?) {
         product = product || {};
         this.id = product.id || FuseUtils.generateGUID();
         this.name = product.name || '';
@@ -63,20 +61,17 @@ export class Product
      *
      * @param {MatChipInputEvent} event
      */
-    addCategory(event: MatChipInputEvent): void
-    {
+    addCategory(event: MatChipInputEvent): void {
         const input = event.input;
         const value = event.value;
 
         // Add category
-        if ( value )
-        {
+        if (value) {
             this.categories.push(value);
         }
 
         // Reset the input value
-        if ( input )
-        {
+        if (input) {
             input.value = '';
         }
     }
@@ -86,12 +81,10 @@ export class Product
      *
      * @param category
      */
-    removeCategory(category): void
-    {
+    removeCategory(category): void {
         const index = this.categories.indexOf(category);
 
-        if ( index >= 0 )
-        {
+        if (index >= 0) {
             this.categories.splice(index, 1);
         }
     }
@@ -101,20 +94,17 @@ export class Product
      *
      * @param {MatChipInputEvent} event
      */
-    addTag(event: MatChipInputEvent): void
-    {
+    addTag(event: MatChipInputEvent): void {
         const input = event.input;
         const value = event.value;
 
         // Add tag
-        if ( value )
-        {
+        if (value) {
             this.tags.push(value);
         }
 
         // Reset the input value
-        if ( input )
-        {
+        if (input) {
             input.value = '';
         }
     }
@@ -124,12 +114,10 @@ export class Product
      *
      * @param tag
      */
-    removeTag(tag): void
-    {
+    removeTag(tag): void {
         const index = this.tags.indexOf(tag);
 
-        if ( index >= 0 )
-        {
+        if (index >= 0) {
             this.tags.splice(index, 1);
         }
     }

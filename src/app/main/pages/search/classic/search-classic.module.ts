@@ -1,18 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTableModule, MatTabsModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule
+} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { SearchClassicComponent } from 'app/main/pages/search/classic/search-classic.component';
-import { SearchClassicService } from 'app/main/pages/search/classic/search-classic.service';
+import {SearchClassicComponent} from 'app/main/pages/search/classic/search-classic.component';
+import {SearchClassicService} from 'app/main/pages/search/classic/search-classic.service';
 
 
 const routes = [
     {
-        path     : 'search/classic',
+        path: 'search/classic',
         component: SearchClassicComponent,
-        resolve  : {
+        resolve: {
             search: SearchClassicService
         }
     }
@@ -22,7 +29,7 @@ const routes = [
     declarations: [
         SearchClassicComponent,
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -34,10 +41,9 @@ const routes = [
 
         FuseSharedModule
     ],
-    providers   : [
+    providers: [
         SearchClassicService
     ]
 })
-export class SearchClassicModule
-{
+export class SearchClassicModule {
 }

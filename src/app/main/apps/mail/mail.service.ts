@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
 
-import { FuseUtils } from '@fuse/utils';
+import {FuseUtils} from '@fuse/utils';
 
-import { Mail } from 'app/main/apps/mail/mail.model';
+import {Mail} from 'app/main/apps/mail/mail.model';
 
 @Injectable()
-export class MailService implements Resolve<any>
-{
+export class MailService implements Resolve<any> {
     mails: Mail[];
     selectedMails: Mail[];
     currentMail: Mail;
@@ -35,8 +34,7 @@ export class MailService implements Resolve<any>
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.selectedMails = [];
         this.onMailsChanged = new BehaviorSubject([]);
@@ -55,8 +53,7 @@ export class MailService implements Resolve<any>
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
@@ -67,23 +64,17 @@ export class MailService implements Resolve<any>
                 this.getMails()
             ]).then(
                 () => {
-                    if ( this.routeParams.mailId )
-                    {
+                    if (this.routeParams.mailId) {
                         this.setCurrentMail(this.routeParams.mailId);
-                    }
-                    else
-                    {
+                    } else {
                         this.setCurrentMail(null);
                     }
 
                     this.onSearchTextChanged.subscribe(searchText => {
-                        if ( searchText !== '' )
-                        {
+                        if (searchText !== '') {
                             this.searchText = searchText;
                             this.getMails();
-                        }
-                        else
-                        {
+                        } else {
                             this.searchText = searchText;
                             this.getMails();
                         }
@@ -101,8 +92,7 @@ export class MailService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getFolders(): Promise<any>
-    {
+    getFolders(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/mail-folders')
                 .subscribe((response: any) => {
@@ -118,8 +108,7 @@ export class MailService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getFilters(): Promise<any>
-    {
+    getFilters(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/mail-filters')
                 .subscribe((response: any) => {
@@ -135,8 +124,7 @@ export class MailService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getLabels(): Promise<any>
-    {
+    getLabels(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/mail-labels')
                 .subscribe((response: any) => {
@@ -152,15 +140,12 @@ export class MailService implements Resolve<any>
      *
      * @returns {Promise<Mail[]>}
      */
-    getMails(): Promise<Mail[]>
-    {
-        if ( this.routeParams.labelHandle )
-        {
+    getMails(): Promise<Mail[]> {
+        if (this.routeParams.labelHandle) {
             return this.getMailsByLabel(this.routeParams.labelHandle);
         }
 
-        if ( this.routeParams.filterHandle )
-        {
+        if (this.routeParams.filterHandle) {
             return this.getMailsByFilter(this.routeParams.filterHandle);
         }
 
@@ -173,8 +158,7 @@ export class MailService implements Resolve<any>
      * @param handle
      * @returns {Promise<Mail[]>}
      */
-    getMailsByFolder(handle): Promise<Mail[]>
-    {
+    getMailsByFolder(handle): Promise<Mail[]> {
         return new Promise((resolve, reject) => {
 
             this._httpClient.get('api/mail-folders?handle=' + handle)
@@ -206,8 +190,7 @@ export class MailService implements Resolve<any>
      * @param handle
      * @returns {Promise<Mail[]>}
      */
-    getMailsByFilter(handle): Promise<Mail[]>
-    {
+    getMailsByFilter(handle): Promise<Mail[]> {
         return new Promise((resolve, reject) => {
 
             this._httpClient.get('api/mail-mails?' + handle + '=true')
@@ -233,8 +216,7 @@ export class MailService implements Resolve<any>
      * @param handle
      * @returns {Promise<Mail[]>}
      */
-    getMailsByLabel(handle): Promise<Mail[]>
-    {
+    getMailsByLabel(handle): Promise<Mail[]> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/mail-labels?handle=' + handle)
                 .subscribe((labels: any) => {
@@ -264,20 +246,15 @@ export class MailService implements Resolve<any>
      *
      * @param id
      */
-    toggleSelectedMail(id): void
-    {
+    toggleSelectedMail(id): void {
         // First, check if we already have that mail as selected...
-        if ( this.selectedMails.length > 0 )
-        {
-            for ( const mail of this.selectedMails )
-            {
+        if (this.selectedMails.length > 0) {
+            for (const mail of this.selectedMails) {
                 // ...delete the selected mail
-                if ( mail.id === id )
-                {
+                if (mail.id === id) {
                     const index = this.selectedMails.indexOf(mail);
 
-                    if ( index !== -1 )
-                    {
+                    if (index !== -1) {
                         this.selectedMails.splice(index, 1);
 
                         // Trigger the next event
@@ -304,14 +281,10 @@ export class MailService implements Resolve<any>
     /**
      * Toggle select all
      */
-    toggleSelectAll(): void
-    {
-        if ( this.selectedMails.length > 0 )
-        {
+    toggleSelectAll(): void {
+        if (this.selectedMails.length > 0) {
             this.deselectMails();
-        }
-        else
-        {
+        } else {
             this.selectMails();
         }
 
@@ -323,17 +296,13 @@ export class MailService implements Resolve<any>
      * @param filterParameter
      * @param filterValue
      */
-    selectMails(filterParameter?, filterValue?): void
-    {
+    selectMails(filterParameter?, filterValue?): void {
         this.selectedMails = [];
 
         // If there is no filter, select all mails
-        if ( filterParameter === undefined || filterValue === undefined )
-        {
+        if (filterParameter === undefined || filterValue === undefined) {
             this.selectedMails = this.mails;
-        }
-        else
-        {
+        } else {
             this.selectedMails.push(...
                 this.mails.filter(mail => {
                     return mail[filterParameter] === filterValue;
@@ -348,8 +317,7 @@ export class MailService implements Resolve<any>
     /**
      * Deselect mails
      */
-    deselectMails(): void
-    {
+    deselectMails(): void {
         this.selectedMails = [];
 
         // Trigger the next event
@@ -361,8 +329,7 @@ export class MailService implements Resolve<any>
      *
      * @param id
      */
-    setCurrentMail(id): void
-    {
+    setCurrentMail(id): void {
         this.currentMail = this.mails.find(mail => {
             return mail.id === id;
         });
@@ -375,18 +342,14 @@ export class MailService implements Resolve<any>
      *
      * @param labelId
      */
-    toggleLabelOnSelectedMails(labelId): void
-    {
+    toggleLabelOnSelectedMails(labelId): void {
         this.selectedMails.map(mail => {
 
             const index = mail.labels.indexOf(labelId);
 
-            if ( index !== -1 )
-            {
+            if (index !== -1) {
                 mail.labels.splice(index, 1);
-            }
-            else
-            {
+            } else {
                 mail.labels.push(labelId);
             }
 
@@ -399,8 +362,7 @@ export class MailService implements Resolve<any>
      *
      * @param folderId
      */
-    setFolderOnSelectedMails(folderId): void
-    {
+    setFolderOnSelectedMails(folderId): void {
         this.selectedMails.map(mail => {
             mail.folder = folderId;
 
@@ -416,8 +378,7 @@ export class MailService implements Resolve<any>
      * @param mail
      * @returns {Promise<any>}
      */
-    updateMail(mail): Promise<any>
-    {
+    updateMail(mail): Promise<any> {
         return new Promise((resolve, reject) => {
 
             this._httpClient.post('api/mail-mails/' + mail.id, {...mail})
@@ -425,8 +386,7 @@ export class MailService implements Resolve<any>
 
                     this.getMails().then(mails => {
 
-                        if ( mails && this.currentMail )
-                        {
+                        if (mails && this.currentMail) {
                             this.setCurrentMail(this.currentMail.id);
                         }
 

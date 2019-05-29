@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subject} from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { orderStatuses } from 'app/main/apps/e-commerce/order/order-statuses';
-import { Order } from 'app/main/apps/e-commerce/order/order.model';
-import { EcommerceOrderService } from 'app/main/apps/e-commerce/order/order.service';
+import {orderStatuses} from 'app/main/apps/e-commerce/order/order-statuses';
+import {Order} from 'app/main/apps/e-commerce/order/order.model';
+import {EcommerceOrderService} from 'app/main/apps/e-commerce/order/order.service';
 
 @Component({
-    selector     : 'e-commerce-order',
-    templateUrl  : './order.component.html',
-    styleUrls    : ['./order.component.scss'],
+    selector: 'e-commerce-order',
+    templateUrl: './order.component.html',
+    styleUrls: ['./order.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class EcommerceOrderComponent implements OnInit, OnDestroy
-{
+export class EcommerceOrderComponent implements OnInit, OnDestroy {
     order: Order;
     orderStatuses: any;
     statusForm: FormGroup;
@@ -34,8 +33,7 @@ export class EcommerceOrderComponent implements OnInit, OnDestroy
     constructor(
         private _ecommerceOrderService: EcommerceOrderService,
         private _formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Set the defaults
         this.order = new Order();
         this.orderStatuses = orderStatuses;
@@ -51,8 +49,7 @@ export class EcommerceOrderComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update order on changes
         this._ecommerceOrderService.onOrderChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -68,8 +65,7 @@ export class EcommerceOrderComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -82,12 +78,10 @@ export class EcommerceOrderComponent implements OnInit, OnDestroy
     /**
      * Update status
      */
-    updateStatus(): void
-    {
+    updateStatus(): void {
         const newStatusId = Number.parseInt(this.statusForm.get('newStatus').value);
 
-        if ( !newStatusId )
-        {
+        if (!newStatusId) {
             return;
         }
 

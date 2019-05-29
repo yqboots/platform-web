@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'typography-inline-text-elements',
+    selector: 'typography-inline-text-elements',
     templateUrl: './inline-text-elements.component.html',
-    styleUrls  : ['./inline-text-elements.component.scss']
+    styleUrls: ['./inline-text-elements.component.scss']
 })
-export class TypographyInlineTextElementsComponent
-{
+export class TypographyInlineTextElementsComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

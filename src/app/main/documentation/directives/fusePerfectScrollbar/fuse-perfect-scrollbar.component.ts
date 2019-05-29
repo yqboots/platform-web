@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-directives-fuse-perfect-scrollbar',
+    selector: 'docs-directives-fuse-perfect-scrollbar',
     templateUrl: './fuse-perfect-scrollbar.component.html',
-    styleUrls  : ['./fuse-perfect-scrollbar.component.scss']
+    styleUrls: ['./fuse-perfect-scrollbar.component.scss']
 })
-export class DocsDirectivesFusePerfectScrollbarComponent
-{
-    constructor()
-    {
+export class DocsDirectivesFusePerfectScrollbarComponent {
+    constructor() {
     }
 }

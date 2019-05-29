@@ -1,20 +1,19 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, ViewEncapsulation} from '@angular/core';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
 
-import { Mail } from 'app/main/apps/mail-ngrx/mail.model';
+import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
 import * as fromStore from 'app/main/apps/mail-ngrx/store';
-import { MailNgrxService } from 'app/main/apps/mail-ngrx/mail.service';
+import {MailNgrxService} from 'app/main/apps/mail-ngrx/mail.service';
 
 @Component({
-    selector       : 'mail-ngrx-details',
-    templateUrl    : './mail-details.component.html',
-    styleUrls      : ['./mail-details.component.scss'],
+    selector: 'mail-ngrx-details',
+    templateUrl: './mail-details.component.html',
+    styleUrls: ['./mail-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation  : ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None
 })
-export class MailNgrxDetailsComponent implements OnChanges
-{
+export class MailNgrxDetailsComponent implements OnChanges {
     @Input()
     currentMail: Mail;
 
@@ -31,8 +30,7 @@ export class MailNgrxDetailsComponent implements OnChanges
     constructor(
         private _mailNgrxService: MailNgrxService,
         private _store: Store<fromStore.MailAppState>
-    )
-    {
+    ) {
         // Set the defaults
         this.labels$ = this._store.pipe(select(fromStore.getLabelsArr));
         this.showDetails = false;
@@ -45,8 +43,7 @@ export class MailNgrxDetailsComponent implements OnChanges
     /**
      * On changes
      */
-    ngOnChanges(): void
-    {
+    ngOnChanges(): void {
         this.updateModel(this.currentMail);
         this.markAsRead();
     }
@@ -58,10 +55,8 @@ export class MailNgrxDetailsComponent implements OnChanges
     /**
      * Mark as read
      */
-    markAsRead(): void
-    {
-        if ( this.mail && !this.mail.read )
-        {
+    markAsRead(): void {
+        if (this.mail && !this.mail.read) {
             this.mail.markRead();
             this.updateMail();
         }
@@ -72,8 +67,7 @@ export class MailNgrxDetailsComponent implements OnChanges
      *
      * @param event
      */
-    toggleStar(event): void
-    {
+    toggleStar(event): void {
         event.stopPropagation();
         this.mail.toggleStar();
         this.updateMail();
@@ -84,8 +78,7 @@ export class MailNgrxDetailsComponent implements OnChanges
      *
      * @param event
      */
-    toggleImportant(event): void
-    {
+    toggleImportant(event): void {
         event.stopPropagation();
         this.mail.toggleImportant();
         this.updateMail();
@@ -96,16 +89,14 @@ export class MailNgrxDetailsComponent implements OnChanges
      *
      * @param data
      */
-    updateModel(data): void
-    {
+    updateModel(data): void {
         this.mail = !data ? null : new Mail({...data});
     }
 
     /**
      * Update the mail
      */
-    updateMail(): void
-    {
+    updateMail(): void {
         this._store.dispatch(new fromStore.UpdateMail(this.mail));
         this.updateModel(this.mail);
     }

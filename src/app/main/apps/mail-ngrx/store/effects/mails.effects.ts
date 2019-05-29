@@ -1,34 +1,30 @@
-import { Injectable } from '@angular/core';
-import { Action, select, Store } from '@ngrx/store';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import {Injectable} from '@angular/core';
+import {Action, select, Store} from '@ngrx/store';
+import {Actions, Effect, ofType} from '@ngrx/effects';
 
-import { Observable, of, forkJoin } from 'rxjs';
-import { catchError, debounceTime, map, mergeMap, exhaustMap, withLatestFrom } from 'rxjs/operators';
+import {forkJoin, Observable, of} from 'rxjs';
+import {catchError, debounceTime, exhaustMap, map, mergeMap, withLatestFrom} from 'rxjs/operators';
 
-import { getRouterState, State } from 'app/store/reducers';
-import { getMailsState } from 'app/main/apps/mail-ngrx/store/selectors';
+import {getRouterState, State} from 'app/store/reducers';
+import {getMailsState} from 'app/main/apps/mail-ngrx/store/selectors';
 import * as MailsActions from 'app/main/apps/mail-ngrx/store/actions/mails.actions';
-import * as fromRoot from 'app/store';
 
-import { Mail } from 'app/main/apps/mail-ngrx/mail.model';
-import { MailNgrxService } from 'app/main/apps/mail-ngrx/mail.service';
+import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
+import {MailNgrxService} from 'app/main/apps/mail-ngrx/mail.service';
 
 @Injectable()
-export class MailsEffect
-{
+export class MailsEffect {
     routerState: any;
 
     constructor(
         private actions: Actions,
         private mailService: MailNgrxService,
         private store: Store<State>
-    )
-    {
+    ) {
         this.store
             .pipe(select(getRouterState))
             .subscribe(routerState => {
-                if ( routerState )
-                {
+                if (routerState) {
                     this.routerState = routerState.state;
                 }
             });
@@ -46,32 +42,31 @@ export class MailsEffect
                 exhaustMap((action) => {
 
                     let handle = {
-                        id   : '',
+                        id: '',
                         value: ''
                     };
 
                     const routeParams = of('labelHandle', 'filterHandle', 'folderHandle');
                     routeParams.subscribe(param => {
-                        if ( this.routerState.params[param] )
-                        {
+                        if (this.routerState.params[param]) {
                             handle = {
-                                id   : param,
+                                id: param,
                                 value: this.routerState.params[param]
                             };
                         }
                     });
 
                     return this.mailService.getMails(handle)
-                               .pipe(
-                                   map((mails: Mail[]) => {
+                        .pipe(
+                            map((mails: Mail[]) => {
 
-                                       return new MailsActions.GetMailsSuccess({
-                                           loaded: handle,
-                                           mails : mails
-                                       });
-                                   }),
-                                   catchError(err => of(new MailsActions.GetMailsFailed(err)))
-                               );
+                                return new MailsActions.GetMailsSuccess({
+                                    loaded: handle,
+                                    mails: mails
+                                });
+                            }),
+                            catchError(err => of(new MailsActions.GetMailsFailed(err)))
+                        );
                 })
             );
 
@@ -138,8 +133,7 @@ export class MailsEffect
                 withLatestFrom(this.store.pipe(select(getMailsState))),
                 map(([action, state]) => {
 
-                    if ( this.routerState.params.mailId && !state.entities[this.routerState.params.mailId] )
-                    {
+                    if (this.routerState.params.mailId && !state.entities[this.routerState.params.mailId]) {
                         // return new fromRoot.Go({path: [this.routerState.url.replace(this.routerState.params.mailId, '')]});
                     }
 
@@ -206,15 +200,15 @@ export class MailsEffect
                     const entities = {...state.entities};
                     let mailsToUpdate = [];
                     state.selectedMailIds
-                         .map(id => {
-                             mailsToUpdate = [
-                                 ...mailsToUpdate,
-                                 entities[id] = {
-                                     ...entities[id],
-                                     folder: action.payload
-                                 }
-                             ];
-                         });
+                        .map(id => {
+                            mailsToUpdate = [
+                                ...mailsToUpdate,
+                                entities[id] = {
+                                    ...entities[id],
+                                    folder: action.payload
+                                }
+                            ];
+                        });
                     return new MailsActions.UpdateMails(mailsToUpdate);
                 })
             );
@@ -235,23 +229,22 @@ export class MailsEffect
                     let mailsToUpdate = [];
 
                     state.selectedMailIds
-                         .map(id => {
+                        .map(id => {
 
-                             let labels = [...entities[id].labels];
+                            let labels = [...entities[id].labels];
 
-                             if ( !entities[id].labels.includes(action.payload) )
-                             {
-                                 labels = [...labels, action.payload];
-                             }
+                            if (!entities[id].labels.includes(action.payload)) {
+                                labels = [...labels, action.payload];
+                            }
 
-                             mailsToUpdate = [
-                                 ...mailsToUpdate,
-                                 entities[id] = {
-                                     ...entities[id],
-                                     labels
-                                 }
-                             ];
-                         });
+                            mailsToUpdate = [
+                                ...mailsToUpdate,
+                                entities[id] = {
+                                    ...entities[id],
+                                    labels
+                                }
+                            ];
+                        });
 
                     return new MailsActions.UpdateMails(mailsToUpdate);
                 })

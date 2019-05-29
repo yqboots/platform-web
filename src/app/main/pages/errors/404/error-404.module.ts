@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { Error404Component } from 'app/main/pages/errors/404/error-404.component';
+import {Error404Component} from 'app/main/pages/errors/404/error-404.component';
 
 const routes = [
     {
-        path     : 'errors/error-404',
+        path: 'errors/error-404',
         component: Error404Component
     }
 ];
@@ -17,7 +17,7 @@ const routes = [
     declarations: [
         Error404Component
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatIconModule,
@@ -25,6 +25,5 @@ const routes = [
         FuseSharedModule
     ]
 })
-export class Error404Module
-{
+export class Error404Module {
 }

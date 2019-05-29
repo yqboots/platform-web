@@ -1,29 +1,29 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatToolbarModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatToolbarModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { KnowledgeBaseService } from 'app/main/pages/knowledge-base/knowledge-base.service';
-import { KnowledgeBaseComponent } from 'app/main/pages/knowledge-base/knowledge-base.component';
-import { KnowledgeBaseArticleComponent } from 'app/main/pages/knowledge-base/dialogs/article/article.component';
+import {KnowledgeBaseService} from 'app/main/pages/knowledge-base/knowledge-base.service';
+import {KnowledgeBaseComponent} from 'app/main/pages/knowledge-base/knowledge-base.component';
+import {KnowledgeBaseArticleComponent} from 'app/main/pages/knowledge-base/dialogs/article/article.component';
 
 const routes = [
     {
-        path     : 'knowledge-base',
+        path: 'knowledge-base',
         component: KnowledgeBaseComponent,
-        resolve  : {
+        resolve: {
             knowledgeBase: KnowledgeBaseService
         }
     }
 ];
 
 @NgModule({
-    declarations   : [
+    declarations: [
         KnowledgeBaseComponent,
         KnowledgeBaseArticleComponent
     ],
-    imports        : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -34,13 +34,12 @@ const routes = [
 
         FuseSharedModule
     ],
-    providers      : [
+    providers: [
         KnowledgeBaseService
     ],
     entryComponents: [
         KnowledgeBaseArticleComponent
     ]
 })
-export class KnowledgeBaseModule
-{
+export class KnowledgeBaseModule {
 }

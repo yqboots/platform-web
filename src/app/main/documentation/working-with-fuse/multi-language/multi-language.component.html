@@ -45,21 +45,21 @@
                 <textarea #source>
                     // i18n/en.ts
                     export const locale = {
-                        lang: 'en',
-                        data: {
-                            'MAIL': {
-                             'COMPOSE': 'COMPOSE'
-                            }
+                    lang: 'en',
+                    data: {
+                        'MAIL': {
+                         'COMPOSE': 'COMPOSE'
                         }
-                    };
+                    }
+                };
 
-                    // i18n/tr.ts
-                    export const locale = {
-                        lang: 'tr',
-                        data: {
-                            'MAIL': {
-                             'COMPOSE': 'YENİ E-POSTA'
-                            }
+                // i18n/tr.ts
+                export const locale = {
+                    lang: 'tr',
+                    data: {
+                        'MAIL': {
+                            'COMPOSE': 'YENİ E-POSTA'
+                                }
                         }
                     };
                 </textarea>
@@ -82,13 +82,13 @@
                 import { locale as turkish } from './i18n/tr';
 
                 @Component({
-                    selector : 'mail',
-                    templateUrl: './mail.component.html',
-                    styleUrls : ['./mail.component.scss']
+                selector : 'mail',
+                templateUrl: './mail.component.html',
+                styleUrls : ['./mail.component.scss']
                 })
                 export class MailComponent
                 {
-                    constructor(private translationLoader: FuseTranslationLoaderService)
+                constructor(private translationLoader: FuseTranslationLoaderService)
                 {
                     this.translationLoader.loadTranslations(english, turkish);
                 }
@@ -113,8 +113,8 @@
 
                 setLanguage()
                 {
-                    // Use the selected language for translations
-                    this.translate.use('tr');
+                // Use the selected language for translations
+                this.translate.use('tr');
                 }
             </textarea>
         </fuse-highlight>

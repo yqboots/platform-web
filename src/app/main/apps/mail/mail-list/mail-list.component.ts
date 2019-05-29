@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { Mail } from 'app/main/apps/mail/mail.model';
-import { MailService } from 'app/main/apps/mail/mail.service';
+import {Mail} from 'app/main/apps/mail/mail.model';
+import {MailService} from 'app/main/apps/mail/mail.service';
 
 @Component({
-    selector     : 'mail-list',
-    templateUrl  : './mail-list.component.html',
-    styleUrls    : ['./mail-list.component.scss'],
+    selector: 'mail-list',
+    templateUrl: './mail-list.component.html',
+    styleUrls: ['./mail-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class MailListComponent implements OnInit, OnDestroy
-{
+export class MailListComponent implements OnInit, OnDestroy {
     mails: Mail[];
     currentMail: Mail;
 
@@ -35,8 +34,7 @@ export class MailListComponent implements OnInit, OnDestroy
         private _activatedRoute: ActivatedRoute,
         private _mailService: MailService,
         private _location: Location
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -48,8 +46,7 @@ export class MailListComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update mails on changes
         this._mailService.onMailsChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -61,31 +58,23 @@ export class MailListComponent implements OnInit, OnDestroy
         this._mailService.onCurrentMailChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentMail => {
-                if ( !currentMail )
-                {
+                if (!currentMail) {
                     // Set the current mail id to null to deselect the current mail
                     this.currentMail = null;
 
                     // Handle the location changes
-                    const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-                          filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-                          folderHandle = this._activatedRoute.snapshot.params.folderHandle;
+                    const labelHandle = this._activatedRoute.snapshot.params.labelHandle,
+                        filterHandle = this._activatedRoute.snapshot.params.filterHandle,
+                        folderHandle = this._activatedRoute.snapshot.params.folderHandle;
 
-                    if ( labelHandle )
-                    {
+                    if (labelHandle) {
                         this._location.go('apps/mail/label/' + labelHandle);
-                    }
-                    else if ( filterHandle )
-                    {
+                    } else if (filterHandle) {
                         this._location.go('apps/mail/filter/' + filterHandle);
-                    }
-                    else
-                    {
+                    } else {
                         this._location.go('apps/mail/' + folderHandle);
                     }
-                }
-                else
-                {
+                } else {
                     this.currentMail = currentMail;
                 }
             });
@@ -94,8 +83,7 @@ export class MailListComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -110,22 +98,16 @@ export class MailListComponent implements OnInit, OnDestroy
      *
      * @param mailId
      */
-    readMail(mailId): void
-    {
-        const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-              filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-              folderHandle = this._activatedRoute.snapshot.params.folderHandle;
+    readMail(mailId): void {
+        const labelHandle = this._activatedRoute.snapshot.params.labelHandle,
+            filterHandle = this._activatedRoute.snapshot.params.filterHandle,
+            folderHandle = this._activatedRoute.snapshot.params.folderHandle;
 
-        if ( labelHandle )
-        {
+        if (labelHandle) {
             this._location.go('apps/mail/label/' + labelHandle + '/' + mailId);
-        }
-        else if ( filterHandle )
-        {
+        } else if (filterHandle) {
             this._location.go('apps/mail/filter/' + filterHandle + '/' + mailId);
-        }
-        else
-        {
+        } else {
             this._location.go('apps/mail/' + folderHandle + '/' + mailId);
         }
 

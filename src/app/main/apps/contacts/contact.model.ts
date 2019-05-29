@@ -1,7 +1,6 @@
-import { FuseUtils } from '@fuse/utils';
+import {FuseUtils} from '@fuse/utils';
 
-export class Contact
-{
+export class Contact {
     id: string;
     name: string;
     lastName: string;
@@ -20,8 +19,7 @@ export class Contact
      *
      * @param contact
      */
-    constructor(contact)
-    {
+    constructor(contact) {
         {
             this.id = contact.id || FuseUtils.generateGUID();
             this.name = contact.name || '';

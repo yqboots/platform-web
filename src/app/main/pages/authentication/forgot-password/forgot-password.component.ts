@@ -1,18 +1,17 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
+import {FuseConfigService} from '@fuse/services/config.service';
+import {fuseAnimations} from '@fuse/animations';
 
 @Component({
-    selector     : 'forgot-password',
-    templateUrl  : './forgot-password.component.html',
-    styleUrls    : ['./forgot-password.component.scss'],
+    selector: 'forgot-password',
+    templateUrl: './forgot-password.component.html',
+    styleUrls: ['./forgot-password.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ForgotPasswordComponent implements OnInit
-{
+export class ForgotPasswordComponent implements OnInit {
     forgotPasswordForm: FormGroup;
 
     /**
@@ -24,18 +23,17 @@ export class ForgotPasswordComponent implements OnInit
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Configure the layout
         this._fuseConfigService.config = {
             layout: {
-                navbar   : {
+                navbar: {
                     hidden: true
                 },
-                toolbar  : {
+                toolbar: {
                     hidden: true
                 },
-                footer   : {
+                footer: {
                     hidden: true
                 },
                 sidepanel: {
@@ -52,8 +50,7 @@ export class ForgotPasswordComponent implements OnInit
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.forgotPasswordForm = this._formBuilder.group({
             email: ['', [Validators.required, Validators.email]]
         });

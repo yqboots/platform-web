@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseCountdownModule } from '@fuse/components';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseCountdownModule} from '@fuse/components';
 
-import { ComingSoonComponent } from 'app/main/pages/coming-soon/coming-soon.component';
+import {ComingSoonComponent} from 'app/main/pages/coming-soon/coming-soon.component';
 
 const routes = [
     {
-        path     : 'coming-soon',
+        path: 'coming-soon',
         component: ComingSoonComponent
     }
 ];
@@ -19,7 +19,7 @@ const routes = [
     declarations: [
         ComingSoonComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -31,6 +31,5 @@ const routes = [
         FuseCountdownModule
     ]
 })
-export class ComingSoonModule
-{
+export class ComingSoonModule {
 }

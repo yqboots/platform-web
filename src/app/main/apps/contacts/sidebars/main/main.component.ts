@@ -1,16 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { ContactsService } from 'app/main/apps/contacts/contacts.service';
+import {ContactsService} from 'app/main/apps/contacts/contacts.service';
 
 @Component({
-    selector   : 'contacts-main-sidebar',
+    selector: 'contacts-main-sidebar',
     templateUrl: './main.component.html',
-    styleUrls  : ['./main.component.scss']
+    styleUrls: ['./main.component.scss']
 })
-export class ContactsMainSidebarComponent implements OnInit, OnDestroy
-{
+export class ContactsMainSidebarComponent implements OnInit, OnDestroy {
     user: any;
     filterBy: string;
 
@@ -24,8 +23,7 @@ export class ContactsMainSidebarComponent implements OnInit, OnDestroy
      */
     constructor(
         private _contactsService: ContactsService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -37,8 +35,7 @@ export class ContactsMainSidebarComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.filterBy = this._contactsService.filterBy || 'all';
 
         this._contactsService.onUserDataChanged
@@ -51,8 +48,7 @@ export class ContactsMainSidebarComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -67,8 +63,7 @@ export class ContactsMainSidebarComponent implements OnInit, OnDestroy
      *
      * @param filter
      */
-    changeFilter(filter): void
-    {
+    changeFilter(filter): void {
         this.filterBy = filter;
         this._contactsService.onFilterChanged.next(this.filterBy);
     }

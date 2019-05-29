@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { ScrumboardService } from 'app/main/apps/scrumboard/scrumboard.service';
-import { List } from 'app/main/apps/scrumboard/list.model';
+import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
+import {List} from 'app/main/apps/scrumboard/list.model';
 
 @Component({
-    selector     : 'scrumboard-board',
-    templateUrl  : './board.component.html',
-    styleUrls    : ['./board.component.scss'],
+    selector: 'scrumboard-board',
+    templateUrl: './board.component.html',
+    styleUrls: ['./board.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ScrumboardBoardComponent implements OnInit, OnDestroy
-{
+export class ScrumboardBoardComponent implements OnInit, OnDestroy {
     board: any;
 
     // Private
@@ -27,8 +26,7 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
         private _activatedRoute: ActivatedRoute,
         private _location: Location,
         private _scrumboardService: ScrumboardService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -40,8 +38,7 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._scrumboardService.onBoardChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(board => {
@@ -52,8 +49,7 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -68,10 +64,8 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
      *
      * @param newListName
      */
-    onListAdd(newListName): void
-    {
-        if ( newListName === '' )
-        {
+    onListAdd(newListName): void {
+        if (newListName === '') {
             return;
         }
 
@@ -83,8 +77,7 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
      *
      * @param newName
      */
-    onBoardNameChanged(newName): void
-    {
+    onBoardNameChanged(newName): void {
         this._scrumboardService.updateBoard();
         this._location.go('/apps/scrumboard/boards/' + this.board.id + '/' + this.board.uri);
     }
@@ -94,8 +87,7 @@ export class ScrumboardBoardComponent implements OnInit, OnDestroy
      *
      * @param ev
      */
-    onDrop(ev): void
-    {
+    onDrop(ev): void {
         this._scrumboardService.updateBoard();
     }
 }

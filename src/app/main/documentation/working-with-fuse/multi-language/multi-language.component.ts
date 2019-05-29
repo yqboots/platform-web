@@ -1,16 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-working-with-fuse-multi-language',
+    selector: 'docs-working-with-fuse-multi-language',
     templateUrl: './multi-language.component.html',
-    styleUrls  : ['./multi-language.component.scss']
+    styleUrls: ['./multi-language.component.scss']
 })
-export class DocsWorkingWithFuseMultiLanguageComponent
-{
+export class DocsWorkingWithFuseMultiLanguageComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
     }
 }

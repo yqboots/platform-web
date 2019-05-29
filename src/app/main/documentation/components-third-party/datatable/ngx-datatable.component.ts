@@ -1,15 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
-    selector   : 'docs-components-third-party-ngx-datatable',
+    selector: 'docs-components-third-party-ngx-datatable',
     templateUrl: './ngx-datatable.component.html',
-    styleUrls  : ['./ngx-datatable.component.scss']
+    styleUrls: ['./ngx-datatable.component.scss']
 })
-export class DocsComponentsThirdPartyNgxDatatableComponent implements OnInit, OnDestroy
-{
+export class DocsComponentsThirdPartyNgxDatatableComponent implements OnInit, OnDestroy {
     rows: any[];
     loadingIndicator: boolean;
     reorderable: boolean;
@@ -24,8 +23,7 @@ export class DocsComponentsThirdPartyNgxDatatableComponent implements OnInit, On
      */
     constructor(
         private _httpClient: HttpClient
-    )
-    {
+    ) {
         // Set the defaults
         this.loadingIndicator = true;
         this.reorderable = true;
@@ -41,8 +39,7 @@ export class DocsComponentsThirdPartyNgxDatatableComponent implements OnInit, On
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._httpClient.get('api/contacts-contacts')
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((contacts: any) => {
@@ -54,8 +51,7 @@ export class DocsComponentsThirdPartyNgxDatatableComponent implements OnInit, On
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();

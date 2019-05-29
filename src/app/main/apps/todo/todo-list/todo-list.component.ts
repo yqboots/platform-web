@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
-import { takeUntil } from 'rxjs/operators';
+import {Todo} from 'app/main/apps/todo/todo.model';
+import {TodoService} from 'app/main/apps/todo/todo.service';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
-    selector     : 'todo-list',
-    templateUrl  : './todo-list.component.html',
-    styleUrls    : ['./todo-list.component.scss'],
+    selector: 'todo-list',
+    templateUrl: './todo-list.component.html',
+    styleUrls: ['./todo-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class TodoListComponent implements OnInit, OnDestroy
-{
+export class TodoListComponent implements OnInit, OnDestroy {
     todos: Todo[];
     currentTodo: Todo;
 
@@ -35,8 +34,7 @@ export class TodoListComponent implements OnInit, OnDestroy
         private _activatedRoute: ActivatedRoute,
         private _todoService: TodoService,
         private _location: Location
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -48,8 +46,7 @@ export class TodoListComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update todos on changes
         this._todoService.onTodosChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -61,30 +58,22 @@ export class TodoListComponent implements OnInit, OnDestroy
         this._todoService.onCurrentTodoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentTodo => {
-                if ( !currentTodo )
-                {
+                if (!currentTodo) {
                     // Set the current todo id to null to deselect the current todo
                     this.currentTodo = null;
 
                     // Handle the location changes
-                    const tagHandle    = this._activatedRoute.snapshot.params.tagHandle,
-                          filterHandle = this._activatedRoute.snapshot.params.filterHandle;
+                    const tagHandle = this._activatedRoute.snapshot.params.tagHandle,
+                        filterHandle = this._activatedRoute.snapshot.params.filterHandle;
 
-                    if ( tagHandle )
-                    {
+                    if (tagHandle) {
                         this._location.go('apps/todo/tag/' + tagHandle);
-                    }
-                    else if ( filterHandle )
-                    {
+                    } else if (filterHandle) {
                         this._location.go('apps/todo/filter/' + filterHandle);
-                    }
-                    else
-                    {
+                    } else {
                         this._location.go('apps/todo/all');
                     }
-                }
-                else
-                {
+                } else {
                     this.currentTodo = currentTodo;
                 }
             });
@@ -93,8 +82,7 @@ export class TodoListComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -109,8 +97,7 @@ export class TodoListComponent implements OnInit, OnDestroy
      *
      * @param todoId
      */
-    readTodo(todoId): void
-    {
+    readTodo(todoId): void {
         // Set current todo
         this._todoService.setCurrentTodo(todoId);
     }
@@ -120,8 +107,7 @@ export class TodoListComponent implements OnInit, OnDestroy
      *
      * @param ev
      */
-    onDrop(ev): void
-    {
+    onDrop(ev): void {
 
     }
 }

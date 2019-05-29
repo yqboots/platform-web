@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-components-third-party-google-maps',
+    selector: 'docs-components-third-party-google-maps',
     templateUrl: './google-maps.component.html',
-    styleUrls  : ['./google-maps.component.scss']
+    styleUrls: ['./google-maps.component.scss']
 })
-export class DocsComponentsThirdPartyGoogleMapsComponent
-{
+export class DocsComponentsThirdPartyGoogleMapsComponent {
     lat: number;
     lng: number;
 
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
         // Set the defaults
         this.lat = -34.397;
         this.lng = 150.644;

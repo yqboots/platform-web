@@ -1,18 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTableModule, MatTabsModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule
+} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { SearchModernComponent } from 'app/main/pages/search/modern/search-modern.component';
-import { SearchModernService } from 'app/main/pages/search/modern/search-modern.service';
+import {SearchModernComponent} from 'app/main/pages/search/modern/search-modern.component';
+import {SearchModernService} from 'app/main/pages/search/modern/search-modern.service';
 
 
 const routes = [
     {
-        path     : 'search/modern',
+        path: 'search/modern',
         component: SearchModernComponent,
-        resolve  : {
+        resolve: {
             search: SearchModernService
         }
     }
@@ -22,7 +29,7 @@ const routes = [
     declarations: [
         SearchModernComponent,
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -34,10 +41,9 @@ const routes = [
 
         FuseSharedModule
     ],
-    providers   : [
+    providers: [
         SearchModernService
     ]
 })
-export class SearchModernModule
-{
+export class SearchModernModule {
 }

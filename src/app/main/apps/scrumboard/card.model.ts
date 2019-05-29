@@ -1,7 +1,6 @@
-import { FuseUtils } from '@fuse/utils';
+import {FuseUtils} from '@fuse/utils';
 
-export class Card
-{
+export class Card {
     id: string;
     name: string;
     description: string;
@@ -22,8 +21,7 @@ export class Card
      *
      * @param card
      */
-    constructor(card)
-    {
+    constructor(card) {
         this.id = card.id || FuseUtils.generateGUID();
         this.name = card.name || '';
         this.description = card.description || '';

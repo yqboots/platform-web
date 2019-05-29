@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { ResetPasswordComponent } from 'app/main/pages/authentication/reset-password/reset-password.component';
+import {ResetPasswordComponent} from 'app/main/pages/authentication/reset-password/reset-password.component';
 
 const routes = [
     {
-        path     : 'auth/reset-password',
+        path: 'auth/reset-password',
         component: ResetPasswordComponent
     }
 ];
@@ -17,7 +17,7 @@ const routes = [
     declarations: [
         ResetPasswordComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -28,6 +28,5 @@ const routes = [
         FuseSharedModule
     ]
 })
-export class ResetPasswordModule
-{
+export class ResetPasswordModule {
 }

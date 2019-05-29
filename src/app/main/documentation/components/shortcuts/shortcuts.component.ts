@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-components-shortcuts',
+    selector: 'docs-components-shortcuts',
     templateUrl: './shortcuts.component.html',
-    styleUrls  : ['./shortcuts.component.scss']
+    styleUrls: ['./shortcuts.component.scss']
 })
-export class DocsComponentsShortcutsComponent
-{
+export class DocsComponentsShortcutsComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

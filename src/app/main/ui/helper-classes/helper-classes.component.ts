@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'helper-classes',
+    selector: 'helper-classes',
     templateUrl: './helper-classes.component.html',
-    styleUrls  : ['./helper-classes.component.scss']
+    styleUrls: ['./helper-classes.component.scss']
 })
-export class HelperClassesComponent
-{
+export class HelperClassesComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
     }
 
 }

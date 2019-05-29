@@ -1,28 +1,34 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    OnDestroy,
+    OnInit,
+    ViewEncapsulation
+} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
-import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
+import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {FuseTranslationLoaderService} from '@fuse/services/translation-loader.service';
 
-import { Mail } from 'app/main/apps/mail-ngrx/mail.model';
-import { MailNgrxService } from 'app/main/apps/mail-ngrx/mail.service';
+import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
+import {MailNgrxService} from 'app/main/apps/mail-ngrx/mail.service';
 import * as fromStore from 'app/main/apps/mail-ngrx/store';
 
-import { locale as english } from 'app/main/apps/mail-ngrx/i18n/en';
-import { locale as turkish } from 'app/main/apps/mail-ngrx/i18n/tr';
+import {locale as english} from 'app/main/apps/mail-ngrx/i18n/en';
+import {locale as turkish} from 'app/main/apps/mail-ngrx/i18n/tr';
 
 @Component({
-    selector       : 'mail-ngrx',
-    templateUrl    : './mail.component.html',
-    styleUrls      : ['./mail.component.scss'],
+    selector: 'mail-ngrx',
+    templateUrl: './mail.component.html',
+    styleUrls: ['./mail.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation  : ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None
 })
-export class MailNgrxComponent implements OnInit, OnDestroy
-{
+export class MailNgrxComponent implements OnInit, OnDestroy {
     hasSelectedMails: boolean;
     isIndeterminate: boolean;
     searchInput: FormControl;
@@ -50,8 +56,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _mailNgrxService: MailNgrxService,
         private _store: Store<fromStore.MailAppState>
-    )
-    {
+    ) {
         // Set the defaults
         this.searchInput = new FormControl('');
         this._fuseTranslationLoaderService.loadTranslations(english, turkish);
@@ -72,8 +77,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.mails$.subscribe(mails => {
             this.mails = mails;
         });
@@ -101,8 +105,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         this._changeDetectorRef.detach();
     }
 
@@ -115,16 +118,12 @@ export class MailNgrxComponent implements OnInit, OnDestroy
      *
      * @param ev
      */
-    toggleSelectAll(ev): void
-    {
+    toggleSelectAll(ev): void {
         ev.preventDefault();
 
-        if ( this.selectedMailIds.length && this.selectedMailIds.length > 0 )
-        {
+        if (this.selectedMailIds.length && this.selectedMailIds.length > 0) {
             this.deselectAllMails();
-        }
-        else
-        {
+        } else {
             this.selectAllMails();
         }
     }
@@ -132,16 +131,14 @@ export class MailNgrxComponent implements OnInit, OnDestroy
     /**
      * Select all mails
      */
-    selectAllMails(): void
-    {
+    selectAllMails(): void {
         this._store.dispatch(new fromStore.SelectAllMails());
     }
 
     /**
      * Deselect all mails
      */
-    deselectAllMails(): void
-    {
+    deselectAllMails(): void {
         this._store.dispatch(new fromStore.DeselectAllMails());
     }
 
@@ -151,8 +148,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
      * @param parameter
      * @param value
      */
-    selectMailsByParameter(parameter, value): void
-    {
+    selectMailsByParameter(parameter, value): void {
         this._store.dispatch(new fromStore.SelectMailsByParameter({
             parameter,
             value
@@ -164,8 +160,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
      *
      * @param labelId
      */
-    toggleLabelOnSelectedMails(labelId): void
-    {
+    toggleLabelOnSelectedMails(labelId): void {
         this._store.dispatch(new fromStore.AddLabelOnSelectedMails(labelId));
     }
 
@@ -174,24 +169,21 @@ export class MailNgrxComponent implements OnInit, OnDestroy
      *
      * @param folderId
      */
-    setFolderOnSelectedMails(folderId): void
-    {
+    setFolderOnSelectedMails(folderId): void {
         this._store.dispatch(new fromStore.SetFolderOnSelectedMails(folderId));
     }
 
     /**
      * Deselect current mail
      */
-    deselectCurrentMail(): void
-    {
+    deselectCurrentMail(): void {
         this._store.dispatch(new fromStore.SetCurrentMail(''));
     }
 
     /**
      * Refresh
      */
-    refresh(): void
-    {
+    refresh(): void {
         this._changeDetectorRef.markForCheck();
     }
 
@@ -200,8 +192,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy
      *
      * @param name
      */
-    toggleSidebar(name): void
-    {
+    toggleSidebar(name): void {
         this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
 }

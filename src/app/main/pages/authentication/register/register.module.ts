@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { RegisterComponent } from 'app/main/pages/authentication/register/register.component';
+import {RegisterComponent} from 'app/main/pages/authentication/register/register.component';
 
 const routes = [
     {
-        path     : 'auth/register',
+        path: 'auth/register',
         component: RegisterComponent
     }
 ];
@@ -17,7 +17,7 @@ const routes = [
     declarations: [
         RegisterComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -29,6 +29,5 @@ const routes = [
         FuseSharedModule
     ]
 })
-export class RegisterModule
-{
+export class RegisterModule {
 }

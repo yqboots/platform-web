@@ -1,18 +1,17 @@
-import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
-import { takeUntil } from 'rxjs/operators';
+import {Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
+import {Todo} from 'app/main/apps/todo/todo.model';
+import {TodoService} from 'app/main/apps/todo/todo.service';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
-    selector     : 'todo-list-item',
-    templateUrl  : './todo-list-item.component.html',
-    styleUrls    : ['./todo-list-item.component.scss'],
+    selector: 'todo-list-item',
+    templateUrl: './todo-list-item.component.html',
+    styleUrls: ['./todo-list-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class TodoListItemComponent implements OnInit, OnDestroy
-{
+export class TodoListItemComponent implements OnInit, OnDestroy {
     tags: any[];
 
     @Input()
@@ -39,11 +38,9 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     constructor(
         private _todoService: TodoService,
         private _activatedRoute: ActivatedRoute
-    )
-    {
+    ) {
         // Disable move if path is not /all
-        if ( _activatedRoute.snapshot.url[0].path !== 'all' )
-        {
+        if (_activatedRoute.snapshot.url[0].path !== 'all') {
             this.moveDisabled = true;
         }
 
@@ -58,8 +55,7 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Set the initial values
         this.todo = new Todo(this.todo);
         this.completed = this.todo.completed;
@@ -70,12 +66,9 @@ export class TodoListItemComponent implements OnInit, OnDestroy
             .subscribe(selectedTodos => {
                 this.selected = false;
 
-                if ( selectedTodos.length > 0 )
-                {
-                    for ( const todo of selectedTodos )
-                    {
-                        if ( todo.id === this.todo.id )
-                        {
+                if (selectedTodos.length > 0) {
+                    for (const todo of selectedTodos) {
+                        if (todo.id === this.todo.id) {
                             this.selected = true;
                             break;
                         }
@@ -94,8 +87,7 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -108,16 +100,14 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * On selected change
      */
-    onSelectedChange(): void
-    {
+    onSelectedChange(): void {
         this._todoService.toggleSelectedTodo(this.todo.id);
     }
 
     /**
      * Toggle star
      */
-    toggleStar(event): void
-    {
+    toggleStar(event): void {
         event.stopPropagation();
 
         this.todo.toggleStar();
@@ -127,8 +117,7 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * Toggle Important
      */
-    toggleImportant(event): void
-    {
+    toggleImportant(event): void {
         event.stopPropagation();
 
         this.todo.toggleImportant();
@@ -138,8 +127,7 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * Toggle Completed
      */
-    toggleCompleted(event): void
-    {
+    toggleCompleted(event): void {
         event.stopPropagation();
 
         this.todo.toggleCompleted();

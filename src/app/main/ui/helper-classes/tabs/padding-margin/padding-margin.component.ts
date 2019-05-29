@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'helper-classes-padding-margin',
+    selector: 'helper-classes-padding-margin',
     templateUrl: './padding-margin.component.html',
-    styleUrls  : ['./padding-margin.component.scss']
+    styleUrls: ['./padding-margin.component.scss']
 })
-export class HelperClassesPaddingMarginComponent
-{
+export class HelperClassesPaddingMarginComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

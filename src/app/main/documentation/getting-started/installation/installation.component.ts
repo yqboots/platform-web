@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-installation',
+    selector: 'docs-installation',
     templateUrl: './installation.component.html',
-    styleUrls  : ['./installation.component.scss']
+    styleUrls: ['./installation.component.scss']
 })
-export class DocsGettingStartedInstallationComponent
-{
-    constructor()
-    {
+export class DocsGettingStartedInstallationComponent {
+    constructor() {
     }
 }

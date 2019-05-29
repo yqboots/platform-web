@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {MatDialog} from '@angular/material';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { MailService } from 'app/main/apps/mail/mail.service';
-import { MailComposeDialogComponent } from 'app/main/apps/mail/dialogs/compose/compose.component';
+import {MailService} from 'app/main/apps/mail/mail.service';
+import {MailComposeDialogComponent} from 'app/main/apps/mail/dialogs/compose/compose.component';
 
 @Component({
-    selector     : 'mail-main-sidebar',
-    templateUrl  : './main-sidebar.component.html',
-    styleUrls    : ['./main-sidebar.component.scss'],
+    selector: 'mail-main-sidebar',
+    templateUrl: './main-sidebar.component.html',
+    styleUrls: ['./main-sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class MailMainSidebarComponent implements OnInit, OnDestroy
-{
+export class MailMainSidebarComponent implements OnInit, OnDestroy {
     folders: any[];
     filters: any[];
     labels: any[];
@@ -37,11 +36,10 @@ export class MailMainSidebarComponent implements OnInit, OnDestroy
     constructor(
         private _mailService: MailService,
         public _matDialog: MatDialog
-    )
-    {
+    ) {
         // Set the defaults
         this.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
+            'creapond': 'johndoe@creapond.com',
             'withinpixels': 'johndoe@withinpixels.com'
         };
         this.selectedAccount = 'creapond';
@@ -57,8 +55,7 @@ export class MailMainSidebarComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._mailService.onFoldersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(folders => {
@@ -81,8 +78,7 @@ export class MailMainSidebarComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -95,21 +91,18 @@ export class MailMainSidebarComponent implements OnInit, OnDestroy
     /**
      * Compose dialog
      */
-    composeDialog(): void
-    {
+    composeDialog(): void {
         this.dialogRef = this._matDialog.open(MailComposeDialogComponent, {
             panelClass: 'mail-compose-dialog'
         });
         this.dialogRef.afterClosed()
             .subscribe(response => {
-                if ( !response )
-                {
+                if (!response) {
                     return;
                 }
                 const actionType: string = response[0];
                 const formData: FormGroup = response[1];
-                switch ( actionType )
-                {
+                switch (actionType) {
                     /**
                      * Send
                      */

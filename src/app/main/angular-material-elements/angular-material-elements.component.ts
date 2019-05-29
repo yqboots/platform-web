@@ -1,17 +1,16 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { COMPONENT_MAP } from 'app/main/angular-material-elements/example-components';
+import {COMPONENT_MAP} from 'app/main/angular-material-elements/example-components';
 
 @Component({
-    selector   : 'angular-material',
+    selector: 'angular-material',
     templateUrl: './angular-material-elements.component.html',
-    styleUrls  : ['./angular-material-elements.component.scss']
+    styleUrls: ['./angular-material-elements.component.scss']
 })
-export class AngularMaterialElementsComponent implements OnInit, OnDestroy
-{
+export class AngularMaterialElementsComponent implements OnInit, OnDestroy {
     id: string;
     title: string;
     examples: any;
@@ -26,8 +25,7 @@ export class AngularMaterialElementsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _activatedRoute: ActivatedRoute
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -35,8 +33,7 @@ export class AngularMaterialElementsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._activatedRoute.params
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(params => {
@@ -50,8 +47,7 @@ export class AngularMaterialElementsComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();

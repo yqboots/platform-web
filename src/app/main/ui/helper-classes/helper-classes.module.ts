@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MatIconModule, MatTabsModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {MatIconModule, MatTabsModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseHighlightModule } from '@fuse/components';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseHighlightModule} from '@fuse/components';
 
-import { HelperClassesComponent } from 'app/main/ui/helper-classes/helper-classes.component';
-import { HelperClassesPaddingMarginComponent } from 'app/main/ui/helper-classes/tabs/padding-margin/padding-margin.component';
-import { HelperClassesWidthHeightComponent } from 'app/main/ui/helper-classes/tabs/width-height/width-height.component';
+import {HelperClassesComponent} from 'app/main/ui/helper-classes/helper-classes.component';
+import {HelperClassesPaddingMarginComponent} from 'app/main/ui/helper-classes/tabs/padding-margin/padding-margin.component';
+import {HelperClassesWidthHeightComponent} from 'app/main/ui/helper-classes/tabs/width-height/width-height.component';
 
 const routes: Routes = [
     {
-        path     : 'helper-classes',
+        path: 'helper-classes',
         component: HelperClassesComponent
     }
 ];
@@ -22,7 +22,7 @@ const routes: Routes = [
         HelperClassesPaddingMarginComponent,
         HelperClassesWidthHeightComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatIconModule,
@@ -32,6 +32,5 @@ const routes: Routes = [
         FuseHighlightModule,
     ],
 })
-export class UIHelperClassesModule
-{
+export class UIHelperClassesModule {
 }

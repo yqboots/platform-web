@@ -1,15 +1,14 @@
-import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import {Component, Inject, ViewEncapsulation} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
-    selector     : 'mail-ngrx-compose',
-    templateUrl  : './compose.component.html',
-    styleUrls    : ['./compose.component.scss'],
+    selector: 'mail-ngrx-compose',
+    templateUrl: './compose.component.html',
+    styleUrls: ['./compose.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class MailNgrxComposeDialogComponent
-{
+export class MailNgrxComposeDialogComponent {
     composeForm: FormGroup;
 
     /**
@@ -23,8 +22,7 @@ export class MailNgrxComposeDialogComponent
         public matDialogRef: MatDialogRef<MailNgrxComposeDialogComponent>,
         @Inject(MAT_DIALOG_DATA) private _data: any,
         private _formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Set the defaults
         this.composeForm = this.createComposeForm();
     }
@@ -38,16 +36,15 @@ export class MailNgrxComposeDialogComponent
      *
      * @returns {FormGroup}
      */
-    createComposeForm(): FormGroup
-    {
+    createComposeForm(): FormGroup {
         return this._formBuilder.group({
-            from   : {
-                value   : ['johndoe@creapond.com'],
+            from: {
+                value: ['johndoe@creapond.com'],
                 disabled: [true]
             },
-            to     : [''],
-            cc     : [''],
-            bcc    : [''],
+            to: [''],
+            cc: [''],
+            bcc: [''],
             subject: [''],
             message: ['']
         });

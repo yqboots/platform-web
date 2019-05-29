@@ -607,23 +607,23 @@
                                     <table class="simple">
 
                                         <thead>
-                                            <tr>
-                                                <th *ngFor="let column of widgets.widget10.table.columns">
-                                                    {{column.title}}
-                                                </th>
-                                            </tr>
+                                        <tr>
+                                            <th *ngFor="let column of widgets.widget10.table.columns">
+                                                {{column.title}}
+                                            </th>
+                                        </tr>
                                         </thead>
 
                                         <tbody>
-                                            <tr *ngFor="let row of widgets.widget10.table.rows">
-                                                <td *ngFor="let cell of row">
+                                        <tr *ngFor="let row of widgets.widget10.table.rows">
+                                            <td *ngFor="let cell of row">
                                                     <span class="p-4" [ngClass]="cell.classes">
                                                         {{cell.value}}
                                                     </span>
-                                                    <mat-icon *ngIf="cell.icon" class="s-16">{{cell.icon}}
-                                                    </mat-icon>
-                                                </td>
-                                            </tr>
+                                                <mat-icon *ngIf="cell.icon" class="s-16">{{cell.icon}}
+                                                </mat-icon>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

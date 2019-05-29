@@ -1,19 +1,18 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { MatColors } from '@fuse/mat-colors';
+import {MatColors} from '@fuse/mat-colors';
 
-import { ScrumboardService } from 'app/main/apps/scrumboard/scrumboard.service';
+import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
 
 @Component({
-    selector     : 'scrumboard-board-color-selector',
-    templateUrl  : './board-color-selector.component.html',
-    styleUrls    : ['./board-color-selector.component.scss'],
+    selector: 'scrumboard-board-color-selector',
+    templateUrl: './board-color-selector.component.html',
+    styleUrls: ['./board-color-selector.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy
-{
+export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy {
     colors: any;
     board: any;
 
@@ -27,8 +26,7 @@ export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy
      */
     constructor(
         private _scrumboardService: ScrumboardService
-    )
-    {
+    ) {
         // Set the defaults
         this.colors = MatColors.all;
 
@@ -43,8 +41,7 @@ export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._scrumboardService.onBoardChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(board => {
@@ -55,8 +52,7 @@ export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -71,8 +67,7 @@ export class ScrumboardBoardColorSelectorComponent implements OnInit, OnDestroy
      *
      * @param color
      */
-    setColor(color): void
-    {
+    setColor(color): void {
         this.board.settings.color = color;
         this._scrumboardService.updateBoard();
     }

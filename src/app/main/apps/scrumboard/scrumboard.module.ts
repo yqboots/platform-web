@@ -1,51 +1,64 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {
-    MatButtonModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
-    MatProgressBarModule, MatRippleModule, MatSidenavModule, MatToolbarModule, MatTooltipModule
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatRippleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTooltipModule
 } from '@angular/material';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import {NgxDnDModule} from '@swimlane/ngx-dnd';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseConfirmDialogModule, FuseMaterialColorPickerModule } from '@fuse/components';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseConfirmDialogModule, FuseMaterialColorPickerModule} from '@fuse/components';
 
-import { BoardResolve, ScrumboardService } from 'app/main/apps/scrumboard/scrumboard.service';
-import { ScrumboardComponent } from 'app/main/apps/scrumboard/scrumboard.component';
-import { ScrumboardBoardComponent } from 'app/main/apps/scrumboard/board/board.component';
-import { ScrumboardBoardListComponent } from 'app/main/apps/scrumboard/board/list/list.component';
-import { ScrumboardBoardCardComponent } from 'app/main/apps/scrumboard/board/list/card/card.component';
-import { ScrumboardBoardEditListNameComponent } from 'app/main/apps/scrumboard/board/list/edit-list-name/edit-list-name.component';
-import { ScrumboardBoardAddCardComponent } from 'app/main/apps/scrumboard/board/list/add-card/add-card.component';
-import { ScrumboardBoardAddListComponent } from 'app/main/apps/scrumboard/board/add-list/add-list.component';
-import { ScrumboardCardDialogComponent } from 'app/main/apps/scrumboard/board/dialogs/card/card.component';
-import { ScrumboardLabelSelectorComponent } from 'app/main/apps/scrumboard/board/dialogs/card/label-selector/label-selector.component';
-import { ScrumboardEditBoardNameComponent } from 'app/main/apps/scrumboard/board/edit-board-name/edit-board-name.component';
-import { ScrumboardBoardSettingsSidenavComponent } from 'app/main/apps/scrumboard/board/sidenavs/settings/settings.component';
-import { ScrumboardBoardColorSelectorComponent } from 'app/main/apps/scrumboard/board/sidenavs/settings/board-color-selector/board-color-selector.component';
+import {BoardResolve, ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
+import {ScrumboardComponent} from 'app/main/apps/scrumboard/scrumboard.component';
+import {ScrumboardBoardComponent} from 'app/main/apps/scrumboard/board/board.component';
+import {ScrumboardBoardListComponent} from 'app/main/apps/scrumboard/board/list/list.component';
+import {ScrumboardBoardCardComponent} from 'app/main/apps/scrumboard/board/list/card/card.component';
+import {ScrumboardBoardEditListNameComponent} from 'app/main/apps/scrumboard/board/list/edit-list-name/edit-list-name.component';
+import {ScrumboardBoardAddCardComponent} from 'app/main/apps/scrumboard/board/list/add-card/add-card.component';
+import {ScrumboardBoardAddListComponent} from 'app/main/apps/scrumboard/board/add-list/add-list.component';
+import {ScrumboardCardDialogComponent} from 'app/main/apps/scrumboard/board/dialogs/card/card.component';
+import {ScrumboardLabelSelectorComponent} from 'app/main/apps/scrumboard/board/dialogs/card/label-selector/label-selector.component';
+import {ScrumboardEditBoardNameComponent} from 'app/main/apps/scrumboard/board/edit-board-name/edit-board-name.component';
+import {ScrumboardBoardSettingsSidenavComponent} from 'app/main/apps/scrumboard/board/sidenavs/settings/settings.component';
+import {ScrumboardBoardColorSelectorComponent} from 'app/main/apps/scrumboard/board/sidenavs/settings/board-color-selector/board-color-selector.component';
 
 const routes: Routes = [
     {
-        path     : 'boards',
+        path: 'boards',
         component: ScrumboardComponent,
-        resolve  : {
+        resolve: {
             scrumboard: ScrumboardService
         }
     },
     {
-        path     : 'boards/:boardId/:boardUri',
+        path: 'boards/:boardId/:boardUri',
         component: ScrumboardBoardComponent,
-        resolve  : {
+        resolve: {
             board: BoardResolve
         }
     },
     {
-        path      : '**',
+        path: '**',
         redirectTo: 'boards'
     }
 ];
 
 @NgModule({
-    declarations   : [
+    declarations: [
         ScrumboardComponent,
         ScrumboardBoardComponent,
         ScrumboardBoardListComponent,
@@ -59,7 +72,7 @@ const routes: Routes = [
         ScrumboardBoardSettingsSidenavComponent,
         ScrumboardBoardColorSelectorComponent
     ],
-    imports        : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -84,12 +97,11 @@ const routes: Routes = [
         FuseConfirmDialogModule,
         FuseMaterialColorPickerModule
     ],
-    providers      : [
+    providers: [
         ScrumboardService,
         BoardResolve
     ],
     entryComponents: [ScrumboardCardDialogComponent]
 })
-export class ScrumboardModule
-{
+export class ScrumboardModule {
 }

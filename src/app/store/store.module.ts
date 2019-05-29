@@ -1,19 +1,19 @@
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { MetaReducer, StoreModule } from '@ngrx/store';
-import { NgModule } from '@angular/core';
-import { storeFreeze } from 'ngrx-store-freeze';
-import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
+import {MetaReducer, StoreModule} from '@ngrx/store';
+import {NgModule} from '@angular/core';
+import {storeFreeze} from 'ngrx-store-freeze';
+import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-store';
 
-import { environment } from 'environments/environment';
-import { reducers, effects, CustomSerializer } from 'app/store';
+import {environment} from 'environments/environment';
+import {CustomSerializer, effects, reducers} from 'app/store';
 
 export const metaReducers: MetaReducer<any>[] = !environment.production
     ? [storeFreeze]
     : [];
 
 @NgModule({
-    imports  : [
+    imports: [
         StoreModule.forRoot(reducers, {metaReducers}),
         EffectsModule.forRoot(effects),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
@@ -21,12 +21,11 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
     ],
     providers: [
         {
-            provide : RouterStateSerializer,
+            provide: RouterStateSerializer,
             useClass: CustomSerializer
         }
     ]
 })
 
-export class AppStoreModule
-{
+export class AppStoreModule {
 }

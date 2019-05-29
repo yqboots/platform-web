@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'typography-message-boxes',
+    selector: 'typography-message-boxes',
     templateUrl: './message-boxes.component.html',
-    styleUrls  : ['./message-boxes.component.scss']
+    styleUrls: ['./message-boxes.component.scss']
 })
-export class TypographyMessageBoxesComponent
-{
+export class TypographyMessageBoxesComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }

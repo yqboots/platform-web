@@ -20,7 +20,8 @@
 
         <mat-accordion class="faqs-accordion">
 
-            <mat-expansion-panel *ngFor="let faq of faqsFiltered; let i = index" [expanded]="step === i" (opened)="setStep(i)">
+            <mat-expansion-panel *ngFor="let faq of faqsFiltered; let i = index" [expanded]="step === i"
+                                 (opened)="setStep(i)">
                 <mat-expansion-panel-header>
                     <mat-panel-title fxLayout="row" fxLayoutAlign="start center">
                         <mat-icon class="mr-12 s-20 secondary-text">help_outline</mat-icon>

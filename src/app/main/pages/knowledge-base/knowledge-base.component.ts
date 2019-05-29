@@ -1,19 +1,18 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { KnowledgeBaseService } from 'app/main/pages/knowledge-base/knowledge-base.service';
-import { KnowledgeBaseArticleComponent } from 'app/main/pages/knowledge-base/dialogs/article/article.component';
+import {KnowledgeBaseService} from 'app/main/pages/knowledge-base/knowledge-base.service';
+import {KnowledgeBaseArticleComponent} from 'app/main/pages/knowledge-base/dialogs/article/article.component';
 
 @Component({
-    selector     : 'knowledge-base',
-    templateUrl  : './knowledge-base.component.html',
-    styleUrls    : ['./knowledge-base.component.scss'],
+    selector: 'knowledge-base',
+    templateUrl: './knowledge-base.component.html',
+    styleUrls: ['./knowledge-base.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class KnowledgeBaseComponent implements OnInit, OnDestroy
-{
+export class KnowledgeBaseComponent implements OnInit, OnDestroy {
     knowledgeBase: any;
 
     // Private
@@ -28,8 +27,7 @@ export class KnowledgeBaseComponent implements OnInit, OnDestroy
     constructor(
         private _knowledgeBaseService: KnowledgeBaseService,
         private _matDialog: MatDialog
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -41,8 +39,7 @@ export class KnowledgeBaseComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._knowledgeBaseService.onKnowledgeBaseChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(response => {
@@ -53,8 +50,7 @@ export class KnowledgeBaseComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -69,11 +65,10 @@ export class KnowledgeBaseComponent implements OnInit, OnDestroy
      *
      * @param article
      */
-    readArticle(article): void
-    {
+    readArticle(article): void {
         this._matDialog.open(KnowledgeBaseArticleComponent, {
             panelClass: 'knowledgebase-article-dialog',
-            data      : {article: article}
+            data: {article: article}
         });
     }
 }

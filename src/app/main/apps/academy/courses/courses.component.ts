@@ -1,19 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import {fuseAnimations} from '@fuse/animations';
 
-import { AcademyCoursesService } from 'app/main/apps/academy/courses.service';
+import {AcademyCoursesService} from 'app/main/apps/academy/courses.service';
 
 @Component({
-    selector   : 'academy-courses',
+    selector: 'academy-courses',
     templateUrl: './courses.component.html',
-    styleUrls  : ['./courses.component.scss'],
-    animations : fuseAnimations
+    styleUrls: ['./courses.component.scss'],
+    animations: fuseAnimations
 })
-export class AcademyCoursesComponent implements OnInit, OnDestroy
-{
+export class AcademyCoursesComponent implements OnInit, OnDestroy {
     categories: any[];
     courses: any[];
     coursesFilteredByCategory: any[];
@@ -31,8 +30,7 @@ export class AcademyCoursesComponent implements OnInit, OnDestroy
      */
     constructor(
         private _academyCoursesService: AcademyCoursesService
-    )
-    {
+    ) {
         // Set the defaults
         this.currentCategory = 'all';
         this.searchTerm = '';
@@ -48,8 +46,7 @@ export class AcademyCoursesComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to categories
         this._academyCoursesService.onCategoriesChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -68,8 +65,7 @@ export class AcademyCoursesComponent implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -82,16 +78,12 @@ export class AcademyCoursesComponent implements OnInit, OnDestroy
     /**
      * Filter courses by category
      */
-    filterCoursesByCategory(): void
-    {
+    filterCoursesByCategory(): void {
         // Filter
-        if ( this.currentCategory === 'all' )
-        {
+        if (this.currentCategory === 'all') {
             this.coursesFilteredByCategory = this.courses;
             this.filteredCourses = this.courses;
-        }
-        else
-        {
+        } else {
             this.coursesFilteredByCategory = this.courses.filter((course) => {
                 return course.category === this.currentCategory;
             });
@@ -107,17 +99,13 @@ export class AcademyCoursesComponent implements OnInit, OnDestroy
     /**
      * Filter courses by term
      */
-    filterCoursesByTerm(): void
-    {
+    filterCoursesByTerm(): void {
         const searchTerm = this.searchTerm.toLowerCase();
 
         // Search
-        if ( searchTerm === '' )
-        {
+        if (searchTerm === '') {
             this.filteredCourses = this.coursesFilteredByCategory;
-        }
-        else
-        {
+        } else {
             this.filteredCourses = this.coursesFilteredByCategory.filter((course) => {
                 return course.title.toLowerCase().includes(searchTerm);
             });

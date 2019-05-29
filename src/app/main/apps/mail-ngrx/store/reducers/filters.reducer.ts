@@ -1,7 +1,6 @@
 import * as FiltersActions from 'app/main/apps/mail-ngrx/store/actions/filters.actions';
 
-export interface FiltersState
-{
+export interface FiltersState {
     entities?: { [id: number]: any };
     loading: boolean;
     loaded: boolean;
@@ -9,19 +8,17 @@ export interface FiltersState
 
 export const FiltersInitialState: FiltersState = {
     entities: {},
-    loading : false,
-    loaded  : false
+    loading: false,
+    loaded: false
 };
 
-export function FiltersReducer(state = FiltersInitialState, action: FiltersActions.FiltersActionsAll): FiltersState
-{
-    switch ( action.type )
-    {
+export function FiltersReducer(state = FiltersInitialState, action: FiltersActions.FiltersActionsAll): FiltersState {
+    switch (action.type) {
         case FiltersActions.GET_FILTERS:
             return {
                 ...state,
                 loading: true,
-                loaded : false
+                loaded: false
             };
         case FiltersActions.GET_FILTERS_SUCCESS:
 
@@ -37,7 +34,7 @@ export function FiltersReducer(state = FiltersInitialState, action: FiltersActio
             return {
                 ...state,
                 loading: false,
-                loaded : true,
+                loaded: true,
                 entities
             };
 
@@ -45,7 +42,7 @@ export function FiltersReducer(state = FiltersInitialState, action: FiltersActio
             return {
                 ...state,
                 loading: false,
-                loaded : false
+                loaded: false
             };
         default:
             return state;

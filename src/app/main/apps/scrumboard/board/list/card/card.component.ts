@@ -1,15 +1,14 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import * as moment from 'moment';
 
 @Component({
-    selector     : 'scrumboard-board-card',
-    templateUrl  : './card.component.html',
-    styleUrls    : ['./card.component.scss'],
+    selector: 'scrumboard-board-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ScrumboardBoardCardComponent implements OnInit
-{
+export class ScrumboardBoardCardComponent implements OnInit {
     @Input()
     cardId;
 
@@ -23,8 +22,7 @@ export class ScrumboardBoardCardComponent implements OnInit
      */
     constructor(
         private _activatedRoute: ActivatedRoute
-    )
-    {
+    ) {
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -34,8 +32,7 @@ export class ScrumboardBoardCardComponent implements OnInit
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.board = this._activatedRoute.snapshot.data.board;
         this.card = this.board.cards.filter((card) => {
             return this.cardId === card.id;
@@ -52,8 +49,7 @@ export class ScrumboardBoardCardComponent implements OnInit
      * @param cardDate
      * @returns {boolean}
      */
-    isOverdue(cardDate): boolean
-    {
+    isOverdue(cardDate): boolean {
         return moment() > moment(new Date(cardDate));
     }
 }

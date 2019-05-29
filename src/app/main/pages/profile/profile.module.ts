@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatDividerModule, MatIconModule, MatTabsModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatDividerModule, MatIconModule, MatTabsModule} from '@angular/material';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/shared.module';
 
-import { ProfileService } from 'app/main/pages/profile/profile.service';
-import { ProfileComponent } from 'app/main/pages/profile/profile.component';
-import { ProfileTimelineComponent } from 'app/main/pages/profile/tabs/timeline/timeline.component';
-import { ProfileAboutComponent } from 'app/main/pages/profile/tabs/about/about.component';
-import { ProfilePhotosVideosComponent } from 'app/main/pages/profile/tabs/photos-videos/photos-videos.component';
+import {ProfileService} from 'app/main/pages/profile/profile.service';
+import {ProfileComponent} from 'app/main/pages/profile/profile.component';
+import {ProfileTimelineComponent} from 'app/main/pages/profile/tabs/timeline/timeline.component';
+import {ProfileAboutComponent} from 'app/main/pages/profile/tabs/about/about.component';
+import {ProfilePhotosVideosComponent} from 'app/main/pages/profile/tabs/photos-videos/photos-videos.component';
 
 
 const routes = [
     {
-        path     : 'profile',
+        path: 'profile',
         component: ProfileComponent,
-        resolve  : {
+        resolve: {
             profile: ProfileService
         }
     }
@@ -28,7 +28,7 @@ const routes = [
         ProfileAboutComponent,
         ProfilePhotosVideosComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -38,10 +38,9 @@ const routes = [
 
         FuseSharedModule
     ],
-    providers   : [
+    providers: [
         ProfileService
     ]
 })
-export class ProfileModule
-{
+export class ProfileModule {
 }

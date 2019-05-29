@@ -1,15 +1,24 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, Input, OnDestroy, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import {
+    AfterViewInit,
+    Component,
+    ComponentFactoryResolver,
+    ComponentRef,
+    Input,
+    OnDestroy,
+    ViewChild,
+    ViewContainerRef,
+    ViewEncapsulation
+} from '@angular/core';
+import {MatSnackBar} from '@angular/material';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-typescript';
 
-import { fuseAnimations } from '@fuse/animations/index';
-import { FuseCopierService } from '@fuse/services/copier.service';
+import {fuseAnimations} from '@fuse/animations/index';
+import {FuseCopierService} from '@fuse/services/copier.service';
 
-import { EXAMPLE_COMPONENTS } from 'app/main/angular-material-elements/example-components';
+import {EXAMPLE_COMPONENTS} from 'app/main/angular-material-elements/example-components';
 
-export interface LiveExample
-{
+export interface LiveExample {
     title: string;
     component: any;
     additionalFiles?: string[];
@@ -17,14 +26,13 @@ export interface LiveExample
 }
 
 @Component({
-    selector     : 'example-viewer',
-    templateUrl  : './example-viewer.html',
-    styleUrls    : ['./example-viewer.scss'],
+    selector: 'example-viewer',
+    templateUrl: './example-viewer.html',
+    styleUrls: ['./example-viewer.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ExampleViewerComponent implements AfterViewInit, OnDestroy
-{
+export class ExampleViewerComponent implements AfterViewInit, OnDestroy {
     _example: string;
     exampleData: LiveExample;
     showSource: boolean;
@@ -45,8 +53,7 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
         private _matSnackBar: MatSnackBar,
         private _fuseCopierService: FuseCopierService,
         private _componentFactoryResolver: ComponentFactoryResolver
-    )
-    {
+    ) {
         // Set the defaults
         this.selectedIndex = 0;
         this.showSource = false;
@@ -61,13 +68,11 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
      *
      * @param {ViewContainerRef} value
      */
-    set container(value: ViewContainerRef)
-    {
+    set container(value: ViewContainerRef) {
         this._previewContainer = value;
     }
 
-    get container(): ViewContainerRef
-    {
+    get container(): ViewContainerRef {
         return this._previewContainer;
     }
 
@@ -77,21 +82,16 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
      * @param {string} example
      */
     @Input()
-    set example(example: string)
-    {
-        if ( example && EXAMPLE_COMPONENTS[example] )
-        {
+    set example(example: string) {
+        if (example && EXAMPLE_COMPONENTS[example]) {
             this._example = example;
             this.exampleData = EXAMPLE_COMPONENTS[example];
-        }
-        else
-        {
+        } else {
             console.log('MISSING EXAMPLE: ', example);
         }
     }
 
-    get example(): string
-    {
+    get example(): string {
         return this._example;
     }
 
@@ -102,8 +102,7 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
     /**
      * After view init
      */
-    ngAfterViewInit(): void
-    {
+    ngAfterViewInit(): void {
         setTimeout(() => {
             const cmpFactory = this._componentFactoryResolver.resolveComponentFactory(this.exampleData.component);
             this.previewRef = this._previewContainer.createComponent(cmpFactory);
@@ -113,10 +112,8 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
-        if ( this.previewRef )
-        {
+    ngOnDestroy(): void {
+        if (this.previewRef) {
             this.previewRef.destroy();
         }
     }
@@ -128,8 +125,7 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
     /**
      * Toggle source view
      */
-    toggleSourceView(): void
-    {
+    toggleSourceView(): void {
         this.showSource = !this.showSource;
     }
 
@@ -138,14 +134,10 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy
      *
      * @param {string} text
      */
-    copySource(text: string): void
-    {
-        if ( this._fuseCopierService.copyText(text) )
-        {
+    copySource(text: string): void {
+        if (this._fuseCopierService.copyText(text)) {
             this._matSnackBar.open('Code copied', '', {duration: 2500});
-        }
-        else
-        {
+        } else {
             this._matSnackBar.open('Copy failed. Please try again!', '', {duration: 2500});
         }
     }

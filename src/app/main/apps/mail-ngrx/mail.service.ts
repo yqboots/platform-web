@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
 
-import { Mail } from 'app/main/apps/mail-ngrx/mail.model';
-import { MailAppState } from 'app/main/apps/mail-ngrx/store/reducers';
-import { getFiltersArr, getFoldersArr, getLabelsArr, getMailsArr } from 'app/main/apps/mail-ngrx/store/selectors';
+import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
+import {MailAppState} from 'app/main/apps/mail-ngrx/store/reducers';
+import {getFiltersArr, getFoldersArr, getLabelsArr, getMailsArr} from 'app/main/apps/mail-ngrx/store/selectors';
 
 @Injectable()
-export class MailNgrxService
-{
+export class MailNgrxService {
     foldersArr: any;
     filtersArr: any;
     labelsArr: any;
@@ -25,8 +24,7 @@ export class MailNgrxService
     constructor(
         private _httpClient: HttpClient,
         private _store: Store<MailAppState>
-    )
-    {
+    ) {
         this._store
             .pipe(select(getFoldersArr))
             .subscribe(folders => {
@@ -59,8 +57,7 @@ export class MailNgrxService
      *
      * @returns {Observable<Mail[]>}
      */
-    getAllMails(): Observable<Mail[]>
-    {
+    getAllMails(): Observable<Mail[]> {
         return this._httpClient.get<Mail[]>('api/mail-mails');
     }
 
@@ -69,8 +66,7 @@ export class MailNgrxService
      *
      * @returns {Observable<any>}
      */
-    getFolders(): Observable<any>
-    {
+    getFolders(): Observable<any> {
         return this._httpClient.get('api/mail-folders');
     }
 
@@ -79,8 +75,7 @@ export class MailNgrxService
      *
      * @returns {Observable<any>}
      */
-    getFilters(): Observable<any>
-    {
+    getFilters(): Observable<any> {
         return this._httpClient.get('api/mail-filters');
     }
 
@@ -89,8 +84,7 @@ export class MailNgrxService
      *
      * @returns {Observable<any>}
      */
-    getLabels(): Observable<any>
-    {
+    getLabels(): Observable<any> {
         return this._httpClient.get('api/mail-labels');
     }
 
@@ -100,18 +94,13 @@ export class MailNgrxService
      * @param handle
      * @returns {Observable<Mail[]>}
      */
-    getMails(handle): Observable<Mail[]>
-    {
-        if ( handle.id === 'labelHandle' )
-        {
+    getMails(handle): Observable<Mail[]> {
+        if (handle.id === 'labelHandle') {
             const labelId = this.labelsArr.find(label => label.handle === handle.value).id;
             return this._httpClient.get<Mail[]>('api/mail-mails?labels=' + labelId);
-        }
-        else if ( handle.id === 'filterHandle' )
-        {
+        } else if (handle.id === 'filterHandle') {
             return this._httpClient.get<Mail[]>('api/mail-mails?' + handle.value + '=true');
-        }
-        else // folderHandle
+        } else // folderHandle
         {
             const folderId = this.foldersArr.find(folder => folder.handle === handle.value).id;
             return this._httpClient.get<any>('api/mail-mails?folder=' + folderId);
@@ -124,8 +113,7 @@ export class MailNgrxService
      * @param mail
      * @returns {Promise<any>}
      */
-    updateMail(mail): any
-    {
+    updateMail(mail): any {
         return this._httpClient.post('api/mail-mails/' + mail.id, {...mail});
     }
 }

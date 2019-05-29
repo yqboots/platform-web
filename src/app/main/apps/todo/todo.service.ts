@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Location} from '@angular/common';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 
-import { FuseUtils } from '@fuse/utils';
+import {FuseUtils} from '@fuse/utils';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
+import {Todo} from 'app/main/apps/todo/todo.model';
 
 @Injectable()
-export class TodoService implements Resolve<any>
-{
+export class TodoService implements Resolve<any> {
     todos: Todo[];
     selectedTodos: Todo[];
     currentTodo: Todo;
@@ -36,8 +35,7 @@ export class TodoService implements Resolve<any>
     constructor(
         private _httpClient: HttpClient,
         private _location: Location
-    )
-    {
+    ) {
         // Set the defaults
         this.selectedTodos = [];
         this.searchText = '';
@@ -57,8 +55,7 @@ export class TodoService implements Resolve<any>
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
@@ -69,23 +66,17 @@ export class TodoService implements Resolve<any>
                 this.getTodos()
             ]).then(
                 () => {
-                    if ( this.routeParams.todoId )
-                    {
+                    if (this.routeParams.todoId) {
                         this.setCurrentTodo(this.routeParams.todoId);
-                    }
-                    else
-                    {
+                    } else {
                         this.setCurrentTodo(null);
                     }
 
                     this.onSearchTextChanged.subscribe(searchText => {
-                        if ( searchText !== '' )
-                        {
+                        if (searchText !== '') {
                             this.searchText = searchText;
                             this.getTodos();
-                        }
-                        else
-                        {
+                        } else {
                             this.searchText = searchText;
                             this.getTodos();
                         }
@@ -102,8 +93,7 @@ export class TodoService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getFilters(): Promise<any>
-    {
+    getFilters(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/todo-filters')
                 .subscribe((response: any) => {
@@ -119,8 +109,7 @@ export class TodoService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    getTags(): Promise<any>
-    {
+    getTags(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/todo-tags')
                 .subscribe((response: any) => {
@@ -136,15 +125,12 @@ export class TodoService implements Resolve<any>
      *
      * @returns {Promise<Todo[]>}
      */
-    getTodos(): Promise<Todo[]>
-    {
-        if ( this.routeParams.tagHandle )
-        {
+    getTodos(): Promise<Todo[]> {
+        if (this.routeParams.tagHandle) {
             return this.getTodosByTag(this.routeParams.tagHandle);
         }
 
-        if ( this.routeParams.filterHandle )
-        {
+        if (this.routeParams.filterHandle) {
             return this.getTodosByFilter(this.routeParams.filterHandle);
         }
 
@@ -157,8 +143,7 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByParams(handle): Promise<Todo[]>
-    {
+    getTodosByParams(handle): Promise<Todo[]> {
         return new Promise((resolve, reject) => {
 
             this._httpClient.get('api/todo-todos')
@@ -182,13 +167,11 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByFilter(handle): Promise<Todo[]>
-    {
+    getTodosByFilter(handle): Promise<Todo[]> {
 
         let param = handle + '=true';
 
-        if ( handle === 'dueDate' )
-        {
+        if (handle === 'dueDate') {
             param = handle + '=^$|\\s+';
         }
 
@@ -217,8 +200,7 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByTag(handle): Promise<Todo[]>
-    {
+    getTodosByTag(handle): Promise<Todo[]> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/todo-tags?handle=' + handle)
                 .subscribe((tags: any) => {
@@ -248,20 +230,15 @@ export class TodoService implements Resolve<any>
      *
      * @param id
      */
-    toggleSelectedTodo(id): void
-    {
+    toggleSelectedTodo(id): void {
         // First, check if we already have that todo as selected...
-        if ( this.selectedTodos.length > 0 )
-        {
-            for ( const todo of this.selectedTodos )
-            {
+        if (this.selectedTodos.length > 0) {
+            for (const todo of this.selectedTodos) {
                 // ...delete the selected todo
-                if ( todo.id === id )
-                {
+                if (todo.id === id) {
                     const index = this.selectedTodos.indexOf(todo);
 
-                    if ( index !== -1 )
-                    {
+                    if (index !== -1) {
                         this.selectedTodos.splice(index, 1);
 
                         // Trigger the next event
@@ -288,14 +265,10 @@ export class TodoService implements Resolve<any>
     /**
      * Toggle select all
      */
-    toggleSelectAll(): void
-    {
-        if ( this.selectedTodos.length > 0 )
-        {
+    toggleSelectAll(): void {
+        if (this.selectedTodos.length > 0) {
             this.deselectTodos();
-        }
-        else
-        {
+        } else {
             this.selectTodos();
         }
 
@@ -307,17 +280,13 @@ export class TodoService implements Resolve<any>
      * @param filterParameter
      * @param filterValue
      */
-    selectTodos(filterParameter?, filterValue?): void
-    {
+    selectTodos(filterParameter?, filterValue?): void {
         this.selectedTodos = [];
 
         // If there is no filter, select all todos
-        if ( filterParameter === undefined || filterValue === undefined )
-        {
+        if (filterParameter === undefined || filterValue === undefined) {
             this.selectedTodos = this.todos;
-        }
-        else
-        {
+        } else {
             this.selectedTodos.push(...
                 this.todos.filter(todo => {
                     return todo[filterParameter] === filterValue;
@@ -332,8 +301,7 @@ export class TodoService implements Resolve<any>
     /**
      * Deselect todos
      */
-    deselectTodos(): void
-    {
+    deselectTodos(): void {
         this.selectedTodos = [];
 
         // Trigger the next event
@@ -345,27 +313,21 @@ export class TodoService implements Resolve<any>
      *
      * @param id
      */
-    setCurrentTodo(id): void
-    {
+    setCurrentTodo(id): void {
         this.currentTodo = this.todos.find(todo => {
             return todo.id === id;
         });
 
         this.onCurrentTodoChanged.next([this.currentTodo, 'edit']);
 
-        const tagHandle    = this.routeParams.tagHandle,
-              filterHandle = this.routeParams.filterHandle;
+        const tagHandle = this.routeParams.tagHandle,
+            filterHandle = this.routeParams.filterHandle;
 
-        if ( tagHandle )
-        {
+        if (tagHandle) {
             this._location.go('apps/todo/tag/' + tagHandle + '/' + id);
-        }
-        else if ( filterHandle )
-        {
+        } else if (filterHandle) {
             this._location.go('apps/todo/filter/' + filterHandle + '/' + id);
-        }
-        else
-        {
+        } else {
             this._location.go('apps/todo/all/' + id);
         }
     }
@@ -375,8 +337,7 @@ export class TodoService implements Resolve<any>
      *
      * @param tagId
      */
-    toggleTagOnSelectedTodos(tagId): void
-    {
+    toggleTagOnSelectedTodos(tagId): void {
         this.selectedTodos.map(todo => {
             this.toggleTagOnTodo(tagId, todo);
         });
@@ -388,16 +349,12 @@ export class TodoService implements Resolve<any>
      * @param tagId
      * @param todo
      */
-    toggleTagOnTodo(tagId, todo): void
-    {
+    toggleTagOnTodo(tagId, todo): void {
         const index = todo.tags.indexOf(tagId);
 
-        if ( index !== -1 )
-        {
+        if (index !== -1) {
             todo.tags.splice(index, 1);
-        }
-        else
-        {
+        } else {
             todo.tags.push(tagId);
         }
 
@@ -411,10 +368,8 @@ export class TodoService implements Resolve<any>
      * @param todo
      * @returns {boolean}
      */
-    hasTag(tagId, todo): any
-    {
-        if ( !todo.tags )
-        {
+    hasTag(tagId, todo): any {
+        if (!todo.tags) {
             return false;
         }
 
@@ -427,8 +382,7 @@ export class TodoService implements Resolve<any>
      * @param todo
      * @returns {Promise<any>}
      */
-    updateTodo(todo): any
-    {
+    updateTodo(todo): any {
         return new Promise((resolve, reject) => {
 
             this._httpClient.post('api/todo-todos/' + todo.id, {...todo})

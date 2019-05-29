@@ -1,5 +1,4 @@
-export class Mail
-{
+export class Mail {
     id: string;
     from: {
         name: string,
@@ -32,8 +31,7 @@ export class Mail
      *
      * @param mail
      */
-    constructor(mail)
-    {
+    constructor(mail) {
         this.id = mail.id;
         this.from = mail.from;
         this.to = mail.to;
@@ -52,32 +50,28 @@ export class Mail
     /**
      * Toggle star
      */
-    toggleStar(): void
-    {
+    toggleStar(): void {
         this.starred = !this.starred;
     }
 
     /**
      * Toggle important
      */
-    toggleImportant(): void
-    {
+    toggleImportant(): void {
         this.important = !this.important;
     }
 
     /**
      * Mark as read
      */
-    markRead(): void
-    {
+    markRead(): void {
         this.read = true;
     }
 
     /**
      * Mark as unread
      */
-    markUnread(): void
-    {
+    markUnread(): void {
         this.read = false;
     }
 }

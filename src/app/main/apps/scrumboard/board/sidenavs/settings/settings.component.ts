@@ -1,19 +1,18 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 
-import { fuseAnimations } from '@fuse/animations';
-import { ScrumboardService } from 'app/main/apps/scrumboard/scrumboard.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {fuseAnimations} from '@fuse/animations';
+import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
-    selector     : 'scrumboard-board-settings',
-    templateUrl  : './settings.component.html',
-    styleUrls    : ['./settings.component.scss'],
+    selector: 'scrumboard-board-settings',
+    templateUrl: './settings.component.html',
+    styleUrls: ['./settings.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestroy
-{
+export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestroy {
     board: any;
     view: string;
 
@@ -22,8 +21,7 @@ export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestro
 
     constructor(
         private scrumboardService: ScrumboardService
-    )
-    {
+    ) {
         // Set the defaults
         this.view = 'main';
 
@@ -38,8 +36,7 @@ export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestro
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.scrumboardService.onBoardChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(board => {
@@ -50,8 +47,7 @@ export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestro
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -64,8 +60,7 @@ export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestro
     /**
      * Toggle card cover
      */
-    toggleCardCover(): void
-    {
+    toggleCardCover(): void {
         this.board.settings.cardCoverImages = !this.board.settings.cardCoverImages;
         this.scrumboardService.updateBoard();
     }
@@ -73,8 +68,7 @@ export class ScrumboardBoardSettingsSidenavComponent implements OnInit, OnDestro
     /**
      * Toggle subscription
      */
-    toggleSubscription(): void
-    {
+    toggleSubscription(): void {
         this.board.settings.subscribed = !this.board.settings.subscribed;
         this.scrumboardService.updateBoard();
     }

@@ -1,8 +1,7 @@
 import * as MailsActions from 'app/main/apps/mail-ngrx/store/actions/mails.actions';
-import { Mail } from 'app/main/apps/mail-ngrx/mail.model';
+import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
 
-export interface MailsState
-{
+export interface MailsState {
     entities?: { [id: number]: Mail };
     currentMail: any;
     selectedMailIds: string[];
@@ -12,28 +11,24 @@ export interface MailsState
 }
 
 export const MailsInitialState: MailsState = {
-    entities       : {},
-    currentMail    : null,
+    entities: {},
+    currentMail: null,
     selectedMailIds: [],
-    searchText     : '',
-    loading        : false,
-    loaded         : false
+    searchText: '',
+    loading: false,
+    loaded: false
 };
 
-export function MailsReducer(state = MailsInitialState, action: MailsActions.MailsActionsAll): MailsState
-{
-    switch ( action.type )
-    {
-        case MailsActions.GET_MAILS:
-        {
+export function MailsReducer(state = MailsInitialState, action: MailsActions.MailsActionsAll): MailsState {
+    switch (action.type) {
+        case MailsActions.GET_MAILS: {
             return {
                 ...state,
                 loading: true
             };
         }
 
-        case MailsActions.GET_MAILS_SUCCESS:
-        {
+        case MailsActions.GET_MAILS_SUCCESS: {
 
             const mails = action.payload.mails;
             const loaded = action.payload.loaded;
@@ -53,25 +48,22 @@ export function MailsReducer(state = MailsInitialState, action: MailsActions.Mai
             };
         }
 
-        case MailsActions.GET_MAILS_FAILED:
-        {
+        case MailsActions.GET_MAILS_FAILED: {
             return {
                 ...state,
                 loading: false,
-                loaded : false
+                loaded: false
             };
         }
 
-        case MailsActions.SET_CURRENT_MAIL_SUCCESS:
-        {
+        case MailsActions.SET_CURRENT_MAIL_SUCCESS: {
             return {
                 ...state,
                 currentMail: action.payload
             };
         }
 
-        case MailsActions.UPDATE_MAIL_SUCCESS:
-        {
+        case MailsActions.UPDATE_MAIL_SUCCESS: {
             return {
                 ...state,
                 entities: {
@@ -81,8 +73,7 @@ export function MailsReducer(state = MailsInitialState, action: MailsActions.Mai
             };
         }
 
-        case MailsActions.SET_SEARCH_TEXT:
-        {
+        case MailsActions.SET_SEARCH_TEXT: {
 
             return {
                 ...state,
@@ -90,19 +81,15 @@ export function MailsReducer(state = MailsInitialState, action: MailsActions.Mai
             };
         }
 
-        case MailsActions.TOGGLE_IN_SELECTED_MAILS:
-        {
+        case MailsActions.TOGGLE_IN_SELECTED_MAILS: {
 
             const mailId = action.payload;
 
             let selectedMailIds = [...state.selectedMailIds];
 
-            if ( selectedMailIds.find(id => id === mailId) !== undefined )
-            {
+            if (selectedMailIds.find(id => id === mailId) !== undefined) {
                 selectedMailIds = selectedMailIds.filter(id => id !== mailId);
-            }
-            else
-            {
+            } else {
                 selectedMailIds = [...selectedMailIds, mailId];
             }
 
@@ -112,8 +99,7 @@ export function MailsReducer(state = MailsInitialState, action: MailsActions.Mai
             };
         }
 
-        case MailsActions.SELECT_ALL_MAILS:
-        {
+        case MailsActions.SELECT_ALL_MAILS: {
             const arr = Object.keys(state.entities).map(k => state.entities[k]);
 
             const selectedMailIds = arr.map(mail => mail.id);
@@ -124,28 +110,25 @@ export function MailsReducer(state = MailsInitialState, action: MailsActions.Mai
             };
         }
 
-        case MailsActions.DESELECT_ALL_MAILS:
-        {
+        case MailsActions.DESELECT_ALL_MAILS: {
             return {
                 ...state,
                 selectedMailIds: []
             };
         }
 
-        case MailsActions.SELECT_MAILS_BY_PARAMETER:
-        {
+        case MailsActions.SELECT_MAILS_BY_PARAMETER: {
             const filter = action.payload;
             const arr = Object.keys(state.entities).map(k => state.entities[k]);
             const selectedMailIds = arr.filter(mail => mail[filter.parameter] === filter.value)
-                                       .map(mail => mail.id);
+                .map(mail => mail.id);
             return {
                 ...state,
                 selectedMailIds
             };
         }
 
-        case MailsActions.SET_FOLDER_ON_SELECTED_MAILS:
-        {
+        case MailsActions.SET_FOLDER_ON_SELECTED_MAILS: {
             const entities = {...state.entities};
 
             state.selectedMailIds.map(id => {

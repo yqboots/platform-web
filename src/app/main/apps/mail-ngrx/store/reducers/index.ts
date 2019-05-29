@@ -1,11 +1,10 @@
-import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-import { MailsReducer, MailsState } from './mails.reducer';
-import { FoldersReducer, FoldersState } from './folders.reducer';
-import { FiltersReducer, FiltersState } from './filters.reducer';
-import { LabelsReducer, LabelsState } from './labels.reducer';
+import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
+import {MailsReducer, MailsState} from './mails.reducer';
+import {FoldersReducer, FoldersState} from './folders.reducer';
+import {FiltersReducer, FiltersState} from './filters.reducer';
+import {LabelsReducer, LabelsState} from './labels.reducer';
 
-export interface MailAppState
-{
+export interface MailAppState {
     mails: MailsState;
     folders: FoldersState;
     filters: FiltersState;
@@ -22,10 +21,10 @@ export const getAppState = createSelector(
 );
 
 export const reducers: ActionReducerMap<MailAppState> = {
-    mails  : MailsReducer,
+    mails: MailsReducer,
     folders: FoldersReducer,
     filters: FiltersReducer,
-    labels : LabelsReducer
+    labels: LabelsReducer
 };
 
 export * from './mails.reducer';

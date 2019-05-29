@@ -1,18 +1,18 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import {MatButtonModule, MatIconModule} from '@angular/material';
 
-import { AgmCoreModule } from '@agm/core';
+import {AgmCoreModule} from '@agm/core';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseHighlightModule } from '@fuse/components/index';
+import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseHighlightModule} from '@fuse/components/index';
 
-import { DocsComponentsThirdPartyGoogleMapsComponent } from './google-maps.component';
+import {DocsComponentsThirdPartyGoogleMapsComponent} from './google-maps.component';
 
 const routes = [
     {
-        path     : 'google-maps',
+        path: 'google-maps',
         component: DocsComponentsThirdPartyGoogleMapsComponent
     }
 ];
@@ -21,7 +21,7 @@ const routes = [
     declarations: [
         DocsComponentsThirdPartyGoogleMapsComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -35,6 +35,5 @@ const routes = [
         FuseHighlightModule
     ],
 })
-export class GoogleMapsModule
-{
+export class GoogleMapsModule {
 }

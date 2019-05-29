@@ -1,14 +1,13 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
-    selector     : 'scrumboard-edit-board-name',
-    templateUrl  : './edit-board-name.component.html',
-    styleUrls    : ['./edit-board-name.component.scss'],
+    selector: 'scrumboard-edit-board-name',
+    templateUrl: './edit-board-name.component.html',
+    styleUrls: ['./edit-board-name.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ScrumboardEditBoardNameComponent
-{
+export class ScrumboardEditBoardNameComponent {
     formActive: boolean;
     form: FormGroup;
 
@@ -23,8 +22,7 @@ export class ScrumboardEditBoardNameComponent
 
     constructor(
         private formBuilder: FormBuilder
-    )
-    {
+    ) {
         // Set the defaults
         this.formActive = false;
         this.boardNameChanged = new EventEmitter();
@@ -37,8 +35,7 @@ export class ScrumboardEditBoardNameComponent
     /**
      * Open form
      */
-    openForm(): void
-    {
+    openForm(): void {
         this.form = this.formBuilder.group({
             name: [this.board.name]
         });
@@ -49,16 +46,14 @@ export class ScrumboardEditBoardNameComponent
     /**
      * Close form
      */
-    closeForm(): void
-    {
+    closeForm(): void {
         this.formActive = false;
     }
 
     /**
      * Focus to the name field
      */
-    focusNameField(): void
-    {
+    focusNameField(): void {
         setTimeout(() => {
             this.nameInputField.nativeElement.focus();
         });
@@ -67,10 +62,8 @@ export class ScrumboardEditBoardNameComponent
     /**
      * On form submit
      */
-    onFormSubmit(): void
-    {
-        if ( this.form.valid )
-        {
+    onFormSubmit(): void {
+        if (this.form.valid) {
             this.board.name = this.form.getRawValue().name;
             this.board.uri = encodeURIComponent(this.board.name).replace(/%20/g, '-').toLowerCase();
 

@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'docs-introduction',
+    selector: 'docs-introduction',
     templateUrl: './introduction.component.html',
-    styleUrls  : ['./introduction.component.scss']
+    styleUrls: ['./introduction.component.scss']
 })
-export class DocsGettingStartedIntroductionComponent
-{
-    constructor()
-    {
+export class DocsGettingStartedIntroductionComponent {
+    constructor() {
     }
 }

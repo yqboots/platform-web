@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { MatColors } from '@fuse/mat-colors';
+import {MatColors} from '@fuse/mat-colors';
 
 @Component({
-    selector   : 'colors',
+    selector: 'colors',
     templateUrl: './colors.component.html',
-    styleUrls  : ['./colors.component.scss']
+    styleUrls: ['./colors.component.scss']
 })
-export class ColorsComponent
-{
+export class ColorsComponent {
     colors: {};
     selectedColor: string;
     selectedColorDefaultValue: string;
@@ -16,8 +15,7 @@ export class ColorsComponent
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
         // Set the defaults
         this.colors = MatColors.all;
         this._updateSelectedColor('primary');
@@ -32,8 +30,7 @@ export class ColorsComponent
      *
      * @param selected
      */
-    selectColor(selected): void
-    {
+    selectColor(selected): void {
         this._updateSelectedColor(selected.tab.textLabel);
     }
 
@@ -43,8 +40,7 @@ export class ColorsComponent
      * @param colorName
      * @private
      */
-    private _updateSelectedColor(colorName): void
-    {
+    private _updateSelectedColor(colorName): void {
         this.selectedColor = colorName;
         this.selectedColorDefaultValue = MatColors.getColor(this.selectedColor)[500];
     }

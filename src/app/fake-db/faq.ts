@@ -1,5 +1,4 @@
-export class FaqFakeDb
-{
+export class FaqFakeDb {
     public static data = [
         {
             'question': 'Proident tempor est nulla irure ad est?',

@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector   : 'helper-classes-width-height',
+    selector: 'helper-classes-width-height',
     templateUrl: './width-height.component.html',
-    styleUrls  : ['./width-height.component.scss']
+    styleUrls: ['./width-height.component.scss']
 })
-export class HelperClassesWidthHeightComponent
-{
+export class HelperClassesWidthHeightComponent {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor() {
 
     }
 }
