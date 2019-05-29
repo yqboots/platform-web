@@ -11,7 +11,7 @@
             <span class="secondary-text">Directives</span>
         </div>
 
-        <div class="h2 mt-16">fusePerfectScrollbar</div>
+        <div class="h2 mt-16">perfectScrollbar</div>
 
     </div>
     <!-- / HEADER -->
@@ -20,7 +20,7 @@
     <div class="content p-24">
 
         <p>
-            <code>fusePerfectScrollbar</code> is an Angular directive for the <a
+            <code>perfectScrollbar</code> is an Angular directive for the <a
             href="https://github.com/utatti/perfect-scrollbar" target="_blank">Perfect Scrollbar</a> library.
         </p>
 
@@ -28,7 +28,7 @@
         <p class="py-8">
             <fuse-highlight lang="html">
                 <textarea #source>
-                    <div fusePerfectScrollbar>
+                    <div perfectScrollbar>
                 </textarea>
             </fuse-highlight>
         </p>
@@ -36,21 +36,21 @@
         <p class="py-8">
             <fuse-highlight lang="html">
                 <textarea #source>
-                    <div [fusePerfectScrollbar]="false" [fusePerfectScrollbarOptions]="{'updateOnRouteChange': true}">
+                    <div [perfectScrollbar]="false" [perfectScrollbarOptions]="{'updateOnRouteChange': true}">
                 </textarea>
             </fuse-highlight>
         </p>
 
         <div class="section-title">Inputs</div>
         <p class="py-8" fxLayout="row" fxLayoutAlign="start center">
-            <code class="mr-16">fusePerfectScrollbar</code>
+            <code class="mr-16">perfectScrollbar</code>
             <span>
                 Accepts an optional boolean which you can control the Perfect Scrollbar. If provided false, Perfect
                 Scrollbar will be destroyed or won't be initialized.
             </span>
         </p>
         <p class="py-8" fxLayout="row" fxLayoutAlign="start center">
-            <code class="mr-16">fusePerfectScrollbarOptions</code>
+            <code class="mr-16">perfectScrollbarOptions</code>
             <span>
                 Accepts the <a href="https://github.com/utatti/perfect-scrollbar#options" target="_blank">Perfect
                 Scrollbar options</a>. In addition to those options, there is also a custom <b>updateOnRouteChange</b>

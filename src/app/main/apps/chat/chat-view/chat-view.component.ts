@@ -1,20 +1,19 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewChildren, ViewEncapsulation} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import { ChatService } from 'app/main/apps/chat/chat.service';
+import {ChatService} from 'app/main/apps/chat/chat.service';
 
 @Component({
-    selector     : 'chat-view',
-    templateUrl  : './chat-view.component.html',
-    styleUrls    : ['./chat-view.component.scss'],
+    selector: 'chat-view',
+    templateUrl: './chat-view.component.html',
+    styleUrls: ['./chat-view.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
-{
+export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     user: any;
     chat: any;
     dialog: any;
@@ -22,8 +21,8 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     replyInput: any;
     selectedChat: any;
 
-    @ViewChild(FusePerfectScrollbarDirective)
-    directiveScroll: FusePerfectScrollbarDirective;
+    @ViewChild(PerfectScrollbarDirective)
+    perfectScrollbarDirective: PerfectScrollbarDirective;
 
     @ViewChildren('replyInput')
     replyInputField;
@@ -41,8 +40,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
      */
     constructor(
         private _chatService: ChatService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -54,14 +52,12 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.user = this._chatService.user;
         this._chatService.onChatSelected
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(chatData => {
-                if ( chatData )
-                {
+                if (chatData) {
                     this.selectedChat = chatData;
                     this.contact = chatData.contact;
                     this.dialog = chatData.dialog;
@@ -73,8 +69,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * After view init
      */
-    ngAfterViewInit(): void
-    {
+    ngAfterViewInit(): void {
         this.replyInput = this.replyInputField.first.nativeElement;
         this.readyToReply();
     }
@@ -82,8 +77,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -100,8 +94,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
      * @param i
      * @returns {boolean}
      */
-    shouldShowContactAvatar(message, i): boolean
-    {
+    shouldShowContactAvatar(message, i): boolean {
         return (
             message.who === this.contact.id &&
             ((this.dialog[i + 1] && this.dialog[i + 1].who !== this.contact.id) || !this.dialog[i + 1])
@@ -115,8 +108,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
      * @param i
      * @returns {boolean}
      */
-    isFirstMessageOfGroup(message, i): boolean
-    {
+    isFirstMessageOfGroup(message, i): boolean {
         return (i === 0 || this.dialog[i - 1] && this.dialog[i - 1].who !== message.who);
     }
 
@@ -127,24 +119,21 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
      * @param i
      * @returns {boolean}
      */
-    isLastMessageOfGroup(message, i): boolean
-    {
+    isLastMessageOfGroup(message, i): boolean {
         return (i === this.dialog.length - 1 || this.dialog[i + 1] && this.dialog[i + 1].who !== message.who);
     }
 
     /**
      * Select contact
      */
-    selectContact(): void
-    {
+    selectContact(): void {
         this._chatService.selectContact(this.contact);
     }
 
     /**
      * Ready to reply
      */
-    readyToReply(): void
-    {
+    readyToReply(): void {
         setTimeout(() => {
             this.focusReplyInput();
             this.scrollToBottom();
@@ -154,8 +143,7 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * Focus to the reply input
      */
-    focusReplyInput(): void
-    {
+    focusReplyInput(): void {
         setTimeout(() => {
             this.replyInput.focus();
         });
@@ -166,15 +154,13 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
      *
      * @param {number} speed
      */
-    scrollToBottom(speed?: number): void
-    {
+    scrollToBottom(speed?: number): void {
         speed = speed || 400;
-        if ( this.directiveScroll )
-        {
-            this.directiveScroll.update();
+        if (this.perfectScrollbarDirective) {
+            this.perfectScrollbarDirective.update();
 
             setTimeout(() => {
-                this.directiveScroll.scrollToBottom(0, speed);
+                this.perfectScrollbarDirective.scrollToBottom(0, speed);
             });
         }
     }
@@ -182,20 +168,18 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * Reply
      */
-    reply(event): void
-    {
+    reply(event): void {
         event.preventDefault();
 
-        if ( !this.replyForm.form.value.message )
-        {
+        if (!this.replyForm.form.value.message) {
             return;
         }
 
         // Message
         const message = {
-            who    : this.user.id,
+            who: this.user.id,
             message: this.replyForm.form.value.message,
-            time   : new Date().toISOString()
+            time: new Date().toISOString()
         };
 
         // Add the message to the chat

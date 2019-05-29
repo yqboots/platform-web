@@ -1,26 +1,26 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { delay, filter, take, takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {Subject} from 'rxjs';
+import {delay, filter, take, takeUntil} from 'rxjs/operators';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
-import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
+
+import {FuseConfigService} from '@fuse/services/config.service';
+import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
+import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
-    selector     : 'navbar-vertical-style-2',
-    templateUrl  : './style-2.component.html',
-    styleUrls    : ['./style-2.component.scss'],
+    selector: 'navbar-vertical-style-2',
+    templateUrl: './style-2.component.html',
+    styleUrls: ['./style-2.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
-{
+export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
     fuseConfig: any;
     navigation: any;
 
     // Private
-    private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
+    private _perfectScrollbarDirective: PerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
 
     /**
@@ -36,8 +36,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
         private _fuseNavigationService: FuseNavigationService,
         private _fuseSidebarService: FuseSidebarService,
         private _router: Router
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -47,15 +46,13 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     // Directive
-    @ViewChild(FusePerfectScrollbarDirective)
-    set directive(theDirective: FusePerfectScrollbarDirective)
-    {
-        if ( !theDirective )
-        {
+    @ViewChild(PerfectScrollbarDirective)
+    set directive(theDirective: PerfectScrollbarDirective) {
+        if (!theDirective) {
             return;
         }
 
-        this._fusePerfectScrollbar = theDirective;
+        this._perfectScrollbarDirective = theDirective;
 
         // Update the scrollbar on collapsable item toggle
         this._fuseNavigationService.onItemCollapseToggled
@@ -64,7 +61,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                this._fusePerfectScrollbar.update();
+                this._perfectScrollbarDirective.update();
             });
 
         // Scroll to the active item position
@@ -77,13 +74,12 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
                     setTimeout(() => {
                         const activeNavItem: any = document.querySelector('navbar .nav-link.active');
 
-                        if ( activeNavItem )
-                        {
-                            const activeItemOffsetTop       = activeNavItem.offsetTop,
-                                  activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
-                                  scrollDistance            = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3);
+                        if (activeNavItem) {
+                            const activeItemOffsetTop = activeNavItem.offsetTop,
+                                activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
+                                scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3);
 
-                            this._fusePerfectScrollbar.scrollToTop(scrollDistance);
+                            this._perfectScrollbarDirective.scrollToTop(scrollDistance);
                         }
                     });
                 }
@@ -97,16 +93,14 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this._router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                    if ( this._fuseSidebarService.getSidebar('navbar') )
-                    {
+                    if (this._fuseSidebarService.getSidebar('navbar')) {
                         this._fuseSidebarService.getSidebar('navbar').close();
                     }
                 }
@@ -133,8 +127,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -147,16 +140,14 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy
     /**
      * Toggle sidebar opened status
      */
-    toggleSidebarOpened(): void
-    {
+    toggleSidebarOpened(): void {
         this._fuseSidebarService.getSidebar('navbar').toggleOpen();
     }
 
     /**
      * Toggle sidebar folded status
      */
-    toggleSidebarFolded(): void
-    {
+    toggleSidebarFolded(): void {
         this._fuseSidebarService.getSidebar('navbar').toggleFold();
     }
 }

@@ -1,29 +1,38 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    OnDestroy,
+    OnInit,
+    QueryList,
+    ViewChildren,
+    ViewEncapsulation
+} from '@angular/core';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import { AcademyCourseService } from 'app/main/apps/academy/course.service';
+import {fuseAnimations} from '@fuse/animations';
+import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+
+import {AcademyCourseService} from 'app/main/apps/academy/course.service';
 
 @Component({
-    selector     : 'academy-course',
-    templateUrl  : './course.component.html',
-    styleUrls    : ['./course.component.scss'],
+    selector: 'academy-course',
+    templateUrl: './course.component.html',
+    styleUrls: ['./course.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
-{
+export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit {
     animationDirection: 'left' | 'right' | 'none';
     course: any;
     courseStepContent: any;
     currentStep: number;
 
-    @ViewChildren(FusePerfectScrollbarDirective)
-    fuseScrollbarDirectives: QueryList<FusePerfectScrollbarDirective>;
+    @ViewChildren(PerfectScrollbarDirective)
+    scrollbarDirectives: QueryList<PerfectScrollbarDirective>;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -39,8 +48,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
         private _academyCourseService: AcademyCourseService,
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseSidebarService: FuseSidebarService
-    )
-    {
+    ) {
         // Set the defaults
         this.animationDirection = 'none';
         this.currentStep = 0;
@@ -56,8 +64,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to courses
         this._academyCourseService.onCourseChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -69,9 +76,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * After view init
      */
-    ngAfterViewInit(): void
-    {
-        this.courseStepContent = this.fuseScrollbarDirectives.find((fuseScrollbarDirective) => {
+    ngAfterViewInit(): void {
+        this.courseStepContent = this.scrollbarDirectives.find((fuseScrollbarDirective) => {
             return fuseScrollbarDirective.elementRef.nativeElement.id === 'course-step-content';
         });
     }
@@ -79,8 +85,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -95,8 +100,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
      *
      * @param step
      */
-    gotoStep(step): void
-    {
+    gotoStep(step): void {
         // Decide the animation direction
         this.animationDirection = this.currentStep < step ? 'left' : 'right';
 
@@ -111,10 +115,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * Go to next step
      */
-    gotoNextStep(): void
-    {
-        if ( this.currentStep === this.course.totalSteps - 1 )
-        {
+    gotoNextStep(): void {
+        if (this.currentStep === this.course.totalSteps - 1) {
             return;
         }
 
@@ -132,10 +134,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
     /**
      * Go to previous step
      */
-    gotoPreviousStep(): void
-    {
-        if ( this.currentStep === 0 )
-        {
+    gotoPreviousStep(): void {
+        if (this.currentStep === 0) {
             return;
         }
 
@@ -155,8 +155,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit
      *
      * @param name
      */
-    toggleSidebar(name): void
-    {
+    toggleSidebar(name): void {
         this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
 }
