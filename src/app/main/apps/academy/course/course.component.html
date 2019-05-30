@@ -4,7 +4,7 @@
     <fuse-sidebar class="sidebar" name="academy-course-left-sidebar-1" position="left" lockedOpen="gt-md">
 
         <!-- SIDEBAR CONTENT -->
-        <div class="content" fusePerfectScrollbar>
+        <div class="content" perfectScrollbar>
 
             <div class="steps">
 
@@ -53,7 +53,7 @@
 
             <ng-container *ngFor="let step of course.steps; let i = index;">
 
-                <div class="course-step" fusePerfectScrollbar
+                <div class="course-step" perfectScrollbar
                      *ngIf="currentStep === i"
                      [@slideIn]="animationDirection">
 

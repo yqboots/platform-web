@@ -1,8 +1,7 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import {FuseIfOnDomDirective} from '@fuse/directives/fuse-if-on-dom/fuse-if-on-dom.directive';
 import {FuseInnerScrollDirective} from '@fuse/directives/fuse-inner-scroll/fuse-inner-scroll.directive';
-import {FusePerfectScrollbarDirective} from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import {
     FuseMatSidenavHelperDirective,
     FuseMatSidenavTogglerDirective
@@ -13,16 +12,14 @@ import {
         FuseIfOnDomDirective,
         FuseInnerScrollDirective,
         FuseMatSidenavHelperDirective,
-        FuseMatSidenavTogglerDirective,
-        FusePerfectScrollbarDirective
+        FuseMatSidenavTogglerDirective
     ],
     imports: [],
     exports: [
         FuseIfOnDomDirective,
         FuseInnerScrollDirective,
         FuseMatSidenavHelperDirective,
-        FuseMatSidenavTogglerDirective,
-        FusePerfectScrollbarDirective
+        FuseMatSidenavTogglerDirective
     ]
 })
 export class FuseDirectivesModule {

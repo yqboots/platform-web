@@ -3,7 +3,7 @@
 
     <!-- CHAT PANEL -->
     <fuse-sidebar name="chatPanel" position="left" class="chat-panel left-chat-panel"
-        [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
+                  [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
                   lockedOpen="gt-md">
         <chat-panel></chat-panel>
     </fuse-sidebar>
@@ -20,8 +20,8 @@
     </ng-container>
     <!-- / TOOLBAR: Above fixed -->
 
-    <div id="container-1" class="container" fusePerfectScrollbar
-        [fusePerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+    <div id="container-1" class="container"
+        [perfectScrollbar]="{suppressScrollX: true, updateOnRouteChange : true}">
 
         <!-- TOOLBAR: Above static -->
         <ng-container *ngIf="fuseConfig.layout.toolbar.position === 'above-static'">

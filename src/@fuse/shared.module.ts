@@ -3,9 +3,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
 import {FuseDirectivesModule} from '@fuse/directives/directives';
 import {FusePipesModule} from '@fuse/pipes/pipes.module';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    /*suppressScrollX: true*/
+};
 
 @NgModule({
     imports: [
@@ -14,6 +19,7 @@ import {FusePipesModule} from '@fuse/pipes/pipes.module';
         ReactiveFormsModule,
 
         FlexLayoutModule,
+        PerfectScrollbarModule,
 
         FuseDirectivesModule,
         FusePipesModule
@@ -24,9 +30,16 @@ import {FusePipesModule} from '@fuse/pipes/pipes.module';
         ReactiveFormsModule,
 
         FlexLayoutModule,
+        PerfectScrollbarModule,
 
         FuseDirectivesModule,
         FusePipesModule
+    ],
+    providers: [
+        {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        }
     ]
 })
 export class FuseSharedModule {

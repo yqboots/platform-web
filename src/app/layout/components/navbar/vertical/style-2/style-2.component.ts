@@ -3,9 +3,10 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Subject} from 'rxjs';
 import {delay, filter, take, takeUntil} from 'rxjs/operators';
 
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
+
 import {FuseConfigService} from '@fuse/services/config.service';
 import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
-import {FusePerfectScrollbarDirective} from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
     navigation: any;
 
     // Private
-    private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
+    private _perfectScrollbarDirective: PerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
 
     /**
@@ -45,13 +46,13 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
     // -----------------------------------------------------------------------------------------------------
 
     // Directive
-    @ViewChild(FusePerfectScrollbarDirective, {static: true})
-    set directive(theDirective: FusePerfectScrollbarDirective) {
+    @ViewChild(PerfectScrollbarDirective, {static: false})
+    set directive(theDirective: PerfectScrollbarDirective) {
         if (!theDirective) {
             return;
         }
 
-        this._fusePerfectScrollbar = theDirective;
+        this._perfectScrollbarDirective = theDirective;
 
         // Update the scrollbar on collapsable item toggle
         this._fuseNavigationService.onItemCollapseToggled
@@ -60,7 +61,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                this._fusePerfectScrollbar.update();
+                this._perfectScrollbarDirective.update();
             });
 
         // Scroll to the active item position
@@ -71,7 +72,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
             )
             .subscribe(() => {
                     setTimeout(() => {
-                        this._fusePerfectScrollbar.scrollToElement('navbar .nav-link.active', -120);
+                        this._perfectScrollbarDirective.scrollToElement('navbar .nav-link.active', -120);
                     });
                 }
             );

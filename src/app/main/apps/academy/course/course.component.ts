@@ -11,8 +11,9 @@ import {
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
+
 import {fuseAnimations} from '@fuse/animations';
-import {FusePerfectScrollbarDirective} from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
 
 import {AcademyCourseService} from 'app/main/apps/academy/course.service';
@@ -30,8 +31,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit 
     courseStepContent: any;
     currentStep: number;
 
-    @ViewChildren(FusePerfectScrollbarDirective)
-    fuseScrollbarDirectives: QueryList<FusePerfectScrollbarDirective>;
+    @ViewChildren(PerfectScrollbarDirective)
+    scrollbarDirectives: QueryList<PerfectScrollbarDirective>;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -76,7 +77,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy, AfterViewInit 
      * After view init
      */
     ngAfterViewInit(): void {
-        this.courseStepContent = this.fuseScrollbarDirectives.find((fuseScrollbarDirective) => {
+        this.courseStepContent = this.scrollbarDirectives.find((fuseScrollbarDirective) => {
             return fuseScrollbarDirective.elementRef.nativeElement.id === 'course-step-content';
         });
     }

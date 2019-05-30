@@ -15,8 +15,9 @@ import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
+import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
+
 import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
-import {FusePerfectScrollbarDirective} from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
 
 @Component({
@@ -33,16 +34,22 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy {
     user: any;
 
     @ViewChild('replyForm', {static: false})
-    private _replyForm: NgForm;
+    set replyForm(content: NgForm) {
+        this._replyForm = content;
+    }
 
     @ViewChild('replyInput', {static: false})
-    private _replyInput: ElementRef;
+    set replyInput(content: ElementRef) {
+        this._replyInput = content;
+    }
 
-    @ViewChildren(FusePerfectScrollbarDirective)
-    private _fusePerfectScrollbarDirectives: QueryList<FusePerfectScrollbarDirective>;
+    @ViewChildren(PerfectScrollbarDirective)
+    private _perfectScrollbarDirectives: QueryList<PerfectScrollbarDirective>;
 
     // Private
-    private _chatViewScrollbar: FusePerfectScrollbarDirective;
+    private _chatViewScrollbar: PerfectScrollbarDirective;
+    private _replyForm: NgForm;
+    private _replyInput: ElementRef;
     private _unsubscribeAll: Subject<any>;
 
     /**
@@ -92,7 +99,7 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy {
      * After view init
      */
     ngAfterViewInit(): void {
-        this._chatViewScrollbar = this._fusePerfectScrollbarDirectives.find((directive) => {
+        this._chatViewScrollbar = this._perfectScrollbarDirectives.find((directive) => {
             return directive.elementRef.nativeElement.id === 'messages';
         });
     }
