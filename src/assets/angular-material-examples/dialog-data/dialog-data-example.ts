@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 
 export interface DialogData {
     animal: 'panda' | 'unicorn' | 'lion';

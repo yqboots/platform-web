@@ -3,7 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
+import {FusePerfectScrollbarDirective} from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 
 import {ChatService} from 'app/main/apps/chat/chat.service';
 
@@ -21,13 +21,13 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     replyInput: any;
     selectedChat: any;
 
-    @ViewChild(PerfectScrollbarDirective)
-    perfectScrollbarDirective: PerfectScrollbarDirective;
+    @ViewChild(FusePerfectScrollbarDirective, {static: false})
+    directiveScroll: FusePerfectScrollbarDirective;
 
     @ViewChildren('replyInput')
     replyInputField;
 
-    @ViewChild('replyForm')
+    @ViewChild('replyForm', {static: false})
     replyForm: NgForm;
 
     // Private
@@ -156,11 +156,11 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit {
      */
     scrollToBottom(speed?: number): void {
         speed = speed || 400;
-        if (this.perfectScrollbarDirective) {
-            this.perfectScrollbarDirective.update();
+        if (this.directiveScroll) {
+            this.directiveScroll.update();
 
             setTimeout(() => {
-                this.perfectScrollbarDirective.scrollToBottom(0, speed);
+                this.directiveScroll.scrollToBottom(0, speed);
             });
         }
     }

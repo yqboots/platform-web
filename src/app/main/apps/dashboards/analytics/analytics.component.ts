@@ -48,7 +48,7 @@ export class AnalyticsDashboardComponent implements OnInit {
      * Register a custom plugin
      */
     private _registerCustomChartJSPlugin(): void {
-        (<any>window).Chart.plugins.register({
+        (window as any).Chart.plugins.register({
             afterDatasetsDraw: function (chart, easing): any {
                 // Only activate the plugin if it's made available
                 // in the options
@@ -72,7 +72,7 @@ export class AnalyticsDashboardComponent implements OnInit {
                             const fontSize = 13;
                             const fontStyle = 'normal';
                             const fontFamily = 'Roboto, Helvetica Neue, Arial';
-                            ctx.font = (<any>window).Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+                            ctx.font = (window as any).Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
                             // Just naively convert to string for now
                             const dataString = dataset.data[index].toString() + 'k';

@@ -1,5 +1,5 @@
 import {Directive, HostBinding, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
-import {MatSidenav} from '@angular/material';
+import {MatSidenav} from '@angular/material/sidenav';
 import {MediaObserver} from '@angular/flex-layout';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -55,7 +55,7 @@ export class FuseMatSidenavHelperDirective implements OnInit, OnDestroy {
         // Register the sidenav to the service
         this._fuseMatSidenavHelperService.setSidenav(this.fuseMatSidenavHelper, this._matSidenav);
 
-        if (this._mediaObserver.isActive(this.matIsLockedOpen)) {
+        if (this.matIsLockedOpen && this._mediaObserver.isActive(this.matIsLockedOpen)) {
             this.isLockedOpen = true;
             this._matSidenav.mode = 'side';
             this._matSidenav.toggle(true);
@@ -68,7 +68,7 @@ export class FuseMatSidenavHelperDirective implements OnInit, OnDestroy {
         this._fuseMatchMediaService.onMediaChange
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(() => {
-                if (this._mediaObserver.isActive(this.matIsLockedOpen)) {
+                if (this.matIsLockedOpen && this._mediaObserver.isActive(this.matIsLockedOpen)) {
                     this.isLockedOpen = true;
                     this._matSidenav.mode = 'side';
                     this._matSidenav.toggle(true);

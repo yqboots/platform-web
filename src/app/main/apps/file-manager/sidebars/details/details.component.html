@@ -27,7 +27,7 @@
 <!-- / SIDEBAR HEADER -->
 
 <!-- SIDEBAR CONTENT -->
-<div class="content p-24" perfectScrollbar>
+<div class="content p-24" fusePerfectScrollbar>
 
     <div class="file-details" [@animate]="{value:'*',params:{delay:'200ms'}}">
 
@@ -36,7 +36,7 @@
         </div>
 
         <div class="offline-switch">
-            <mat-slide-toggle ([ngModel])="selected.offline" labelPosition="before">Available Offline</mat-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="selected.offline" labelPosition="before">Available Offline</mat-slide-toggle>
         </div>
 
         <div class="title">Info</div>

@@ -1,6 +1,7 @@
-import {AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList, ViewChild} from '@angular/core';
-import {MatColumnDef, MatHeaderRowDef, MatRowDef, MatSort, MatTable, MatTableDataSource} from '@angular/material';
 import {DataSource} from '@angular/cdk/collections';
+import {AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList, ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort';
+import {MatColumnDef, MatHeaderRowDef, MatRowDef, MatTable, MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
     name: string;
@@ -34,7 +35,7 @@ export class TableWrappedExample implements OnInit {
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
     dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-    @ViewChild('sort') sort: MatSort;
+    @ViewChild('sort', {static: true}) sort: MatSort;
 
     ngOnInit() {
         this.dataSource.sort = this.sort;
@@ -59,7 +60,7 @@ export class WrapperTable<T> implements AfterContentInit {
     @ContentChildren(MatRowDef) rowDefs: QueryList<MatRowDef<T>>;
     @ContentChildren(MatColumnDef) columnDefs: QueryList<MatColumnDef>;
 
-    @ViewChild(MatTable) table: MatTable<T>;
+    @ViewChild(MatTable, {static: true}) table: MatTable<T>;
 
     @Input() columns: string[];
 

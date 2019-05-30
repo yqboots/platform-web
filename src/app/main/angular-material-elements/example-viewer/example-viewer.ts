@@ -9,7 +9,7 @@ import {
     ViewContainerRef,
     ViewEncapsulation
 } from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-typescript';
 
@@ -39,7 +39,7 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy {
     previewRef: ComponentRef<any>;
     selectedIndex: number;
 
-    @ViewChild('previewContainer', {read: ViewContainerRef})
+    @ViewChild('previewContainer', {read: ViewContainerRef, static: false})
     private _previewContainer: ViewContainerRef;
 
     /**

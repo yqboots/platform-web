@@ -39,7 +39,7 @@
 
         <div class="view" *ngSwitchCase="'palettes'">
 
-            <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" perfectScrollbar>
+            <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" fusePerfectScrollbar>
                 <div class="color" fxLayout="row" fxLayoutAlign="center center"
                      *ngFor="let color of (colors | keys)"
                      [ngClass]="color.key"
@@ -50,7 +50,7 @@
         </div>
 
         <div class="view" *ngSwitchCase="'hues'">
-            <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" perfectScrollbar>
+            <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" fusePerfectScrollbar>
                 <div class="color" fxLayout="row" fxLayoutAlign="center center"
                      *ngFor="let hue of hues"
                      [fxHide]="selectedPalette === 'fuse-white' && hue !== '500' || selectedPalette === 'fuse-black' && hue !== '500'"
