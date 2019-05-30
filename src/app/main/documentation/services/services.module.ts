@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule} from '@fuse/components/index';
 
 import {FuseConfigServiceDocsComponent} from 'app/main/documentation/services/fuse-config/fuse-config.component';

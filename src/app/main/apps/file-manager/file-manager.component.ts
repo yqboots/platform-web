@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations} from '@fuse/core';
+import {FuseSidebarService} from '@fuse/components';
 
 import {FileManagerService} from 'app/main/apps/file-manager/file-manager.service';
 

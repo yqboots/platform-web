@@ -3,7 +3,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 import {FuseNavigationModule} from '@fuse/components';
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {NavbarVerticalStyle2Component} from 'app/layout/components/navbar/vertical/style-2/style-2.component';
 

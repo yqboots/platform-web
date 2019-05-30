@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-
-import {fuseAnimations} from '@fuse/animations';
-
-import {ProfileService} from '../../profile.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
+import {fuseAnimations} from '@fuse/core';
+
+import {ProfileService} from '../../profile.service';
 
 @Component({
     selector: 'profile-timeline',

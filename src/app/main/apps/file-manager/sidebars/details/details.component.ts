@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {FileManagerService} from 'app/main/apps/file-manager/file-manager.service';
 

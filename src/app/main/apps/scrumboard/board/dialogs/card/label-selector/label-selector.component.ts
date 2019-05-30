@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsula
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseUtils} from '@fuse/utils';
+import {fuseAnimations, FuseUtils} from '@fuse/core';
 
 import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
 

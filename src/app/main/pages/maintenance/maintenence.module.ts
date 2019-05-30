@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {MaintenanceComponent} from 'app/main/pages/maintenance/maintenance.component';
 

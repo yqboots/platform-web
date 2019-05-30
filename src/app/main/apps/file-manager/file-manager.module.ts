@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseSidebarModule} from '@fuse/components';
 
 import {FileManagerService} from 'app/main/apps/file-manager/file-manager.service';

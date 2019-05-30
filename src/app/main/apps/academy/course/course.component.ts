@@ -13,8 +13,8 @@ import {takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations} from '@fuse/core';
+import {FuseSidebarService} from '@fuse/components';
 
 import {AcademyCourseService} from 'app/main/apps/academy/course.service';
 

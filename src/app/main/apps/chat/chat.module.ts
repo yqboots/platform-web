@@ -12,7 +12,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {ChatService} from 'app/main/apps/chat/chat.service';
 import {ChatComponent} from 'app/main/apps/chat/chat.component';

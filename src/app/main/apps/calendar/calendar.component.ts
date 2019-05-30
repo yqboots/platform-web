@@ -10,8 +10,8 @@ import {
     CalendarMonthViewDay
 } from 'angular-calendar';
 
-import {FuseConfirmDialogComponent} from '@fuse/components/confirm-dialog/confirm-dialog.component';
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
+import {FuseConfirmDialogComponent} from '@fuse/components';
 
 import {CalendarService} from 'app/main/apps/calendar/calendar.service';
 import {CalendarEventModel} from 'app/main/apps/calendar/event.model';

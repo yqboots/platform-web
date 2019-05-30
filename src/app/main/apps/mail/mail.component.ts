@@ -3,8 +3,8 @@ import {FormControl} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
-import {FuseTranslationLoaderService} from '@fuse/services/translation-loader.service';
+import {FuseSidebarService} from '@fuse/components';
+import {FuseTranslationLoaderService} from '@fuse/core';
 
 import {Mail} from 'app/main/apps/mail/mail.model';
 import {MailService} from 'app/main/apps/mail/mail.service';

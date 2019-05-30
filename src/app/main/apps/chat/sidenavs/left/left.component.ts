@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {ChatService} from 'app/main/apps/chat/chat.service';
 

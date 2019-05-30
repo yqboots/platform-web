@@ -3,8 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, 
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 
-import {FuseConfigService} from '@fuse/services/config.service';
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations, FuseConfigService} from '@fuse/core';
 
 @Component({
     selector: 'reset-password-2',

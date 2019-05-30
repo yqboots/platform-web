@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {AnalyticsDashboardService} from 'app/main/apps/dashboards/analytics/analytics.service';
 

@@ -10,7 +10,7 @@ import {AgmCoreModule} from '@agm/core';
 import {ChartsModule} from 'ng2-charts';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseWidgetModule} from '@fuse/components/widget/widget.module';
 
 import {AnalyticsDashboardComponent} from 'app/main/apps/dashboards/analytics/analytics.component';

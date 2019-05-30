@@ -5,8 +5,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseUtils} from '@fuse/utils';
+import {fuseAnimations, FuseUtils} from '@fuse/core';
 
 import {Product} from 'app/main/apps/e-commerce/product/product.model';
 import {EcommerceProductService} from 'app/main/apps/e-commerce/product/product.service';

@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-
-import {fuseAnimations} from '@fuse/animations';
-
-import {ProfileService} from 'app/main/pages/profile/profile.service';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+
+import {fuseAnimations} from '@fuse/core';
+
+import {ProfileService} from 'app/main/pages/profile/profile.service';
 
 @Component({
     selector: 'profile-photos-videos',

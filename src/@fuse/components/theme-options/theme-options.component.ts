@@ -4,10 +4,9 @@ import {DOCUMENT} from '@angular/common';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseConfigService} from '@fuse/services/config.service';
-import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations, FuseConfigService} from '@fuse/core';
+import {FuseNavigationService} from '../navigation/navigation.service';
+import {FuseSidebarService} from '../sidebar/sidebar.service';
 
 @Component({
     selector: 'fuse-theme-options',

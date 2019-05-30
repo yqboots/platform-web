@@ -6,7 +6,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {FuseSearchBarModule, FuseShortcutsModule} from '@fuse/components';
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {ToolbarComponent} from 'app/layout/components/toolbar/toolbar.component';
 

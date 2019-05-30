@@ -9,9 +9,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/shared.module';
-import {FuseDemoModule} from '@fuse/components/demo/demo.module';
-import {FuseHighlightModule} from '@fuse/components';
+import {FuseSharedModule} from '@fuse/core';
+import {FuseDemoModule, FuseHighlightModule} from '@fuse/components';
 
 import {CardsComponent} from 'app/main/ui/cards/cards.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {InvoiceService} from 'app/main/pages/invoices/invoice.service';
 import {InvoiceModernComponent} from 'app/main/pages/invoices/modern/modern.component';

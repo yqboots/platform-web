@@ -10,9 +10,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
-import {FuseSharedModule} from '@fuse/shared.module';
-import {FuseSidebarModule} from '@fuse/components';
-import {FuseWidgetModule} from '@fuse/components/widget/widget.module';
+import {FuseSharedModule} from '@fuse/core';
+import {FuseSidebarModule, FuseWidgetModule} from '@fuse/components';
 
 import {ProjectDashboardComponent} from 'app/main/apps/dashboards/project/project.component';
 import {ProjectDashboardService} from 'app/main/apps/dashboards/project/project.service';

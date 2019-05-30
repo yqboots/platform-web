@@ -2,9 +2,8 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {filter, takeUntil} from 'rxjs/operators';
 
-import {FuseConfigService} from '@fuse/services/config.service';
-import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {FuseConfigService} from '@fuse/core';
+import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
 
 @Component({
     selector: 'navbar-horizontal-style-1',

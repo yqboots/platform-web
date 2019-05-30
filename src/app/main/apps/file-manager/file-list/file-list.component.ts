@@ -3,8 +3,8 @@ import {DataSource} from '@angular/cdk/collections';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations} from '@fuse/core';
+import {FuseSidebarService} from '@fuse/components';
 
 import {FileManagerService} from 'app/main/apps/file-manager/file-manager.service';
 

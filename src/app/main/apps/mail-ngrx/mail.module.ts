@@ -12,7 +12,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseSidebarModule} from '@fuse/components';
 
 import * as fromGuards from 'app/main/apps/mail-ngrx/store/guards/index';

@@ -11,7 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxDnDModule} from '@swimlane/ngx-dnd';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseSidebarModule} from '@fuse/components';
 
 import {TodoService} from 'app/main/apps/todo/todo.service';

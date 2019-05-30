@@ -11,7 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseConfirmDialogModule, FuseSidebarModule} from '@fuse/components';
 
 import {ContactsComponent} from 'app/main/apps/contacts/contacts.component';

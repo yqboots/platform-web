@@ -17,7 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgxDnDModule} from '@swimlane/ngx-dnd';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseConfirmDialogModule, FuseMaterialColorPickerModule} from '@fuse/components';
 
 import {BoardResolve, ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';

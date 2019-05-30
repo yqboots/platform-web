@@ -2,8 +2,9 @@ import {ChangeDetectorRef, Component, HostBinding, Input, OnDestroy, OnInit} fro
 import {merge, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {FuseNavigationItem} from '@fuse/types';
-import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
+import {FuseNavigationItem} from '@fuse/core';
+
+import {FuseNavigationService} from '../../navigation.service';
 
 @Component({
     selector: 'fuse-nav-vertical-group',

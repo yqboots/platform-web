@@ -1,4 +1,4 @@
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
 
 import {createSelector} from '@ngrx/store';
 import {getMailAppState, MailAppState, MailsState} from 'app/main/apps/mail-ngrx/store/reducers';

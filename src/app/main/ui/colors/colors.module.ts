@@ -4,8 +4,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/shared.module';
-import {FuseDemoModule} from '@fuse/components/demo/demo.module';
+import {FuseSharedModule} from '@fuse/core';
+import {FuseDemoModule} from '@fuse/components';
 
 import {ColorsComponent} from 'app/main/ui/colors/colors.component';
 

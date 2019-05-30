@@ -3,8 +3,8 @@ import {FormControl} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {fuseAnimations} from '@fuse/core';
+import {FuseSidebarService} from '@fuse/components';
 
 import {Todo} from 'app/main/apps/todo/todo.model';
 import {TodoService} from 'app/main/apps/todo/todo.service';

@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 
 import {DocsChangelogComponent} from 'app/main/documentation/changelog/changelog.component';
 

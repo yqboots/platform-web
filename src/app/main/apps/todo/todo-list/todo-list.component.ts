@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {Todo} from 'app/main/apps/todo/todo.model';
 import {TodoService} from 'app/main/apps/todo/todo.service';

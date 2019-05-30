@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
+import {FuseSharedModule} from '@fuse/core';
 import {FuseSidebarModule} from '@fuse/components';
-import {FuseSharedModule} from '@fuse/shared.module';
 
 import {ChatPanelModule} from 'app/layout/components/chat-panel/chat-panel.module';
 import {ContentModule} from 'app/layout/components/content/content.module';

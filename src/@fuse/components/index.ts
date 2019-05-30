@@ -10,3 +10,8 @@ export * from './shortcuts/shortcuts.module';
 export * from './sidebar/sidebar.module';
 export * from './theme-options/theme-options.module';
 export * from './widget/widget.module';
+
+export * from './confirm-dialog/confirm-dialog.component';
+export * from './navigation/navigation.service';
+export * from './sidebar/sidebar.service';
+

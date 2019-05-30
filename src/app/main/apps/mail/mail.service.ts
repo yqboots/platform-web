@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {BehaviorSubject, Observable} from 'rxjs';
 
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
 
 import {Mail} from 'app/main/apps/mail/mail.model';
 

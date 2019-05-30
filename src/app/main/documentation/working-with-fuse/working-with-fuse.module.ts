@@ -3,7 +3,7 @@ import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule} from '@fuse/components';
 
 import {DocsWorkingWithFuseServerComponent} from 'app/main/documentation/working-with-fuse/server/server.component';

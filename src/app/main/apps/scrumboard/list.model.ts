@@ -1,4 +1,4 @@
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
 
 export class List {
     id: string;

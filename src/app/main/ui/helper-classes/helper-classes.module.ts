@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule} from '@fuse/components';
 
 import {HelperClassesComponent} from 'app/main/ui/helper-classes/helper-classes.component';

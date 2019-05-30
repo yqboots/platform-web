@@ -5,8 +5,8 @@ import {DataSource} from '@angular/cdk/collections';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
-import {FuseConfirmDialogComponent} from '@fuse/components/confirm-dialog/confirm-dialog.component';
+import {fuseAnimations} from '@fuse/core';
+import {FuseConfirmDialogComponent} from '@fuse/components';
 
 import {ContactsService} from 'app/main/apps/contacts/contacts.service';
 import {ContactsContactFormDialogComponent} from 'app/main/apps/contacts/contact-form/contact-form.component';

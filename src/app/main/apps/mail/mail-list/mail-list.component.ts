@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {Mail} from 'app/main/apps/mail/mail.model';
 import {MailService} from 'app/main/apps/mail/mail.service';

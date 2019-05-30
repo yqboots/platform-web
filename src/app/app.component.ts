@@ -5,11 +5,11 @@ import {TranslateService} from '@ngx-translate/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {FuseConfigService} from '@fuse/services/config.service';
+import {FuseConfigService} from '@fuse/core';
 import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
 import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
-import {FuseSplashScreenService} from '@fuse/services/splash-screen.service';
-import {FuseTranslationLoaderService} from '@fuse/services/translation-loader.service';
+import {FuseSplashScreenService} from '@fuse/core/services/splash-screen.service';
+import {FuseTranslationLoaderService} from '@fuse/core';
 
 import {navigation} from 'app/navigation/navigation';
 import {locale as navigationEnglish} from 'app/navigation/i18n/en';

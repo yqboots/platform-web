@@ -13,7 +13,7 @@ import {ColorPickerModule} from 'ngx-color-picker';
 import {CalendarModule as AngularCalendarModule, DateAdapter} from 'angular-calendar';
 import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 
-import {FuseSharedModule} from '@fuse/shared.module';
+import {FuseSharedModule} from '@fuse/core';
 import {FuseConfirmDialogModule} from '@fuse/components';
 
 import {CalendarComponent} from 'app/main/apps/calendar/calendar.component';

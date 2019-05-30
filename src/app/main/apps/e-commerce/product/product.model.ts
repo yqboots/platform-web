@@ -1,6 +1,6 @@
 import {MatChipInputEvent} from '@angular/material/chips';
 
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
 
 export class Product {
     id: string;

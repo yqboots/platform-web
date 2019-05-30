@@ -1,4 +1,4 @@
-import {FuseConfig} from '@fuse/types';
+import {FuseConfig} from '@fuse/core/types';
 
 /**
  * Default Fuse Configuration

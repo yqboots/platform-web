@@ -11,8 +11,8 @@ import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
-import {FuseTranslationLoaderService} from '@fuse/services/translation-loader.service';
+import {FuseTranslationLoaderService} from '@fuse/core';
+import {FuseSidebarService} from '@fuse/components';
 
 import {Mail} from 'app/main/apps/mail-ngrx/mail.model';
 import {MailNgrxService} from 'app/main/apps/mail-ngrx/mail.service';

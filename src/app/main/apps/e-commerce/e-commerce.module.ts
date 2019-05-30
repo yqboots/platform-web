@@ -16,8 +16,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {AgmCoreModule} from '@agm/core';
 
-import {FuseSharedModule} from '@fuse/shared.module';
-import {FuseWidgetModule} from '@fuse/components/widget/widget.module';
+import {FuseSharedModule} from '@fuse/core';
+import {FuseWidgetModule} from '@fuse/components';
 
 import {EcommerceProductsComponent} from 'app/main/apps/e-commerce/products/products.component';
 import {EcommerceProductsService} from 'app/main/apps/e-commerce/products/products.service';

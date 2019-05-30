@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
 
 import {FaqService} from 'app/main/pages/faq/faq.service';
 

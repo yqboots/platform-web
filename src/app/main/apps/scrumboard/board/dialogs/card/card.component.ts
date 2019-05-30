@@ -4,8 +4,8 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog
 import {MatMenuTrigger} from '@angular/material/menu';
 import {Subject} from 'rxjs';
 
-import {FuseConfirmDialogComponent} from '@fuse/components/confirm-dialog/confirm-dialog.component';
-import {FuseUtils} from '@fuse/utils';
+import {FuseUtils} from '@fuse/core';
+import {FuseConfirmDialogComponent} from '@fuse/components';
 
 import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
 import {takeUntil} from 'rxjs/operators';

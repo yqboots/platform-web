@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/animations';
+import {fuseAnimations} from '@fuse/core';
 
 import {ScrumboardService} from 'app/main/apps/scrumboard/scrumboard.service';
 import {Board} from 'app/main/apps/scrumboard/board.model';

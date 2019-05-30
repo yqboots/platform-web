@@ -5,9 +5,8 @@ import {delay, filter, take, takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {FuseConfigService} from '@fuse/services/config.service';
-import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {FuseConfigService} from '@fuse/core';
+import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
 
 @Component({
     selector: 'navbar-vertical-style-2',

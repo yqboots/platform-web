@@ -1,9 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/shared.module';
-import {FuseHighlightModule} from '@fuse/components/index';
-import {FuseWidgetModule} from '@fuse/components/widget/widget.module';
+import {FuseSharedModule} from '@fuse/core';
+import {FuseHighlightModule, FuseWidgetModule} from '@fuse/components';
 
 import {MaterialModule} from 'app/main/angular-material-elements/material.module';
 import {EXAMPLE_LIST} from 'app/main/angular-material-elements/example-components';
