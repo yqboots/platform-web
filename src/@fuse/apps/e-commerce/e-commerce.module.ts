@@ -14,7 +14,6 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import {AgmCoreModule} from '@agm/core';
 
 import {FuseSharedModule} from '@fuse/core';
 import {FuseWidgetModule} from '@fuse/components';
@@ -91,9 +90,6 @@ const routes: Routes = [
         MatTabsModule,
 
         NgxChartsModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyD81ecsCj4yYpcXSLFcYU97PvRsE_X8Bx8'
-        }),
 
         FuseSharedModule,
         FuseWidgetModule

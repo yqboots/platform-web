@@ -97,15 +97,8 @@
                                         </mat-expansion-panel-header>
 
                                         <div fxFlex fxLayout="column">
-                                            <div class="address h4 py-24">{{order.customer.shippingAddress.address}}
-                                            </div>
-                                            <agm-map class="w-100-p h-400" [zoom]="15"
-                                                     [latitude]="order.customer.shippingAddress.lat"
-                                                     [longitude]="order.customer.shippingAddress.lng">
-                                                <agm-marker [latitude]="order.customer.shippingAddress.lat"
-                                                            [longitude]="order.customer.shippingAddress.lng">
-                                                </agm-marker>
-                                            </agm-map>
+                                            <div
+                                                class="address h4 py-24">{{order.customer.shippingAddress.address}}</div>
                                         </div>
 
                                     </mat-expansion-panel>
@@ -119,13 +112,6 @@
                                         <div fxFlex fxLayout="column">
                                             <div class="address h4 py-24">{{order.customer.invoiceAddress.address}}
                                             </div>
-                                            <agm-map class="w-100-p h-400" [zoom]="15"
-                                                     [latitude]="order.customer.invoiceAddress.lat"
-                                                     [longitude]="order.customer.invoiceAddress.lng">
-                                                <agm-marker [latitude]="order.customer.invoiceAddress.lat"
-                                                            [longitude]="order.customer.invoiceAddress.lng">
-                                                </agm-marker>
-                                            </agm-map>
                                         </div>
 
                                     </mat-expansion-panel>

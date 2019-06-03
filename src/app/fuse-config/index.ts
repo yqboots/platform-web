@@ -1,4 +1,6 @@
 import {FuseConfig} from '@fuse/core/types';
+import {environment} from 'environments/environment';
+import {Routes} from '@angular/router';
 
 /**
  * Default Fuse Configuration
@@ -7,7 +9,6 @@ import {FuseConfig} from '@fuse/core/types';
  * changed per component basis. See `app/main/pages/authentication/login/login.component.ts`
  * constructor method to learn more about changing these options per component basis.
  */
-
 export const fuseConfig: FuseConfig = {
     // Color themes can be defined in src/app/app.theme.scss
     colorTheme: 'theme-default',
@@ -41,3 +42,38 @@ export const fuseConfig: FuseConfig = {
         }
     }
 };
+
+const _appRoutes: Routes = [];
+if (environment.production) {
+    _appRoutes.push({
+        path: 'apps',
+        loadChildren: () => import('@fuse/apps/apps.module').then(m => m.AppsModule)
+    });
+} else {
+    _appRoutes.push({
+        path: 'apps',
+        loadChildren: () => import('@fuse/apps/apps.module').then(m => m.AppsModule)
+    });
+    _appRoutes.push({
+        path: 'pages',
+        loadChildren: () => import('@showcase/pages/pages.module').then(m => m.PagesModule)
+    });
+    _appRoutes.push({
+        path: 'ui',
+        loadChildren: () => import('@showcase/ui/ui.module').then(m => m.UIModule)
+    });
+    _appRoutes.push({
+        path: 'angular-material-elements',
+        loadChildren: () => import('@showcase/angular-material-elements/angular-material-elements.module').then(m => m.AngularMaterialElementsModule)
+    });
+    _appRoutes.push({
+        path: 'documentation',
+        loadChildren: () => import('@doc/documentation.module').then(m => m.DocumentationModule)
+    });
+}
+_appRoutes.push({
+    path: '**',
+    redirectTo: 'apps/dashboards/analytics'
+});
+
+export const appRoutes = _appRoutes;
