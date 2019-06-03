@@ -27,11 +27,11 @@ const appRoutes: Routes = [
     },
     {
         path: 'pages',
-        loadChildren: './main/pages/pages.module#PagesModule'
+        loadChildren: () => import('@showcase/pages/pages.module').then(m => m.PagesModule)
     },
     {
         path: 'ui',
-        loadChildren: './main/ui/ui.module#UIModule'
+        loadChildren: () => import('@showcase/ui/ui.module').then(m => m.UIModule)
     },
     {
         path: 'documentation',
@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'angular-material-elements',
-        loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
+        loadChildren: () => import('@showcase/angular-material-elements/angular-material-elements.module').then(m => m.AngularMaterialElementsModule)
     },
     {
         path: '**',
