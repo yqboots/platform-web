@@ -23,7 +23,7 @@ import {LayoutModule} from 'app/layout/layout.module';
 const appRoutes: Routes = [
     {
         path: 'apps',
-        loadChildren: './main/apps/apps.module#AppsModule'
+        loadChildren: () => import('@fuse/apps/apps.module').then(m => m.AppsModule)
     },
     {
         path: 'pages',
