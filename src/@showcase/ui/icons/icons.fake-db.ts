@@ -3891,9 +3891,9 @@ export class IconsFakeDb {
             'tags': ['sd_storage']
         },
         {
-            'name': 'search',
-            'ligature': 'search',
-            'tags': ['search']
+            'name': 'search.fake-db.ts',
+            'ligature': 'search.fake-db.ts',
+            'tags': ['search.fake-db.ts']
         },
         {
             'name': 'security',

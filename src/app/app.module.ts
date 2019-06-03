@@ -20,6 +20,8 @@ import {AppComponent} from 'app/app.component';
 import {AppStoreModule} from 'app/store/store.module';
 import {LayoutModule} from 'app/layout/layout.module';
 
+import {environment} from 'environments/environment';
+
 @NgModule({
     declarations: [
         AppComponent
@@ -31,10 +33,10 @@ import {LayoutModule} from 'app/layout/layout.module';
         RouterModule.forRoot(appRoutes),
 
         TranslateModule.forRoot(),
-        InMemoryWebApiModule.forRoot(FakeDbService, {
+        !environment.production ? InMemoryWebApiModule.forRoot(FakeDbService, {
             delay: 0,
             passThruUnknownUrl: true
-        }),
+        }) : [],
 
         // Material moment date module
         MatMomentDateModule,
