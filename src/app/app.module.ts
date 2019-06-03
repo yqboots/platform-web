@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'documentation',
-        loadChildren: './main/documentation/documentation.module#DocumentationModule'
+        loadChildren: () => import('@doc/documentation.module').then(m => m.DocumentationModule)
     },
     {
         path: 'angular-material-elements',

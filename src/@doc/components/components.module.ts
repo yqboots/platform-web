@@ -11,15 +11,15 @@ import {
     FuseMaterialColorPickerModule,
     FuseWidgetModule
 } from '@fuse/components';
-import {DocsComponentsCountdownComponent} from 'app/main/documentation/components/countdown/countdown.component';
-import {DocsComponentsHighlightComponent} from 'app/main/documentation/components/highlight/highlight.component';
-import {DocsComponentsMaterialColorPickerComponent} from 'app/main/documentation/components/material-color-picker/material-color-picker.component';
-import {DocsComponentsNavigationComponent} from 'app/main/documentation/components/navigation/navigation.component';
-import {DocsComponentsProgressBarComponent} from 'app/main/documentation/components/progress-bar/progress-bar.component';
-import {DocsComponentsSearchBarComponent} from 'app/main/documentation/components/search-bar/search-bar.component';
-import {DocsComponentsSidebarComponent} from 'app/main/documentation/components/sidebar/sidebar.component';
-import {DocsComponentsShortcutsComponent} from 'app/main/documentation/components/shortcuts/shortcuts.component';
-import {DocsComponentsWidgetComponent} from 'app/main/documentation/components/widget/widget.component';
+import {DocsComponentsCountdownComponent} from '@doc/components/countdown/countdown.component';
+import {DocsComponentsHighlightComponent} from '@doc/components/highlight/highlight.component';
+import {DocsComponentsMaterialColorPickerComponent} from '@doc/components/material-color-picker/material-color-picker.component';
+import {DocsComponentsNavigationComponent} from '@doc/components/navigation/navigation.component';
+import {DocsComponentsProgressBarComponent} from '@doc/components/progress-bar/progress-bar.component';
+import {DocsComponentsSearchBarComponent} from '@doc/components/search-bar/search-bar.component';
+import {DocsComponentsSidebarComponent} from '@doc/components/sidebar/sidebar.component';
+import {DocsComponentsShortcutsComponent} from '@doc/components/shortcuts/shortcuts.component';
+import {DocsComponentsWidgetComponent} from '@doc/components/widget/widget.component';
 
 const routes = [
     {

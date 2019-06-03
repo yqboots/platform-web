@@ -21,6 +21,12 @@
         "paths": {
             "@fuse": [
                 "@fuse/"
+            ],
+            "@docs": [
+                "@doc/"
+            ],
+            "@showcase": [
+                "@showcase/"
             ]
         }
     }

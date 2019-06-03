@@ -3,10 +3,10 @@ import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 
 import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule} from '@fuse/components/index';
+import {FuseHighlightModule} from '@fuse/components';
 
-import {FuseConfigServiceDocsComponent} from 'app/main/documentation/services/fuse-config/fuse-config.component';
-import {FuseSplashScreenServiceDocsComponent} from 'app/main/documentation/services/fuse-splash-screen/fuse-splash-screen.component';
+import {FuseConfigServiceDocsComponent} from '@doc/services/fuse-config/fuse-config.component';
+import {FuseSplashScreenServiceDocsComponent} from '@doc/services/fuse-splash-screen/fuse-splash-screen.component';
 
 const routes = [
     {

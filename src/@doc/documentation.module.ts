@@ -5,7 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import {FuseSharedModule} from '@fuse/core';
 
-import {DocsChangelogComponent} from 'app/main/documentation/changelog/changelog.component';
+import {DocsChangelogComponent} from '@doc/changelog/changelog.component';
 
 const routes: Routes = [
     {
@@ -14,27 +14,27 @@ const routes: Routes = [
     },
     {
         path: 'getting-started',
-        loadChildren: './getting-started/getting-started.module#GettingStartedModule'
+        loadChildren: () => import('@doc/getting-started/getting-started.module').then(m => m.GettingStartedModule)
     },
     {
         path: 'working-with-fuse',
-        loadChildren: './working-with-fuse/working-with-fuse.module#WorkingWithFuseModule'
+        loadChildren: () => import('@doc/working-with-fuse/working-with-fuse.module').then(m => m.WorkingWithFuseModule)
     },
     {
         path: 'components',
-        loadChildren: './components/components.module#ComponentsModule'
+        loadChildren: () => import('@doc/components/components.module').then(m => m.ComponentsModule)
     },
     {
         path: 'components-third-party',
-        loadChildren: './components-third-party/components-third-party.module#ComponentsThirdPartyModule'
+        loadChildren: () => import('@doc/components-third-party/components-third-party.module').then(m => m.ComponentsThirdPartyModule)
     },
     {
         path: 'directives',
-        loadChildren: './directives/directives.module#DirectivesModule'
+        loadChildren: () => import('@doc/directives/directives.module').then(m => m.DirectivesModule)
     },
     {
         path: 'services',
-        loadChildren: './services/services.module#ServicesModule'
+        loadChildren: () => import('@doc/services/services.module').then(m => m.ServicesModule)
     }
 ];
 

@@ -7,8 +7,8 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 import {FuseSharedModule} from '@fuse/core';
 
-import {GoogleMapsModule} from 'app/main/documentation/components-third-party/google-maps/google-maps.module';
-import {DocsComponentsThirdPartyNgxDatatableComponent} from 'app/main/documentation/components-third-party/datatable/ngx-datatable.component';
+import {GoogleMapsModule} from '@doc/components-third-party/google-maps/google-maps.module';
+import {DocsComponentsThirdPartyNgxDatatableComponent} from '@doc/components-third-party/datatable/ngx-datatable.component';
 
 const routes = [
     {

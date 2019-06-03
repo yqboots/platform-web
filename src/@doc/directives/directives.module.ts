@@ -6,10 +6,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule} from '@fuse/components';
 
-import {DocsDirectivesFuseIfOnDomComponent} from 'app/main/documentation/directives/fuseIfOnDom/fuse-if-on-dom.component';
-import {DocsDirectivesFuseInnerScrollComponent} from 'app/main/documentation/directives/fuseInnerScroll/fuse-inner-scroll.component';
-import {DocsDirectivesFuseMatSidenavComponent} from 'app/main/documentation/directives/fuseMatSidenav/fuse-mat-sidenav.component';
-import {DocsDirectivesFusePerfectScrollbarComponent} from 'app/main/documentation/directives/fusePerfectScrollbar/fuse-perfect-scrollbar.component';
+import {DocsDirectivesFuseIfOnDomComponent} from '@doc/directives/fuseIfOnDom/fuse-if-on-dom.component';
+import {DocsDirectivesFuseInnerScrollComponent} from '@doc/directives/fuseInnerScroll/fuse-inner-scroll.component';
+import {DocsDirectivesFuseMatSidenavComponent} from '@doc/directives/fuseMatSidenav/fuse-mat-sidenav.component';
+import {DocsDirectivesFusePerfectScrollbarComponent} from '@doc/directives/fusePerfectScrollbar/fuse-perfect-scrollbar.component';
 
 const routes = [
     {

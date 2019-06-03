@@ -6,14 +6,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule} from '@fuse/components';
 
-import {DocsWorkingWithFuseServerComponent} from 'app/main/documentation/working-with-fuse/server/server.component';
-import {DocsWorkingWithFuseProductionComponent} from 'app/main/documentation/working-with-fuse/production/production.component';
-import {DocsWorkingWithFuseDirectoryStructureComponent} from 'app/main/documentation/working-with-fuse/directory-structure/directory-structure.component';
-import {DocsWorkingWithFuseUpdatingFuseComponent} from 'app/main/documentation/working-with-fuse/updating-fuse/updating-fuse.component';
-import {DocsWorkingWithFuseMultiLanguageComponent} from 'app/main/documentation/working-with-fuse/multi-language/multi-language.component';
-import {DocsWorkingWithFuseMaterialThemingComponent} from 'app/main/documentation/working-with-fuse/material-theming/material-theming.component';
-import {DocsWorkingWithFuseThemeLayoutsComponent} from 'app/main/documentation/working-with-fuse/theme-layouts/theme-layouts.component';
-import {DocsWorkingWithFusePageLayoutsComponent} from 'app/main/documentation/working-with-fuse/page-layouts/page-layouts.component';
+import {DocsWorkingWithFuseServerComponent} from '@doc/working-with-fuse/server/server.component';
+import {DocsWorkingWithFuseProductionComponent} from '@doc/working-with-fuse/production/production.component';
+import {DocsWorkingWithFuseDirectoryStructureComponent} from '@doc/working-with-fuse/directory-structure/directory-structure.component';
+import {DocsWorkingWithFuseUpdatingFuseComponent} from '@doc/working-with-fuse/updating-fuse/updating-fuse.component';
+import {DocsWorkingWithFuseMultiLanguageComponent} from '@doc/working-with-fuse/multi-language/multi-language.component';
+import {DocsWorkingWithFuseMaterialThemingComponent} from '@doc/working-with-fuse/material-theming/material-theming.component';
+import {DocsWorkingWithFuseThemeLayoutsComponent} from '@doc/working-with-fuse/theme-layouts/theme-layouts.component';
+import {DocsWorkingWithFusePageLayoutsComponent} from '@doc/working-with-fuse/page-layouts/page-layouts.component';
 
 const routes = [
     {
