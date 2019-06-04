@@ -47,12 +47,12 @@ const _appRoutes: Routes = [];
 if (environment.production) {
     _appRoutes.push({
         path: 'apps',
-        loadChildren: () => import('@fuse/apps/apps.module').then(m => m.AppsModule)
+        loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
 } else {
     _appRoutes.push({
         path: 'apps',
-        loadChildren: () => import('@fuse/apps/apps.module').then(m => m.AppsModule)
+        loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
     _appRoutes.push({
         path: 'pages',

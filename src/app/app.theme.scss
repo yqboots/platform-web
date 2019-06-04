@@ -81,18 +81,18 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
-@import "src/@fuse/apps/academy/academy.theme";
-@import "src/@fuse/apps/calendar/calendar.theme";
-@import "src/@fuse/apps/chat/chat.theme";
-@import "src/@fuse/apps/contacts/contacts.theme";
-@import "src/@fuse/apps/dashboards/project/project.theme";
-@import "src/@fuse/apps/e-commerce/orders/orders.theme";
-@import "src/@fuse/apps/e-commerce/products/products.theme";
-@import "src/@fuse/apps/file-manager/file-manager.theme";
-@import "src/@fuse/apps/mail/mail.theme";
-@import "src/@fuse/apps/mail-ngrx/mail.theme";
-@import "src/@fuse/apps/scrumboard/scrumboard.theme";
-@import "src/@fuse/apps/todo/todo.theme";
+@import "src/@fuse/extensions/academy/academy.theme";
+@import "src/@fuse/extensions/calendar/calendar.theme";
+@import "src/@fuse/extensions/chat/chat.theme";
+@import "src/@fuse/extensions/contacts/contacts.theme";
+@import "src/@fuse/extensions/dashboards/project/project.theme";
+@import "src/@fuse/extensions/e-commerce/orders/orders.theme";
+@import "src/@fuse/extensions/e-commerce/products/products.theme";
+@import "src/@fuse/extensions/file-manager/file-manager.theme";
+@import "src/@fuse/extensions/mail/mail.theme";
+@import "src/@fuse/extensions/mail-ngrx/mail.theme";
+@import "src/@fuse/extensions/scrumboard/scrumboard.theme";
+@import "src/@fuse/extensions/todo/todo.theme";
 
 @import "src/@showcase/pages/authentication/login/login.theme";
 @import "src/@showcase/pages/authentication/login-2/login-2.theme";
