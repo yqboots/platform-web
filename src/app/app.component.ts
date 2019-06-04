@@ -5,15 +5,14 @@ import {TranslateService} from '@ngx-translate/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {FuseConfigService} from '@fuse/core';
+import {FuseConfigService, FuseTranslationLoaderService} from '@fuse/core';
 import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
 import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
 import {FuseSplashScreenService} from '@fuse/core/services/splash-screen.service';
-import {FuseTranslationLoaderService} from '@fuse/core';
 
 import {navigation} from 'app/navigation/navigation';
 import {locale as navigationEnglish} from 'app/navigation/i18n/en';
-import {locale as navigationTurkish} from 'app/navigation/i18n/tr';
+import {locale as navigationTurkish} from 'app/navigation/i18n/zh';
 
 @Component({
     selector: 'app',
@@ -59,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this._fuseNavigationService.setCurrentNavigation('main');
 
         // Add languages
-        this._translateService.addLangs(['en', 'tr']);
+        this._translateService.addLangs(['en', 'zh']);
 
         // Set the default language
         this._translateService.setDefaultLang('en');
@@ -77,7 +76,7 @@ export class AppComponent implements OnInit, OnDestroy {
          */
 
         /**
-         * If you are using a language other than the default one, i.e. Turkish in this case,
+         * If you are using a language other than the default one, i.e. Chinese in this case,
          * you may encounter an issue where some of the components are not actually being
          * translated when your app first initialized.
          *
@@ -86,16 +85,14 @@ export class AppComponent implements OnInit, OnDestroy {
          * service.
          **/
 
-        // Set the default language to 'en' and then back to 'tr'.
+        // Set the default language to 'en' and then back to 'zh'.
         // '.use' cannot be used here as ngxTranslate won't switch to a language that's already
         // been selected and there is no way to force it, so we overcome the issue by switching
         // the default language back and forth.
-        /**
-         setTimeout(() => {
+        setTimeout(() => {
             this._translateService.setDefaultLang('en');
-            this._translateService.setDefaultLang('tr');
-         });
-         */
+            this._translateService.setDefaultLang('zh');
+        });
 
         /**
          * ----------------------------------------------------------------------------------------------------

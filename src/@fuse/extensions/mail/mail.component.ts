@@ -10,7 +10,7 @@ import {Mail} from '@fuse/extensions/mail/mail.model';
 import {MailService} from '@fuse/extensions/mail/mail.service';
 
 import {locale as english} from '@fuse/extensions/mail//i18n/en';
-import {locale as turkish} from '@fuse/extensions/mail//i18n/tr';
+import {locale as chinese} from '@fuse/extensions/mail//i18n/zh';
 
 @Component({
     selector: 'mail',
@@ -43,7 +43,7 @@ export class MailComponent implements OnInit, OnDestroy {
         private _fuseTranslationLoaderService: FuseTranslationLoaderService
     ) {
         // Load the translations
-        this._fuseTranslationLoaderService.loadTranslations(english, turkish);
+        this._fuseTranslationLoaderService.loadTranslations(english, chinese);
 
         // Set the defaults
         this.searchInput = new FormControl('');

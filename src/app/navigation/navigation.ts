@@ -1,6 +1,8 @@
 import {FuseNavigation} from '@fuse/core';
 
-export const navigation: FuseNavigation[] = [
+import {environment} from 'environments/environment';
+
+export const navigation: FuseNavigation[] = environment.production ? [] : [
     {
         id: 'applications',
         title: 'Applications',

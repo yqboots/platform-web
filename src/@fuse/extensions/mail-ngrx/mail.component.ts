@@ -19,7 +19,7 @@ import {MailNgrxService} from '@fuse/extensions/mail-ngrx/mail.service';
 import * as fromStore from '@fuse/extensions/mail-ngrx/store';
 
 import {locale as english} from '@fuse/extensions/mail-ngrx/i18n/en';
-import {locale as turkish} from '@fuse/extensions/mail-ngrx/i18n/tr';
+import {locale as chinese} from '@fuse/extensions/mail-ngrx/i18n/zh';
 
 @Component({
     selector: 'mail-ngrx',
@@ -59,7 +59,7 @@ export class MailNgrxComponent implements OnInit, OnDestroy {
     ) {
         // Set the defaults
         this.searchInput = new FormControl('');
-        this._fuseTranslationLoaderService.loadTranslations(english, turkish);
+        this._fuseTranslationLoaderService.loadTranslations(english, chinese);
         this.currentMail$ = this._store.pipe(select(fromStore.getCurrentMail));
         this.mails$ = this._store.pipe(select(fromStore.getMailsArr));
         this.folders$ = this._store.pipe(select(fromStore.getFoldersArr));
