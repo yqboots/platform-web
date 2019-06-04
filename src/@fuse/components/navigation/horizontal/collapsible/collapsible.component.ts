@@ -5,17 +5,17 @@ import {takeUntil} from 'rxjs/operators';
 import {fuseAnimations, FuseConfigService} from '@fuse/core';
 
 @Component({
-    selector: 'fuse-nav-horizontal-collapsable',
-    templateUrl: './collapsable.component.html',
-    styleUrls: ['./collapsable.component.scss'],
+    selector: 'fuse-nav-horizontal-collapsible',
+    templateUrl: './collapsible.component.html',
+    styleUrls: ['./collapsible.component.scss'],
     animations: fuseAnimations
 })
-export class FuseNavHorizontalCollapsableComponent implements OnInit, OnDestroy {
+export class FuseNavHorizontalCollapsibleComponent implements OnInit, OnDestroy {
     fuseConfig: any;
     isOpen = false;
 
     @HostBinding('class')
-    classes = 'nav-collapsable nav-item';
+    classes = 'nav-collapsible nav-item';
 
     @Input()
     item: any;

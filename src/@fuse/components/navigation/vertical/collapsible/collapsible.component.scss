@@ -20,7 +20,7 @@
 
     .nav-link {
 
-        .collapsable-arrow {
+        .collapsible-arrow {
             transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
             transform: rotate(0);
         }
@@ -34,7 +34,7 @@
 
         > .nav-link {
 
-            .collapsable-arrow {
+            .collapsible-arrow {
                 transform: rotate(90deg);
             }
         }

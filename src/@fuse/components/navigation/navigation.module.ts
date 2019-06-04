@@ -8,10 +8,10 @@ import {TranslateModule} from '@ngx-translate/core';
 
 import {FuseNavigationComponent} from './navigation.component';
 import {FuseNavVerticalItemComponent} from './vertical/item/item.component';
-import {FuseNavVerticalCollapsableComponent} from './vertical/collapsable/collapsable.component';
+import {FuseNavVerticalCollapsibleComponent} from './vertical/collapsible/collapsible.component';
 import {FuseNavVerticalGroupComponent} from './vertical/group/group.component';
 import {FuseNavHorizontalItemComponent} from './horizontal/item/item.component';
-import {FuseNavHorizontalCollapsableComponent} from './horizontal/collapsable/collapsable.component';
+import {FuseNavHorizontalCollapsibleComponent} from './horizontal/collapsible/collapsible.component';
 
 @NgModule({
     imports: [
@@ -30,9 +30,9 @@ import {FuseNavHorizontalCollapsableComponent} from './horizontal/collapsable/co
         FuseNavigationComponent,
         FuseNavVerticalGroupComponent,
         FuseNavVerticalItemComponent,
-        FuseNavVerticalCollapsableComponent,
+        FuseNavVerticalCollapsibleComponent,
         FuseNavHorizontalItemComponent,
-        FuseNavHorizontalCollapsableComponent
+        FuseNavHorizontalCollapsibleComponent
     ]
 })
 export class FuseNavigationModule {

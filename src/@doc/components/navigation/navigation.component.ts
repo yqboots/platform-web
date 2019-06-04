@@ -63,7 +63,7 @@ export class DocsComponentsNavigationComponent {
         };
 
         this._fuseNavigationService.updateNavigationItem('calendar', {
-            type: 'collapsable',
+            type: 'collapsible',
             children: [
                 newNavItem
             ]

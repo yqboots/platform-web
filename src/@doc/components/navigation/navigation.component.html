@@ -20,7 +20,7 @@
 
         <p>
             <code>fuse-navigation</code>
-            is a custom built Fuse component allows you to create a multi-level collapsable
+            is a custom built Fuse component allows you to create a multi-level collapsible
             navigation. It has built-in support for translations using
             <b>ngx-translate</b>
             module.
@@ -41,7 +41,7 @@
                 <code>&lt;fuse-navigation&gt;&lt;/fuse-navigation&gt;</code>
                 uses a json file to populate
                 the entire navigation. It supports three different navigation items;<b>Group</b>,
-                <b>Collapsable</b>
+                <b>Collapsible</b>
                 and<b>Item</b>. These items can be mixed and matched to create unique and complex
                 navigation layouts.
             </p>
@@ -129,7 +129,7 @@
             </fuse-highlight>
         </p>
 
-        <div class="section-title">Collapsable</div>
+        <div class="section-title">Collapsible</div>
         <p class="py-8">
             <fuse-highlight lang="json">
                 <textarea #source>
@@ -137,7 +137,7 @@
                     'id'       : 'datatables',
                     'title'    : 'Datatables',
                     'translate': 'NAV.DATATABLES',
-                    'type'     : 'collapsable',
+                    'type'     : 'collapsible',
                     'icon'     : 'border_all',
                     'children' : [
                     {
@@ -268,7 +268,7 @@
                     };
 
                         this._fuseNavigationService.updateNavigationItem('calendar', {
-                    type: 'collapsable',
+                    type: 'collapsible',
                     children: [
                     newNavItem
                     ]

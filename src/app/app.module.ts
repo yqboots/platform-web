@@ -13,7 +13,7 @@ import 'hammerjs';
 import {FuseModule, FuseSharedModule} from '@fuse/core';
 import {FuseProgressBarModule, FuseSidebarModule, FuseThemeOptionsModule} from '@fuse/components';
 
-import {appRoutes, fuseConfig} from 'app/fuse-config';
+import {appRoutes, fuseConfig} from 'app/config';
 
 import {FakeDbService} from 'app/fake-db/fake-db.service';
 import {AppComponent} from 'app/app.component';

@@ -174,7 +174,7 @@ export class FuseNavigationService {
                 continue;
             }
 
-            if (item.type === 'collapsable' || item.type === 'group') {
+            if (item.type === 'collapsible' || item.type === 'group') {
                 if (item.children) {
                     this.getFlatNavigation(item.children, flatNavigation);
                 }

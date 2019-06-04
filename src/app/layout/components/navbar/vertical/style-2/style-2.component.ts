@@ -53,7 +53,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
 
         this._perfectScrollbarDirective = theDirective;
 
-        // Update the scrollbar on collapsable item toggle
+        // Update the scrollbar on collapsible item toggle
         this._fuseNavigationService.onItemCollapseToggled
             .pipe(
                 delay(500),

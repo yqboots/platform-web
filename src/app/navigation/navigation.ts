@@ -12,7 +12,7 @@ export const navigation: FuseNavigation[] = [
                 id: 'dashboards',
                 title: 'Dashboards',
                 translate: 'NAV.DASHBOARDS',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'dashboard',
                 children: [
                     {
@@ -41,7 +41,7 @@ export const navigation: FuseNavigation[] = [
                 id: 'e-commerce',
                 title: 'E-Commerce',
                 translate: 'NAV.ECOMMERCE',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'shopping_cart',
                 children: [
                     {
@@ -171,7 +171,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'authentication',
                 title: 'Authentication',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'lock',
                 badge: {
                     title: '10',
@@ -251,7 +251,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'errors',
                 title: 'Errors',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'error',
                 children: [
                     {
@@ -271,7 +271,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'invoice',
                 title: 'Invoice',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'receipt',
                 children: [
                     {
@@ -298,7 +298,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'pricing',
                 title: 'Pricing',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'attach_money',
                 children: [
                     {
@@ -331,7 +331,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'search',
                 title: 'Search',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'search',
                 children: [
                     {
@@ -408,13 +408,13 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'page-layouts',
                 title: 'Page Layouts',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'view_quilt',
                 children: [
                     {
                         id: 'carded',
                         title: 'Carded',
-                        type: 'collapsable',
+                        type: 'collapsible',
                         badge: {
                             title: '12',
                             bg: '#525e8a',
@@ -498,7 +498,7 @@ export const navigation: FuseNavigation[] = [
                     {
                         id: 'simple',
                         title: 'Simple',
-                        type: 'collapsable',
+                        type: 'collapsible',
                         badge: {
                             title: '10',
                             bg: '#525e8a',
@@ -593,7 +593,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'form-controls',
                 title: 'Form Controls',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -655,7 +655,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'navigation',
                 title: 'Navigation',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -681,7 +681,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'layout',
                 title: 'Layout',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -755,7 +755,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'buttons-indicators',
                 title: 'Buttons & Indicators',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -805,7 +805,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'popups-modals',
                 title: 'Popups & Modals',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -831,7 +831,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'data-table',
                 title: 'Data table',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'layers',
                 children: [
                     {
@@ -877,7 +877,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'getting-started',
                 title: 'Getting Started',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {
@@ -897,7 +897,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'working-with-fuse',
                 title: 'Working with Fuse',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {
@@ -953,7 +953,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'components',
                 title: 'Components',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {
@@ -1015,13 +1015,13 @@ export const navigation: FuseNavigation[] = [
             {
                 id: '3rd-party-components',
                 title: '3rd Party Components',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {
                         id: 'datatables',
                         title: 'Datatables',
-                        type: 'collapsable',
+                        type: 'collapsible',
                         children: [
                             {
                                 id: 'ngxdatatable',
@@ -1042,7 +1042,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'directives',
                 title: 'Directives',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {
@@ -1074,7 +1074,7 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'services',
                 title: 'Services',
-                type: 'collapsable',
+                type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
                     {

@@ -430,7 +430,7 @@ export class ScrumboardFakeDb {
                 },
                 {
                     'id': 'bad3.51be8ad33acaf.9540ecb37f7e8.6bee596cfe7d3.44c68bee289c4.b96ed0b9f0af7.e14846035',
-                    'name': 'Collapsable navigation',
+                    'name': 'Collapsible navigation',
                     'description': '',
                     'idAttachmentCover': '',
                     'idMembers': [],
@@ -445,7 +445,7 @@ export class ScrumboardFakeDb {
                     'comments': [
                         {
                             'idMember': '36027j1930450d8bf7b10158',
-                            'message': 'I\'m not sure why we re-doing the navigation. The current collapsable navigation works flawlessly.',
+                            'message': 'I\'m not sure why we re-doing the navigation. The current collapsible navigation works flawlessly.',
                             'time': 'now'
                         }
                     ],
