@@ -3,7 +3,7 @@ import {MediaObserver} from '@angular/flex-layout';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations, FuseMatSidenavHelperService} from '@fuse/core';
+import {fuseAnimations, MatSidenavHelperService} from '@fuse/core';
 
 import {ChatService} from '@fuse/extensions/chat/chat.service';
 
@@ -28,12 +28,12 @@ export class ChatChatsSidenavComponent implements OnInit, OnDestroy {
      * Constructor
      *
      * @param {ChatService} _chatService
-     * @param {FuseMatSidenavHelperService} _fuseMatSidenavHelperService
+     * @param {MatSidenavHelperService} _fuseMatSidenavHelperService
      * @param {MediaObserver} _mediaObserver
      */
     constructor(
         private _chatService: ChatService,
-        private _fuseMatSidenavHelperService: FuseMatSidenavHelperService,
+        private _fuseMatSidenavHelperService: MatSidenavHelperService,
         public _mediaObserver: MediaObserver
     ) {
         // Set the defaults

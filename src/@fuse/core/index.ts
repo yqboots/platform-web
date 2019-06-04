@@ -10,5 +10,5 @@ export * from './services';
 export * from './types';
 export * from './utils';
 
-export * from './directives/fuse-mat-sidenav/fuse-mat-sidenav.directive';
+export * from './directives/mat-sidenav/mat-sidenav.directive';
 

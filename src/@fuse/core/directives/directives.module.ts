@@ -1,24 +1,24 @@
 import {NgModule} from '@angular/core';
 
-import {FuseIfOnDomDirective} from './fuse-if-on-dom/fuse-if-on-dom.directive';
-import {FuseInnerScrollDirective} from './fuse-inner-scroll/fuse-inner-scroll.directive';
+import {IfOnDomDirective} from './if-on-dom/if-on-dom.directive';
+import {InnerScrollDirective} from './inner-scroll/inner-scroll.directive';
 import {
-    FuseMatSidenavHelperDirective,
+    MatSidenavHelperDirective,
     FuseMatSidenavTogglerDirective
-} from './fuse-mat-sidenav/fuse-mat-sidenav.directive';
+} from './mat-sidenav/mat-sidenav.directive';
 
 @NgModule({
     declarations: [
-        FuseIfOnDomDirective,
-        FuseInnerScrollDirective,
-        FuseMatSidenavHelperDirective,
+        IfOnDomDirective,
+        InnerScrollDirective,
+        MatSidenavHelperDirective,
         FuseMatSidenavTogglerDirective
     ],
     imports: [],
     exports: [
-        FuseIfOnDomDirective,
-        FuseInnerScrollDirective,
-        FuseMatSidenavHelperDirective,
+        IfOnDomDirective,
+        InnerScrollDirective,
+        MatSidenavHelperDirective,
         FuseMatSidenavTogglerDirective
     ]
 })

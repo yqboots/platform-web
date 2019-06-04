@@ -7,7 +7,7 @@ import {FuseMatchMediaService} from '../../services/match-media.service';
 @Directive({
     selector: '.inner-scroll'
 })
-export class FuseInnerScrollDirective implements OnInit, OnDestroy {
+export class InnerScrollDirective implements OnInit, OnDestroy {
     // Private
     private _parent: any;
     private _grandParent: any;

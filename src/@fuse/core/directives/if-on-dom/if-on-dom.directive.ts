@@ -3,7 +3,7 @@ import {AfterContentChecked, Directive, ElementRef, TemplateRef, ViewContainerRe
 @Directive({
     selector: '[fuseIfOnDom]'
 })
-export class FuseIfOnDomDirective implements AfterContentChecked {
+export class IfOnDomDirective implements AfterContentChecked {
     isCreated: boolean;
 
     /**

@@ -5,12 +5,12 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 import {FuseMatchMediaService} from '../../services';
-import {FuseMatSidenavHelperService} from './fuse-mat-sidenav.service';
+import {MatSidenavHelperService} from './mat-sidenav.service';
 
 @Directive({
     selector: '[fuseMatSidenavHelper]'
 })
-export class FuseMatSidenavHelperDirective implements OnInit, OnDestroy {
+export class MatSidenavHelperDirective implements OnInit, OnDestroy {
     @HostBinding('class.mat-is-locked-open')
     isLockedOpen: boolean;
 
@@ -27,13 +27,13 @@ export class FuseMatSidenavHelperDirective implements OnInit, OnDestroy {
      * Constructor
      *
      * @param {FuseMatchMediaService} _fuseMatchMediaService
-     * @param {FuseMatSidenavHelperService} _fuseMatSidenavHelperService
+     * @param {MatSidenavHelperService} _fuseMatSidenavHelperService
      * @param {MatSidenav} _matSidenav
      * @param {MediaObserver} _mediaObserver
      */
     constructor(
         private _fuseMatchMediaService: FuseMatchMediaService,
-        private _fuseMatSidenavHelperService: FuseMatSidenavHelperService,
+        private _fuseMatSidenavHelperService: MatSidenavHelperService,
         private _matSidenav: MatSidenav,
         private _mediaObserver: MediaObserver
     ) {
@@ -100,10 +100,10 @@ export class FuseMatSidenavTogglerDirective {
     /**
      * Constructor
      *
-     * @param {FuseMatSidenavHelperService} _fuseMatSidenavHelperService
+     * @param {MatSidenavHelperService} _fuseMatSidenavHelperService
      */
     constructor(
-        private _fuseMatSidenavHelperService: FuseMatSidenavHelperService) {
+        private _fuseMatSidenavHelperService: MatSidenavHelperService) {
     }
 
     // -----------------------------------------------------------------------------------------------------

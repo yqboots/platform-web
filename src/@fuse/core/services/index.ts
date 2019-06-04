@@ -3,4 +3,4 @@ export * from './copier.service';
 export * from './match-media.service';
 export * from './splash-screen.service';
 export * from './translation-loader.service';
-export * from '../directives/fuse-mat-sidenav/fuse-mat-sidenav.service';
+export * from '../directives/mat-sidenav/mat-sidenav.service';
