@@ -46,12 +46,12 @@ export const fuseConfig: FuseConfig = {
 const _appRoutes: Routes = [];
 if (environment.production) {
     _appRoutes.push({
-        path: 'apps',
+        path: 'exts',
         loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
 } else {
     _appRoutes.push({
-        path: 'apps',
+        path: 'exts',
         loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
     _appRoutes.push({
@@ -73,7 +73,7 @@ if (environment.production) {
 }
 _appRoutes.push({
     path: '**',
-    redirectTo: 'apps/dashboards/analytics'
+    redirectTo: 'exts/dashboards/analytics'
 });
 
 export const appRoutes = _appRoutes;

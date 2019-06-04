@@ -19,13 +19,13 @@ export const navigation: FuseNavigation[] = [
                         id: 'analytics',
                         title: 'Analytics',
                         type: 'item',
-                        url: '/apps/dashboards/analytics'
+                        url: '/exts/dashboards/analytics'
                     },
                     {
                         id: 'project',
                         title: 'Project',
                         type: 'item',
-                        url: '/apps/dashboards/project'
+                        url: '/exts/dashboards/project'
                     }
                 ]
             },
@@ -35,7 +35,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.CALENDAR',
                 type: 'item',
                 icon: 'today',
-                url: '/apps/calendar'
+                url: '/exts/calendar'
             },
             {
                 id: 'e-commerce',
@@ -48,28 +48,28 @@ export const navigation: FuseNavigation[] = [
                         id: 'products',
                         title: 'Products',
                         type: 'item',
-                        url: '/apps/e-commerce/products',
+                        url: '/exts/e-commerce/products',
                         exactMatch: true
                     },
                     {
                         id: 'productDetail',
                         title: 'Product Detail',
                         type: 'item',
-                        url: '/apps/e-commerce/products/1/printed-dress',
+                        url: '/exts/e-commerce/products/1/printed-dress',
                         exactMatch: true
                     },
                     {
                         id: 'orders',
                         title: 'Orders',
                         type: 'item',
-                        url: '/apps/e-commerce/orders',
+                        url: '/exts/e-commerce/orders',
                         exactMatch: true
                     },
                     {
                         id: 'orderDetail',
                         title: 'Order Detail',
                         type: 'item',
-                        url: '/apps/e-commerce/orders/1',
+                        url: '/exts/e-commerce/orders/1',
                         exactMatch: true
                     }
                 ]
@@ -80,7 +80,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.ACADEMY',
                 type: 'item',
                 icon: 'school',
-                url: '/apps/academy'
+                url: '/exts/academy'
             },
             {
                 id: 'mail',
@@ -88,7 +88,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.MAIL.TITLE',
                 type: 'item',
                 icon: 'email',
-                url: '/apps/mail',
+                url: '/exts/mail',
                 badge: {
                     title: '25',
                     translate: 'NAV.MAIL.BADGE',
@@ -102,7 +102,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.MAIL_NGRX.TITLE',
                 type: 'item',
                 icon: 'email',
-                url: '/apps/mail-ngrx',
+                url: '/exts/mail-ngrx',
                 badge: {
                     title: '13',
                     translate: 'NAV.MAIL_NGRX.BADGE',
@@ -116,7 +116,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.CHAT',
                 type: 'item',
                 icon: 'chat',
-                url: '/apps/chat',
+                url: '/exts/chat',
                 badge: {
                     title: '13',
                     bg: '#09d261',
@@ -129,7 +129,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.FILE_MANAGER',
                 type: 'item',
                 icon: 'folder',
-                url: '/apps/file-manager'
+                url: '/exts/file-manager'
             },
             {
                 id: 'contacts',
@@ -137,7 +137,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.CONTACTS',
                 type: 'item',
                 icon: 'account_box',
-                url: '/apps/contacts'
+                url: '/exts/contacts'
             },
             {
                 id: 'to-do',
@@ -145,7 +145,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.TODO',
                 type: 'item',
                 icon: 'check_box',
-                url: '/apps/todo',
+                url: '/exts/todo',
                 badge: {
                     title: '3',
                     bg: '#FF6F00',
@@ -158,7 +158,7 @@ export const navigation: FuseNavigation[] = [
                 translate: 'NAV.SCRUMBOARD',
                 type: 'item',
                 icon: 'assessment',
-                url: '/apps/scrumboard'
+                url: '/exts/scrumboard'
             }
         ]
     },
