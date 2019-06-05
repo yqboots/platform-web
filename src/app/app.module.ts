@@ -13,7 +13,7 @@ import 'hammerjs';
 import {YqModule, YqSharedModule} from '@yq/core';
 import {YqProgressBarModule, YqSidebarModule, YqThemeOptionsModule} from '@yq/components';
 
-import {appRoutes, yqConfig} from 'app/config';
+import {appRouteConfigs, appConfig} from 'app/config';
 
 import {FakeDbService} from 'app/fake-db/fake-db.service';
 import {AppComponent} from 'app/app.component';
@@ -30,7 +30,7 @@ import {environment} from 'environments/environment';
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        RouterModule.forRoot(appRoutes),
+        RouterModule.forRoot(appRouteConfigs),
 
         TranslateModule.forRoot(),
         !environment.production ? InMemoryWebApiModule.forRoot(FakeDbService, {
@@ -46,7 +46,7 @@ import {environment} from 'environments/environment';
         MatIconModule,
 
         // YQBoots modules
-        YqModule.forRoot(yqConfig),
+        YqModule.forRoot(appConfig),
         YqProgressBarModule,
         YqSharedModule,
         YqSidebarModule,

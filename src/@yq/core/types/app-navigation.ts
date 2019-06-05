@@ -1,4 +1,4 @@
-export interface YqNavigationItem {
+export interface AppNavigationItem {
     id: string;
     title: string;
     type: 'item' | 'group' | 'collapsible';
@@ -17,9 +17,9 @@ export interface YqNavigationItem {
         bg?: string;
         fg?: string;
     };
-    children?: YqNavigationItem[];
+    children?: AppNavigationItem[];
 }
 
-export interface YqNavigation extends YqNavigationItem {
-    children?: YqNavigationItem[];
+export interface AppNavigation extends AppNavigationItem {
+    children?: AppNavigationItem[];
 }

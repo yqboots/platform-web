@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import * as _ from 'lodash';
 
-import {YqNavigationItem} from '@yq/core';
+import {AppNavigationItem} from '@yq/core';
 
 @Injectable({
     providedIn: 'root'
@@ -166,7 +166,7 @@ export class YqNavigationService {
      * @param flatNavigation
      * @returns {any[]}
      */
-    getFlatNavigation(navigation, flatNavigation: YqNavigationItem[] = []): any {
+    getFlatNavigation(navigation, flatNavigation: AppNavigationItem[] = []): any {
         for (const item of navigation) {
             if (item.type === 'item') {
                 flatNavigation.push(item);

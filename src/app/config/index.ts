@@ -1,15 +1,13 @@
-import {YqConfig} from '@yq/core/types';
-import {environment} from 'environments/environment';
 import {Routes} from '@angular/router';
 
+import {AppConfig} from '@yq/core/types';
+
+import {environment} from 'environments/environment';
+
 /**
- * Default YQBoots Configuration
- *
- * You can edit these options to change the default options. All these options also can be
- * changed per component basis. See `app/main/pages/authentication/login/login.component.ts`
- * constructor method to learn more about changing these options per component basis.
+ * Default App Configuration
  */
-export const yqConfig: YqConfig = {
+export const appConfig: AppConfig = {
     // Color themes can be defined in src/app/app.theme.scss
     colorTheme: 'theme-default',
     customScrollbars: true,
@@ -43,37 +41,37 @@ export const yqConfig: YqConfig = {
     }
 };
 
-const _appRoutes: Routes = [];
+const _appRouteConfigs: Routes = [];
 if (environment.production) {
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'exts',
         loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
 } else {
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'exts',
         loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'pages',
         loadChildren: () => import('@showcase/pages/pages.module').then(m => m.PagesModule)
     });
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'ui',
         loadChildren: () => import('@showcase/ui/ui.module').then(m => m.UIModule)
     });
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'angular-material-elements',
         loadChildren: () => import('@showcase/material/materials.module').then(m => m.MaterialsModule)
     });
-    _appRoutes.push({
+    _appRouteConfigs.push({
         path: 'documentation',
         loadChildren: () => import('@doc/documentation.module').then(m => m.DocumentationModule)
     });
 }
-_appRoutes.push({
+_appRouteConfigs.push({
     path: '**',
     redirectTo: 'exts/dashboards/analytics'
 });
 
-export const appRoutes = _appRoutes;
+export const appRouteConfigs = _appRouteConfigs;

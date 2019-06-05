@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, HostBinding, Input, OnDestroy, OnInit} fro
 import {merge, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqNavigationItem} from '@yq/core';
+import {AppNavigationItem} from '@yq/core';
 
 import {YqNavigationService} from '../../navigation.service';
 
@@ -16,7 +16,7 @@ export class YqNavVerticalGroupComponent implements OnInit, OnDestroy {
     classes = 'nav-group nav-item';
 
     @Input()
-    item: YqNavigationItem;
+    item: AppNavigationItem;
 
     // Private
     private _unsubscribeAll: Subject<any>;

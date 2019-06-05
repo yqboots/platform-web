@@ -8,18 +8,11 @@ export const FORWARD = '[Router] Forward';
 export class Go implements Action {
     readonly type = GO;
 
-    /**
-     * Constructor
-     *
-     * @param {{path: any[]; query?: object; extras?: NavigationExtras}} payload
-     */
-    constructor(
-        public payload: {
-            path: any[];
-            query?: object;
-            extras?: NavigationExtras;
-        }
-    ) {
+    constructor(public payload: {
+        path: any[];
+        query?: object;
+        extras?: NavigationExtras;
+    }) {
     }
 }
 

@@ -1,4 +1,4 @@
-export interface YqConfig {
+export interface AppConfig {
     colorTheme: string;
     customScrollbars: boolean;
     layout: {

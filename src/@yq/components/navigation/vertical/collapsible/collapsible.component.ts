@@ -3,7 +3,7 @@ import {NavigationEnd, Router} from '@angular/router';
 import {merge, Subject} from 'rxjs';
 import {filter, takeUntil} from 'rxjs/operators';
 
-import {yqAnimations, YqNavigationItem} from '@yq/core';
+import {yqAnimations, AppNavigationItem} from '@yq/core';
 
 import {YqNavigationService} from '../../navigation.service';
 
@@ -15,7 +15,7 @@ import {YqNavigationService} from '../../navigation.service';
 })
 export class YqNavVerticalCollapsibleComponent implements OnInit, OnDestroy {
     @Input()
-    item: YqNavigationItem;
+    item: AppNavigationItem;
 
     @HostBinding('class')
     classes = 'nav-collapsible nav-item';

@@ -2,31 +2,23 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {Actions, Effect, ofType} from '@ngrx/effects';
+import {Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import * as RouterActions from 'app/store/actions/router.action';
 
 @Injectable()
 export class RouterEffects {
-    /**
-     * Constructor
-     *
-     * @param {Actions} actions$
-     * @param {Router} router
-     * @param {Location} location
-     */
-    constructor(
-        private actions$: Actions,
-        private router: Router,
-        private location: Location
-    ) {
+    constructor(private actions$: Actions,
+                private router: Router,
+                private location: Location) {
     }
 
     /**
      * Navigate
      */
     @Effect({dispatch: false})
-    navigate$ = this.actions$.pipe(
+    navigate$: Observable<any> = this.actions$.pipe(
         ofType(RouterActions.GO),
         map((action: RouterActions.Go) => action.payload),
         tap(({path, query: queryParams, extras}) => {
@@ -36,20 +28,18 @@ export class RouterEffects {
 
     /**
      * Navigate back
-     * @type {Observable<any>}
      */
     @Effect({dispatch: false})
-    navigateBack$ = this.actions$.pipe(
+    navigateBack$: Observable<any> = this.actions$.pipe(
         ofType(RouterActions.BACK),
         tap(() => this.location.back())
     );
 
     /**
      * Navigate forward
-     * @type {Observable<any>}
      */
     @Effect({dispatch: false})
-    navigateForward$ = this.actions$.pipe(
+    navigateForward$: Observable<any> = this.actions$.pipe(
         ofType(RouterActions.FORWARD),
         tap(() => this.location.forward())
     );

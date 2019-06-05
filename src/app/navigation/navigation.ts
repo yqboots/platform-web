@@ -1,8 +1,8 @@
-import {YqNavigation} from '@yq/core';
+import {AppNavigation} from '@yq/core';
 
 import {environment} from 'environments/environment';
 
-export const navigation: YqNavigation[] = environment.production ? [] : [
+export const navigation: AppNavigation[] = environment.production ? [] : [
     {
         id: 'applications',
         title: 'Applications',

@@ -8,9 +8,7 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-s
 import {environment} from 'environments/environment';
 import {CustomSerializer, effects, reducers} from 'app/store';
 
-export const metaReducers: MetaReducer<any>[] = !environment.production
-    ? [storeFreeze]
-    : [];
+export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
     imports: [

@@ -1,2 +1,2 @@
-export * from './yq-config';
-export * from './yq-navigation';
+export * from './app-config';
+export * from './app-navigation';
