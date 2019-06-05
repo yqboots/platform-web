@@ -6,14 +6,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {YqSharedModule} from '@yq/core';
 import {YqHighlightModule} from '@yq/components';
 
-import {DocsWorkingWithYqServerComponent} from '@doc/working-with-yq/server/server.component';
-import {DocsWorkingWithYqProductionComponent} from '@doc/working-with-yq/production/production.component';
-import {DocsWorkingWithYqDirectoryStructureComponent} from '@doc/working-with-yq/directory-structure/directory-structure.component';
-import {DocsWorkingWithYqUpdatingYqComponent} from '@doc/working-with-yq/updating-yq/updating-yq.component';
-import {DocsWorkingWithYqMultiLanguageComponent} from '@doc/working-with-yq/multi-language/multi-language.component';
-import {DocsWorkingWithYqMaterialThemingComponent} from '@doc/working-with-yq/material-theming/material-theming.component';
-import {DocsWorkingWithYqThemeLayoutsComponent} from '@doc/working-with-yq/theme-layouts/theme-layouts.component';
-import {DocsWorkingWithYqPageLayoutsComponent} from '@doc/working-with-yq/page-layouts/page-layouts.component';
+import {DocsWorkingWithYqServerComponent} from '@doc/developer-guide/server/server.component';
+import {DocsWorkingWithYqProductionComponent} from '@doc/developer-guide/production/production.component';
+import {DocsWorkingWithYqDirectoryStructureComponent} from '@doc/developer-guide/directory-structure/directory-structure.component';
+import {DocsWorkingWithYqUpdatingYqComponent} from '@doc/developer-guide/updating-yq/updating-yq.component';
+import {DocsWorkingWithYqMultiLanguageComponent} from '@doc/developer-guide/multi-language/multi-language.component';
+import {DocsWorkingWithYqMaterialThemingComponent} from '@doc/developer-guide/material-theming/material-theming.component';
+import {DocsWorkingWithYqThemeLayoutsComponent} from '@doc/developer-guide/theme-layouts/theme-layouts.component';
+import {DocsWorkingWithYqPageLayoutsComponent} from '@doc/developer-guide/page-layouts/page-layouts.component';
 
 const routes = [
     {
@@ -71,5 +71,5 @@ const routes = [
         YqHighlightModule
     ]
 })
-export class WorkingWithYqModule {
+export class DeveloperGuideModule {
 }

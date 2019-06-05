@@ -897,7 +897,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
                 ]
             },
             {
-                id: 'working-with-yq',
+                id: 'developer-guide',
                 title: 'Working with YQBoots',
                 type: 'collapsible',
                 icon: 'import_contacts',
@@ -906,49 +906,49 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
                         id: 'server',
                         title: 'Server',
                         type: 'item',
-                        url: '/documentation/working-with-yq/server'
+                        url: '/documentation/developer-guide/server'
                     },
                     {
                         id: 'production',
                         title: 'Production',
                         type: 'item',
-                        url: '/documentation/working-with-yq/production'
+                        url: '/documentation/developer-guide/production'
                     },
                     {
                         id: 'directory-structure',
                         title: 'Directory Structure',
                         type: 'item',
-                        url: '/documentation/working-with-yq/directory-structure'
+                        url: '/documentation/developer-guide/directory-structure'
                     },
                     {
                         id: 'updating-yq',
                         title: 'Updating YQBoots',
                         type: 'item',
-                        url: '/documentation/working-with-yq/updating-yq'
+                        url: '/documentation/developer-guide/updating-yq'
                     },
                     {
                         id: 'multi-language',
                         title: 'Multi Language',
                         type: 'item',
-                        url: '/documentation/working-with-yq/multi-language'
+                        url: '/documentation/developer-guide/multi-language'
                     },
                     {
                         id: 'material-theming',
                         title: 'Material Theming',
                         type: 'item',
-                        url: '/documentation/working-with-yq/material-theming'
+                        url: '/documentation/developer-guide/material-theming'
                     },
                     {
                         id: 'theme-layouts',
                         title: 'Theme Layouts',
                         type: 'item',
-                        url: '/documentation/working-with-yq/theme-layouts'
+                        url: '/documentation/developer-guide/theme-layouts'
                     },
                     {
                         id: 'page-layouts',
                         title: 'Page Layouts',
                         type: 'item',
-                        url: '/documentation/working-with-yq/page-layouts'
+                        url: '/documentation/developer-guide/page-layouts'
                     }
                 ]
             },

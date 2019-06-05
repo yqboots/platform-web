@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('@doc/getting-started/getting-started.module').then(m => m.GettingStartedModule)
     },
     {
-        path: 'working-with-yq',
-        loadChildren: () => import('@doc/working-with-yq/working-with-yq.module').then(m => m.WorkingWithYqModule)
+        path: 'developer-guide',
+        loadChildren: () => import('@doc/developer-guide/developer-guide.module').then(m => m.DeveloperGuideModule)
     },
     {
         path: 'components',

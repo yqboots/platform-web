@@ -4,7 +4,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Alice Freeman',
-                    'avatar': 'assets/images/avatars/alice.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'started following you.',
                 'time': '13 mins. ago'
@@ -12,7 +12,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Andrew Green',
-                    'avatar': 'assets/images/avatars/andrew.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'sent you a message.',
                 'time': 'June 10,2018'
@@ -20,7 +20,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Garry Newman',
-                    'avatar': 'assets/images/avatars/garry.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'shared a public post with your group.',
                 'time': 'June 9,2018'
@@ -28,7 +28,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Carl Henderson',
-                    'avatar': 'assets/images/avatars/carl.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'wants to play Fallout Shelter with you.',
                 'time': 'June 8,2018'
@@ -36,7 +36,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Jane Dean',
-                    'avatar': 'assets/images/avatars/jane.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'started following you.',
                 'time': 'June 7,2018'
@@ -44,7 +44,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Juan Carpenter',
-                    'avatar': 'assets/images/avatars/james.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'sent you a message.',
                 'time': 'June 6,2018'
@@ -52,7 +52,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Judith Burton',
-                    'avatar': 'assets/images/avatars/joyce.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'shared a photo with you.',
                 'time': 'June 5,2018'
@@ -60,7 +60,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Vincent Munoz',
-                    'avatar': 'assets/images/avatars/vincent.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'shared a photo with you.',
                 'time': 'June 4,2018'
@@ -70,7 +70,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Garry Newman',
-                    'avatar': 'assets/images/avatars/garry.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'Remember the place we were talking about the other night? Found it!',
                 'time': '32 minutes ago',
@@ -85,7 +85,7 @@ export class ProfileFakeDb {
                     {
                         'user': {
                             'name': 'Alice Freeman',
-                            'avatar': 'assets/images/avatars/alice.jpg'
+                            'avatar': 'assets/images/avatars/profile.jpg'
                         },
                         'time': 'June 10, 2018',
                         'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
@@ -95,7 +95,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Andrew Green',
-                    'avatar': 'assets/images/avatars/andrew.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'Hey, man! Check this, it’s pretty awesome!',
                 'time': 'June 12, 2018',
@@ -115,7 +115,7 @@ export class ProfileFakeDb {
                     {
                         'user': {
                             'name': 'Alice Freeman',
-                            'avatar': 'assets/images/avatars/alice.jpg'
+                            'avatar': 'assets/images/avatars/profile.jpg'
                         },
                         'time': 'June 10, 2018',
                         'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
@@ -125,7 +125,7 @@ export class ProfileFakeDb {
             {
                 'user': {
                     'name': 'Carl Henderson',
-                    'avatar': 'assets/images/avatars/carl.jpg'
+                    'avatar': 'assets/images/avatars/profile.jpg'
                 },
                 'message': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat. Aenean lorem ex, ultrices sit amet ligula sed...',
                 'time': 'June 10, 2018',
@@ -325,31 +325,31 @@ export class ProfileFakeDb {
         'friends': [
             {
                 'name': 'Garry Newman',
-                'avatar': 'assets/images/avatars/garry.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Carl Henderson',
-                'avatar': 'assets/images/avatars/carl.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Jane Dean',
-                'avatar': 'assets/images/avatars/jane.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Garry Arnold',
-                'avatar': 'assets/images/avatars/garry.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Vincent Munoz',
-                'avatar': 'assets/images/avatars/vincent.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Alice Freeman',
-                'avatar': 'assets/images/avatars/alice.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             },
             {
                 'name': 'Andrew Green',
-                'avatar': 'assets/images/avatars/andrew.jpg'
+                'avatar': 'assets/images/avatars/profile.jpg'
             }
         ]
     };
