@@ -13,26 +13,26 @@ import {ChatPanelComponent} from 'app/layout/components/chat-panel/chat-panel.co
 import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
 
 @NgModule({
-    declarations: [
-        ChatPanelComponent
-    ],
-    providers: [
-        ChatPanelService
-    ],
-    imports: [
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatTabsModule,
-        MatTooltipModule,
-        MatRippleModule,
+  declarations: [
+    ChatPanelComponent
+  ],
+  providers: [
+    ChatPanelService
+  ],
+  imports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatRippleModule,
 
-        YqSharedModule
-    ],
-    exports: [
-        ChatPanelComponent
-    ]
+    YqSharedModule
+  ],
+  exports: [
+    ChatPanelComponent
+  ]
 })
 export class ChatPanelModule {
 }

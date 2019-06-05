@@ -16,38 +16,38 @@ import {AnalyticsDashboardComponent} from '@yq/extensions/dashboards/analytics/a
 import {AnalyticsDashboardService} from '@yq/extensions/dashboards/analytics/analytics.service';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: AnalyticsDashboardComponent,
-        resolve: {
-            data: AnalyticsDashboardService
-        }
+  {
+    path: '**',
+    component: AnalyticsDashboardComponent,
+    resolve: {
+      data: AnalyticsDashboardService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        AnalyticsDashboardComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    AnalyticsDashboardComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatMenuModule,
-        MatSelectModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatTabsModule,
 
-        ChartsModule,
-        NgxChartsModule,
+    ChartsModule,
+    NgxChartsModule,
 
-        YqSharedModule,
-        YqWidgetModule
-    ],
-    providers: [
-        AnalyticsDashboardService
-    ]
+    YqSharedModule,
+    YqWidgetModule
+  ],
+  providers: [
+    AnalyticsDashboardService
+  ]
 })
 export class AnalyticsDashboardModule {
 }

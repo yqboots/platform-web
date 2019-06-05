@@ -23,42 +23,42 @@ import {LayoutModule} from 'app/layout/layout.module';
 import {environment} from 'environments/environment';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        RouterModule.forRoot(appRouteConfigs),
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRouteConfigs),
 
-        TranslateModule.forRoot(),
-        !environment.production ? InMemoryWebApiModule.forRoot(FakeDbService, {
-            delay: 0,
-            passThruUnknownUrl: true
-        }) : [],
+    TranslateModule.forRoot(),
+    !environment.production ? InMemoryWebApiModule.forRoot(FakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
-        // Material moment date module
-        MatMomentDateModule,
+    // Material moment date module
+    MatMomentDateModule,
 
-        // Material
-        MatButtonModule,
-        MatIconModule,
+    // Material
+    MatButtonModule,
+    MatIconModule,
 
-        // YQBoots modules
-        YqModule.forRoot(appConfig),
-        YqProgressBarModule,
-        YqSharedModule,
-        YqSidebarModule,
-        YqThemeOptionsModule,
+    // YQBoots modules
+    YqModule.forRoot(appConfig),
+    YqProgressBarModule,
+    YqSharedModule,
+    YqSidebarModule,
+    YqThemeOptionsModule,
 
-        // App modules
-        LayoutModule,
-        AppStoreModule
-    ],
-    bootstrap: [
-        AppComponent
-    ]
+    // App modules
+    LayoutModule,
+    AppStoreModule
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }

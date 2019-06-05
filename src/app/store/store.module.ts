@@ -11,18 +11,18 @@ import {CustomSerializer, effects, reducers} from 'app/store';
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
-    imports: [
-        StoreModule.forRoot(reducers, {metaReducers}),
-        EffectsModule.forRoot(effects),
-        !environment.production ? StoreDevtoolsModule.instrument() : [],
-        StoreRouterConnectingModule.forRoot()
-    ],
-    providers: [
-        {
-            provide: RouterStateSerializer,
-            useClass: CustomSerializer
-        }
-    ]
+  imports: [
+    StoreModule.forRoot(reducers, {metaReducers}),
+    EffectsModule.forRoot(effects),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreRouterConnectingModule.forRoot()
+  ],
+  providers: [
+    {
+      provide: RouterStateSerializer,
+      useClass: CustomSerializer
+    }
+  ]
 })
 
 export class AppStoreModule {

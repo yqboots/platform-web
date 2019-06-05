@@ -15,30 +15,30 @@ import {CookieService} from 'ngx-cookie-service';
 import {YqShortcutsComponent} from './shortcuts.component';
 
 @NgModule({
-    declarations: [
-        YqShortcutsComponent
-    ],
-    imports: [
-        CommonModule,
-        RouterModule,
+  declarations: [
+    YqShortcutsComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
 
-        FlexLayoutModule,
+    FlexLayoutModule,
 
-        MatButtonModule,
-        MatDividerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatListModule,
-        MatTooltipModule
-    ],
-    exports: [
-        YqShortcutsComponent
-    ],
-    providers: [
-        CookieService
-    ]
+    MatButtonModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatListModule,
+    MatTooltipModule
+  ],
+  exports: [
+    YqShortcutsComponent
+  ],
+  providers: [
+    CookieService
+  ]
 })
 export class YqShortcutsModule {
 }

@@ -1,71 +1,71 @@
 <div id="yq-config" class="page-layout simple fullwidth docs">
 
-    <!-- HEADER -->
-    <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
-        <div fxLayout="column" fxLayoutAlign="center start">
-            <div fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="secondary-text s-18">home</mat-icon>
-                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
-                <span class="secondary-text">Documentation</span>
-                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
-                <span class="secondary-text">Services</span>
-            </div>
-            <div class="h2 mt-16">YQBoots Config</div>
-        </div>
+  <!-- HEADER -->
+  <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Documentation</span>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Services</span>
+      </div>
+      <div class="h2 mt-16">YQBoots Config</div>
     </div>
-    <!-- / HEADER -->
+  </div>
+  <!-- / HEADER -->
 
-    <!-- CONTENT -->
-    <div class="content p-24">
+  <!-- CONTENT -->
+  <div class="content p-24">
 
-        <p>
-            <code>Config</code> is a custom built YQBoots service allows to have a granular control over the YQBoots. It can
-            be used for changing theme options (layout, color etc.) by component basis.
-        </p>
+    <p>
+      <code>Config</code> is a custom built YQBoots service allows to have a granular control over the YQBoots. It can
+      be used for changing theme options (layout, color etc.) by component basis.
+    </p>
 
-        <div class="section-title">Usage</div>
-        <p class="py-8">
+    <div class="section-title">Usage</div>
+    <p class="py-8">
 
-            <yq-highlight lang="typescript">
+      <yq-highlight lang="typescript">
                 <textarea #source>
 
                     export class SomeComponent
-                    {
-                    config: any;
+                  {
+                  config: any;
 
-                    constructor(
-                        private _yqConfigService: YqConfigService
-                    )
+                  constructor(
+                      private _yqConfigService: YqConfigService
+                  )
                         {
                             // Fully customizable surroundings for this particular component
                             this._yqConfigService.config = {
-                    colorTheme      : 'theme-default-dark',
-                    layout          : {
+                  colorTheme      : 'theme-default-dark',
+                  layout          : {
                                     style    : 'vertical-layout-1',
                                     width    : 'fullwidth',
                                     navbar   : {
-                    primaryBackground  : 'yq-navy-700',
-                    secondaryBackground: 'yq-navy-900',
-                    folded             : false,
-                    hidden             : false,
-                    position           : 'left',
-                    variant            : 'vertical-style-1'
+                  primaryBackground  : 'yq-navy-700',
+                  secondaryBackground: 'yq-navy-900',
+                  folded             : false,
+                  hidden             : false,
+                  position           : 'left',
+                  variant            : 'vertical-style-1'
                                     },
                                     toolbar  : {
-                    customBackgroundColor: false,
-                    background           : 'yq-white-500',
-                    hidden               : false,
-                    position             : 'below-static'
+                  customBackgroundColor: false,
+                  background           : 'yq-white-500',
+                  hidden               : false,
+                  position             : 'below-static'
                                     },
                                     footer   : {
-                    customBackgroundColor: true,
-                    background           : 'yq-navy-900',
-                    hidden               : false,
-                    position             : 'below-fixed'
+                  customBackgroundColor: true,
+                  background           : 'yq-navy-900',
+                  hidden               : false,
+                  position             : 'below-fixed'
                                     },
                                     sidepanel: {
-                    hidden  : false,
-                    position: 'right'
+                  hidden  : false,
+                  position: 'right'
                                     }
                                 },
                                 customScrollbars: true
@@ -77,17 +77,17 @@
                             // Subscribe to config change
                             this._yqConfigService.config
                                 .subscribe((config) => {
-                    this.config = config;
+                  this.config = config;
                                 });
                         }
                     }
 
                 </textarea>
-            </yq-highlight>
+      </yq-highlight>
 
-        </p>
+    </p>
 
-    </div>
+  </div>
 
 </div>
 

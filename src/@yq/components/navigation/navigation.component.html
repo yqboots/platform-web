@@ -1,33 +1,33 @@
 <div class="nav" [ngClass]="{'horizontal':layout === 'horizontal', 'vertical':layout === 'vertical'}">
 
-    <!-- Vertical Navigation Layout -->
-    <ng-container *ngIf="layout === 'vertical'">
+  <!-- Vertical Navigation Layout -->
+  <ng-container *ngIf="layout === 'vertical'">
 
-        <ng-container *ngFor="let item of navigation">
+    <ng-container *ngFor="let item of navigation">
 
-            <yq-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></yq-nav-vertical-group>
-            <yq-nav-vertical-collapsible *ngIf="item.type=='collapsible'"
-                [item]="item"></yq-nav-vertical-collapsible>
-            <yq-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></yq-nav-vertical-item>
-
-        </ng-container>
+      <yq-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></yq-nav-vertical-group>
+      <yq-nav-vertical-collapsible *ngIf="item.type=='collapsible'"
+        [item]="item"></yq-nav-vertical-collapsible>
+      <yq-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></yq-nav-vertical-item>
 
     </ng-container>
-    <!-- / Vertical Navigation Layout -->
 
-    <!-- Horizontal Navigation Layout -->
-    <ng-container *ngIf="layout === 'horizontal'">
+  </ng-container>
+  <!-- / Vertical Navigation Layout -->
 
-        <ng-container *ngFor="let item of navigation">
+  <!-- Horizontal Navigation Layout -->
+  <ng-container *ngIf="layout === 'horizontal'">
 
-            <yq-nav-horizontal-collapsible *ngIf="item.type=='group'" [item]="item"></yq-nav-horizontal-collapsible>
-            <yq-nav-horizontal-collapsible *ngIf="item.type=='collapsible'"
-                [item]="item"></yq-nav-horizontal-collapsible>
-            <yq-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></yq-nav-horizontal-item>
+    <ng-container *ngFor="let item of navigation">
 
-        </ng-container>
+      <yq-nav-horizontal-collapsible *ngIf="item.type=='group'" [item]="item"></yq-nav-horizontal-collapsible>
+      <yq-nav-horizontal-collapsible *ngIf="item.type=='collapsible'"
+        [item]="item"></yq-nav-horizontal-collapsible>
+      <yq-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></yq-nav-horizontal-item>
 
     </ng-container>
-    <!-- / Horizontal Navigation Layout -->
+
+  </ng-container>
+  <!-- / Horizontal Navigation Layout -->
 
 </div>

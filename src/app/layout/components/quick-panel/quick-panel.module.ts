@@ -8,19 +8,19 @@ import {YqSharedModule} from '@yq/core';
 import {QuickPanelComponent} from 'app/layout/components/quick-panel/quick-panel.component';
 
 @NgModule({
-    declarations: [
-        QuickPanelComponent
-    ],
-    imports: [
-        MatDividerModule,
-        MatListModule,
-        MatSlideToggleModule,
+  declarations: [
+    QuickPanelComponent
+  ],
+  imports: [
+    MatDividerModule,
+    MatListModule,
+    MatSlideToggleModule,
 
-        YqSharedModule,
-    ],
-    exports: [
-        QuickPanelComponent
-    ]
+    YqSharedModule,
+  ],
+  exports: [
+    QuickPanelComponent
+  ]
 })
 export class QuickPanelModule {
 }

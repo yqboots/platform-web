@@ -9,29 +9,29 @@ import {YqConfigServiceDocsComponent} from '@doc/services/yq-config/yq-config.co
 import {YqSplashScreenServiceDocsComponent} from '@doc/services/yq-splash-screen/yq-splash-screen.component';
 
 const routes = [
-    {
-        path: 'yq-config',
-        component: YqConfigServiceDocsComponent
-    },
-    {
-        path: 'yq-splash-screen',
-        component: YqSplashScreenServiceDocsComponent
-    }
+  {
+    path: 'yq-config',
+    component: YqConfigServiceDocsComponent
+  },
+  {
+    path: 'yq-splash-screen',
+    component: YqSplashScreenServiceDocsComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        YqConfigServiceDocsComponent,
-        YqSplashScreenServiceDocsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    YqConfigServiceDocsComponent,
+    YqSplashScreenServiceDocsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatIconModule,
+    MatIconModule,
 
-        YqSharedModule,
-        YqHighlightModule
-    ]
+    YqSharedModule,
+    YqHighlightModule
+  ]
 })
 
 export class ServicesModule {

@@ -1,14 +1,14 @@
 :host {
 
-    .folded:not(.unfolded) & {
+  .folded:not(.unfolded) & {
 
-        .nav-link {
+    .nav-link {
 
-            > .nav-link-title,
-            > .nav-link-badge {
-                opacity: 0;
-                transition: opacity 200ms ease;
-            }
-        }
+      > .nav-link-title,
+      > .nav-link-badge {
+        opacity: 0;
+        transition: opacity 200ms ease;
+      }
     }
+  }
 }

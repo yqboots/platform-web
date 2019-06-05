@@ -1,91 +1,91 @@
 <!-- SIDE PANEL -->
 <ng-container *ngIf="!yqConfig.layout.sidepanel.hidden && yqConfig.layout.sidepanel.position === 'left'">
 
-    <!-- CHAT PANEL -->
-    <yq-sidebar name="chatPanel" position="left" class="chat-panel left-chat-panel"
-        [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
-                  lockedOpen="gt-md">
-        <chat-panel></chat-panel>
-    </yq-sidebar>
-    <!-- / CHAT PANEL -->
+  <!-- CHAT PANEL -->
+  <yq-sidebar name="chatPanel" position="left" class="chat-panel left-chat-panel"
+    [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
+              lockedOpen="gt-md">
+    <chat-panel></chat-panel>
+  </yq-sidebar>
+  <!-- / CHAT PANEL -->
 
 </ng-container>
 <!-- / SIDE PANEL -->
 
 <div id="main">
 
-    <!-- TOOLBAR: Above -->
-    <ng-container *ngIf="yqConfig.layout.toolbar.position === 'above'">
-        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
-    </ng-container>
-    <!-- / TOOLBAR: Above -->
+  <!-- TOOLBAR: Above -->
+  <ng-container *ngIf="yqConfig.layout.toolbar.position === 'above'">
+    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+  </ng-container>
+  <!-- / TOOLBAR: Above -->
 
-    <!-- NAVBAR: Top -->
+  <!-- NAVBAR: Top -->
+  <ng-container>
+    <ng-container *ngTemplateOutlet="topNavbar"></ng-container>
+  </ng-container>
+  <!-- / NAVBAR: Top -->
+
+  <!-- TOOLBAR: Below -->
+  <ng-container *ngIf="yqConfig.layout.toolbar.position === 'below'">
+    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+  </ng-container>
+  <!-- / TOOLBAR: Below -->
+
+  <div id="container-1" class="container">
+
+    <!-- NAVBAR: Left -->
     <ng-container>
-        <ng-container *ngTemplateOutlet="topNavbar"></ng-container>
+      <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
     </ng-container>
-    <!-- / NAVBAR: Top -->
+    <!-- / NAVBAR: Left -->
 
-    <!-- TOOLBAR: Below -->
-    <ng-container *ngIf="yqConfig.layout.toolbar.position === 'below'">
-        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
-    </ng-container>
-    <!-- / TOOLBAR: Below -->
+    <div id="container-2" class="container">
 
-    <div id="container-1" class="container">
+      <div id="container-3"
+           class="container" [perfectScrollbar]="{suppressScrollX: true, updateOnRouteChange : true}">
 
-        <!-- NAVBAR: Left -->
-        <ng-container>
-            <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
+        <!-- CONTENT -->
+        <content></content>
+        <!-- / CONTENT -->
+
+        <!-- FOOTER: Below -->
+        <ng-container *ngIf="yqConfig.layout.footer.position === 'above-static'">
+          <ng-container *ngTemplateOutlet="footer"></ng-container>
         </ng-container>
-        <!-- / NAVBAR: Left -->
+        <!-- / FOOTER: Below -->
 
-        <div id="container-2" class="container">
-
-            <div id="container-3"
-                 class="container" [perfectScrollbar]="{suppressScrollX: true, updateOnRouteChange : true}">
-
-                <!-- CONTENT -->
-                <content></content>
-                <!-- / CONTENT -->
-
-                <!-- FOOTER: Below -->
-                <ng-container *ngIf="yqConfig.layout.footer.position === 'above-static'">
-                    <ng-container *ngTemplateOutlet="footer"></ng-container>
-                </ng-container>
-                <!-- / FOOTER: Below -->
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
-    <!-- FOOTER: Above -->
-    <ng-container *ngIf="yqConfig.layout.footer.position === 'above-fixed'">
-        <ng-container *ngTemplateOutlet="footer"></ng-container>
-    </ng-container>
-    <!-- FOOTER: Above -->
+  </div>
+
+  <!-- FOOTER: Above -->
+  <ng-container *ngIf="yqConfig.layout.footer.position === 'above-fixed'">
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+  </ng-container>
+  <!-- FOOTER: Above -->
 
 </div>
 
 <!-- SIDE PANEL -->
 <ng-container *ngIf="!yqConfig.layout.sidepanel.hidden && yqConfig.layout.sidepanel.position === 'right'">
 
-    <!-- CHAT PANEL -->
-    <yq-sidebar name="chatPanel" position="right" class="chat-panel right-chat-panel"
-        [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
-                  lockedOpen="gt-md">
-        <chat-panel></chat-panel>
-    </yq-sidebar>
-    <!-- / CHAT PANEL -->
+  <!-- CHAT PANEL -->
+  <yq-sidebar name="chatPanel" position="right" class="chat-panel right-chat-panel"
+    [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
+              lockedOpen="gt-md">
+    <chat-panel></chat-panel>
+  </yq-sidebar>
+  <!-- / CHAT PANEL -->
 
 </ng-container>
 <!-- / SIDE PANEL -->
 
 <!-- QUICK PANEL -->
 <yq-sidebar name="quickPanel" position="right" class="quick-panel">
-    <quick-panel></quick-panel>
+  <quick-panel></quick-panel>
 </yq-sidebar>
 <!-- / QUICK PANEL -->
 
@@ -95,35 +95,35 @@
 
 <!-- TOOLBAR -->
 <ng-template #toolbar>
-    <toolbar *ngIf="!yqConfig.layout.toolbar.hidden"
-        [ngClass]="yqConfig.layout.toolbar.customBackgroundColor === true ? yqConfig.layout.toolbar.position + ' ' + yqConfig.layout.toolbar.background : yqConfig.layout.toolbar.position">
-    </toolbar>
+  <toolbar *ngIf="!yqConfig.layout.toolbar.hidden"
+    [ngClass]="yqConfig.layout.toolbar.customBackgroundColor === true ? yqConfig.layout.toolbar.position + ' ' + yqConfig.layout.toolbar.background : yqConfig.layout.toolbar.position">
+  </toolbar>
 </ng-template>
 <!-- / TOOLBAR -->
 
 <!-- FOOTER -->
 <ng-template #footer>
-    <footer *ngIf="!yqConfig.layout.footer.hidden"
-        [ngClass]="yqConfig.layout.footer.customBackgroundColor === true ? yqConfig.layout.footer.position + ' ' + yqConfig.layout.footer.background : yqConfig.layout.footer.position">
-    </footer>
+  <footer *ngIf="!yqConfig.layout.footer.hidden"
+    [ngClass]="yqConfig.layout.footer.customBackgroundColor === true ? yqConfig.layout.footer.position + ' ' + yqConfig.layout.footer.background : yqConfig.layout.footer.position">
+  </footer>
 </ng-template>
 <!-- / FOOTER -->
 
 <!-- TOP NAVBAR -->
 <ng-template #topNavbar>
-    <navbar variant="horizontal-style-1"
-            class="top-navbar" fxHide fxShow.gt-md
-        *ngIf="!yqConfig.layout.navbar.hidden">
-    </navbar>
+  <navbar variant="horizontal-style-1"
+          class="top-navbar" fxHide fxShow.gt-md
+    *ngIf="!yqConfig.layout.navbar.hidden">
+  </navbar>
 </ng-template>
 <!-- / TOP NAVBAR -->
 
 <!-- LEFT NAVBAR -->
 <ng-template #leftNavbar>
-    <yq-sidebar name="navbar" class="navbar-yq-sidebar"
-        [folded]="yqConfig.layout.navbar.folded"
-        *ngIf="!yqConfig.layout.navbar.hidden">
-        <navbar [variant]="yqConfig.layout.navbar.variant" class="left-navbar"></navbar>
-    </yq-sidebar>
+  <yq-sidebar name="navbar" class="navbar-yq-sidebar"
+    [folded]="yqConfig.layout.navbar.folded"
+    *ngIf="!yqConfig.layout.navbar.hidden">
+    <navbar [variant]="yqConfig.layout.navbar.variant" class="left-navbar"></navbar>
+  </yq-sidebar>
 </ng-template>
 <!-- / LEFT NAVBAR -->

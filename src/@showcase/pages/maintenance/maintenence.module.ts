@@ -6,21 +6,21 @@ import {YqSharedModule} from '@yq/core';
 import {MaintenanceComponent} from '@showcase/pages/maintenance/maintenance.component';
 
 const routes = [
-    {
-        path: 'maintenance',
-        component: MaintenanceComponent
-    }
+  {
+    path: 'maintenance',
+    component: MaintenanceComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        MaintenanceComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    MaintenanceComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class MaintenanceModule {
 }

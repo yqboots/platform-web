@@ -11,36 +11,36 @@ import {DocsDirectivesInnerScrollComponent} from '@doc/directives/innerScroll/in
 import {DocsDirectivesMatSidenavComponent} from '@doc/directives/matSidenav/mat-sidenav.component';
 
 const routes = [
-    {
-        path: 'if-on-dom',
-        component: DocsDirectivesIfOnDomComponent
+  {
+    path: 'if-on-dom',
+    component: DocsDirectivesIfOnDomComponent
 
-    },
-    {
-        path: 'inner-scroll',
-        component: DocsDirectivesInnerScrollComponent
-    },
-    {
-        path: 'mat-sidenav',
-        component: DocsDirectivesMatSidenavComponent
-    }
+  },
+  {
+    path: 'inner-scroll',
+    component: DocsDirectivesInnerScrollComponent
+  },
+  {
+    path: 'mat-sidenav',
+    component: DocsDirectivesMatSidenavComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        DocsDirectivesIfOnDomComponent,
-        DocsDirectivesInnerScrollComponent,
-        DocsDirectivesMatSidenavComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    DocsDirectivesIfOnDomComponent,
+    DocsDirectivesInnerScrollComponent,
+    DocsDirectivesMatSidenavComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatIconModule,
+    MatButtonModule,
+    MatIconModule,
 
-        YqSharedModule,
-        YqHighlightModule
-    ]
+    YqSharedModule,
+    YqHighlightModule
+  ]
 })
 export class DirectivesModule {
 }

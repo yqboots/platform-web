@@ -10,26 +10,26 @@ import {YqDemoModule} from '@yq/components';
 import {ColorsComponent} from '@showcase/ui/colors/colors.component';
 
 const routes: Routes = [
-    {
-        path: 'colors',
-        component: ColorsComponent
-    }
+  {
+    path: 'colors',
+    component: ColorsComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ColorsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ColorsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatIconModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
 
-        YqSharedModule,
-        YqDemoModule
-    ]
+    YqSharedModule,
+    YqDemoModule
+  ]
 })
 export class UIColorsModule {
 }

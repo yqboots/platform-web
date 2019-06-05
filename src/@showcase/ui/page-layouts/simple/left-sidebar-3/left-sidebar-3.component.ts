@@ -3,31 +3,31 @@ import {Component} from '@angular/core';
 import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
 
 @Component({
-    selector: 'simple-left-sidebar-4',
-    templateUrl: './left-sidebar-3.component.html',
-    styleUrls: ['./left-sidebar-3.component.scss']
+  selector: 'simple-left-sidebar-4',
+  templateUrl: './left-sidebar-3.component.html',
+  styleUrls: ['./left-sidebar-3.component.scss']
 })
 export class SimpleLeftSidebar3Component {
-    /**
-     * Constructor
-     *
-     * @param {YqSidebarService} _yqSidebarService
-     */
-    constructor(
-        private _yqSidebarService: YqSidebarService
-    ) {
-    }
+  /**
+   * Constructor
+   *
+   * @param {YqSidebarService} _yqSidebarService
+   */
+  constructor(
+    private _yqSidebarService: YqSidebarService
+  ) {
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Public methods
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Toggle sidebar
-     *
-     * @param name
-     */
-    toggleSidebar(name): void {
-        this._yqSidebarService.getSidebar(name).toggleOpen();
-    }
+  /**
+   * Toggle sidebar
+   *
+   * @param name
+   */
+  toggleSidebar(name): void {
+    this._yqSidebarService.getSidebar(name).toggleOpen();
+  }
 }

@@ -10,26 +10,26 @@ import {YqSharedModule} from '@yq/core';
 import {LockComponent} from '@showcase/pages/authentication/lock/lock.component';
 
 const routes = [
-    {
-        path: 'auth/lock',
-        component: LockComponent
-    }
+  {
+    path: 'auth/lock',
+    component: LockComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        LockComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    LockComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class LockModule {
 }

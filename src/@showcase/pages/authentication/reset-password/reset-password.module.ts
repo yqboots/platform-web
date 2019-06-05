@@ -10,26 +10,26 @@ import {YqSharedModule} from '@yq/core';
 import {ResetPasswordComponent} from '@showcase/pages/authentication/reset-password/reset-password.component';
 
 const routes = [
-    {
-        path: 'auth/reset-password',
-        component: ResetPasswordComponent
-    }
+  {
+    path: 'auth/reset-password',
+    component: ResetPasswordComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ResetPasswordComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ResetPasswordComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class ResetPasswordModule {
 }

@@ -8,23 +8,23 @@
 
 @mixin yq-core-theme($theme) {
 
-    // Theming for YQBoots core styles
-    @include colors-theme($theme);
-    @include cards-theme($theme);
-    @include material-theme($theme);
-    @include page-layouts-theme($theme);
-    @include typography-theme($theme);
+  // Theming for YQBoots core styles
+  @include colors-theme($theme);
+  @include cards-theme($theme);
+  @include material-theme($theme);
+  @include page-layouts-theme($theme);
+  @include typography-theme($theme);
 
-    // Theming for YQBoots components
-    @include yq-countdown-theme($theme);
-    @include yq-search-bar-theme($theme);
-    @include yq-shortcuts-theme($theme);
-    @include yq-sidebar-theme($theme);
-    @include yq-theme-options-theme($theme);
-    @include yq-material-color-picker-theme($theme);
-    @include yq-widget-theme($theme);
+  // Theming for YQBoots components
+  @include yq-countdown-theme($theme);
+  @include yq-search-bar-theme($theme);
+  @include yq-shortcuts-theme($theme);
+  @include yq-sidebar-theme($theme);
+  @include yq-theme-options-theme($theme);
+  @include yq-material-color-picker-theme($theme);
+  @include yq-widget-theme($theme);
 
-    // Theming for 3rd party components
-    @include ngx-datatable-theme($theme);
+  // Theming for 3rd party components
+  @include ngx-datatable-theme($theme);
 }
 

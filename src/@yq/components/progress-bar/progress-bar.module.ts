@@ -9,20 +9,20 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {YqProgressBarComponent} from './progress-bar.component';
 
 @NgModule({
-    declarations: [
-        YqProgressBarComponent
-    ],
-    imports: [
-        CommonModule,
-        RouterModule,
+  declarations: [
+    YqProgressBarComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
 
-        MatButtonModule,
-        MatIconModule,
-        MatProgressBarModule
-    ],
-    exports: [
-        YqProgressBarComponent
-    ]
+    MatButtonModule,
+    MatIconModule,
+    MatProgressBarModule
+  ],
+  exports: [
+    YqProgressBarComponent
+  ]
 })
 export class YqProgressBarModule {
 }

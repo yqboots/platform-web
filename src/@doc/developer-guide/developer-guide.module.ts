@@ -16,60 +16,60 @@ import {DocsWorkingWithYqThemeLayoutsComponent} from '@doc/developer-guide/theme
 import {DocsWorkingWithYqPageLayoutsComponent} from '@doc/developer-guide/page-layouts/page-layouts.component';
 
 const routes = [
-    {
-        path: 'server',
-        component: DocsWorkingWithYqServerComponent
-    },
-    {
-        path: 'production',
-        component: DocsWorkingWithYqProductionComponent
-    },
-    {
-        path: 'directory-structure',
-        component: DocsWorkingWithYqDirectoryStructureComponent
-    },
-    {
-        path: 'updating-yq',
-        component: DocsWorkingWithYqUpdatingYqComponent
-    },
-    {
-        path: 'multi-language',
-        component: DocsWorkingWithYqMultiLanguageComponent
-    },
-    {
-        path: 'material-theming',
-        component: DocsWorkingWithYqMaterialThemingComponent
-    },
-    {
-        path: 'theme-layouts',
-        component: DocsWorkingWithYqThemeLayoutsComponent
-    },
-    {
-        path: 'page-layouts',
-        component: DocsWorkingWithYqPageLayoutsComponent
-    }
+  {
+    path: 'server',
+    component: DocsWorkingWithYqServerComponent
+  },
+  {
+    path: 'production',
+    component: DocsWorkingWithYqProductionComponent
+  },
+  {
+    path: 'directory-structure',
+    component: DocsWorkingWithYqDirectoryStructureComponent
+  },
+  {
+    path: 'updating-yq',
+    component: DocsWorkingWithYqUpdatingYqComponent
+  },
+  {
+    path: 'multi-language',
+    component: DocsWorkingWithYqMultiLanguageComponent
+  },
+  {
+    path: 'material-theming',
+    component: DocsWorkingWithYqMaterialThemingComponent
+  },
+  {
+    path: 'theme-layouts',
+    component: DocsWorkingWithYqThemeLayoutsComponent
+  },
+  {
+    path: 'page-layouts',
+    component: DocsWorkingWithYqPageLayoutsComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        DocsWorkingWithYqServerComponent,
-        DocsWorkingWithYqProductionComponent,
-        DocsWorkingWithYqDirectoryStructureComponent,
-        DocsWorkingWithYqUpdatingYqComponent,
-        DocsWorkingWithYqMaterialThemingComponent,
-        DocsWorkingWithYqMultiLanguageComponent,
-        DocsWorkingWithYqThemeLayoutsComponent,
-        DocsWorkingWithYqPageLayoutsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    DocsWorkingWithYqServerComponent,
+    DocsWorkingWithYqProductionComponent,
+    DocsWorkingWithYqDirectoryStructureComponent,
+    DocsWorkingWithYqUpdatingYqComponent,
+    DocsWorkingWithYqMaterialThemingComponent,
+    DocsWorkingWithYqMultiLanguageComponent,
+    DocsWorkingWithYqThemeLayoutsComponent,
+    DocsWorkingWithYqPageLayoutsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatIconModule,
+    MatButtonModule,
+    MatIconModule,
 
-        YqSharedModule,
-        YqHighlightModule
-    ]
+    YqSharedModule,
+    YqHighlightModule
+  ]
 })
 export class DeveloperGuideModule {
 }

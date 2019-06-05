@@ -8,33 +8,33 @@ export const GET_LABELS_FAILED = '[LABELS] GET LABELS FAILED';
  * Get Labels
  */
 export class GetLabels implements Action {
-    readonly type = GET_LABELS;
+  readonly type = GET_LABELS;
 
-    constructor(public payload: any) {
-    }
+  constructor(public payload: any) {
+  }
 }
 
 /**
  * Get Labels Success
  */
 export class GetLabelsSuccess implements Action {
-    readonly type = GET_LABELS_SUCCESS;
+  readonly type = GET_LABELS_SUCCESS;
 
-    constructor(public payload: any) {
-    }
+  constructor(public payload: any) {
+  }
 }
 
 /**
  * Get Labels Failed
  */
 export class GetLabelsFailed implements Action {
-    readonly type = GET_LABELS_FAILED;
+  readonly type = GET_LABELS_FAILED;
 
-    constructor(public payload: string) {
-    }
+  constructor(public payload: string) {
+  }
 }
 
 export type LabelsActionsAll
-    = GetLabels
-    | GetLabelsSuccess
-    | GetLabelsFailed;
+  = GetLabels
+  | GetLabelsSuccess
+  | GetLabelsFailed;

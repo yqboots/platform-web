@@ -11,27 +11,27 @@ import {YqSharedModule} from '@yq/core';
 import {IconsComponent} from '@showcase/ui/icons/icons.component';
 
 const routes: Routes = [
-    {
-        path: 'icons',
-        component: IconsComponent
-    }
+  {
+    path: 'icons',
+    component: IconsComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        IconsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    IconsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatProgressSpinnerModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class UIIconsModule {
 }

@@ -1,11 +1,11 @@
 @mixin yq-search-bar-theme($theme) {
 
-    $background: map-get($theme, background);
+  $background: map-get($theme, background);
 
-    .yq-search-bar {
+  .yq-search-bar {
 
-        &.expanded {
-            background-color: map-get($background, background);
-        }
+    &.expanded {
+      background-color: map-get($background, background);
     }
+  }
 }

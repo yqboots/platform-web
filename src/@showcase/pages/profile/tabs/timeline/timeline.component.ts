@@ -7,51 +7,51 @@ import {yqAnimations} from '@yq/core';
 import {ProfileService} from '../../profile.service';
 
 @Component({
-    selector: 'profile-timeline',
-    templateUrl: './timeline.component.html',
-    styleUrls: ['./timeline.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations: yqAnimations
+  selector: 'profile-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: yqAnimations
 })
 export class ProfileTimelineComponent implements OnInit, OnDestroy {
-    timeline: any;
+  timeline: any;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {ProfileService} _profileService
-     */
-    constructor(
-        private _profileService: ProfileService
-    ) {
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+  /**
+   * Constructor
+   *
+   * @param {ProfileService} _profileService
+   */
+  constructor(
+    private _profileService: ProfileService
+  ) {
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._profileService.timelineOnChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(timeline => {
-                this.timeline = timeline;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._profileService.timelineOnChanged
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(timeline => {
+        this.timeline = timeline;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }

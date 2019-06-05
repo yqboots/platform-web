@@ -7,50 +7,50 @@ import {yqAnimations} from '@yq/core';
 import {FileManagerService} from '@yq/extensions/file-manager/file-manager.service';
 
 @Component({
-    selector: 'file-manager-details-sidebar',
-    templateUrl: './details.component.html',
-    styleUrls: ['./details.component.scss'],
-    animations: yqAnimations
+  selector: 'file-manager-details-sidebar',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss'],
+  animations: yqAnimations
 })
 export class FileManagerDetailsSidebarComponent implements OnInit, OnDestroy {
-    selected: any;
+  selected: any;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {FileManagerService} _fileManagerService
-     */
-    constructor(
-        private _fileManagerService: FileManagerService
-    ) {
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+  /**
+   * Constructor
+   *
+   * @param {FileManagerService} _fileManagerService
+   */
+  constructor(
+    private _fileManagerService: FileManagerService
+  ) {
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._fileManagerService.onFileSelected
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(selected => {
-                this.selected = selected;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._fileManagerService.onFileSelected
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(selected => {
+        this.selected = selected;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }

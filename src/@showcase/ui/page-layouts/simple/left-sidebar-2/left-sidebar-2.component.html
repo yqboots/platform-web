@@ -1,40 +1,40 @@
 <div class="page-layout simple left-sidebar inner-scroll">
 
-    <!-- SIDEBAR -->
-    <yq-sidebar class="sidebar" name="simple-left-sidebar-2" position="left" lockedOpen="gt-md">
+  <!-- SIDEBAR -->
+  <yq-sidebar class="sidebar" name="simple-left-sidebar-2" position="left" lockedOpen="gt-md">
 
-        <!-- SIDEBAR CONTENT -->
-        <div class="content p-24" perfectScrollbar>
-            <yq-demo-sidebar></yq-demo-sidebar>
-        </div>
-        <!-- / SIDEBAR CONTENT -->
+    <!-- SIDEBAR CONTENT -->
+    <div class="content p-24" perfectScrollbar>
+      <yq-demo-sidebar></yq-demo-sidebar>
+    </div>
+    <!-- / SIDEBAR CONTENT -->
 
-    </yq-sidebar>
-    <!-- / SIDEBAR -->
+  </yq-sidebar>
+  <!-- / SIDEBAR -->
 
-    <!-- CENTER -->
-    <div class="center" perfectScrollbar>
+  <!-- CENTER -->
+  <div class="center" perfectScrollbar>
 
-        <!-- HEADER -->
-        <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+    <!-- HEADER -->
+    <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
 
-            <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
-                    (click)="toggleSidebar('simple-left-sidebar-2')">
-                <mat-icon>menu</mat-icon>
-            </button>
+      <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
+              (click)="toggleSidebar('simple-left-sidebar-2')">
+        <mat-icon>menu</mat-icon>
+      </button>
 
-            <h2 class="m-0">Left sidebar with inner scroll</h2>
-
-        </div>
-        <!-- / HEADER -->
-
-        <!-- CONTENT -->
-        <div class="content p-24">
-            <yq-demo-content></yq-demo-content>
-        </div>
-        <!-- / CONTENT -->
+      <h2 class="m-0">Left sidebar with inner scroll</h2>
 
     </div>
-    <!-- / CENTER -->
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24">
+      <yq-demo-content></yq-demo-content>
+    </div>
+    <!-- / CONTENT -->
+
+  </div>
+  <!-- / CENTER -->
 
 </div>

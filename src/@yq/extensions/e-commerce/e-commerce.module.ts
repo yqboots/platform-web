@@ -28,78 +28,78 @@ import {EcommerceOrderComponent} from '@yq/extensions/e-commerce/order/order.com
 import {EcommerceOrderService} from '@yq/extensions/e-commerce/order/order.service';
 
 const routes: Routes = [
-    {
-        path: 'products',
-        component: EcommerceProductsComponent,
-        resolve: {
-            data: EcommerceProductsService
-        }
-    },
-    {
-        path: 'products/:id',
-        component: EcommerceProductComponent,
-        resolve: {
-            data: EcommerceProductService
-        }
-    },
-    {
-        path: 'products/:id/:handle',
-        component: EcommerceProductComponent,
-        resolve: {
-            data: EcommerceProductService
-        }
-    },
-    {
-        path: 'orders',
-        component: EcommerceOrdersComponent,
-        resolve: {
-            data: EcommerceOrdersService
-        }
-    },
-    {
-        path: 'orders/:id',
-        component: EcommerceOrderComponent,
-        resolve: {
-            data: EcommerceOrderService
-        }
+  {
+    path: 'products',
+    component: EcommerceProductsComponent,
+    resolve: {
+      data: EcommerceProductsService
     }
+  },
+  {
+    path: 'products/:id',
+    component: EcommerceProductComponent,
+    resolve: {
+      data: EcommerceProductService
+    }
+  },
+  {
+    path: 'products/:id/:handle',
+    component: EcommerceProductComponent,
+    resolve: {
+      data: EcommerceProductService
+    }
+  },
+  {
+    path: 'orders',
+    component: EcommerceOrdersComponent,
+    resolve: {
+      data: EcommerceOrdersService
+    }
+  },
+  {
+    path: 'orders/:id',
+    component: EcommerceOrderComponent,
+    resolve: {
+      data: EcommerceOrderService
+    }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        EcommerceProductsComponent,
-        EcommerceProductComponent,
-        EcommerceOrdersComponent,
-        EcommerceOrderComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    EcommerceProductsComponent,
+    EcommerceProductComponent,
+    EcommerceOrdersComponent,
+    EcommerceOrderComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatChipsModule,
-        MatExpansionModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatPaginatorModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSortModule,
-        MatSnackBarModule,
-        MatTableModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSortModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatTabsModule,
 
-        NgxChartsModule,
+    NgxChartsModule,
 
-        YqSharedModule,
-        YqWidgetModule
-    ],
-    providers: [
-        EcommerceProductsService,
-        EcommerceProductService,
-        EcommerceOrdersService,
-        EcommerceOrderService
-    ]
+    YqSharedModule,
+    YqWidgetModule
+  ],
+  providers: [
+    EcommerceProductsService,
+    EcommerceProductService,
+    EcommerceOrdersService,
+    EcommerceOrderService
+  ]
 })
 export class EcommerceModule {
 }

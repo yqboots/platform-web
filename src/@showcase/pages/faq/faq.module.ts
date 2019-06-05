@@ -10,30 +10,30 @@ import {FaqService} from '@showcase/pages/faq/faq.service';
 import {FaqComponent} from '@showcase/pages/faq/faq.component';
 
 const routes = [
-    {
-        path: 'faq',
-        component: FaqComponent,
-        resolve: {
-            faq: FaqService
-        }
+  {
+    path: 'faq',
+    component: FaqComponent,
+    resolve: {
+      faq: FaqService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        FaqComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    FaqComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatExpansionModule,
-        MatIconModule,
+    MatExpansionModule,
+    MatIconModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        FaqService
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    FaqService
+  ]
 })
 export class FaqModule {
 }

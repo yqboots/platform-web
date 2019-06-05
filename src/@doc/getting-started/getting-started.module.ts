@@ -9,29 +9,29 @@ import {DocsGettingStartedIntroductionComponent} from '@doc/getting-started/intr
 import {DocsGettingStartedInstallationComponent} from '@doc/getting-started/installation/installation.component';
 
 const routes = [
-    {
-        path: 'introduction',
-        component: DocsGettingStartedIntroductionComponent
-    },
-    {
-        path: 'installation',
-        component: DocsGettingStartedInstallationComponent
-    }
+  {
+    path: 'introduction',
+    component: DocsGettingStartedIntroductionComponent
+  },
+  {
+    path: 'installation',
+    component: DocsGettingStartedInstallationComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        DocsGettingStartedIntroductionComponent,
-        DocsGettingStartedInstallationComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    DocsGettingStartedIntroductionComponent,
+    DocsGettingStartedInstallationComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatIconModule,
+    MatIconModule,
 
-        YqSharedModule,
-        YqHighlightModule
-    ]
+    YqSharedModule,
+    YqHighlightModule
+  ]
 })
 export class GettingStartedModule {
 }

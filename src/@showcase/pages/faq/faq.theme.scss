@@ -1,18 +1,18 @@
 @mixin faq-theme($theme) {
 
-    faq {
+  faq {
 
-        .header {
+    .header {
 
-            .search {
-                background: white;
-                color: rgba(0, 0, 0, 0.54);
+      .search {
+        background: white;
+        color: rgba(0, 0, 0, 0.54);
 
-                input {
-                    background: white;
-                    color: rgba(0, 0, 0, 0.87);
-                }
-            }
+        input {
+          background: white;
+          color: rgba(0, 0, 0, 0.87);
         }
+      }
     }
+  }
 }

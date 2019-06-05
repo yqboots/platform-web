@@ -16,47 +16,47 @@ import {AcademyCoursesService} from '@yq/extensions/academy/courses.service';
 import {AcademyCourseService} from '@yq/extensions/academy/course.service';
 
 const routes = [
-    {
-        path: 'courses',
-        component: AcademyCoursesComponent,
-        resolve: {
-            academy: AcademyCoursesService
-        }
-    },
-    {
-        path: 'courses/:courseId/:courseSlug',
-        component: AcademyCourseComponent,
-        resolve: {
-            academy: AcademyCourseService
-        }
-    },
-    {
-        path: '**',
-        redirectTo: 'courses'
+  {
+    path: 'courses',
+    component: AcademyCoursesComponent,
+    resolve: {
+      academy: AcademyCoursesService
     }
+  },
+  {
+    path: 'courses/:courseId/:courseSlug',
+    component: AcademyCourseComponent,
+    resolve: {
+      academy: AcademyCourseService
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'courses'
+  }
 ];
 
 @NgModule({
-    declarations: [
-        AcademyCoursesComponent,
-        AcademyCourseComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    AcademyCoursesComponent,
+    AcademyCourseComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatSelectModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
 
-        YqSharedModule,
-        YqSidebarModule
-    ],
-    providers: [
-        AcademyCoursesService,
-        AcademyCourseService
-    ]
+    YqSharedModule,
+    YqSidebarModule
+  ],
+  providers: [
+    AcademyCoursesService,
+    AcademyCourseService
+  ]
 })
 export class AcademyModule {
 }

@@ -1,24 +1,24 @@
 :host {
 
-    .content {
+  .content {
 
-        .color-tabs-content {
+    .color-tabs-content {
 
-            .color-header {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            }
+      .color-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
 
-            .color {
+      .color {
 
-                .fg-box {
-                    background-color: white;
-                }
-            }
-
-            .colored-bg {
-                transition: background-color 400ms ease;
-            }
+        .fg-box {
+          background-color: white;
         }
+      }
+
+      .colored-bg {
+        transition: background-color 400ms ease;
+      }
     }
+  }
 }
 

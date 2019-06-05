@@ -5,26 +5,26 @@ import {FiltersReducer, FiltersState} from './filters.reducer';
 import {LabelsReducer, LabelsState} from './labels.reducer';
 
 export interface MailAppState {
-    mails: MailsState;
-    folders: FoldersState;
-    filters: FiltersState;
-    labels: LabelsState;
+  mails: MailsState;
+  folders: FoldersState;
+  filters: FiltersState;
+  labels: LabelsState;
 }
 
 export const getMailAppState = createFeatureSelector<MailAppState>(
-    'mail-app'
+  'mail-app'
 );
 
 export const getAppState = createSelector(
-    getMailAppState,
-    (state: MailAppState) => state
+  getMailAppState,
+  (state: MailAppState) => state
 );
 
 export const reducers: ActionReducerMap<MailAppState> = {
-    mails: MailsReducer,
-    folders: FoldersReducer,
-    filters: FiltersReducer,
-    labels: LabelsReducer
+  mails: MailsReducer,
+  folders: FoldersReducer,
+  filters: FiltersReducer,
+  labels: LabelsReducer
 };
 
 export * from './mails.reducer';

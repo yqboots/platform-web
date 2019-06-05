@@ -5,28 +5,28 @@ import {MatSnackBar} from '@angular/material/snack-bar';
  * @title Snack-bar with a custom component
  */
 @Component({
-    selector: 'snack-bar-component-example',
-    templateUrl: 'snack-bar-component-example.html',
-    styleUrls: ['snack-bar-component-example.css'],
+  selector: 'snack-bar-component-example',
+  templateUrl: 'snack-bar-component-example.html',
+  styleUrls: ['snack-bar-component-example.css'],
 })
 export class SnackBarComponentExample {
-    durationInSeconds = 5;
+  durationInSeconds = 5;
 
-    constructor(private _snackBar: MatSnackBar) {
-    }
+  constructor(private _snackBar: MatSnackBar) {
+  }
 
-    openSnackBar() {
-        this._snackBar.openFromComponent(PizzaPartyComponent, {
-            duration: this.durationInSeconds * 1000,
-        });
-    }
+  openSnackBar() {
+    this._snackBar.openFromComponent(PizzaPartyComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
 }
 
 
 @Component({
-    selector: 'snack-bar-component-example-snack',
-    templateUrl: 'snack-bar-component-example-snack.html',
-    styles: [`
+  selector: 'snack-bar-component-example-snack',
+  templateUrl: 'snack-bar-component-example-snack.html',
+  styles: [`
     .example-pizza-party {
       color: hotpink;
     }

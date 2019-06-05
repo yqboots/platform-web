@@ -8,68 +8,68 @@ import {YqSidebarService} from '@yq/components';
 import {FileManagerService} from '@yq/extensions/file-manager/file-manager.service';
 
 @Component({
-    selector: 'file-manager',
-    templateUrl: './file-manager.component.html',
-    styleUrls: ['./file-manager.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations: yqAnimations
+  selector: 'file-manager',
+  templateUrl: './file-manager.component.html',
+  styleUrls: ['./file-manager.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: yqAnimations
 })
 export class FileManagerComponent implements OnInit, OnDestroy {
-    selected: any;
-    pathArr: string[];
+  selected: any;
+  pathArr: string[];
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {FileManagerService} _fileManagerService
-     * @param {YqSidebarService} _yqSidebarService
-     */
-    constructor(
-        private _fileManagerService: FileManagerService,
-        private _yqSidebarService: YqSidebarService
-    ) {
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+  /**
+   * Constructor
+   *
+   * @param {FileManagerService} _fileManagerService
+   * @param {YqSidebarService} _yqSidebarService
+   */
+  constructor(
+    private _fileManagerService: FileManagerService,
+    private _yqSidebarService: YqSidebarService
+  ) {
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._fileManagerService.onFileSelected
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(selected => {
-                this.selected = selected;
-                this.pathArr = selected.location.split('>');
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._fileManagerService.onFileSelected
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(selected => {
+        this.selected = selected;
+        this.pathArr = selected.location.split('>');
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Public methods
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Toggle the sidebar
-     *
-     * @param name
-     */
-    toggleSidebar(name): void {
-        this._yqSidebarService.getSidebar(name).toggleOpen();
-    }
+  /**
+   * Toggle the sidebar
+   *
+   * @param name
+   */
+  toggleSidebar(name): void {
+    this._yqSidebarService.getSidebar(name).toggleOpen();
+  }
 }

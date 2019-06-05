@@ -7,54 +7,54 @@ import {yqAnimations} from '@yq/core';
 import {ChatService} from '@yq/extensions/chat/chat.service';
 
 @Component({
-    selector: 'chat-left-sidenav',
-    templateUrl: './left.component.html',
-    styleUrls: ['./left.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations: yqAnimations
+  selector: 'chat-left-sidenav',
+  templateUrl: './left.component.html',
+  styleUrls: ['./left.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: yqAnimations
 })
 export class ChatLeftSidenavComponent implements OnInit, OnDestroy {
-    view: string;
+  view: string;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {ChatService} _chatService
-     */
-    constructor(
-        private _chatService: ChatService
-    ) {
-        // Set the defaults
-        this.view = 'chats';
+  /**
+   * Constructor
+   *
+   * @param {ChatService} _chatService
+   */
+  constructor(
+    private _chatService: ChatService
+  ) {
+    // Set the defaults
+    this.view = 'chats';
 
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._chatService.onLeftSidenavViewChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(view => {
-                this.view = view;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._chatService.onLeftSidenavViewChanged
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(view => {
+        this.view = view;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }

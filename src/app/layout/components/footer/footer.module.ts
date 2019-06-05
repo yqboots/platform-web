@@ -9,21 +9,21 @@ import {YqSharedModule} from '@yq/core';
 import {FooterComponent} from 'app/layout/components/footer/footer.component';
 
 @NgModule({
-    declarations: [
-        FooterComponent
-    ],
-    imports: [
-        RouterModule,
+  declarations: [
+    FooterComponent
+  ],
+  imports: [
+    RouterModule,
 
-        MatButtonModule,
-        MatIconModule,
-        MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
 
-        YqSharedModule
-    ],
-    exports: [
-        FooterComponent
-    ]
+    YqSharedModule
+  ],
+  exports: [
+    FooterComponent
+  ]
 })
 export class FooterModule {
 }

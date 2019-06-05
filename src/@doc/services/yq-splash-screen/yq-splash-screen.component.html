@@ -1,55 +1,55 @@
 <div id="splash-screen" class="page-layout simple fullwidth docs">
 
-    <!-- HEADER -->
-    <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
-        <div fxLayout="column" fxLayoutAlign="center start">
-            <div fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="secondary-text s-18">home</mat-icon>
-                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
-                <span class="secondary-text">Documentation</span>
-                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
-                <span class="secondary-text">Services</span>
-            </div>
-            <div class="h2 mt-16">YQBoots Splash Screen</div>
-        </div>
+  <!-- HEADER -->
+  <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Documentation</span>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Services</span>
+      </div>
+      <div class="h2 mt-16">YQBoots Splash Screen</div>
     </div>
-    <!-- / HEADER -->
+  </div>
+  <!-- / HEADER -->
 
-    <!-- CONTENT -->
-    <div class="content p-24">
+  <!-- CONTENT -->
+  <div class="content p-24">
 
-        <p>
-            <code>Splash screen</code> is a custom YQBoots service that allows to have a control on the splash screen.
-        </p>
+    <p>
+      <code>Splash screen</code> is a custom YQBoots service that allows to have a control on the splash screen.
+    </p>
 
-        <div class="section-title">Usage</div>
-        <p class="py-8">
+    <div class="section-title">Usage</div>
+    <p class="py-8">
 
-            <yq-highlight lang="typescript">
+      <yq-highlight lang="typescript">
                 <textarea #source>
 
                     export class SomeComponent implements OnInit
-                    {
-                    constructor(
-                        private _yqSplashScreenService: YqSplashScreenService
-                    ) {}
+                  {
+                  constructor(
+                      private _yqSplashScreenService: YqSplashScreenService
+                  ) {}
 
                         ngOnInit()
                         {
                             this._yqSplashScreenService.show();
 
                             setTimeout(() => {
-                    this._yqSplashScreenService.hide();
+                  this._yqSplashScreenService.hide();
                             }, 3000);
                         }
                     }
 
                 </textarea>
-            </yq-highlight>
+      </yq-highlight>
 
-        </p>
+    </p>
 
-    </div>
+  </div>
 
 </div>
 

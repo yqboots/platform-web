@@ -4,25 +4,25 @@
 
 <!-- VERTICAL LAYOUT 1 -->
 <ng-container *ngIf="yqConfig.layout.style === 'vertical-layout-1'">
-    <vertical-layout-1></vertical-layout-1>
+  <vertical-layout-1></vertical-layout-1>
 </ng-container>
 <!-- / VERTICAL LAYOUT 1 -->
 
 <!-- VERTICAL LAYOUT 2 -->
 <ng-container *ngIf="yqConfig.layout.style === 'vertical-layout-2'">
-    <vertical-layout-2></vertical-layout-2>
+  <vertical-layout-2></vertical-layout-2>
 </ng-container>
 <!-- / VERTICAL LAYOUT 2 -->
 
 <!-- VERTICAL LAYOUT 3 -->
 <ng-container *ngIf="yqConfig.layout.style === 'vertical-layout-3'">
-    <vertical-layout-3></vertical-layout-3>
+  <vertical-layout-3></vertical-layout-3>
 </ng-container>
 <!-- / VERTICAL LAYOUT 3 -->
 
 <!-- HORIZONTAL LAYOUT 1 -->
 <ng-container *ngIf="yqConfig.layout.style === 'horizontal-layout-1'">
-    <horizontal-layout-1></horizontal-layout-1>
+  <horizontal-layout-1></horizontal-layout-1>
 </ng-container>
 <!-- / HORIZONTAL LAYOUT 1 -->
 
@@ -31,10 +31,10 @@
         [ngClass]="{'right-side-panel': yqConfig.layout.sidepanel.position === 'right',
                     'side-panel-hidden': yqConfig.layout.sidepanel.hidden === true}"
         (click)="toggleSidebarOpen('themeOptionsPanel')">
-    <mat-icon>settings</mat-icon>
+  <mat-icon>settings</mat-icon>
 </button>
 
 <yq-sidebar name="themeOptionsPanel" class="theme-options-sidebar" position="right" [invisibleOverlay]="true">
-    <yq-theme-options></yq-theme-options>
+  <yq-theme-options></yq-theme-options>
 </yq-sidebar>
 <!-- / THEME OPTIONS PANEL -->

@@ -1,14 +1,14 @@
 @mixin yq-material-color-picker-theme($theme) {
 
-    $background: map-get($theme, background);
+  $background: map-get($theme, background);
 
-    .yq-material-color-picker-menu {
+  .yq-material-color-picker-menu {
 
-        .mat-menu-content {
+    .mat-menu-content {
 
-            .views {
-                background: #303030;
-            }
-        }
+      .views {
+        background: #303030;
+      }
     }
+  }
 }

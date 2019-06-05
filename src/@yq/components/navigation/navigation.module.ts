@@ -14,26 +14,26 @@ import {YqNavHorizontalItemComponent} from './horizontal/item/item.component';
 import {YqNavHorizontalCollapsibleComponent} from './horizontal/collapsible/collapsible.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule,
+  imports: [
+    CommonModule,
+    RouterModule,
 
-        MatIconModule,
-        MatRippleModule,
+    MatIconModule,
+    MatRippleModule,
 
-        TranslateModule.forChild()
-    ],
-    exports: [
-        YqNavigationComponent
-    ],
-    declarations: [
-        YqNavigationComponent,
-        YqNavVerticalGroupComponent,
-        YqNavVerticalItemComponent,
-        YqNavVerticalCollapsibleComponent,
-        YqNavHorizontalItemComponent,
-        YqNavHorizontalCollapsibleComponent
-    ]
+    TranslateModule.forChild()
+  ],
+  exports: [
+    YqNavigationComponent
+  ],
+  declarations: [
+    YqNavigationComponent,
+    YqNavVerticalGroupComponent,
+    YqNavVerticalItemComponent,
+    YqNavVerticalCollapsibleComponent,
+    YqNavHorizontalItemComponent,
+    YqNavHorizontalCollapsibleComponent
+  ]
 })
 export class YqNavigationModule {
 }

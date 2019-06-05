@@ -7,21 +7,21 @@ import {FilterPipe} from './filter.pipe';
 import {CamelCaseToDashPipe} from './camelCaseToDash.pipe';
 
 @NgModule({
-    declarations: [
-        KeysPipe,
-        GetByIdPipe,
-        HtmlToPlaintextPipe,
-        FilterPipe,
-        CamelCaseToDashPipe
-    ],
-    imports: [],
-    exports: [
-        KeysPipe,
-        GetByIdPipe,
-        HtmlToPlaintextPipe,
-        FilterPipe,
-        CamelCaseToDashPipe
-    ]
+  declarations: [
+    KeysPipe,
+    GetByIdPipe,
+    HtmlToPlaintextPipe,
+    FilterPipe,
+    CamelCaseToDashPipe
+  ],
+  imports: [],
+  exports: [
+    KeysPipe,
+    GetByIdPipe,
+    HtmlToPlaintextPipe,
+    FilterPipe,
+    CamelCaseToDashPipe
+  ]
 })
 export class YqPipesModule {
 }

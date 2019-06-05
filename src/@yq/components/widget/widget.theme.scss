@@ -1,14 +1,14 @@
 @mixin yq-widget-theme($theme) {
 
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
-    yq-widget {
+  yq-widget {
 
-        > .yq-widget-front,
-        > .yq-widget-back {
-            background: map-get($background, card);
-            border-color: map-get($foreground, divider);
-        }
+    > .yq-widget-front,
+    > .yq-widget-back {
+      background: map-get($background, card);
+      border-color: map-get($foreground, divider);
     }
+  }
 }

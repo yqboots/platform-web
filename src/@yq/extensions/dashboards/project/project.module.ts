@@ -17,40 +17,40 @@ import {ProjectDashboardComponent} from '@yq/extensions/dashboards/project/proje
 import {ProjectDashboardService} from '@yq/extensions/dashboards/project/project.service';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: ProjectDashboardComponent,
-        resolve: {
-            data: ProjectDashboardService
-        }
+  {
+    path: '**',
+    component: ProjectDashboardComponent,
+    resolve: {
+      data: ProjectDashboardService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ProjectDashboardComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ProjectDashboardComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatDividerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatMenuModule,
-        MatSelectModule,
-        MatTableModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatTableModule,
+    MatTabsModule,
 
-        NgxChartsModule,
+    NgxChartsModule,
 
-        YqSharedModule,
-        YqSidebarModule,
-        YqWidgetModule
-    ],
-    providers: [
-        ProjectDashboardService
-    ]
+    YqSharedModule,
+    YqSidebarModule,
+    YqWidgetModule
+  ],
+  providers: [
+    ProjectDashboardService
+  ]
 })
 export class ProjectDashboardModule {
 }

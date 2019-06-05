@@ -7,51 +7,51 @@ import {yqAnimations} from '@yq/core';
 import {ProfileService} from '@showcase/pages/profile/profile.service';
 
 @Component({
-    selector: 'profile-photos-videos',
-    templateUrl: './photos-videos.component.html',
-    styleUrls: ['./photos-videos.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations: yqAnimations
+  selector: 'profile-photos-videos',
+  templateUrl: './photos-videos.component.html',
+  styleUrls: ['./photos-videos.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: yqAnimations
 })
 export class ProfilePhotosVideosComponent implements OnInit, OnDestroy {
-    photosVideos: any;
+  photosVideos: any;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {ProfileService} _profileService
-     */
-    constructor(
-        private _profileService: ProfileService
-    ) {
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+  /**
+   * Constructor
+   *
+   * @param {ProfileService} _profileService
+   */
+  constructor(
+    private _profileService: ProfileService
+  ) {
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._profileService.photosVideosOnChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(photosVideos => {
-                this.photosVideos = photosVideos;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._profileService.photosVideosOnChanged
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(photosVideos => {
+        this.photosVideos = photosVideos;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }

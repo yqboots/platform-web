@@ -6,10 +6,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {YqSharedModule} from '@yq/core';
 
 import {
-    YqCountdownModule,
-    YqHighlightModule,
-    YqMaterialColorPickerModule,
-    YqWidgetModule
+  YqCountdownModule,
+  YqHighlightModule,
+  YqMaterialColorPickerModule,
+  YqWidgetModule
 } from '@yq/components';
 import {DocsComponentsCountdownComponent} from '@doc/components/countdown/countdown.component';
 import {DocsComponentsHighlightComponent} from '@doc/components/highlight/highlight.component';
@@ -22,69 +22,69 @@ import {DocsComponentsShortcutsComponent} from '@doc/components/shortcuts/shortc
 import {DocsComponentsWidgetComponent} from '@doc/components/widget/widget.component';
 
 const routes = [
-    {
-        path: 'countdown',
-        component: DocsComponentsCountdownComponent
-    },
-    {
-        path: 'highlight',
-        component: DocsComponentsHighlightComponent
-    },
-    {
-        path: 'material-color-picker',
-        component: DocsComponentsMaterialColorPickerComponent
-    },
-    {
-        path: 'navigation',
-        component: DocsComponentsNavigationComponent
-    },
-    {
-        path: 'progress-bar',
-        component: DocsComponentsProgressBarComponent
-    },
-    {
-        path: 'search-bar',
-        component: DocsComponentsSearchBarComponent
-    },
-    {
-        path: 'sidebar',
-        component: DocsComponentsSidebarComponent
-    },
-    {
-        path: 'shortcuts',
-        component: DocsComponentsShortcutsComponent
-    },
-    {
-        path: 'widget',
-        component: DocsComponentsWidgetComponent
-    }
+  {
+    path: 'countdown',
+    component: DocsComponentsCountdownComponent
+  },
+  {
+    path: 'highlight',
+    component: DocsComponentsHighlightComponent
+  },
+  {
+    path: 'material-color-picker',
+    component: DocsComponentsMaterialColorPickerComponent
+  },
+  {
+    path: 'navigation',
+    component: DocsComponentsNavigationComponent
+  },
+  {
+    path: 'progress-bar',
+    component: DocsComponentsProgressBarComponent
+  },
+  {
+    path: 'search-bar',
+    component: DocsComponentsSearchBarComponent
+  },
+  {
+    path: 'sidebar',
+    component: DocsComponentsSidebarComponent
+  },
+  {
+    path: 'shortcuts',
+    component: DocsComponentsShortcutsComponent
+  },
+  {
+    path: 'widget',
+    component: DocsComponentsWidgetComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        DocsComponentsCountdownComponent,
-        DocsComponentsHighlightComponent,
-        DocsComponentsMaterialColorPickerComponent,
-        DocsComponentsNavigationComponent,
-        DocsComponentsProgressBarComponent,
-        DocsComponentsSearchBarComponent,
-        DocsComponentsSidebarComponent,
-        DocsComponentsShortcutsComponent,
-        DocsComponentsWidgetComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    DocsComponentsCountdownComponent,
+    DocsComponentsHighlightComponent,
+    DocsComponentsMaterialColorPickerComponent,
+    DocsComponentsNavigationComponent,
+    DocsComponentsProgressBarComponent,
+    DocsComponentsSearchBarComponent,
+    DocsComponentsSidebarComponent,
+    DocsComponentsShortcutsComponent,
+    DocsComponentsWidgetComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatIconModule,
+    MatButtonModule,
+    MatIconModule,
 
-        YqSharedModule,
+    YqSharedModule,
 
-        YqCountdownModule,
-        YqHighlightModule,
-        YqMaterialColorPickerModule,
-        YqWidgetModule
-    ]
+    YqCountdownModule,
+    YqHighlightModule,
+    YqMaterialColorPickerModule,
+    YqWidgetModule
+  ]
 })
 export class ComponentsModule {
 }

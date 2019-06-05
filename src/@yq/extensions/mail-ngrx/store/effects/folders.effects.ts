@@ -9,29 +9,29 @@ import {MailNgrxService} from '@yq/extensions/mail-ngrx/mail.service';
 
 @Injectable()
 export class FoldersEffect {
-    constructor(
-        private actions: Actions,
-        private mailService: MailNgrxService
-    ) {
-    }
+  constructor(
+    private actions: Actions,
+    private mailService: MailNgrxService
+  ) {
+  }
 
-    /**
-     * Get Folders from Server
-     * @type {Observable<any>}
-     */
-    @Effect()
-    getFolders: Observable<FoldersActions.FoldersActionsAll> =
-        this.actions
-            .pipe(
-                ofType<FoldersActions.GetFolders>(FoldersActions.GET_FOLDERS),
-                switchMap((action) => {
-                        return this.mailService.getFolders()
-                            .pipe(
-                                map((folders: any) => {
-                                    return new FoldersActions.GetFoldersSuccess(folders);
-                                }),
-                                catchError(err => of(new FoldersActions.GetFoldersFailed(err)))
-                            );
-                    }
-                ));
+  /**
+   * Get Folders from Server
+   * @type {Observable<any>}
+   */
+  @Effect()
+  getFolders: Observable<FoldersActions.FoldersActionsAll> =
+    this.actions
+      .pipe(
+        ofType<FoldersActions.GetFolders>(FoldersActions.GET_FOLDERS),
+        switchMap((action) => {
+            return this.mailService.getFolders()
+              .pipe(
+                map((folders: any) => {
+                  return new FoldersActions.GetFoldersSuccess(folders);
+                }),
+                catchError(err => of(new FoldersActions.GetFoldersFailed(err)))
+              );
+          }
+        ));
 }

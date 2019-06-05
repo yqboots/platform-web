@@ -1,23 +1,23 @@
 <div class="navbar-header" [ngClass]="yqConfig.layout.navbar.secondaryBackground">
 
-    <div class="logo">
-        <img class="logo-icon" src="assets/images/logos/yq.svg">
-        <span class="logo-text">YQBoots</span>
-    </div>
+  <div class="logo">
+    <img class="logo-icon" src="assets/images/logos/yq.svg">
+    <span class="logo-text">YQBoots</span>
+  </div>
 
-    <button mat-icon-button class="toggle-sidebar-folded"
-            (click)="toggleSidebarFolded()" fxHide.lt-lg>
-        <mat-icon>menu</mat-icon>
-    </button>
+  <button mat-icon-button class="toggle-sidebar-folded"
+          (click)="toggleSidebarFolded()" fxHide.lt-lg>
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <button mat-icon-button class="toggle-sidebar-opened"
-            (click)="toggleSidebarOpened()" fxHide.gt-md>
-        <mat-icon>arrow_back</mat-icon>
-    </button>
+  <button mat-icon-button class="toggle-sidebar-opened"
+          (click)="toggleSidebarOpened()" fxHide.gt-md>
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 
 </div>
 
 <div class="navbar-content" [perfectScrollbar]="{suppressScrollX: true}"
      [ngClass]="yqConfig.layout.navbar.primaryBackground">
-    <yq-navigation layout="vertical"></yq-navigation>
+  <yq-navigation layout="vertical"></yq-navigation>
 </div>

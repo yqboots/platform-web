@@ -1,14 +1,14 @@
 @mixin knowledge-base-theme($theme) {
 
-    $background: map-get($theme, background);
+  $background: map-get($theme, background);
 
-    knowledge-base {
+  knowledge-base {
 
-        .content {
+    .content {
 
-            .articles-list {
-                background-color: map-get($background, card);
-            }
-        }
+      .articles-list {
+        background-color: map-get($background, card);
+      }
     }
+  }
 }

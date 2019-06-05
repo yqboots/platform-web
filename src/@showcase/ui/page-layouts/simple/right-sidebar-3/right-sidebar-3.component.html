@@ -1,48 +1,48 @@
 <div class="page-layout simple right-sidebar inner-sidebar">
 
-    <!-- HEADER -->
-    <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+  <!-- HEADER -->
+  <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
 
-        <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
-                (click)="toggleSidebar('simple-right-sidebar-3')">
-            <mat-icon>menu</mat-icon>
-        </button>
+    <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
+            (click)="toggleSidebar('simple-right-sidebar-3')">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-        <div>
-            <h2>Right inner sidebar with content scroll</h2>
-        </div>
+    <div>
+      <h2>Right inner sidebar with content scroll</h2>
+    </div>
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- SIDEBAR -->
+    <yq-sidebar class="sidebar" name="simple-right-sidebar-3" position="left" lockedOpen="gt-md">
+
+      <!-- SIDEBAR CONTENT -->
+      <div class="content p-24" perfectScrollbar>
+        <yq-demo-sidebar></yq-demo-sidebar>
+      </div>
+      <!-- / SIDEBAR CONTENT -->
+
+    </yq-sidebar>
+    <!-- / SIDEBAR -->
+
+    <!-- CENTER -->
+    <div class="center p-24" perfectScrollbar>
+
+      <!-- CONTENT -->
+      <div class="content p-24">
+        <yq-demo-content></yq-demo-content>
+      </div>
+      <!-- / CONTENT -->
 
     </div>
-    <!-- / HEADER -->
+    <!-- / CENTER -->
 
-    <!-- CONTENT -->
-    <div class="content">
-
-        <!-- SIDEBAR -->
-        <yq-sidebar class="sidebar" name="simple-right-sidebar-3" position="left" lockedOpen="gt-md">
-
-            <!-- SIDEBAR CONTENT -->
-            <div class="content p-24" perfectScrollbar>
-                <yq-demo-sidebar></yq-demo-sidebar>
-            </div>
-            <!-- / SIDEBAR CONTENT -->
-
-        </yq-sidebar>
-        <!-- / SIDEBAR -->
-
-        <!-- CENTER -->
-        <div class="center p-24" perfectScrollbar>
-
-            <!-- CONTENT -->
-            <div class="content p-24">
-                <yq-demo-content></yq-demo-content>
-            </div>
-            <!-- / CONTENT -->
-
-        </div>
-        <!-- / CENTER -->
-
-    </div>
-    <!-- / CONTENT -->
+  </div>
+  <!-- / CONTENT -->
 
 </div>

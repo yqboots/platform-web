@@ -14,34 +14,34 @@ import {SearchClassicService} from '@showcase/pages/search/classic/search-classi
 
 
 const routes = [
-    {
-        path: 'search/classic',
-        component: SearchClassicComponent,
-        resolve: {
-            search: SearchClassicService
-        }
+  {
+    path: 'search/classic',
+    component: SearchClassicComponent,
+    resolve: {
+      search: SearchClassicService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        SearchClassicComponent,
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    SearchClassicComponent,
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatTableModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        SearchClassicService
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    SearchClassicService
+  ]
 })
 export class SearchClassicModule {
 }

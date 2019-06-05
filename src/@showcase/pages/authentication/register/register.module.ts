@@ -11,27 +11,27 @@ import {YqSharedModule} from '@yq/core';
 import {RegisterComponent} from '@showcase/pages/authentication/register/register.component';
 
 const routes = [
-    {
-        path: 'auth/register',
-        component: RegisterComponent
-    }
+  {
+    path: 'auth/register',
+    component: RegisterComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        RegisterComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    RegisterComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class RegisterModule {
 }

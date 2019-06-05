@@ -11,23 +11,23 @@ import {YqSharedModule} from '@yq/core';
 import {ToolbarComponent} from 'app/layout/components/toolbar/toolbar.component';
 
 @NgModule({
-    declarations: [
-        ToolbarComponent
-    ],
-    imports: [
-        RouterModule,
-        MatButtonModule,
-        MatIconModule,
-        MatMenuModule,
-        MatToolbarModule,
+  declarations: [
+    ToolbarComponent
+  ],
+  imports: [
+    RouterModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
 
-        YqSharedModule,
-        YqSearchBarModule,
-        YqShortcutsModule
-    ],
-    exports: [
-        ToolbarComponent
-    ]
+    YqSharedModule,
+    YqSearchBarModule,
+    YqShortcutsModule
+  ],
+  exports: [
+    ToolbarComponent
+  ]
 })
 export class ToolbarModule {
 }

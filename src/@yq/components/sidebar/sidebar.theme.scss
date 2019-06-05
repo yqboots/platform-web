@@ -1,16 +1,16 @@
 @mixin yq-sidebar-theme($theme) {
 
-    $background: map-get($theme, background);
+  $background: map-get($theme, background);
 
-    yq-sidebar {
-        background: map-get($background, background);
+  yq-sidebar {
+    background: map-get($background, background);
+  }
+
+  .yq-sidebar-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &.yq-sidebar-overlay-invisible {
+      background-color: transparent;
     }
-
-    .yq-sidebar-overlay {
-        background-color: rgba(0, 0, 0, 0.6);
-
-        &.yq-sidebar-overlay-invisible {
-            background-color: transparent;
-        }
-    }
+  }
 }

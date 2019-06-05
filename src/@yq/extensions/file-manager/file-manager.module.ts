@@ -16,38 +16,38 @@ import {FileManagerFileListComponent} from '@yq/extensions/file-manager/file-lis
 import {FileManagerMainSidebarComponent} from '@yq/extensions/file-manager/sidebars/main/main.component';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: FileManagerComponent,
-        children: [],
-        resolve: {
-            files: FileManagerService
-        }
+  {
+    path: '**',
+    component: FileManagerComponent,
+    children: [],
+    resolve: {
+      files: FileManagerService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        FileManagerComponent,
-        FileManagerFileListComponent,
-        FileManagerMainSidebarComponent,
-        FileManagerDetailsSidebarComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    FileManagerComponent,
+    FileManagerFileListComponent,
+    FileManagerMainSidebarComponent,
+    FileManagerDetailsSidebarComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatIconModule,
-        MatRippleModule,
-        MatSlideToggleModule,
-        MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatTableModule,
 
-        YqSharedModule,
-        YqSidebarModule
-    ],
-    providers: [
-        FileManagerService
-    ]
+    YqSharedModule,
+    YqSidebarModule
+  ],
+  providers: [
+    FileManagerService
+  ]
 })
 export class FileManagerModule {
 }

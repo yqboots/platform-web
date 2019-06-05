@@ -5,16 +5,16 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {YqConfirmDialogComponent} from './confirm-dialog.component';
 
 @NgModule({
-    declarations: [
-        YqConfirmDialogComponent
-    ],
-    imports: [
-        MatDialogModule,
-        MatButtonModule
-    ],
-    entryComponents: [
-        YqConfirmDialogComponent
-    ],
+  declarations: [
+    YqConfirmDialogComponent
+  ],
+  imports: [
+    MatDialogModule,
+    MatButtonModule
+  ],
+  entryComponents: [
+    YqConfirmDialogComponent
+  ],
 })
 export class YqConfirmDialogModule {
 }

@@ -14,34 +14,34 @@ import {SearchModernService} from '@showcase/pages/search/modern/search-modern.s
 
 
 const routes = [
-    {
-        path: 'search/modern',
-        component: SearchModernComponent,
-        resolve: {
-            search: SearchModernService
-        }
+  {
+    path: 'search/modern',
+    component: SearchModernComponent,
+    resolve: {
+      search: SearchModernService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        SearchModernComponent,
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    SearchModernComponent,
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatTableModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        SearchModernService
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    SearchModernService
+  ]
 })
 export class SearchModernModule {
 }

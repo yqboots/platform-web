@@ -9,29 +9,29 @@ import {MailNgrxService} from '@yq/extensions/mail-ngrx/mail.service';
 
 @Injectable()
 export class FiltersEffect {
-    constructor(
-        private actions: Actions,
-        private mailService: MailNgrxService
-    ) {
-    }
+  constructor(
+    private actions: Actions,
+    private mailService: MailNgrxService
+  ) {
+  }
 
-    /**
-     * Get filters from Server
-     * @type {Observable<any>}
-     */
-    @Effect()
-    getFilters: Observable<FiltersActions.FiltersActionsAll> =
-        this.actions
-            .pipe(
-                ofType<FiltersActions.GetFilters>(FiltersActions.GET_FILTERS),
-                switchMap((action) => {
-                        return this.mailService.getFilters()
-                            .pipe(
-                                map((filters: any) => {
-                                    return new FiltersActions.GetFiltersSuccess(filters);
-                                }),
-                                catchError(err => of(new FiltersActions.GetFiltersFailed(err)))
-                            );
-                    }
-                ));
+  /**
+   * Get filters from Server
+   * @type {Observable<any>}
+   */
+  @Effect()
+  getFilters: Observable<FiltersActions.FiltersActionsAll> =
+    this.actions
+      .pipe(
+        ofType<FiltersActions.GetFilters>(FiltersActions.GET_FILTERS),
+        switchMap((action) => {
+            return this.mailService.getFilters()
+              .pipe(
+                map((filters: any) => {
+                  return new FiltersActions.GetFiltersSuccess(filters);
+                }),
+                catchError(err => of(new FiltersActions.GetFiltersFailed(err)))
+              );
+          }
+        ));
 }

@@ -12,27 +12,27 @@ import {YqCountdownModule} from '@yq/components';
 import {ComingSoonComponent} from '@showcase/pages/coming-soon/coming-soon.component';
 
 const routes = [
-    {
-        path: 'coming-soon',
-        component: ComingSoonComponent
-    }
+  {
+    path: 'coming-soon',
+    component: ComingSoonComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ComingSoonComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ComingSoonComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
-        YqSharedModule,
-        YqCountdownModule
-    ]
+    YqSharedModule,
+    YqCountdownModule
+  ]
 })
 export class ComingSoonModule {
 }

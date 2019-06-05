@@ -10,34 +10,34 @@ import {PricingStyle2Component} from '@showcase/pages/pricing/style-2/style-2.co
 import {PricingStyle3Component} from '@showcase/pages/pricing/style-3/style-3.component';
 
 const routes = [
-    {
-        path: 'pricing/style-1',
-        component: PricingStyle1Component
-    },
-    {
-        path: 'pricing/style-2',
-        component: PricingStyle2Component
-    },
-    {
-        path: 'pricing/style-3',
-        component: PricingStyle3Component
-    }
+  {
+    path: 'pricing/style-1',
+    component: PricingStyle1Component
+  },
+  {
+    path: 'pricing/style-2',
+    component: PricingStyle2Component
+  },
+  {
+    path: 'pricing/style-3',
+    component: PricingStyle3Component
+  }
 ];
 
 @NgModule({
-    declarations: [
-        PricingStyle1Component,
-        PricingStyle2Component,
-        PricingStyle3Component
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    PricingStyle1Component,
+    PricingStyle2Component,
+    PricingStyle3Component
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatDividerModule,
+    MatButtonModule,
+    MatDividerModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class PricingModule {
 }

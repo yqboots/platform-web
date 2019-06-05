@@ -10,26 +10,26 @@ import {YqSharedModule} from '@yq/core';
 import {ForgotPassword2Component} from '@showcase/pages/authentication/forgot-password-2/forgot-password-2.component';
 
 const routes = [
-    {
-        path: 'auth/forgot-password-2',
-        component: ForgotPassword2Component
-    }
+  {
+    path: 'auth/forgot-password-2',
+    component: ForgotPassword2Component
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ForgotPassword2Component
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ForgotPassword2Component
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
 
-        YqSharedModule,
-    ]
+    YqSharedModule,
+  ]
 })
 export class ForgotPassword2Module {
 }

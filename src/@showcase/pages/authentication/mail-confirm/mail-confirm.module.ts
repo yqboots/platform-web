@@ -7,23 +7,23 @@ import {YqSharedModule} from '@yq/core';
 import {MailConfirmComponent} from '@showcase/pages/authentication/mail-confirm/mail-confirm.component';
 
 const routes = [
-    {
-        path: 'auth/mail-confirm',
-        component: MailConfirmComponent
-    }
+  {
+    path: 'auth/mail-confirm',
+    component: MailConfirmComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        MailConfirmComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    MailConfirmComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatIconModule,
+    MatIconModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class MailConfirmModule {
 }

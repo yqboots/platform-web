@@ -9,15 +9,15 @@ import {UIPageLayoutsModule} from '@showcase/ui/page-layouts/page-layouts.module
 import {UIColorsModule} from '@showcase/ui/colors/colors.module';
 
 @NgModule({
-    imports: [
-        UICardsModule,
-        UIFormsModule,
-        UIIconsModule,
-        UITypographyModule,
-        UIHelperClassesModule,
-        UIPageLayoutsModule,
-        UIColorsModule
-    ]
+  imports: [
+    UICardsModule,
+    UIFormsModule,
+    UIIconsModule,
+    UITypographyModule,
+    UIHelperClassesModule,
+    UIPageLayoutsModule,
+    UIColorsModule
+  ]
 })
 export class UIModule {
 }

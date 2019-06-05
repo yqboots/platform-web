@@ -24,88 +24,88 @@ import {MailMainSidebarComponent} from '@yq/extensions/mail/sidebars/main/main-s
 import {MailComposeDialogComponent} from '@yq/extensions/mail/dialogs/compose/compose.component';
 
 const routes: Routes = [
-    {
-        path: 'label/:labelHandle',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: 'label/:labelHandle/:mailId',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: 'filter/:filterHandle',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: 'filter/:filterHandle/:mailId',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: ':folderHandle',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: ':folderHandle/:mailId',
-        component: MailComponent,
-        resolve: {
-            mail: MailService
-        }
-    },
-    {
-        path: '**',
-        redirectTo: 'inbox'
+  {
+    path: 'label/:labelHandle',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
     }
+  },
+  {
+    path: 'label/:labelHandle/:mailId',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
+    }
+  },
+  {
+    path: 'filter/:filterHandle',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
+    }
+  },
+  {
+    path: 'filter/:filterHandle/:mailId',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
+    }
+  },
+  {
+    path: ':folderHandle',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
+    }
+  },
+  {
+    path: ':folderHandle/:mailId',
+    component: MailComponent,
+    resolve: {
+      mail: MailService
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'inbox'
+  }
 ];
 
 @NgModule({
-    declarations: [
-        MailComponent,
-        MailListComponent,
-        MailListItemComponent,
-        MailDetailsComponent,
-        MailMainSidebarComponent,
-        MailComposeDialogComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    MailComponent,
+    MailListComponent,
+    MailListItemComponent,
+    MailDetailsComponent,
+    MailMainSidebarComponent,
+    MailComposeDialogComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatToolbarModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatToolbarModule,
 
-        TranslateModule,
+    TranslateModule,
 
-        YqSharedModule,
-        YqSidebarModule
-    ],
-    providers: [
-        MailService
-    ],
-    entryComponents: [
-        MailComposeDialogComponent
-    ]
+    YqSharedModule,
+    YqSidebarModule
+  ],
+  providers: [
+    MailService
+  ],
+  entryComponents: [
+    MailComposeDialogComponent
+  ]
 })
 export class MailModule {
 }

@@ -8,19 +8,19 @@ import {YqSharedModule} from '@yq/core';
 import {NavbarVerticalStyle2Component} from 'app/layout/components/navbar/vertical/style-2/style-2.component';
 
 @NgModule({
-    declarations: [
-        NavbarVerticalStyle2Component
-    ],
-    imports: [
-        MatButtonModule,
-        MatIconModule,
+  declarations: [
+    NavbarVerticalStyle2Component
+  ],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
 
-        YqSharedModule,
-        YqNavigationModule
-    ],
-    exports: [
-        NavbarVerticalStyle2Component
-    ]
+    YqSharedModule,
+    YqNavigationModule
+  ],
+  exports: [
+    NavbarVerticalStyle2Component
+  ]
 })
 export class NavbarVerticalStyle2Module {
 }

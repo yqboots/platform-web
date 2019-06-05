@@ -11,24 +11,24 @@ import {YqPipesModule} from '@yq/core';
 import {YqMaterialColorPickerComponent} from './material-color-picker.component';
 
 @NgModule({
-    declarations: [
-        YqMaterialColorPickerComponent
-    ],
-    imports: [
-        CommonModule,
+  declarations: [
+    YqMaterialColorPickerComponent
+  ],
+  imports: [
+    CommonModule,
 
-        FlexLayoutModule,
+    FlexLayoutModule,
 
-        MatButtonModule,
-        MatIconModule,
-        MatMenuModule,
-        MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTooltipModule,
 
-        YqPipesModule
-    ],
-    exports: [
-        YqMaterialColorPickerComponent
-    ],
+    YqPipesModule
+  ],
+  exports: [
+    YqMaterialColorPickerComponent
+  ],
 })
 export class YqMaterialColorPickerModule {
 }

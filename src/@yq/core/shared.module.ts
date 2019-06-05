@@ -9,38 +9,38 @@ import {YqDirectivesModule} from './directives/directives.module';
 import {YqPipesModule} from './pipes/pipes.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-    /*suppressScrollX: true*/
+  /*suppressScrollX: true*/
 };
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
-        FlexLayoutModule,
-        PerfectScrollbarModule,
+    FlexLayoutModule,
+    PerfectScrollbarModule,
 
-        YqDirectivesModule,
-        YqPipesModule
-    ],
-    exports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
+    YqDirectivesModule,
+    YqPipesModule
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
-        FlexLayoutModule,
-        PerfectScrollbarModule,
+    FlexLayoutModule,
+    PerfectScrollbarModule,
 
-        YqDirectivesModule,
-        YqPipesModule
-    ],
-    providers: [
-        {
-            provide: PERFECT_SCROLLBAR_CONFIG,
-            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        }
-    ]
+    YqDirectivesModule,
+    YqPipesModule
+  ],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ]
 })
 export class YqSharedModule {
 }

@@ -1,17 +1,17 @@
 @mixin yq-countdown-theme($theme) {
 
-    $foreground: map-get($theme, foreground);
+  $foreground: map-get($theme, foreground);
 
-    yq-countdown {
+  yq-countdown {
 
-        .yq-countdown {
+    .yq-countdown {
 
-            .time {
+      .time {
 
-                .title {
-                    color: map-get($foreground, secondary-text);
-                }
-            }
+        .title {
+          color: map-get($foreground, secondary-text);
         }
+      }
     }
+  }
 }

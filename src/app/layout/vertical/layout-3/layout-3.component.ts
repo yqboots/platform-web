@@ -7,55 +7,55 @@ import {YqConfigService} from '@yq/core';
 import {navigation} from 'app/navigation/navigation';
 
 @Component({
-    selector: 'vertical-layout-3',
-    templateUrl: './layout-3.component.html',
-    styleUrls: ['./layout-3.component.scss'],
-    encapsulation: ViewEncapsulation.None
+  selector: 'vertical-layout-3',
+  templateUrl: './layout-3.component.html',
+  styleUrls: ['./layout-3.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class VerticalLayout3Component implements OnInit, OnDestroy {
-    yqConfig: any;
-    navigation: any;
+  yqConfig: any;
+  navigation: any;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {YqConfigService} _yqConfigService
-     */
-    constructor(
-        private _yqConfigService: YqConfigService
-    ) {
-        // Set the defaults
-        this.navigation = navigation;
+  /**
+   * Constructor
+   *
+   * @param {YqConfigService} _yqConfigService
+   */
+  constructor(
+    private _yqConfigService: YqConfigService
+  ) {
+    // Set the defaults
+    this.navigation = navigation;
 
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        // Subscribe to config changes
-        this._yqConfigService.config
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((config) => {
-                this.yqConfig = config;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    // Subscribe to config changes
+    this._yqConfigService.config
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe((config) => {
+        this.yqConfig = config;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }

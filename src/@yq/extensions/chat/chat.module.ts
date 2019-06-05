@@ -25,46 +25,46 @@ import {ChatRightSidenavComponent} from '@yq/extensions/chat/sidenavs/right/righ
 import {ChatContactSidenavComponent} from '@yq/extensions/chat/sidenavs/right/contact/contact.component';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: ChatComponent,
-        children: [],
-        resolve: {
-            chat: ChatService
-        }
+  {
+    path: '**',
+    component: ChatComponent,
+    children: [],
+    resolve: {
+      chat: ChatService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ChatComponent,
-        ChatViewComponent,
-        ChatStartComponent,
-        ChatChatsSidenavComponent,
-        ChatUserSidenavComponent,
-        ChatLeftSidenavComponent,
-        ChatRightSidenavComponent,
-        ChatContactSidenavComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ChatComponent,
+    ChatViewComponent,
+    ChatStartComponent,
+    ChatChatsSidenavComponent,
+    ChatUserSidenavComponent,
+    ChatLeftSidenavComponent,
+    ChatRightSidenavComponent,
+    ChatContactSidenavComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        MatMenuModule,
-        MatRadioModule,
-        MatSidenavModule,
-        MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatRadioModule,
+    MatSidenavModule,
+    MatToolbarModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        ChatService
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    ChatService
+  ]
 })
 export class ChatModule {
 }

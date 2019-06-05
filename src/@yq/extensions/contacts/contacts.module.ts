@@ -22,47 +22,47 @@ import {ContactsMainSidebarComponent} from '@yq/extensions/contacts/sidebars/mai
 import {ContactsContactFormDialogComponent} from '@yq/extensions/contacts/contact-form/contact-form.component';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: ContactsComponent,
-        resolve: {
-            contacts: ContactsService
-        }
+  {
+    path: '**',
+    component: ContactsComponent,
+    resolve: {
+      contacts: ContactsService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ContactsComponent,
-        ContactsContactListComponent,
-        ContactsSelectedBarComponent,
-        ContactsMainSidebarComponent,
-        ContactsContactFormDialogComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ContactsComponent,
+    ContactsContactListComponent,
+    ContactsSelectedBarComponent,
+    ContactsMainSidebarComponent,
+    ContactsContactFormDialogComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatDatepickerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatRippleModule,
-        MatTableModule,
-        MatToolbarModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatTableModule,
+    MatToolbarModule,
 
-        YqSharedModule,
-        YqConfirmDialogModule,
-        YqSidebarModule
-    ],
-    providers: [
-        ContactsService
-    ],
-    entryComponents: [
-        ContactsContactFormDialogComponent
-    ]
+    YqSharedModule,
+    YqConfirmDialogModule,
+    YqSidebarModule
+  ],
+  providers: [
+    ContactsService
+  ],
+  entryComponents: [
+    ContactsContactFormDialogComponent
+  ]
 })
 export class ContactsModule {
 }

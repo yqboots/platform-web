@@ -1,38 +1,38 @@
 @mixin search-modern-theme($theme) {
 
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
-    // Search Modern
-    search-modern {
+  // Search Modern
+  search-modern {
 
-        .header {
+    .header {
 
-            .search-wrapper {
-                background: map-get($background, card);
+      .search-wrapper {
+        background: map-get($background, card);
 
-                .search {
+        .search {
 
-                    mat-icon {
-                        color: map-get($foreground, secondary-text);
-                    }
+          mat-icon {
+            color: map-get($foreground, secondary-text);
+          }
 
-                    input {
-                        background: map-get($background, card);
-                        color: map-get($foreground, text);
-                    }
-                }
-            }
+          input {
+            background: map-get($background, card);
+            color: map-get($foreground, text);
+          }
         }
-
-        .content {
-
-            .results {
-
-                .result-item {
-                    background: map-get($background, card);
-                }
-            }
-        }
+      }
     }
+
+    .content {
+
+      .results {
+
+        .result-item {
+          background: map-get($background, card);
+        }
+      }
+    }
+  }
 }

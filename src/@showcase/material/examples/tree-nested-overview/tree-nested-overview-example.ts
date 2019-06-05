@@ -7,53 +7,53 @@ import {MatTreeNestedDataSource} from '@angular/material/tree';
  * Each node has a name and an optiona list of children.
  */
 interface FoodNode {
-    name: string;
-    children?: FoodNode[];
+  name: string;
+  children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
-    {
-        name: 'Fruit',
+  {
+    name: 'Fruit',
+    children: [
+      {name: 'Apple'},
+      {name: 'Banana'},
+      {name: 'Fruit loops'},
+    ]
+  }, {
+    name: 'Vegetables',
+    children: [
+      {
+        name: 'Green',
         children: [
-            {name: 'Apple'},
-            {name: 'Banana'},
-            {name: 'Fruit loops'},
+          {name: 'Broccoli'},
+          {name: 'Brussel sprouts'},
         ]
-    }, {
-        name: 'Vegetables',
+      }, {
+        name: 'Orange',
         children: [
-            {
-                name: 'Green',
-                children: [
-                    {name: 'Broccoli'},
-                    {name: 'Brussel sprouts'},
-                ]
-            }, {
-                name: 'Orange',
-                children: [
-                    {name: 'Pumpkins'},
-                    {name: 'Carrots'},
-                ]
-            },
+          {name: 'Pumpkins'},
+          {name: 'Carrots'},
         ]
-    },
+      },
+    ]
+  },
 ];
 
 /**
  * @title Tree with nested nodes
  */
 @Component({
-    selector: 'tree-nested-overview-example',
-    templateUrl: 'tree-nested-overview-example.html',
-    styleUrls: ['tree-nested-overview-example.css'],
+  selector: 'tree-nested-overview-example',
+  templateUrl: 'tree-nested-overview-example.html',
+  styleUrls: ['tree-nested-overview-example.css'],
 })
 export class TreeNestedOverviewExample {
-    treeControl = new NestedTreeControl<FoodNode>(node => node.children);
-    dataSource = new MatTreeNestedDataSource<FoodNode>();
+  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
+  dataSource = new MatTreeNestedDataSource<FoodNode>();
 
-    constructor() {
-        this.dataSource.data = TREE_DATA;
-    }
+  constructor() {
+    this.dataSource.data = TREE_DATA;
+  }
 
-    hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
 }

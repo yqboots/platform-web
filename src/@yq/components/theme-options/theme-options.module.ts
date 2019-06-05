@@ -19,33 +19,33 @@ import {YqMaterialColorPickerModule} from '../material-color-picker/material-col
 import {YqThemeOptionsComponent} from './theme-options.component';
 
 @NgModule({
-    declarations: [
-        YqThemeOptionsComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
+  declarations: [
+    YqThemeOptionsComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
-        FlexLayoutModule,
+    FlexLayoutModule,
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatDividerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatOptionModule,
-        MatRadioModule,
-        MatSelectModule,
-        MatSlideToggleModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatOptionModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSlideToggleModule,
 
-        YqDirectivesModule,
-        YqMaterialColorPickerModule,
-        YqSidebarModule
-    ],
-    exports: [
-        YqThemeOptionsComponent
-    ]
+    YqDirectivesModule,
+    YqMaterialColorPickerModule,
+    YqSidebarModule
+  ],
+  exports: [
+    YqThemeOptionsComponent
+  ]
 })
 export class YqThemeOptionsModule {
 }

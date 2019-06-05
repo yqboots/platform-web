@@ -6,18 +6,18 @@ import {takeUntil} from 'rxjs/operators';
 
 /** @title Datepicker with custom calendar header */
 @Component({
-    selector: 'datepicker-custom-header-example',
-    templateUrl: 'datepicker-custom-header-example.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'datepicker-custom-header-example',
+  templateUrl: 'datepicker-custom-header-example.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DatepickerCustomHeaderExample {
-    exampleHeader = ExampleHeader;
+  exampleHeader = ExampleHeader;
 }
 
 /** Custom header component for datepicker. */
 @Component({
-    selector: 'example-header',
-    styles: [`
+  selector: 'example-header',
+  styles: [`
     .example-header {
       display: flex;
       align-items: center;
@@ -35,7 +35,7 @@ export class DatepickerCustomHeaderExample {
       margin: -22%;
     }
   `],
-    template: `
+  template: `
     <div class="example-header">
       <button mat-icon-button class="example-double-arrow" (click)="previousClicked('year')">
         <mat-icon>keyboard_arrow_left</mat-icon>
@@ -54,39 +54,39 @@ export class DatepickerCustomHeaderExample {
       </button>
     </div>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExampleHeader<D> implements OnDestroy {
-    private _destroyed = new Subject<void>();
+  private _destroyed = new Subject<void>();
 
-    constructor(
-        private _calendar: MatCalendar<D>, private _dateAdapter: DateAdapter<D>,
-        @Inject(MAT_DATE_FORMATS) private _dateFormats: MatDateFormats, cdr: ChangeDetectorRef) {
-        _calendar.stateChanges
-            .pipe(takeUntil(this._destroyed))
-            .subscribe(() => cdr.markForCheck());
-    }
+  constructor(
+    private _calendar: MatCalendar<D>, private _dateAdapter: DateAdapter<D>,
+    @Inject(MAT_DATE_FORMATS) private _dateFormats: MatDateFormats, cdr: ChangeDetectorRef) {
+    _calendar.stateChanges
+      .pipe(takeUntil(this._destroyed))
+      .subscribe(() => cdr.markForCheck());
+  }
 
-    ngOnDestroy() {
-        this._destroyed.next();
-        this._destroyed.complete();
-    }
+  ngOnDestroy() {
+    this._destroyed.next();
+    this._destroyed.complete();
+  }
 
-    get periodLabel() {
-        return this._dateAdapter
-            .format(this._calendar.activeDate, this._dateFormats.display.monthYearLabel)
-            .toLocaleUpperCase();
-    }
+  get periodLabel() {
+    return this._dateAdapter
+      .format(this._calendar.activeDate, this._dateFormats.display.monthYearLabel)
+      .toLocaleUpperCase();
+  }
 
-    previousClicked(mode: 'month' | 'year') {
-        this._calendar.activeDate = mode === 'month' ?
-            this._dateAdapter.addCalendarMonths(this._calendar.activeDate, -1) :
-            this._dateAdapter.addCalendarYears(this._calendar.activeDate, -1);
-    }
+  previousClicked(mode: 'month' | 'year') {
+    this._calendar.activeDate = mode === 'month' ?
+      this._dateAdapter.addCalendarMonths(this._calendar.activeDate, -1) :
+      this._dateAdapter.addCalendarYears(this._calendar.activeDate, -1);
+  }
 
-    nextClicked(mode: 'month' | 'year') {
-        this._calendar.activeDate = mode === 'month' ?
-            this._dateAdapter.addCalendarMonths(this._calendar.activeDate, 1) :
-            this._dateAdapter.addCalendarYears(this._calendar.activeDate, 1);
-    }
+  nextClicked(mode: 'month' | 'year') {
+    this._calendar.activeDate = mode === 'month' ?
+      this._dateAdapter.addCalendarMonths(this._calendar.activeDate, 1) :
+      this._dateAdapter.addCalendarYears(this._calendar.activeDate, 1);
+  }
 }

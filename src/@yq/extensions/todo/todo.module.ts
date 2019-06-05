@@ -22,83 +22,83 @@ import {TodoListComponent} from '@yq/extensions/todo/todo-list/todo-list.compone
 import {TodoDetailsComponent} from '@yq/extensions/todo/todo-details/todo-details.component';
 
 const routes: Routes = [
-    {
-        path: 'all',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: 'all/:todoId',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: 'tag/:tagHandle',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: 'tag/:tagHandle/:todoId',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: 'filter/:filterHandle',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: 'filter/:filterHandle/:todoId',
-        component: TodoComponent,
-        resolve: {
-            todo: TodoService
-        }
-    },
-    {
-        path: '**',
-        redirectTo: 'all'
+  {
+    path: 'all',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
     }
+  },
+  {
+    path: 'all/:todoId',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
+    }
+  },
+  {
+    path: 'tag/:tagHandle',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
+    }
+  },
+  {
+    path: 'tag/:tagHandle/:todoId',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
+    }
+  },
+  {
+    path: 'filter/:filterHandle',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
+    }
+  },
+  {
+    path: 'filter/:filterHandle/:todoId',
+    component: TodoComponent,
+    resolve: {
+      todo: TodoService
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'all'
+  }
 ];
 
 @NgModule({
-    declarations: [
-        TodoComponent,
-        TodoMainSidebarComponent,
-        TodoListItemComponent,
-        TodoListComponent,
-        TodoDetailsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    TodoComponent,
+    TodoMainSidebarComponent,
+    TodoListItemComponent,
+    TodoListComponent,
+    TodoDetailsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatDatepickerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatRippleModule,
-        MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatSelectModule,
 
-        NgxDnDModule,
+    NgxDnDModule,
 
-        YqSharedModule,
-        YqSidebarModule
-    ],
-    providers: [
-        TodoService
-    ]
+    YqSharedModule,
+    YqSidebarModule
+  ],
+  providers: [
+    TodoService
+  ]
 })
 export class TodoModule {
 }

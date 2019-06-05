@@ -21,49 +21,49 @@ import {CalendarService} from '@yq/extensions/calendar/calendar.service';
 import {CalendarEventFormDialogComponent} from '@yq/extensions/calendar/event-form/event-form.component';
 
 const routes: Routes = [
-    {
-        path: '**',
-        component: CalendarComponent,
-        children: [],
-        resolve: {
-            chat: CalendarService
-        }
+  {
+    path: '**',
+    component: CalendarComponent,
+    children: [],
+    resolve: {
+      chat: CalendarService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        CalendarComponent,
-        CalendarEventFormDialogComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    CalendarComponent,
+    CalendarEventFormDialogComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatSlideToggleModule,
-        MatToolbarModule,
-        MatTooltipModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatTooltipModule,
 
-        AngularCalendarModule.forRoot({
-            provide: DateAdapter,
-            useFactory: adapterFactory
-        }),
-        ColorPickerModule,
+    AngularCalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    ColorPickerModule,
 
-        YqSharedModule,
-        YqConfirmDialogModule
-    ],
-    providers: [
-        CalendarService
-    ],
-    entryComponents: [
-        CalendarEventFormDialogComponent
-    ]
+    YqSharedModule,
+    YqConfirmDialogModule
+  ],
+  providers: [
+    CalendarService
+  ],
+  entryComponents: [
+    CalendarEventFormDialogComponent
+  ]
 })
 export class CalendarModule {
 }

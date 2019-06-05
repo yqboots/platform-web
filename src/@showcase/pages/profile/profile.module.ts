@@ -15,35 +15,35 @@ import {ProfilePhotosVideosComponent} from '@showcase/pages/profile/tabs/photos-
 
 
 const routes = [
-    {
-        path: 'profile',
-        component: ProfileComponent,
-        resolve: {
-            profile: ProfileService
-        }
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    resolve: {
+      profile: ProfileService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        ProfileComponent,
-        ProfileTimelineComponent,
-        ProfileAboutComponent,
-        ProfilePhotosVideosComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    ProfileComponent,
+    ProfileTimelineComponent,
+    ProfileAboutComponent,
+    ProfilePhotosVideosComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatDividerModule,
-        MatIconModule,
-        MatTabsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    MatTabsModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        ProfileService
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    ProfileService
+  ]
 })
 export class ProfileModule {
 }

@@ -12,28 +12,28 @@ import {YqSharedModule} from '@yq/core';
 import {FormsComponent} from '@showcase/ui/forms/forms.component';
 
 const routes: Routes = [
-    {
-        path: 'forms',
-        component: FormsComponent
-    }
+  {
+    path: 'forms',
+    component: FormsComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        FormsComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    FormsComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatSelectModule,
-        MatStepperModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatStepperModule,
 
-        YqSharedModule,
-    ]
+    YqSharedModule,
+  ]
 })
 export class UIFormsModule {
 }

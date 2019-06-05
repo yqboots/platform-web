@@ -7,50 +7,50 @@ import {yqAnimations} from '@yq/core';
 import {ChatService} from '@yq/extensions/chat/chat.service';
 
 @Component({
-    selector: 'chat-right-sidenav',
-    templateUrl: './right.component.html',
-    styleUrls: ['./right.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations: yqAnimations
+  selector: 'chat-right-sidenav',
+  templateUrl: './right.component.html',
+  styleUrls: ['./right.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: yqAnimations
 })
 export class ChatRightSidenavComponent implements OnInit, OnDestroy {
-    view: string;
+  view: string;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+  // Private
+  private _unsubscribeAll: Subject<any>;
 
-    constructor(
-        private _chatService: ChatService
-    ) {
-        // Set the defaults
-        this.view = 'contact';
+  constructor(
+    private _chatService: ChatService
+  ) {
+    // Set the defaults
+    this.view = 'contact';
 
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
-    ngOnInit(): void {
-        this._chatService.onRightSidenavViewChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(view => {
-                this.view = view;
-            });
-    }
+  /**
+   * On init
+   */
+  ngOnInit(): void {
+    this._chatService.onRightSidenavViewChanged
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(view => {
+        this.view = view;
+      });
+  }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+  /**
+   * On destroy
+   */
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 
 }

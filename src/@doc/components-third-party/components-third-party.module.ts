@@ -10,27 +10,27 @@ import {YqSharedModule} from '@yq/core';
 import {DocsComponentsThirdPartyNgxDatatableComponent} from '@doc/components-third-party/datatable/ngx-datatable.component';
 
 const routes = [
-    {
-        path: 'datatables/ngx-datatable',
-        component: DocsComponentsThirdPartyNgxDatatableComponent
-    }
+  {
+    path: 'datatables/ngx-datatable',
+    component: DocsComponentsThirdPartyNgxDatatableComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        DocsComponentsThirdPartyNgxDatatableComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    DocsComponentsThirdPartyNgxDatatableComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatIconModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
 
-        NgxDatatableModule,
+    NgxDatatableModule,
 
-        YqSharedModule
-    ]
+    YqSharedModule
+  ]
 })
 export class ComponentsThirdPartyModule {
 }

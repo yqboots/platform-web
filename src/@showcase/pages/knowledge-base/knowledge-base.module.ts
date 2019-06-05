@@ -13,37 +13,37 @@ import {KnowledgeBaseComponent} from '@showcase/pages/knowledge-base/knowledge-b
 import {KnowledgeBaseArticleComponent} from '@showcase/pages/knowledge-base/dialogs/article/article.component';
 
 const routes = [
-    {
-        path: 'knowledge-base',
-        component: KnowledgeBaseComponent,
-        resolve: {
-            knowledgeBase: KnowledgeBaseService
-        }
+  {
+    path: 'knowledge-base',
+    component: KnowledgeBaseComponent,
+    resolve: {
+      knowledgeBase: KnowledgeBaseService
     }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        KnowledgeBaseComponent,
-        KnowledgeBaseArticleComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
+  declarations: [
+    KnowledgeBaseComponent,
+    KnowledgeBaseArticleComponent
+  ],
+  imports: [
+    RouterModule.forChild(routes),
 
-        MatButtonModule,
-        MatDialogModule,
-        MatIconModule,
-        MatListModule,
-        MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule,
 
-        YqSharedModule
-    ],
-    providers: [
-        KnowledgeBaseService
-    ],
-    entryComponents: [
-        KnowledgeBaseArticleComponent
-    ]
+    YqSharedModule
+  ],
+  providers: [
+    KnowledgeBaseService
+  ],
+  entryComponents: [
+    KnowledgeBaseArticleComponent
+  ]
 })
 export class KnowledgeBaseModule {
 }
