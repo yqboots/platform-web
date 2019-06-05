@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {FuseNavigationService} from '@fuse/components/navigation/navigation.service';
+import {YqNavigationService} from '@yq/components/navigation/navigation.service';
 
 @Component({
     selector: 'docs-components-navigation',
@@ -15,7 +15,7 @@ export class DocsComponentsNavigationComponent {
      * Constructor
      */
     constructor(
-        private _fuseNavigationService: FuseNavigationService
+        private _yqNavigationService: YqNavigationService
     ) {
         // Set the defaults
         this.hidden = false;
@@ -33,7 +33,7 @@ export class DocsComponentsNavigationComponent {
         this.hidden = !this.hidden;
 
         // Update the calendar menu item
-        this._fuseNavigationService.updateNavigationItem('calendar', {
+        this._yqNavigationService.updateNavigationItem('calendar', {
             hidden: this.hidden
         });
     }
@@ -43,7 +43,7 @@ export class DocsComponentsNavigationComponent {
      */
     updateMailBadge(): void {
         // Update the badge title
-        this._fuseNavigationService.updateNavigationItem('mail', {
+        this._yqNavigationService.updateNavigationItem('mail', {
             badge: {
                 title: 35
             }
@@ -62,7 +62,7 @@ export class DocsComponentsNavigationComponent {
             url: '/apps/calendar'
         };
 
-        this._fuseNavigationService.updateNavigationItem('calendar', {
+        this._yqNavigationService.updateNavigationItem('calendar', {
             type: 'collapsible',
             children: [
                 newNavItem
@@ -85,14 +85,14 @@ export class DocsComponentsNavigationComponent {
         };
 
         // Add the new nav item at the beginning of the navigation
-        this._fuseNavigationService.addNavigationItem(newNavItem, 'start');
+        this._yqNavigationService.addNavigationItem(newNavItem, 'start');
     }
 
     /**
      * Remove the dashboard menu item
      */
     removeDashboards(): void {
-        this._fuseNavigationService.removeNavigationItem('dashboards');
+        this._yqNavigationService.removeNavigationItem('dashboards');
     }
 
     /**
@@ -147,9 +147,9 @@ export class DocsComponentsNavigationComponent {
         ];
 
         // Register the new navigation
-        this._fuseNavigationService.register('admin-nav', adminNav);
+        this._yqNavigationService.register('admin-nav', adminNav);
 
         // Set the current navigation
-        this._fuseNavigationService.setCurrentNavigation('admin-nav');
+        this._yqNavigationService.setCurrentNavigation('admin-nav');
     }
 }

@@ -5,8 +5,8 @@ import {delay, filter, take, takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {FuseConfigService} from '@fuse/core';
-import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
+import {YqConfigService} from '@yq/core';
+import {YqNavigationService, YqSidebarService} from '@yq/components';
 
 @Component({
     selector: 'navbar-vertical-style-2',
@@ -15,7 +15,7 @@ import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
     encapsulation: ViewEncapsulation.None
 })
 export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
-    fuseConfig: any;
+    yqConfig: any;
     navigation: any;
 
     // Private
@@ -25,15 +25,15 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FuseNavigationService} _fuseNavigationService
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {YqConfigService} _yqConfigService
+     * @param {YqNavigationService} _yqNavigationService
+     * @param {YqSidebarService} _yqSidebarService
      * @param {Router} _router
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
-        private _fuseNavigationService: FuseNavigationService,
-        private _fuseSidebarService: FuseSidebarService,
+        private _yqConfigService: YqConfigService,
+        private _yqNavigationService: YqNavigationService,
+        private _yqSidebarService: YqSidebarService,
         private _router: Router
     ) {
         // Set the private defaults
@@ -54,7 +54,7 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
         this._perfectScrollbarDirective = theDirective;
 
         // Update the scrollbar on collapsible item toggle
-        this._fuseNavigationService.onItemCollapseToggled
+        this._yqNavigationService.onItemCollapseToggled
             .pipe(
                 delay(500),
                 takeUntil(this._unsubscribeAll)
@@ -91,27 +91,27 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                    if (this._fuseSidebarService.getSidebar('navbar')) {
-                        this._fuseSidebarService.getSidebar('navbar').close();
+                    if (this._yqSidebarService.getSidebar('navbar')) {
+                        this._yqSidebarService.getSidebar('navbar').close();
                     }
                 }
             );
 
         // Get current navigation
-        this._fuseNavigationService.onNavigationChanged
+        this._yqNavigationService.onNavigationChanged
             .pipe(
                 filter(value => value !== null),
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                this.navigation = this._fuseNavigationService.getCurrentNavigation();
+                this.navigation = this._yqNavigationService.getCurrentNavigation();
             });
 
         // Subscribe to the config changes
-        this._fuseConfigService.config
+        this._yqConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config) => {
-                this.fuseConfig = config;
+                this.yqConfig = config;
             });
     }
 
@@ -132,13 +132,13 @@ export class NavbarVerticalStyle2Component implements OnInit, OnDestroy {
      * Toggle sidebar opened status
      */
     toggleSidebarOpened(): void {
-        this._fuseSidebarService.getSidebar('navbar').toggleOpen();
+        this._yqSidebarService.getSidebar('navbar').toggleOpen();
     }
 
     /**
      * Toggle sidebar folded status
      */
     toggleSidebarFolded(): void {
-        this._fuseSidebarService.getSidebar('navbar').toggleFold();
+        this._yqSidebarService.getSidebar('navbar').toggleFold();
     }
 }

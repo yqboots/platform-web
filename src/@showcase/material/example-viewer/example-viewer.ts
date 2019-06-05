@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-typescript';
 
-import {fuseAnimations, FuseCopierService} from '@fuse/core';
+import {yqAnimations, YqCopierService} from '@yq/core';
 
 import {EXAMPLE_COMPONENTS} from '@showcase/material/example-components';
 
@@ -29,7 +29,7 @@ export interface LiveExample {
     templateUrl: './example-viewer.html',
     styleUrls: ['./example-viewer.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class ExampleViewerComponent implements AfterViewInit, OnDestroy {
     _example: string;
@@ -45,12 +45,12 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy {
      * Constructor
      *
      * @param {MatSnackBar} _matSnackBar
-     * @param {FuseCopierService} _fuseCopierService
+     * @param {YqCopierService} _yqCopierService
      * @param {ComponentFactoryResolver} _componentFactoryResolver
      */
     constructor(
         private _matSnackBar: MatSnackBar,
-        private _fuseCopierService: FuseCopierService,
+        private _yqCopierService: YqCopierService,
         private _componentFactoryResolver: ComponentFactoryResolver
     ) {
         // Set the defaults
@@ -134,7 +134,7 @@ export class ExampleViewerComponent implements AfterViewInit, OnDestroy {
      * @param {string} text
      */
     copySource(text: string): void {
-        if (this._fuseCopierService.copyText(text)) {
+        if (this._yqCopierService.copyText(text)) {
             this._matSnackBar.open('Code copied', '', {duration: 2500});
         } else {
             this._matSnackBar.open('Copy failed. Please try again!', '', {duration: 2500});

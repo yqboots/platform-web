@@ -1,8 +1,8 @@
-@import "src/assets/scss/fuse";
+@import "src/assets/scss/yq";
 
-fuse-sidebar {
+yq-sidebar {
 
-    &.navbar-fuse-sidebar {
+    &.navbar-yq-sidebar {
         overflow: hidden;
 
         &.folded:not(.unfolded) {

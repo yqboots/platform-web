@@ -1,14 +1,14 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import * as shape from 'd3-shape';
 
-import {fuseAnimations} from '@fuse/core';
+import {yqAnimations} from '@yq/core';
 
 @Component({
     selector: 'cards',
     templateUrl: './cards.component.html',
     styleUrls: ['./cards.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class CardsComponent {
     view: string;

@@ -3,14 +3,14 @@ import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, 
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations, FuseConfigService} from '@fuse/core';
+import {yqAnimations, YqConfigService} from '@yq/core';
 
 @Component({
     selector: 'register-2',
     templateUrl: './register-2.component.html',
     styleUrls: ['./register-2.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class Register2Component implements OnInit, OnDestroy {
     registerForm: FormGroup;
@@ -19,11 +19,11 @@ export class Register2Component implements OnInit, OnDestroy {
     private _unsubscribeAll: Subject<any>;
 
     constructor(
-        private _fuseConfigService: FuseConfigService,
+        private _yqConfigService: YqConfigService,
         private _formBuilder: FormBuilder
     ) {
         // Configure the layout
-        this._fuseConfigService.config = {
+        this._yqConfigService.config = {
             layout: {
                 navbar: {
                     hidden: true

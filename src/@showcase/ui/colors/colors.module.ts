@@ -4,8 +4,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseDemoModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqDemoModule} from '@yq/components';
 
 import {ColorsComponent} from '@showcase/ui/colors/colors.component';
 
@@ -27,8 +27,8 @@ const routes: Routes = [
         MatIconModule,
         MatTabsModule,
 
-        FuseSharedModule,
-        FuseDemoModule
+        YqSharedModule,
+        YqDemoModule
     ]
 })
 export class UIColorsModule {

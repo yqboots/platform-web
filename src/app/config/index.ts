@@ -1,15 +1,15 @@
-import {FuseConfig} from '@fuse/core/types';
+import {YqConfig} from '@yq/core/types';
 import {environment} from 'environments/environment';
 import {Routes} from '@angular/router';
 
 /**
- * Default Fuse Configuration
+ * Default YQBoots Configuration
  *
  * You can edit these options to change the default options. All these options also can be
  * changed per component basis. See `app/main/pages/authentication/login/login.component.ts`
  * constructor method to learn more about changing these options per component basis.
  */
-export const fuseConfig: FuseConfig = {
+export const yqConfig: YqConfig = {
     // Color themes can be defined in src/app/app.theme.scss
     colorTheme: 'theme-default',
     customScrollbars: true,
@@ -17,8 +17,8 @@ export const fuseConfig: FuseConfig = {
         style: 'vertical-layout-1',
         width: 'fullwidth',
         navbar: {
-            primaryBackground: 'fuse-navy-700',
-            secondaryBackground: 'fuse-navy-900',
+            primaryBackground: 'yq-navy-700',
+            secondaryBackground: 'yq-navy-900',
             folded: false,
             hidden: false,
             position: 'left',
@@ -26,13 +26,13 @@ export const fuseConfig: FuseConfig = {
         },
         toolbar: {
             customBackgroundColor: false,
-            background: 'fuse-white-500',
+            background: 'yq-white-500',
             hidden: false,
             position: 'below-static'
         },
         footer: {
             customBackgroundColor: true,
-            background: 'fuse-navy-900',
+            background: 'yq-navy-900',
             hidden: false,
             position: 'below-fixed'
         },
@@ -47,12 +47,12 @@ const _appRoutes: Routes = [];
 if (environment.production) {
     _appRoutes.push({
         path: 'exts',
-        loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
+        loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
 } else {
     _appRoutes.push({
         path: 'exts',
-        loadChildren: () => import('@fuse/extensions/extensions.module').then(m => m.ExtensionsModule)
+        loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
     });
     _appRoutes.push({
         path: 'pages',

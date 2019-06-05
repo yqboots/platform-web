@@ -3,8 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqHighlightModule} from '@yq/components';
 
 import {TypographyComponent} from '@showcase/ui/typography/typography.component';
 import {TypographyHeadingsComponent} from '@showcase/ui/typography/tabs/headings/headings.component';
@@ -35,8 +35,8 @@ const routes: Routes = [
         MatIconModule,
         MatTabsModule,
 
-        FuseSharedModule,
-        FuseHighlightModule
+        YqSharedModule,
+        YqHighlightModule
     ]
 })
 export class UITypographyModule {

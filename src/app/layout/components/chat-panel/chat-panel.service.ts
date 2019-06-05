@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-import {FuseUtils} from '@fuse/core';
+import {YqUtils} from '@yq/core';
 
 @Injectable()
 export class ChatPanelService {
@@ -87,7 +87,7 @@ export class ChatPanelService {
         return new Promise((resolve, reject) => {
 
             // Generate a new id
-            const chatId = FuseUtils.generateGUID();
+            const chatId = YqUtils.generateGUID();
 
             // Prepare the chat object
             const chat = {

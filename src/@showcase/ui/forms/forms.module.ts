@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {FormsComponent} from '@showcase/ui/forms/forms.component';
 
@@ -32,7 +32,7 @@ const routes: Routes = [
         MatSelectModule,
         MatStepperModule,
 
-        FuseSharedModule,
+        YqSharedModule,
     ]
 })
 export class UIFormsModule {

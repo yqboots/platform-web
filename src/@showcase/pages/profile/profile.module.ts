@@ -5,7 +5,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {ProfileService} from '@showcase/pages/profile/profile.service';
 import {ProfileComponent} from '@showcase/pages/profile/profile.component';
@@ -39,7 +39,7 @@ const routes = [
         MatIconModule,
         MatTabsModule,
 
-        FuseSharedModule
+        YqSharedModule
     ],
     providers: [
         ProfileService

@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqHighlightModule} from '@yq/components';
 
 import {DocsGettingStartedIntroductionComponent} from '@doc/getting-started/introduction/introduction.component';
 import {DocsGettingStartedInstallationComponent} from '@doc/getting-started/installation/installation.component';
@@ -29,8 +29,8 @@ const routes = [
 
         MatIconModule,
 
-        FuseSharedModule,
-        FuseHighlightModule
+        YqSharedModule,
+        YqHighlightModule
     ]
 })
 export class GettingStartedModule {

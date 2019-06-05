@@ -10,10 +10,10 @@ import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TranslateModule} from '@ngx-translate/core';
 import 'hammerjs';
 
-import {FuseModule, FuseSharedModule} from '@fuse/core';
-import {FuseProgressBarModule, FuseSidebarModule, FuseThemeOptionsModule} from '@fuse/components';
+import {YqModule, YqSharedModule} from '@yq/core';
+import {YqProgressBarModule, YqSidebarModule, YqThemeOptionsModule} from '@yq/components';
 
-import {appRoutes, fuseConfig} from 'app/config';
+import {appRoutes, yqConfig} from 'app/config';
 
 import {FakeDbService} from 'app/fake-db/fake-db.service';
 import {AppComponent} from 'app/app.component';
@@ -45,12 +45,12 @@ import {environment} from 'environments/environment';
         MatButtonModule,
         MatIconModule,
 
-        // Fuse modules
-        FuseModule.forRoot(fuseConfig),
-        FuseProgressBarModule,
-        FuseSharedModule,
-        FuseSidebarModule,
-        FuseThemeOptionsModule,
+        // YQBoots modules
+        YqModule.forRoot(yqConfig),
+        YqProgressBarModule,
+        YqSharedModule,
+        YqSidebarModule,
+        YqThemeOptionsModule,
 
         // App modules
         LayoutModule,

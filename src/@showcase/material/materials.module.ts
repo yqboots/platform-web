@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule, FuseWidgetModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqHighlightModule, YqWidgetModule} from '@yq/components';
 
 import {MaterialModule} from '@showcase/material/material.module';
 import {EXAMPLE_LIST} from '@showcase/material/example-components';
@@ -32,9 +32,9 @@ const routes: Routes = [
 
         MaterialModule,
 
-        FuseSharedModule,
-        FuseHighlightModule,
-        FuseWidgetModule
+        YqSharedModule,
+        YqHighlightModule,
+        YqWidgetModule
     ],
     entryComponents: EXAMPLE_LIST,
 })

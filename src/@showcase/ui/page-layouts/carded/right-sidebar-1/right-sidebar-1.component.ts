@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
 
 @Component({
     selector: 'carded-right-sidebar-1',
@@ -11,10 +11,10 @@ export class CardedRightSidebar1Component {
     /**
      * Constructor
      *
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {YqSidebarService} _yqSidebarService
      */
     constructor(
-        private _fuseSidebarService: FuseSidebarService
+        private _yqSidebarService: YqSidebarService
     ) {
     }
 
@@ -28,6 +28,6 @@ export class CardedRightSidebar1Component {
      * @param name
      */
     toggleSidebar(name): void {
-        this._fuseSidebarService.getSidebar(name).toggleOpen();
+        this._yqSidebarService.getSidebar(name).toggleOpen();
     }
 }

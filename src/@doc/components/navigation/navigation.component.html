@@ -19,8 +19,8 @@
     <div class="content p-24">
 
         <p>
-            <code>fuse-navigation</code>
-            is a custom built Fuse component allows you to create a multi-level collapsible
+            <code>yq-navigation</code>
+            is a custom built YQBoots component allows you to create a multi-level collapsible
             navigation. It has built-in support for translations using
             <b>ngx-translate</b>
             module.
@@ -28,17 +28,17 @@
 
         <div class="section-title">Usage</div>
         <p class="py-8">
-            <fuse-highlight lang="html">
+            <yq-highlight lang="html">
                 <textarea #source>
-                    <fuse-navigation [navigation]="navigation" [layout]="'vertical'"></fuse-navigation>
+                    <yq-navigation [navigation]="navigation" [layout]="'vertical'"></yq-navigation>
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="my-48">
             <h2>[navigation]</h2>
             <p class="py-8">
-                <code>&lt;fuse-navigation&gt;&lt;/fuse-navigation&gt;</code>
+                <code>&lt;yq-navigation&gt;&lt;/yq-navigation&gt;</code>
                 uses a json file to populate
                 the entire navigation. It supports three different navigation items;<b>Group</b>,
                 <b>Collapsible</b>
@@ -76,40 +76,40 @@
         </p>
 
         <p class="py-8">
-            <fuse-highlight lang="ts">
+            <yq-highlight lang="ts">
                 <textarea #source>
                     // Get your navigation array from database or file
                     this.navigation = [...]
 
                     // Register the navigation to the service
-                    this._fuseNavigationService.register('main', this.navigation);
+                    this._yqNavigationService.register('main', this.navigation);
 
                     // Set the main navigation as our current navigation
-                    this._fuseNavigationService.setCurrentNavigation('main');
+                    this._yqNavigationService.setCurrentNavigation('main');
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <p class="py-8">
             Once you register your navigation like this, you no longer need to provide the
             <b>[navigation]</b>
             input
-            while using the<code>fuse-navigation</code>:
+            while using the<code>yq-navigation</code>:
         </p>
 
         <p class="py-8">
-            <fuse-highlight lang="html">
+            <yq-highlight lang="html">
                 <textarea #source>
-                    <fuse-navigation [layout]="'vertical'"></fuse-navigation>
+                    <yq-navigation [layout]="'vertical'"></yq-navigation>
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="main-title">Navigation item types</div>
 
         <div class="section-title">Grouping</div>
         <p class="py-8">
-            <fuse-highlight lang="json">
+            <yq-highlight lang="json">
                 <textarea #source>
                     {
                     'id'       : 'components',
@@ -126,12 +126,12 @@
                     ]
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Collapsible</div>
         <p class="py-8">
-            <fuse-highlight lang="json">
+            <yq-highlight lang="json">
                 <textarea #source>
                     {
                     'id'       : 'datatables',
@@ -149,12 +149,12 @@
                     ]
                     },
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Item</div>
         <p class="py-8">
-            <fuse-highlight lang="json">
+            <yq-highlight lang="json">
                 <textarea #source>
                     {
                     'id'       : 'countdown',
@@ -165,7 +165,7 @@
                     'url'      : '/components/countdown'
                     },
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="main-title">Vertical Navigation Default Folded Status</div>
@@ -179,7 +179,7 @@
             file and look for the
             <code>[folded]</code>
             attribute on
-            <code>fuse-sidebar</code>
+            <code>yq-sidebar</code>
             components.
         </p>
         <p>
@@ -204,7 +204,7 @@
         </div>
 
         <p class="py-8 mb-48">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     hidden = false;
 
@@ -214,12 +214,12 @@
                         this.hidden = !this.hidden;
 
                         // Update the calendar menu item
-                        this._fuseNavigationService.updateNavigationItem('calendar', {
+                        this._yqNavigationService.updateNavigationItem('calendar', {
                             hidden: this.hidden
                         });
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Update navigation item on-the-fly</div>
@@ -231,19 +231,19 @@
         </div>
 
         <p class="py-8 mb-48">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     updateMailBadge()
                     {
                         // Update the badge title
-                        this._fuseNavigationService.updateNavigationItem('mail', {
+                        this._yqNavigationService.updateNavigationItem('mail', {
                         badge: {
                             title: 35
                                 }
                         });
                         }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Add a subitem to the Calendar nav item</div>
@@ -255,7 +255,7 @@
         </div>
 
         <p class="py-8 mb-48">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     addSubitemToCalendar()
                     {
@@ -267,7 +267,7 @@
                     url : '/apps/calendar'
                     };
 
-                        this._fuseNavigationService.updateNavigationItem('calendar', {
+                        this._yqNavigationService.updateNavigationItem('calendar', {
                     type: 'collapsible',
                     children: [
                     newNavItem
@@ -275,7 +275,7 @@
                     });
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Add a nav item with custom function</div>
@@ -287,7 +287,7 @@
         </div>
 
         <p class="py-8 mb-48">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     addNavItemWithCustomFunction()
                     {
@@ -302,10 +302,10 @@
                     };
 
                         // Add the new nav item at the beginning of the navigation
-                        this._fuseNavigationService.addNavigationItem(newNavItem, 'start');
+                        this._yqNavigationService.addNavigationItem(newNavItem, 'start');
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Remove the Dashboards menu item</div>
@@ -317,14 +317,14 @@
         </div>
 
         <p class="py-8 mb-48">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     removeDashboards(): void
                     {
-                    this._fuseNavigationService.removeNavigationItem('dashboards');
+                    this._yqNavigationService.removeNavigationItem('dashboards');
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Register a new navigation and toggle to it</div>
@@ -336,7 +336,7 @@
         </div>
 
         <p class="py-8">
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     registerNewNavigationAndToggle(): void
                     {
@@ -388,13 +388,13 @@
                     ];
 
                     // Register the new navigation
-                    this._fuseNavigationService.register('admin-nav', adminNav);
+                    this._yqNavigationService.register('admin-nav', adminNav);
 
                     // Set the current navigation
-                    this._fuseNavigationService.setCurrentNavigation('admin-nav');
+                    this._yqNavigationService.setCurrentNavigation('admin-nav');
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
     </div>

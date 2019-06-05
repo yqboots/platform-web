@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {InvoiceService} from '@showcase/pages/invoices/invoice.service';
 import {InvoiceCompactComponent} from '@showcase/pages/invoices/compact/compact.component';
@@ -23,7 +23,7 @@ const routes = [
     imports: [
         RouterModule.forChild(routes),
 
-        FuseSharedModule
+        YqSharedModule
     ],
     providers: [
         InvoiceService

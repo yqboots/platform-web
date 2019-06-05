@@ -4,8 +4,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseDemoModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqDemoModule} from '@yq/components';
 
 import {CardedFullWidth1Component} from '@showcase/ui/page-layouts/carded/full-width-1/full-width-1.component';
 import {CardedFullWidth2Component} from '@showcase/ui/page-layouts/carded/full-width-2/full-width-2.component';
@@ -31,7 +31,7 @@ import {SimpleRightSidebar3Component} from '@showcase/ui/page-layouts/simple/rig
 import {SimpleRightSidebar4Component} from '@showcase/ui/page-layouts/simple/right-sidebar-4/right-sidebar-4.component';
 import {BlankComponent} from '@showcase/ui/page-layouts/blank/blank.component';
 
-import {FuseSidebarModule} from '@fuse/components';
+import {YqSidebarModule} from '@yq/components';
 
 const routes: Routes = [
     // Carded
@@ -164,9 +164,9 @@ const routes: Routes = [
         MatIconModule,
         MatTabsModule,
 
-        FuseSidebarModule,
-        FuseSharedModule,
-        FuseDemoModule
+        YqSidebarModule,
+        YqSharedModule,
+        YqDemoModule
     ]
 })
 export class UIPageLayoutsModule {

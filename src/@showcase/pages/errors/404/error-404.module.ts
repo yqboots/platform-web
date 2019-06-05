@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {Error404Component} from '@showcase/pages/errors/404/error-404.component';
 
@@ -22,7 +22,7 @@ const routes = [
 
         MatIconModule,
 
-        FuseSharedModule
+        YqSharedModule
     ]
 })
 export class Error404Module {

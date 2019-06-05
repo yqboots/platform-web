@@ -5,7 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {ForgotPassword2Component} from '@showcase/pages/authentication/forgot-password-2/forgot-password-2.component';
 
@@ -28,7 +28,7 @@ const routes = [
         MatIconModule,
         MatInputModule,
 
-        FuseSharedModule,
+        YqSharedModule,
     ]
 })
 export class ForgotPassword2Module {

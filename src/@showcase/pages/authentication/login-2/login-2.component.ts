@@ -1,14 +1,14 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import {fuseAnimations, FuseConfigService} from '@fuse/core';
+import {yqAnimations, YqConfigService} from '@yq/core';
 
 @Component({
     selector: 'login-2',
     templateUrl: './login-2.component.html',
     styleUrls: ['./login-2.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class Login2Component implements OnInit {
     loginForm: FormGroup;
@@ -16,15 +16,15 @@ export class Login2Component implements OnInit {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
+     * @param {YqConfigService} _yqConfigService
      * @param {FormBuilder} _formBuilder
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
+        private _yqConfigService: YqConfigService,
         private _formBuilder: FormBuilder
     ) {
         // Configure the layout
-        this._fuseConfigService.config = {
+        this._yqConfigService.config = {
             layout: {
                 navbar: {
                     hidden: true

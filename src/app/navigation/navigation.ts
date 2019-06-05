@@ -1,8 +1,8 @@
-import {FuseNavigation} from '@fuse/core';
+import {YqNavigation} from '@yq/core';
 
 import {environment} from 'environments/environment';
 
-export const navigation: FuseNavigation[] = environment.production ? [] : [
+export const navigation: YqNavigation[] = environment.production ? [] : [
     {
         id: 'applications',
         title: 'Applications',
@@ -897,8 +897,8 @@ export const navigation: FuseNavigation[] = environment.production ? [] : [
                 ]
             },
             {
-                id: 'working-with-fuse',
-                title: 'Working with Fuse',
+                id: 'working-with-yq',
+                title: 'Working with YQBoots',
                 type: 'collapsible',
                 icon: 'import_contacts',
                 children: [
@@ -906,49 +906,49 @@ export const navigation: FuseNavigation[] = environment.production ? [] : [
                         id: 'server',
                         title: 'Server',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/server'
+                        url: '/documentation/working-with-yq/server'
                     },
                     {
                         id: 'production',
                         title: 'Production',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/production'
+                        url: '/documentation/working-with-yq/production'
                     },
                     {
                         id: 'directory-structure',
                         title: 'Directory Structure',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/directory-structure'
+                        url: '/documentation/working-with-yq/directory-structure'
                     },
                     {
-                        id: 'updating-fuse',
-                        title: 'Updating Fuse',
+                        id: 'updating-yq',
+                        title: 'Updating YQBoots',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/updating-fuse'
+                        url: '/documentation/working-with-yq/updating-yq'
                     },
                     {
                         id: 'multi-language',
                         title: 'Multi Language',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/multi-language'
+                        url: '/documentation/working-with-yq/multi-language'
                     },
                     {
                         id: 'material-theming',
                         title: 'Material Theming',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/material-theming'
+                        url: '/documentation/working-with-yq/material-theming'
                     },
                     {
                         id: 'theme-layouts',
                         title: 'Theme Layouts',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/theme-layouts'
+                        url: '/documentation/working-with-yq/theme-layouts'
                     },
                     {
                         id: 'page-layouts',
                         title: 'Page Layouts',
                         type: 'item',
-                        url: '/documentation/working-with-fuse/page-layouts'
+                        url: '/documentation/working-with-yq/page-layouts'
                     }
                 ]
             },
@@ -1048,28 +1048,28 @@ export const navigation: FuseNavigation[] = environment.production ? [] : [
                 icon: 'import_contacts',
                 children: [
                     {
-                        id: 'fuse-if-on-dom',
-                        title: 'fuseIfOnDom',
+                        id: 'yq-if-on-dom',
+                        title: 'yqIfOnDom',
                         type: 'item',
-                        url: '/documentation/directives/fuse-if-on-dom'
+                        url: '/documentation/directives/yq-if-on-dom'
                     },
                     {
-                        id: 'fuse-inner-scroll',
-                        title: 'fuseInnerScroll',
+                        id: 'yq-inner-scroll',
+                        title: 'yqInnerScroll',
                         type: 'item',
-                        url: '/documentation/directives/fuse-inner-scroll'
+                        url: '/documentation/directives/yq-inner-scroll'
                     },
                     {
-                        id: 'fuse-mat-sidenav',
-                        title: 'fuseMatSidenav',
+                        id: 'yq-mat-sidenav',
+                        title: 'yqMatSidenav',
                         type: 'item',
-                        url: '/documentation/directives/fuse-mat-sidenav'
+                        url: '/documentation/directives/yq-mat-sidenav'
                     },
                     {
-                        id: 'fuse-perfect-scrollbar',
-                        title: 'fusePerfectScrollbar',
+                        id: 'yq-perfect-scrollbar',
+                        title: 'yqPerfectScrollbar',
                         type: 'item',
-                        url: '/documentation/directives/fuse-perfect-scrollbar'
+                        url: '/documentation/directives/yq-perfect-scrollbar'
                     }
                 ]
             },
@@ -1080,16 +1080,16 @@ export const navigation: FuseNavigation[] = environment.production ? [] : [
                 icon: 'import_contacts',
                 children: [
                     {
-                        id: 'fuse-config',
-                        title: 'Fuse Config',
+                        id: 'yq-config',
+                        title: 'YQBoots Config',
                         type: 'item',
-                        url: '/documentation/services/fuse-config'
+                        url: '/documentation/services/yq-config'
                     },
                     {
-                        id: 'fuse-splash-screen',
-                        title: 'Fuse Splash Screen',
+                        id: 'yq-splash-screen',
+                        title: 'YQBoots Splash Screen',
                         type: 'item',
-                        url: '/documentation/services/fuse-splash-screen'
+                        url: '/documentation/services/yq-splash-screen'
                     }
                 ]
             }

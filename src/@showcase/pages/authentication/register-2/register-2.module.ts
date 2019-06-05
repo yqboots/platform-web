@@ -6,7 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {Register2Component} from '@showcase/pages/authentication/register-2/register-2.component';
 
@@ -30,7 +30,7 @@ const routes = [
         MatIconModule,
         MatInputModule,
 
-        FuseSharedModule
+        YqSharedModule
     ]
 })
 export class Register2Module {

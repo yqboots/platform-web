@@ -124,7 +124,7 @@
                         <span class="title">Fixed</span>
                         <ul>
                             <li>(Docs) Color picker input is wrong</li>
-                            <li>(FuseNavigation) Trigger observables on item add</li>
+                            <li>(YqNavigation) Trigger observables on item add</li>
                         </ul>
                     </div>
 
@@ -152,7 +152,7 @@
                                 <code>media-breakpoint-only</code> and <code>media-breakpoint-between</code> scss
                                 mixins. Use Material design breakpoints with <code>media-breakpoint</code> mixin.
                                 Breakpoint definitions can be found in
-                                <code>@fuse/scss/partials/_breakpoints.scss</code>.
+                                <code>@yq/scss/partials/_breakpoints.scss</code>.
 
                                 <br><br>
                                 Example:
@@ -166,9 +166,9 @@
                             </li>
                             <li>
                                 Updating the navigation directly from the object no longer works since
-                                <code>FuseNavigation</code> now uses <code>OnPush</code> change detection strategy for
+                                <code>YqNavigation</code> now uses <code>OnPush</code> change detection strategy for
                                 performance reasons. Use <code>updateNavigationItem</code> method from
-                                <code>FuseNavigationService</code> to update the navigation items.
+                                <code>YqNavigationService</code> to update the navigation items.
                             </li>
                         </ul>
                     </div>
@@ -204,7 +204,7 @@
                         <span class="title">Improved</span>
                         <ul>
                             <li>
-                                (FuseNavigation) Use <code>ChangeDetection.OnPush</code> to increase the performance.
+                                (YqNavigation) Use <code>ChangeDetection.OnPush</code> to increase the performance.
                                 Now you can load hundreds of thousands navigation item and it won't mind.
                             </li>
                         </ul>
@@ -293,7 +293,7 @@
                             <li>(Layouts) Some layouts are not working correctly on IE11</li>
                             <li>(Contacts) _matDialogRef is not defined</li>
                             <li>
-                                (FuseConfig) Resetting the config on lazily loaded routes causes the layout items to
+                                (YqConfig) Resetting the config on lazily loaded routes causes the layout items to
                                 show/hide before the actual content loads
                             </li>
                         </ul>
@@ -319,7 +319,7 @@
                         <span class="title">Breaking Changes</span>
                         <ul>
                             <li>
-                                (FuseLoadingBarService) Removed in favor of the new FuseProgressBar component
+                                (YqLoadingBarService) Removed in favor of the new YqProgressBar component
                             </li>
                         </ul>
                     </div>
@@ -330,7 +330,7 @@
                             <li>Updated Angular to 6.0.9</li>
                             <li>Updated various other packages</li>
                             <li>
-                                (FuseProgressBar) New component and its service for globally controlling a progress bar
+                                (YqProgressBar) New component and its service for globally controlling a progress bar
                             </li>
                         </ul>
                     </div>
@@ -406,7 +406,7 @@
                             <li>Scrollbar styles are being modified in some mobile devices</li>
                             <li>(Chat Panel) Mobile scrolling and layout issues</li>
                             <li>
-                                (Navbar) Added classes to the Fuse Sidebar components that contains the navbar to
+                                (Navbar) Added classes to the YQBoots Sidebar components that contains the navbar to
                                 prevent style leak
                             </li>
                             <li>(Toolbar) Removed unnecessary chat panel toggle method</li>
@@ -485,9 +485,9 @@
                             <li>Updated Angular material examples</li>
                             <li>New Chat Panel sidebar</li>
                             <li>(Navbar) New style variants for the Navbar</li>
-                            <li>(FuseSidebar) Added 'foldedChanged' & 'openedChanged' outputs</li>
-                            <li>(FuseNavigation) Ability to add custom classes to the navigation items</li>
-                            <li>(FuseLoadingBarService) New service for showing/hiding the loading bar easily</li>
+                            <li>(YqSidebar) Added 'foldedChanged' & 'openedChanged' outputs</li>
+                            <li>(YqNavigation) Ability to add custom classes to the navigation items</li>
+                            <li>(YqLoadingBarService) New service for showing/hiding the loading bar easily</li>
                         </ul>
                     </div>
 
@@ -519,7 +519,7 @@
                         <span class="title">Fixed</span>
                         <ul>
                             <li>
-                                (Fuse Sidebar) Folded status doesn't work correctly when there are multiple instances
+                                (YQBoots Sidebar) Folded status doesn't work correctly when there are multiple instances
                             </li>
                         </ul>
                     </div>
@@ -545,7 +545,7 @@
                         <span class="title">Breaking Changes</span>
                         <ul>
                             <li>New layout system and layouts</li>
-                            <li>Replaced all mat-sidenav components with fuse-sidebar on apps and pages</li>
+                            <li>Replaced all mat-sidenav components with yq-sidebar on apps and pages</li>
                             <li>Navigation item type 'collapse' renamed to 'collapsible'</li>
                         </ul>
                     </div>
@@ -567,7 +567,7 @@
                             <li>Updated various other packages</li>
                             <li>Improved the codebase and added a lot code comments</li>
                             <li>Improved the documentation and moved them into the Demo app</li>
-                            <li>Changed the fuse-sidebar "align" input to "position"</li>
+                            <li>Changed the yq-sidebar "align" input to "position"</li>
                             <li>Improved the page layouts</li>
                             <li>Navbar toggle button and fold button alignment on right navbar</li>
                         </ul>
@@ -644,7 +644,7 @@
                     <div class="fixed">
                         <span class="title">Fixed</span>
                         <ul>
-                            <li>Fixed: Material icon button colors are being overwritten by Fuse</li>
+                            <li>Fixed: Material icon button colors are being overwritten by YQBoots</li>
                             <li>Fixed: Contacts app edit dialog issues</li>
                             <li>Fixed: Navigation sidebar doesn't scroll on mobile devices</li>
                             <li>Fixed: Horizontal navigation doesn't have 'hidden' and 'custom function' features like
@@ -723,9 +723,9 @@
                         <span class="title">Breaking changes</span>
                         <ul>
                             <li>
-                                <code>core</code> folder moved into the <code>@fuse</code> allowing project owners to
+                                <code>core</code> folder moved into the <code>@yq</code> allowing project owners to
                                 have their own core folder inside the app directory. Also allows for better separation
-                                in between your app and core Fuse features.
+                                in between your app and core YQBoots features.
                             </li>
                             <li>
                                 Removed Angular Material module that includes all Material components at once and added
@@ -752,8 +752,8 @@
                             <li>Updated Angular to 5.2.8</li>
                             <li>Updated Angular Material to 5.2.4</li>
                             <li>Updated Angular CLI to 1.7.3</li>
-                            <li>Matched the Fuse version number with the Angular</li>
-                            <li>No more Fuse2, the package name update to Fuse since the version number matched to
+                            <li>Matched the YQBoots version number with the Angular</li>
+                            <li>No more Yq2, the package name update to YQBoots since the version number matched to
                                 Angular's.
                             </li>
                         </ul>
@@ -762,7 +762,7 @@
                     <div class="fixed">
                         <span class="title">Fixed</span>
                         <ul>
-                            <li>Fixed various issues with Fuse Angular Material Color Picker component.</li>
+                            <li>Fixed various issues with YQBoots Angular Material Color Picker component.</li>
                             <li>Fixed various other small layout and logic bugs.</li>
                         </ul>
                     </div>
@@ -904,7 +904,7 @@
                             <li>Updated Angular Material to 5.0.3</li>
                             <li>Updated various other packages to latest versions</li>
                             <li>Added new card designs</li>
-                            <li>Added new fuse-highlight component</li>
+                            <li>Added new yq-highlight component</li>
                             <li>Added lazy load to various other demo modules to make the demo project faster</li>
                         </ul>
                     </div>
@@ -913,7 +913,7 @@
                         <span class="title">Fixed</span>
                         <ul>
                             <li>BREAKING CHANGE: Cards are moved to custom classes</li>
-                            <li>BREAKING CHANGE: Removed fuse-hljs (Use fuse-highlight instead)</li>
+                            <li>BREAKING CHANGE: Removed yq-hljs (Use yq-highlight instead)</li>
                             <li>Various other small fixed and enhancements</li>
                         </ul>
                     </div>
@@ -1115,7 +1115,7 @@
                             <li>New 'Knowledge Base' page design</li>
                             <li>Added Tabbed versions of the Carded Sidenav layouts</li>
                             <li>Added an ability to control the folded status of the vertical navigation via
-                                FuseConfig
+                                YqConfig
                             </li>
                             <li>
                                 Added 'exactMatch' property to the Navigation Model for more control over the active

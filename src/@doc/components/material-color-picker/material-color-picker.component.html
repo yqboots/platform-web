@@ -19,31 +19,31 @@
     <div class="content p-24">
 
         <p>
-            <code>fuse-material-color-picker</code> is a custom built Fuse component allows you to add a color picker
+            <code>yq-material-color-picker</code> is a custom built YQBoots component allows you to add a color picker
             that allows to choose one of the many Material spec. colors.
         </p>
 
         <div class="section-title">Sample</div>
         <p fxLayout="row" fxLayoutAlign="start start">
-            <fuse-material-color-picker></fuse-material-color-picker>
+            <yq-material-color-picker></yq-material-color-picker>
         </p>
 
         <div class="section-title">Usage</div>
         <p class="py-8">
-            <fuse-highlight lang="html">
+            <yq-highlight lang="html">
                 <textarea #source>
-                    <fuse-material-color-picker [(selectedClass)]="colorClass"
+                    <yq-material-color-picker [(selectedClass)]="colorClass"
                                                 (onColorChanged)="onColorChanged()">
-                    </fuse-material-color-picker>
+                    </yq-material-color-picker>
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Two-way bindings</div>
         <p class="py-8" fxLayout="row" fxLayoutAlign="start center">
             <code class="mr-16">selectedClass</code>
             <span>
-                The name of the Fuse color class to select, e.g. <code>red-500</code>
+                The name of the YQBoots color class to select, e.g. <code>red-500</code>
             </span>
         </p>
         <p class="py-8 pt-4" fxLayout="row" fxLayoutAlign="start center">

@@ -1,25 +1,25 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {fuseAnimations, FuseConfigService} from '@fuse/core';
+import {yqAnimations, YqConfigService} from '@yq/core';
 
 @Component({
     selector: 'mail-confirm',
     templateUrl: './mail-confirm.component.html',
     styleUrls: ['./mail-confirm.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class MailConfirmComponent {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
+     * @param {YqConfigService} _yqConfigService
      */
     constructor(
-        private _fuseConfigService: FuseConfigService
+        private _yqConfigService: YqConfigService
     ) {
         // Configure the layout
-        this._fuseConfigService.config = {
+        this._yqConfigService.config = {
             layout: {
                 navbar: {
                     hidden: true

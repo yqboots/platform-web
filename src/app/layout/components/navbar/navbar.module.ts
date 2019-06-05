@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {NavbarComponent} from 'app/layout/components/navbar/navbar.component';
 import {NavbarHorizontalStyle1Module} from 'app/layout/components/navbar/horizontal/style-1/style-1.module';
@@ -12,7 +12,7 @@ import {NavbarVerticalStyle2Module} from 'app/layout/components/navbar/vertical/
         NavbarComponent
     ],
     imports: [
-        FuseSharedModule,
+        YqSharedModule,
 
         NavbarHorizontalStyle1Module,
         NavbarVerticalStyle1Module,

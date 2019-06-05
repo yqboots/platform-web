@@ -17,7 +17,7 @@ import {takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
 import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
 
 @Component({
@@ -57,12 +57,12 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy {
      *
      * @param {ChatPanelService} _chatPanelService
      * @param {HttpClient} _httpClient
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {YqSidebarService} _yqSidebarService
      */
     constructor(
         private _chatPanelService: ChatPanelService,
         private _httpClient: HttpClient,
-        private _fuseSidebarService: FuseSidebarService
+        private _yqSidebarService: YqSidebarService
     ) {
         // Set the defaults
         this.selectedContact = null;
@@ -88,7 +88,7 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy {
         });
 
         // Subscribe to the foldedChanged observable
-        this._fuseSidebarService.getSidebar('chatPanel').foldedChanged
+        this._yqSidebarService.getSidebar('chatPanel').foldedChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((folded) => {
                 this.sidebarFolded = folded;
@@ -145,21 +145,21 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy {
      * Fold the temporarily unfolded sidebar back
      */
     foldSidebarTemporarily(): void {
-        this._fuseSidebarService.getSidebar('chatPanel').foldTemporarily();
+        this._yqSidebarService.getSidebar('chatPanel').foldTemporarily();
     }
 
     /**
      * Unfold the sidebar temporarily
      */
     unfoldSidebarTemporarily(): void {
-        this._fuseSidebarService.getSidebar('chatPanel').unfoldTemporarily();
+        this._yqSidebarService.getSidebar('chatPanel').unfoldTemporarily();
     }
 
     /**
      * Toggle sidebar opened status
      */
     toggleSidebarOpen(): void {
-        this._fuseSidebarService.getSidebar('chatPanel').toggleOpen();
+        this._yqSidebarService.getSidebar('chatPanel').toggleOpen();
     }
 
     /**

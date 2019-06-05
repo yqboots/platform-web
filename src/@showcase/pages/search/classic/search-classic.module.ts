@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {SearchClassicComponent} from '@showcase/pages/search/classic/search-classic.component';
 import {SearchClassicService} from '@showcase/pages/search/classic/search-classic.service';
@@ -37,7 +37,7 @@ const routes = [
         MatTableModule,
         MatTabsModule,
 
-        FuseSharedModule
+        YqSharedModule
     ],
     providers: [
         SearchClassicService

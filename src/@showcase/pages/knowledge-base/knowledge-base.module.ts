@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {KnowledgeBaseService} from '@showcase/pages/knowledge-base/knowledge-base.service';
 import {KnowledgeBaseComponent} from '@showcase/pages/knowledge-base/knowledge-base.component';
@@ -36,7 +36,7 @@ const routes = [
         MatListModule,
         MatToolbarModule,
 
-        FuseSharedModule
+        YqSharedModule
     ],
     providers: [
         KnowledgeBaseService

@@ -2,35 +2,35 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqHighlightModule} from '@yq/components';
 
-import {FuseConfigServiceDocsComponent} from '@doc/services/fuse-config/fuse-config.component';
-import {FuseSplashScreenServiceDocsComponent} from '@doc/services/fuse-splash-screen/fuse-splash-screen.component';
+import {YqConfigServiceDocsComponent} from '@doc/services/yq-config/yq-config.component';
+import {YqSplashScreenServiceDocsComponent} from '@doc/services/yq-splash-screen/yq-splash-screen.component';
 
 const routes = [
     {
-        path: 'fuse-config',
-        component: FuseConfigServiceDocsComponent
+        path: 'yq-config',
+        component: YqConfigServiceDocsComponent
     },
     {
-        path: 'fuse-splash-screen',
-        component: FuseSplashScreenServiceDocsComponent
+        path: 'yq-splash-screen',
+        component: YqSplashScreenServiceDocsComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        FuseConfigServiceDocsComponent,
-        FuseSplashScreenServiceDocsComponent
+        YqConfigServiceDocsComponent,
+        YqSplashScreenServiceDocsComponent
     ],
     imports: [
         RouterModule.forChild(routes),
 
         MatIconModule,
 
-        FuseSharedModule,
-        FuseHighlightModule
+        YqSharedModule,
+        YqHighlightModule
     ]
 })
 

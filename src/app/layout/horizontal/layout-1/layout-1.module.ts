@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseSidebarModule, FuseThemeOptionsModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqSidebarModule, YqThemeOptionsModule} from '@yq/components';
 
 import {ChatPanelModule} from 'app/layout/components/chat-panel/chat-panel.module';
 import {ContentModule} from 'app/layout/components/content/content.module';
@@ -20,9 +20,9 @@ import {HorizontalLayout1Component} from 'app/layout/horizontal/layout-1/layout-
     imports: [
         MatSidenavModule,
 
-        FuseSharedModule,
-        FuseSidebarModule,
-        FuseThemeOptionsModule,
+        YqSharedModule,
+        YqSidebarModule,
+        YqThemeOptionsModule,
 
         ChatPanelModule,
         ContentModule,

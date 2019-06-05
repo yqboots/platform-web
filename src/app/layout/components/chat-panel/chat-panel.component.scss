@@ -1,4 +1,4 @@
-@import "src/assets/scss/fuse";
+@import "src/assets/scss/yq";
 
 chat-panel {
     display: flex;
@@ -374,7 +374,7 @@ chat-panel {
     }
 }
 
-fuse-sidebar {
+yq-sidebar {
 
     &.chat-panel {
         width: 360px;

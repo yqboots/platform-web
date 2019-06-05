@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {DocsChangelogComponent} from '@doc/changelog/changelog.component';
 
@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('@doc/getting-started/getting-started.module').then(m => m.GettingStartedModule)
     },
     {
-        path: 'working-with-fuse',
-        loadChildren: () => import('@doc/working-with-fuse/working-with-fuse.module').then(m => m.WorkingWithFuseModule)
+        path: 'working-with-yq',
+        loadChildren: () => import('@doc/working-with-yq/working-with-yq.module').then(m => m.WorkingWithYqModule)
     },
     {
         path: 'components',
@@ -47,7 +47,7 @@ const routes: Routes = [
 
         MatIconModule,
 
-        FuseSharedModule
+        YqSharedModule
     ]
 })
 export class DocumentationModule {

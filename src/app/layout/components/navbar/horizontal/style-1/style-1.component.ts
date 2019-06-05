@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {filter, takeUntil} from 'rxjs/operators';
 
-import {FuseConfigService} from '@fuse/core';
-import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
+import {YqConfigService} from '@yq/core';
+import {YqNavigationService, YqSidebarService} from '@yq/components';
 
 @Component({
     selector: 'navbar-horizontal-style-1',
@@ -12,7 +12,7 @@ import {FuseNavigationService, FuseSidebarService} from '@fuse/components';
     encapsulation: ViewEncapsulation.None
 })
 export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy {
-    fuseConfig: any;
+    yqConfig: any;
     navigation: any;
 
     // Private
@@ -21,14 +21,14 @@ export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FuseNavigationService} _fuseNavigationService
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {YqConfigService} _yqConfigService
+     * @param {YqNavigationService} _yqNavigationService
+     * @param {YqSidebarService} _yqSidebarService
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
-        private _fuseNavigationService: FuseNavigationService,
-        private _fuseSidebarService: FuseSidebarService
+        private _yqConfigService: YqConfigService,
+        private _yqNavigationService: YqNavigationService,
+        private _yqSidebarService: YqSidebarService
     ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
@@ -43,20 +43,20 @@ export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy {
      */
     ngOnInit(): void {
         // Get current navigation
-        this._fuseNavigationService.onNavigationChanged
+        this._yqNavigationService.onNavigationChanged
             .pipe(
                 filter(value => value !== null),
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                this.navigation = this._fuseNavigationService.getCurrentNavigation();
+                this.navigation = this._yqNavigationService.getCurrentNavigation();
             });
 
         // Subscribe to the config changes
-        this._fuseConfigService.config
+        this._yqConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config) => {
-                this.fuseConfig = config;
+                this.yqConfig = config;
             });
     }
 

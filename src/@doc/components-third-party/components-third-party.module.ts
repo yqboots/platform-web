@@ -5,7 +5,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {DocsComponentsThirdPartyNgxDatatableComponent} from '@doc/components-third-party/datatable/ngx-datatable.component';
 
@@ -29,7 +29,7 @@ const routes = [
 
         NgxDatatableModule,
 
-        FuseSharedModule
+        YqSharedModule
     ]
 })
 export class ComponentsThirdPartyModule {

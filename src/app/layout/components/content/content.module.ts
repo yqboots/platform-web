@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {ContentComponent} from 'app/layout/components/content/content.component';
 
@@ -11,7 +11,7 @@ import {ContentComponent} from 'app/layout/components/content/content.component'
     ],
     imports: [
         RouterModule,
-        FuseSharedModule
+        YqSharedModule
     ],
     exports: [
         ContentComponent

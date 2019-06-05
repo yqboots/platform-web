@@ -3,14 +3,14 @@ import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {
-    FuseCountdownModule,
-    FuseHighlightModule,
-    FuseMaterialColorPickerModule,
-    FuseWidgetModule
-} from '@fuse/components';
+    YqCountdownModule,
+    YqHighlightModule,
+    YqMaterialColorPickerModule,
+    YqWidgetModule
+} from '@yq/components';
 import {DocsComponentsCountdownComponent} from '@doc/components/countdown/countdown.component';
 import {DocsComponentsHighlightComponent} from '@doc/components/highlight/highlight.component';
 import {DocsComponentsMaterialColorPickerComponent} from '@doc/components/material-color-picker/material-color-picker.component';
@@ -78,12 +78,12 @@ const routes = [
         MatButtonModule,
         MatIconModule,
 
-        FuseSharedModule,
+        YqSharedModule,
 
-        FuseCountdownModule,
-        FuseHighlightModule,
-        FuseMaterialColorPickerModule,
-        FuseWidgetModule
+        YqCountdownModule,
+        YqHighlightModule,
+        YqMaterialColorPickerModule,
+        YqWidgetModule
     ]
 })
 export class ComponentsModule {

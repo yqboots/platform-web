@@ -1,5 +1,5 @@
 // Fix: "Remove the cdk-global-scrollblock effects from the HTML"
-// Fuse already blocks the body scroll so it doesn't need this feature. We are disabling it
+// YQBoots already blocks the body scroll so it doesn't need this feature. We are disabling it
 // because on Windows, it causes a scrollbar to show up.
 html {
 
@@ -86,7 +86,7 @@ button {
     }
 }
 
-// Fix: Stepper icons are broken due to Fuse's icon helpers
+// Fix: Stepper icons are broken due to YQBoots's icon helpers
 mat-horizontal-stepper,
 mat-vertical-stepper {
 
@@ -106,7 +106,7 @@ mat-vertical-stepper {
     padding: 16px 0;
 }
 
-// Fix: Chip remove icon is broken due to Fuse's icon helpers
+// Fix: Chip remove icon is broken due to YQBoots's icon helpers
 mat-chip {
 
     mat-icon {

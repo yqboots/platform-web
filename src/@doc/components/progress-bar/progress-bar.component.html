@@ -19,28 +19,28 @@
     <div class="content p-24">
 
         <p>
-            <code>fuse-progress-bar</code> is a custom built Fuse component allows you to have a service controlled
+            <code>yq-progress-bar</code> is a custom built YQBoots component allows you to have a service controlled
             progress bar. It internally uses <code>mat-progress-bar</code> and provides a global service to control it.
         </p>
 
         <p class="message-box info">
-            Due to the nature of global progress bars, <code>fuse-progress-bar</code> can only be used once in the
+            Due to the nature of global progress bars, <code>yq-progress-bar</code> can only be used once in the
             entire app and it's currently located at <code>app.component.html</code> file.
         </p>
 
         <div class="section-title">Usage</div>
         <p class="py-8">
-            <fuse-highlight lang="html">
+            <yq-highlight lang="html">
                 <textarea #source>
-                    <fuse-progress-bar></fuse-progress-bar>
+                    <yq-progress-bar></yq-progress-bar>
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="section-title">Service Usage</div>
         <p class="py-8">
 
-            <fuse-highlight lang="typescript">
+            <yq-highlight lang="typescript">
                 <textarea #source>
                     export class SomeComponent implements OnInit
                     {
@@ -48,32 +48,32 @@
                     * Constructor
                     */
                     constructor(
-                        private _fuseProgressBarService: FuseProgressBarService
+                        private _yqProgressBarService: YqProgressBarService
                     ) {}
 
                         showcase()
                         {
                             // Show the progress bar
-                            this._fuseProgressBarService.show();
+                            this._yqProgressBarService.show();
 
                             // Hide the progress bar
-                            this._fuseProgressBarService.hide();
+                            this._yqProgressBarService.hide();
 
                             // Set the mode
                             // mode: 'determinate' | 'indeterminate' | 'buffer' | 'query'
-                            this._fuseProgressBarService.setMode(mode);
+                            this._yqProgressBarService.setMode(mode);
 
                             // Set the value
                             // value: number
-                            this._fuseProgressBarService.setValue(value);
+                            this._yqProgressBarService.setValue(value);
 
                             // Set the buffer value
                             // bufferValue: number
-                            this._fuseProgressBarService.setBufferValue(bufferValue);
+                            this._yqProgressBarService.setBufferValue(bufferValue);
                         }
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
 
         </p>
 

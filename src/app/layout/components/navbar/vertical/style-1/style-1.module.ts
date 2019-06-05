@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseNavigationModule} from '@fuse/components';
-import {FuseSharedModule} from '@fuse/core';
+import {YqNavigationModule} from '@yq/components';
+import {YqSharedModule} from '@yq/core';
 
 import {NavbarVerticalStyle1Component} from 'app/layout/components/navbar/vertical/style-1/style-1.component';
 
@@ -15,8 +15,8 @@ import {NavbarVerticalStyle1Component} from 'app/layout/components/navbar/vertic
         MatButtonModule,
         MatIconModule,
 
-        FuseSharedModule,
-        FuseNavigationModule
+        YqSharedModule,
+        YqNavigationModule
     ],
     exports: [
         NavbarVerticalStyle1Component

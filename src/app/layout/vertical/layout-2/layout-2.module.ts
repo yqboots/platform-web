@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseSidebarModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqSidebarModule} from '@yq/components';
 
 import {ChatPanelModule} from 'app/layout/components/chat-panel/chat-panel.module';
 import {ContentModule} from 'app/layout/components/content/content.module';
@@ -20,8 +20,8 @@ import {VerticalLayout2Component} from 'app/layout/vertical/layout-2/layout-2.co
     imports: [
         RouterModule,
 
-        FuseSharedModule,
-        FuseSidebarModule,
+        YqSharedModule,
+        YqSidebarModule,
 
         ChatPanelModule,
         ContentModule,

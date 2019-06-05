@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {ChatPanelComponent} from 'app/layout/components/chat-panel/chat-panel.component';
 import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
@@ -28,7 +28,7 @@ import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.serv
         MatTooltipModule,
         MatRippleModule,
 
-        FuseSharedModule
+        YqSharedModule
     ],
     exports: [
         ChatPanelComponent

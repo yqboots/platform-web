@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 
-import {fuseAnimations} from '@fuse/core';
+import {yqAnimations} from '@yq/core';
 
 import {ProfileService} from '@showcase/pages/profile/profile.service';
 
@@ -11,7 +11,7 @@ import {ProfileService} from '@showcase/pages/profile/profile.service';
     templateUrl: './photos-videos.component.html',
     styleUrls: ['./photos-videos.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class ProfilePhotosVideosComponent implements OnInit, OnDestroy {
     photosVideos: any;

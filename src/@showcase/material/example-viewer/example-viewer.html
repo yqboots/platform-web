@@ -32,9 +32,9 @@
                         (click)="copySource(htmlView.el.nativeElement.innerText)">
                     <mat-icon>content_copy</mat-icon>
                 </button>
-                <fuse-highlight lang="html"
+                <yq-highlight lang="html"
                                 [path]="'/assets/angular-material-examples/'+example+'/'+example+'-example.html'">
-                </fuse-highlight>
+                </yq-highlight>
             </section>
 
             <section class="tab" *ngIf="selectedIndex === 1"
@@ -44,9 +44,9 @@
                         (click)="copySource(tsView.el.nativeElement.innerText)">
                     <mat-icon>content_copy</mat-icon>
                 </button>
-                <fuse-highlight lang="typescript"
+                <yq-highlight lang="typescript"
                                 [path]="'/assets/angular-material-examples/'+example+'/'+example+'-example.ts'">
-                </fuse-highlight>
+                </yq-highlight>
             </section>
 
             <section class="tab" *ngIf="selectedIndex === 2"
@@ -56,9 +56,9 @@
                         (click)="copySource(cssView.el.nativeElement.innerText)">
                     <mat-icon>content_copy</mat-icon>
                 </button>
-                <fuse-highlight lang="css"
+                <yq-highlight lang="css"
                                 [path]="'/assets/angular-material-examples/'+example+'/'+example+'-example.css'">
-                </fuse-highlight>
+                </yq-highlight>
             </section>
         </div>
     </div>

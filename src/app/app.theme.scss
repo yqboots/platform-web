@@ -1,21 +1,21 @@
 // -----------------------------------------------------------------------------------------------------
-// @ Custom color maps for Fuse
+// @ Custom color maps for YQBoots
 // -----------------------------------------------------------------------------------------------------
-$fuse-white: (
+$yq-white: (
     500: white,
     contrast: (
         500: $dark-primary-text
     )
 );
 
-$fuse-black: (
+$yq-black: (
     500: black,
     contrast: (
         500: $light-primary-text,
     )
 );
 
-$fuse-navy: (
+$yq-navy: (
     50: #ECECEE,
     100: #C5C6CB,
     200: #9EA1A9,
@@ -48,14 +48,14 @@ $fuse-navy: (
     )
 );
 
-// Generate Fuse color classes for custom palettes
+// Generate YQBoots color classes for custom palettes
 $custom_palettes: (
-    fuse-white: $fuse-white,
-    fuse-black: $fuse-black,
-    fuse-navy: $fuse-navy
+    yq-white: $yq-white,
+    yq-black: $yq-black,
+    yq-navy: $yq-navy
 );
 
-@include fuse-color-classes($custom_palettes);
+@include yq-color-classes($custom_palettes);
 
 // -----------------------------------------------------------------------------------------------------
 // @ Typography
@@ -81,18 +81,18 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
-@import "src/@fuse/extensions/academy/academy.theme";
-@import "src/@fuse/extensions/calendar/calendar.theme";
-@import "src/@fuse/extensions/chat/chat.theme";
-@import "src/@fuse/extensions/contacts/contacts.theme";
-@import "src/@fuse/extensions/dashboards/project/project.theme";
-@import "src/@fuse/extensions/e-commerce/orders/orders.theme";
-@import "src/@fuse/extensions/e-commerce/products/products.theme";
-@import "src/@fuse/extensions/file-manager/file-manager.theme";
-@import "src/@fuse/extensions/mail/mail.theme";
-@import "src/@fuse/extensions/mail-ngrx/mail.theme";
-@import "src/@fuse/extensions/scrumboard/scrumboard.theme";
-@import "src/@fuse/extensions/todo/todo.theme";
+@import "src/@yq/extensions/academy/academy.theme";
+@import "src/@yq/extensions/calendar/calendar.theme";
+@import "src/@yq/extensions/chat/chat.theme";
+@import "src/@yq/extensions/contacts/contacts.theme";
+@import "src/@yq/extensions/dashboards/project/project.theme";
+@import "src/@yq/extensions/e-commerce/orders/orders.theme";
+@import "src/@yq/extensions/e-commerce/products/products.theme";
+@import "src/@yq/extensions/file-manager/file-manager.theme";
+@import "src/@yq/extensions/mail/mail.theme";
+@import "src/@yq/extensions/mail-ngrx/mail.theme";
+@import "src/@yq/extensions/scrumboard/scrumboard.theme";
+@import "src/@yq/extensions/todo/todo.theme";
 
 @import "src/@showcase/pages/authentication/login/login.theme";
 @import "src/@showcase/pages/authentication/login-2/login-2.theme";
@@ -182,7 +182,7 @@ $typography: mat-typography-config(
 // -----------------------------------------------------------------------------------------------------
 
 // Define the primary, accent and warn palettes
-$default-primary-palette: mat-palette($fuse-navy);
+$default-primary-palette: mat-palette($yq-navy);
 $default-accent-palette: mat-palette($mat-light-blue, 600, 400, 700);
 $default-warn-palette: mat-palette($mat-red);
 
@@ -196,20 +196,20 @@ body.theme-default {
     // Create an Angular Material theme from the $theme map
     @include angular-material-theme($theme);
 
-    // Apply the theme to the Fuse Core
-    @include fuse-core-theme($theme);
+    // Apply the theme to the YQBoots Core
+    @include yq-core-theme($theme);
 
     // Apply the theme to the user components
     @include components-theme($theme);
 
-    // Generate Fuse color classes for primary, accent and warn colors
+    // Generate YQBoots color classes for primary, accent and warn colors
     $palettes: (
         primary: $default-primary-palette,
         accent: $default-accent-palette,
         warn: $default-warn-palette
     );
 
-    @include fuse-color-classes($palettes);
+    @include yq-color-classes($palettes);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -217,7 +217,7 @@ body.theme-default {
 // -----------------------------------------------------------------------------------------------------
 
 // Define the primary, accent and warn palettes
-$yellow-light-theme-primary-palette: mat-palette($fuse-navy, 600, 400, 700);
+$yellow-light-theme-primary-palette: mat-palette($yq-navy, 600, 400, 700);
 $yellow-light-theme-accent-palette: mat-palette($mat-yellow, 600, 400, 700);
 $yellow-light-theme-warn-palette: mat-palette($mat-red);
 
@@ -231,20 +231,20 @@ body.theme-yellow-light {
     // Generate the Angular Material theme
     @include angular-material-theme($yellow-light-theme);
 
-    // Apply the theme to the Fuse Core
-    @include fuse-core-theme($yellow-light-theme);
+    // Apply the theme to the YQBoots Core
+    @include yq-core-theme($yellow-light-theme);
 
     // Apply the theme to the user components
     @include components-theme($yellow-light-theme);
 
-    // Generate Fuse color classes for primary, accent and warn colors
+    // Generate YQBoots color classes for primary, accent and warn colors
     $palettes: (
         primary: $yellow-light-theme-primary-palette,
         accent: $yellow-light-theme-accent-palette,
         warn: $yellow-light-theme-warn-palette
     );
 
-    @include fuse-color-classes($palettes);
+    @include yq-color-classes($palettes);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -266,20 +266,20 @@ body.theme-blue-gray-dark {
     // Generate the Angular Material theme
     @include angular-material-theme($blue-gray-dark-theme);
 
-    // Apply the theme to the Fuse Core
-    @include fuse-core-theme($blue-gray-dark-theme);
+    // Apply the theme to the YQBoots Core
+    @include yq-core-theme($blue-gray-dark-theme);
 
     // Apply the theme to the user components
     @include components-theme($blue-gray-dark-theme);
 
-    // Generate Fuse color classes for primary, accent and warn colors
+    // Generate YQBoots color classes for primary, accent and warn colors
     $palettes: (
         primary: $blue-gray-dark-theme-primary-palette,
         accent: $blue-gray-dark-theme-accent-palette,
         warn: $blue-gray-dark-theme-warn-palette
     );
 
-    @include fuse-color-classes($palettes);
+    @include yq-color-classes($palettes);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -301,18 +301,18 @@ body.theme-pink-dark {
     // Generate the Angular Material theme
     @include angular-material-theme($pink-dark-theme);
 
-    // Apply the theme to the Fuse Core
-    @include fuse-core-theme($pink-dark-theme);
+    // Apply the theme to the YQBoots Core
+    @include yq-core-theme($pink-dark-theme);
 
     // Apply the theme to the user components
     @include components-theme($pink-dark-theme);
 
-    // Generate Fuse color classes for primary, accent and warn colors
+    // Generate YQBoots color classes for primary, accent and warn colors
     $palettes: (
         primary: $pink-dark-theme-primary-palette,
         accent: $pink-dark-theme-accent-palette,
         warn: $pink-dark-theme-warn-palette
     );
 
-    @include fuse-color-classes($palettes);
+    @include yq-color-classes($palettes);
 }

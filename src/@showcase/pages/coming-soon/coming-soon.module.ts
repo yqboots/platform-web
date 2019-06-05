@@ -6,8 +6,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseCountdownModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqCountdownModule} from '@yq/components';
 
 import {ComingSoonComponent} from '@showcase/pages/coming-soon/coming-soon.component';
 
@@ -30,8 +30,8 @@ const routes = [
         MatIconModule,
         MatInputModule,
 
-        FuseSharedModule,
-        FuseCountdownModule
+        YqSharedModule,
+        YqCountdownModule
     ]
 })
 export class ComingSoonModule {

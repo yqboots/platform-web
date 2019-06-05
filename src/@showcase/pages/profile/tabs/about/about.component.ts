@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/core';
+import {yqAnimations} from '@yq/core';
 
 import {ProfileService} from '@showcase/pages/profile/profile.service';
 
@@ -11,7 +11,7 @@ import {ProfileService} from '@showcase/pages/profile/profile.service';
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class ProfileAboutComponent implements OnInit, OnDestroy {
     about: any;

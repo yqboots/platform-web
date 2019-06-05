@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
-import {FuseSharedModule} from '@fuse/core';
+import {YqSharedModule} from '@yq/core';
 
 import {IconsComponent} from '@showcase/ui/icons/icons.component';
 
@@ -30,7 +30,7 @@ const routes: Routes = [
         MatInputModule,
         MatProgressSpinnerModule,
 
-        FuseSharedModule
+        YqSharedModule
     ]
 })
 export class UIIconsModule {

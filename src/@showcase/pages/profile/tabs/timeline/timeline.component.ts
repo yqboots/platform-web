@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {fuseAnimations} from '@fuse/core';
+import {yqAnimations} from '@yq/core';
 
 import {ProfileService} from '../../profile.service';
 
@@ -11,7 +11,7 @@ import {ProfileService} from '../../profile.service';
     templateUrl: './timeline.component.html',
     styleUrls: ['./timeline.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations: fuseAnimations
+    animations: yqAnimations
 })
 export class ProfileTimelineComponent implements OnInit, OnDestroy {
     timeline: any;

@@ -3,39 +3,34 @@ import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
-import {FuseSharedModule} from '@fuse/core';
-import {FuseHighlightModule} from '@fuse/components';
+import {YqSharedModule} from '@yq/core';
+import {YqHighlightModule} from '@yq/components';
 
-import {DocsDirectivesFuseIfOnDomComponent} from '@doc/directives/fuseIfOnDom/fuse-if-on-dom.component';
-import {DocsDirectivesFuseInnerScrollComponent} from '@doc/directives/fuseInnerScroll/fuse-inner-scroll.component';
-import {DocsDirectivesFuseMatSidenavComponent} from '@doc/directives/fuseMatSidenav/fuse-mat-sidenav.component';
-import {DocsDirectivesFusePerfectScrollbarComponent} from '@doc/directives/fusePerfectScrollbar/fuse-perfect-scrollbar.component';
+import {DocsDirectivesIfOnDomComponent} from '@doc/directives/ifOnDom/if-on-dom.component';
+import {DocsDirectivesInnerScrollComponent} from '@doc/directives/innerScroll/inner-scroll.component';
+import {DocsDirectivesMatSidenavComponent} from '@doc/directives/matSidenav/mat-sidenav.component';
 
 const routes = [
     {
-        path: 'fuse-if-on-dom',
-        component: DocsDirectivesFuseIfOnDomComponent
+        path: 'if-on-dom',
+        component: DocsDirectivesIfOnDomComponent
+
     },
     {
-        path: 'fuse-inner-scroll',
-        component: DocsDirectivesFuseInnerScrollComponent
+        path: 'inner-scroll',
+        component: DocsDirectivesInnerScrollComponent
     },
     {
-        path: 'fuse-mat-sidenav',
-        component: DocsDirectivesFuseMatSidenavComponent
-    },
-    {
-        path: 'fuse-perfect-scrollbar',
-        component: DocsDirectivesFusePerfectScrollbarComponent
+        path: 'mat-sidenav',
+        component: DocsDirectivesMatSidenavComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        DocsDirectivesFuseIfOnDomComponent,
-        DocsDirectivesFuseInnerScrollComponent,
-        DocsDirectivesFuseMatSidenavComponent,
-        DocsDirectivesFusePerfectScrollbarComponent
+        DocsDirectivesIfOnDomComponent,
+        DocsDirectivesInnerScrollComponent,
+        DocsDirectivesMatSidenavComponent
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -43,8 +38,8 @@ const routes = [
         MatButtonModule,
         MatIconModule,
 
-        FuseSharedModule,
-        FuseHighlightModule
+        YqSharedModule,
+        YqHighlightModule
     ]
 })
 export class DirectivesModule {

@@ -13,7 +13,7 @@
             true,
             "attribute",
             [
-                "fuse",
+                "yq",
                 ""
             ],
             "camelCase"
@@ -23,7 +23,7 @@
             "element",
             "attribute",
             [
-                "fuse",
+                "yq",
                 ""
             ],
             [

@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
-import {FuseUtils} from '@fuse/core';
+import {YqUtils} from '@yq/core';
 
 import {FaqService} from '@showcase/pages/faq/faq.service';
 
@@ -60,7 +60,7 @@ export class FaqComponent implements OnInit, OnDestroy {
                 distinctUntilChanged()
             )
             .subscribe(searchText => {
-                this.faqsFiltered = FuseUtils.filterArrayByString(this.faqs, searchText);
+                this.faqsFiltered = YqUtils.filterArrayByString(this.faqs, searchText);
             });
     }
 

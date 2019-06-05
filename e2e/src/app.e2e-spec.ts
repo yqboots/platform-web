@@ -1,14 +1,14 @@
-import {FusePage} from './app.po';
+import {YqPage} from './app.po';
 
-describe('Fuse App', () => {
-    let page: FusePage;
+describe('YQBoots App', () => {
+    let page: YqPage;
 
     beforeEach(() => {
-        page = new FusePage();
+        page = new YqPage();
     });
 
     it('should display welcome message', () => {
         page.navigateTo();
-        expect(page.getParagraphText()).toEqual('Welcome to Fuse!');
+        expect(page.getParagraphText()).toEqual('Welcome to YQBoots!');
     });
 });

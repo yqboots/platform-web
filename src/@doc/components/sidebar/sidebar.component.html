@@ -19,17 +19,17 @@
     <div class="content p-24">
 
         <p>
-            <code>fuse-sidebar</code> is a custom built Fuse component allows you to create a sidebar. Currently it's
+            <code>yq-sidebar</code> is a custom built YQBoots component allows you to create a sidebar. Currently it's
             only used as the main navigation sidebar but in the future it will allow multiple usages.
         </p>
 
         <div class="section-title">Usage</div>
         <p class="py-8">
-            <fuse-highlight lang="html">
+            <yq-highlight lang="html">
                 <textarea #source>
-                    <fuse-sidebar name="navbar" [folded]="someSetting.isFolded" lockedOpen="gt-md"></fuse-sidebar>
+                    <yq-sidebar name="navbar" [folded]="someSetting.isFolded" lockedOpen="gt-md"></yq-sidebar>
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
         <div class="my-48">
@@ -91,14 +91,14 @@
             you need to use the name attribute:
         </p>
         <p class="py-8">
-            <fuse-highlight lang="ts">
+            <yq-highlight lang="ts">
                 <textarea #source>
                     toggleSidebar(): void
                     {
-                    this._fuseSidebarService.getSidebar('my-left-sidebar').toggleOpen();
+                    this._yqSidebarService.getSidebar('my-left-sidebar').toggleOpen();
                     }
                 </textarea>
-            </fuse-highlight>
+            </yq-highlight>
         </p>
 
     </div>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {MatColors} from '@fuse/core';
+import {MatColors} from '@yq/core';
 
 @Component({
     selector: 'colors',
