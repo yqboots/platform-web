@@ -15,7 +15,7 @@ import 'prismjs/components/prism-typescript';
 
 import {fuseAnimations, FuseCopierService} from '@fuse/core';
 
-import {EXAMPLE_COMPONENTS} from '@showcase/angular-material-elements/example-components';
+import {EXAMPLE_COMPONENTS} from '@showcase/material/example-components';
 
 export interface LiveExample {
     title: string;

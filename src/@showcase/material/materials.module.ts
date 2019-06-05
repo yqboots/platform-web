@@ -4,10 +4,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {FuseSharedModule} from '@fuse/core';
 import {FuseHighlightModule, FuseWidgetModule} from '@fuse/components';
 
-import {MaterialModule} from '@showcase/angular-material-elements/material.module';
-import {EXAMPLE_LIST} from '@showcase/angular-material-elements/example-components';
-import {AngularMaterialElementsComponent} from '@showcase/angular-material-elements/angular-material-elements.component';
-import {ExampleViewerComponent} from '@showcase/angular-material-elements/example-viewer/example-viewer';
+import {MaterialModule} from '@showcase/material/material.module';
+import {EXAMPLE_LIST} from '@showcase/material/example-components';
+import {MaterialsComponent} from '@showcase/material/materials.component';
+import {ExampleViewerComponent} from '@showcase/material/example-viewer/example-viewer';
 
 const routes: Routes = [
     {
@@ -15,7 +15,7 @@ const routes: Routes = [
         children: [
             {
                 path: ':id',
-                component: AngularMaterialElementsComponent
+                component: MaterialsComponent
             }
         ]
     }
@@ -24,7 +24,7 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         [...EXAMPLE_LIST],
-        AngularMaterialElementsComponent,
+        MaterialsComponent,
         ExampleViewerComponent
     ],
     imports: [
@@ -38,6 +38,6 @@ const routes: Routes = [
     ],
     entryComponents: EXAMPLE_LIST,
 })
-export class AngularMaterialElementsModule {
+export class MaterialsModule {
 }
 

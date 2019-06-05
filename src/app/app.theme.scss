@@ -121,7 +121,7 @@ $typography: mat-typography-config(
 
 @import "src/@showcase/ui/cards/cards.theme";
 
-@import "src/@showcase/angular-material-elements/example-viewer/example-viewer.theme";
+@import "src/@showcase/material/example-viewer/example-viewer.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {

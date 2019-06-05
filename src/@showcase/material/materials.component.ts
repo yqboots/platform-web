@@ -3,14 +3,14 @@ import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {COMPONENT_MAP} from '@showcase/angular-material-elements/example-components';
+import {COMPONENT_MAP} from '@showcase/material/example-components';
 
 @Component({
     selector: 'angular-material',
-    templateUrl: './angular-material-elements.component.html',
-    styleUrls: ['./angular-material-elements.component.scss']
+    templateUrl: './materials.component.html',
+    styleUrls: ['./materials.component.scss']
 })
-export class AngularMaterialElementsComponent implements OnInit, OnDestroy {
+export class MaterialsComponent implements OnInit, OnDestroy {
     id: string;
     title: string;
     examples: any;

@@ -64,7 +64,7 @@ if (environment.production) {
     });
     _appRoutes.push({
         path: 'angular-material-elements',
-        loadChildren: () => import('@showcase/angular-material-elements/angular-material-elements.module').then(m => m.AngularMaterialElementsModule)
+        loadChildren: () => import('@showcase/material/materials.module').then(m => m.MaterialsModule)
     });
     _appRoutes.push({
         path: 'documentation',
