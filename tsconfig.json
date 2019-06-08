@@ -27,13 +27,25 @@
       ],
       "@showcase": [
         "@showcase/"
-      ]/*,
-      "@yq/core": [
-        "../dist/@yq/core"
       ],
-      "@yq/core*//*": [
-        "../dist/@yq/core*//*"
-      ]*/
+      "core": [
+        "../dist/core"
+      ],
+      "core/*": [
+        "../dist/core/*"
+      ],
+      "components": [
+        "../dist/components"
+      ],
+      "components/*": [
+        "../dist/components/*"
+      ],
+      "extensions": [
+        "../dist/extensions"
+      ],
+      "extensions/*": [
+        "../dist/extensions/*"
+      ]
     }
   }
 }
