@@ -45,6 +45,18 @@
       ],
       "extensions/*": [
         "../dist/extensions/*"
+      ],
+      "docs": [
+        "../dist/docs"
+      ],
+      "docs/*": [
+        "../dist/docs/*"
+      ],
+      "showcase": [
+        "../dist/showcase"
+      ],
+      "showcase/*": [
+        "../dist/showcase/*"
       ]
     }
   }
