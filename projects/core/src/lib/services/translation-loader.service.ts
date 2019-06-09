@@ -10,14 +10,7 @@ export interface Locale {
   providedIn: 'root'
 })
 export class YqTranslationLoaderService {
-  /**
-   * Constructor
-   *
-   * @param {TranslateService} _translateService
-   */
-  constructor(
-    private _translateService: TranslateService
-  ) {
+  constructor(private _translateService: TranslateService) {
   }
 
   // -----------------------------------------------------------------------------------------------------
@@ -26,8 +19,6 @@ export class YqTranslationLoaderService {
 
   /**
    * Load translations
-   *
-   * @param {Locale} args
    */
   loadTranslations(...args: Locale[]): void {
     const locales = [...args];

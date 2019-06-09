@@ -10,7 +10,7 @@ import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TranslateModule} from '@ngx-translate/core';
 import 'hammerjs';
 
-import {YqModule, YqSharedModule} from '@yq/core';
+import {YqCoreModule, YqSharedModule} from '@yq/core';
 import {YqProgressBarModule, YqSidebarModule, YqThemeOptionsModule} from '@yq/components';
 
 import {appRouteConfigs, appConfig} from 'app/config';
@@ -46,7 +46,7 @@ import {environment} from 'environments/environment';
     MatIconModule,
 
     // YQBoots modules
-    YqModule.forRoot(appConfig),
+    YqCoreModule.forRoot(appConfig),
     YqProgressBarModule,
     YqSharedModule,
     YqSidebarModule,

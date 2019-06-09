@@ -12,18 +12,9 @@ export class YqSplashScreenService {
   splashScreenEl: any;
   player: AnimationPlayer;
 
-  /**
-   * Constructor
-   *
-   * @param {AnimationBuilder} _animationBuilder
-   * @param _document
-   * @param {Router} _router
-   */
-  constructor(
-    private _animationBuilder: AnimationBuilder,
-    @Inject(DOCUMENT) private _document: any,
-    private _router: Router
-  ) {
+  constructor(private _animationBuilder: AnimationBuilder,
+              @Inject(DOCUMENT) private _document: any,
+              private _router: Router) {
     // Initialize
     this._init();
   }
@@ -34,8 +25,6 @@ export class YqSplashScreenService {
 
   /**
    * Initialize
-   *
-   * @private
    */
   private _init(): void {
     // Get the splash screen element

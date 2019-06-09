@@ -7,9 +7,6 @@ import {MatSidenav} from '@angular/material/sidenav';
 export class MatSidenavHelperService {
   sidenavInstances: MatSidenav[];
 
-  /**
-   * Constructor
-   */
   constructor() {
     this.sidenavInstances = [];
   }
@@ -20,9 +17,6 @@ export class MatSidenavHelperService {
 
   /**
    * Set sidenav
-   *
-   * @param id
-   * @param instance
    */
   setSidenav(id, instance): void {
     this.sidenavInstances[id] = instance;
@@ -30,9 +24,6 @@ export class MatSidenavHelperService {
 
   /**
    * Get sidenav
-   *
-   * @param id
-   * @returns {any}
    */
   getSidenav(id): any {
     return this.sidenavInstances[id];

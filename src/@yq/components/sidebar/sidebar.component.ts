@@ -17,9 +17,9 @@ import {MediaObserver} from '@angular/flex-layout';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
+import {YqConfigService, YqMatchMediaService} from '@yq/core';
+
 import {YqSidebarService} from './sidebar.service';
-import {YqMatchMediaService} from '@yq/core/services/match-media.service';
-import {YqConfigService} from '@yq/core';
 
 @Component({
   selector: 'yq-sidebar',

@@ -16,18 +16,9 @@ export class YqConfigService {
   private _configSubject: BehaviorSubject<any>;
   private readonly _defaultConfig: any;
 
-  /**
-   * Constructor
-   *
-   * @param {Platform} _platform
-   * @param {Router} _router
-   * @param _config
-   */
-  constructor(
-    private _platform: Platform,
-    private _router: Router,
-    @Inject(YQBoots_CONFIG) private _config
-  ) {
+  constructor(private _platform: Platform,
+              private _router: Router,
+              @Inject(YQBoots_CONFIG) private _config) {
     // Set the default config from the user provided config (from forRoot)
     this._defaultConfig = _config;
 
@@ -59,8 +50,6 @@ export class YqConfigService {
 
   /**
    * Get default config
-   *
-   * @returns {any}
    */
   get defaultConfig(): any {
     return this._defaultConfig;
@@ -72,8 +61,6 @@ export class YqConfigService {
 
   /**
    * Initialize
-   *
-   * @private
    */
   private _init(): void {
     /**
@@ -110,9 +97,6 @@ export class YqConfigService {
 
   /**
    * Set config
-   *
-   * @param value
-   * @param {{emitEvent: boolean}} opts
    */
   setConfig(value, opts = {emitEvent: true}): void {
     // Get the value from the behavior subject
@@ -130,8 +114,6 @@ export class YqConfigService {
 
   /**
    * Get config
-   *
-   * @returns {Observable<any>}
    */
   getConfig(): Observable<any> {
     return this._configSubject.asObservable();

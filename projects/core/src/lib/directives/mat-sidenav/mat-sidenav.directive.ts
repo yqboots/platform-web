@@ -20,23 +20,12 @@ export class MatSidenavHelperDirective implements OnInit, OnDestroy {
   @Input()
   matIsLockedOpen: string;
 
-  // Private
   private _unsubscribeAll: Subject<any>;
 
-  /**
-   * Constructor
-   *
-   * @param {YqMatchMediaService} _yqMatchMediaService
-   * @param {MatSidenavHelperService} _yqMatSidenavHelperService
-   * @param {MatSidenav} _matSidenav
-   * @param {MediaObserver} _mediaObserver
-   */
-  constructor(
-    private _yqMatchMediaService: YqMatchMediaService,
-    private _yqMatSidenavHelperService: MatSidenavHelperService,
-    private _matSidenav: MatSidenav,
-    private _mediaObserver: MediaObserver
-  ) {
+  constructor(private _yqMatchMediaService: YqMatchMediaService,
+              private _yqMatSidenavHelperService: MatSidenavHelperService,
+              private _matSidenav: MatSidenav,
+              private _mediaObserver: MediaObserver) {
     // Set the defaults
     this.isLockedOpen = true;
 
@@ -97,11 +86,6 @@ export class YqMatSidenavTogglerDirective {
   @Input()
   yqMatSidenavToggler: string;
 
-  /**
-   * Constructor
-   *
-   * @param {MatSidenavHelperService} _yqMatSidenavHelperService
-   */
   constructor(
     private _yqMatSidenavHelperService: MatSidenavHelperService) {
   }

@@ -28,11 +28,11 @@
       "@showcase": [
         "@showcase/"
       ],
-      "core": [
-        "../dist/core"
+      "@yq/core": [
+        "../dist/@yq/core"
       ],
-      "core/*": [
-        "../dist/core/*"
+      "@yq/core/*": [
+        "../dist/@yq/core/*"
       ],
       "components": [
         "../dist/components"

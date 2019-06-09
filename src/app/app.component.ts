@@ -5,10 +5,9 @@ import {TranslateService} from '@ngx-translate/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqConfigService, YqTranslationLoaderService} from '@yq/core';
+import {YqConfigService, YqTranslationLoaderService, YqSplashScreenService} from '@yq/core';
 import {YqNavigationService} from '@yq/components/navigation/navigation.service';
 import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
-import {YqSplashScreenService} from '@yq/core/services/splash-screen.service';
 
 import {navigation} from 'app/navigation/navigation';
 import {locale as navigationEnglish} from 'app/navigation/i18n/en';

@@ -2,7 +2,7 @@ import {Directive, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqMatchMediaService} from '../../services/match-media.service';
+import {YqMatchMediaService} from '../../services';
 
 @Directive({
   selector: '.inner-scroll'
@@ -13,18 +13,9 @@ export class InnerScrollDirective implements OnInit, OnDestroy {
   private _grandParent: any;
   private _unsubscribeAll: Subject<any>;
 
-  /**
-   * Constructor
-   *
-   * @param {ElementRef} _elementRef
-   * @param {YqMatchMediaService} _yqMediaMatchService
-   * @param {Renderer2} _renderer
-   */
-  constructor(
-    private _elementRef: ElementRef,
-    private _yqMediaMatchService: YqMatchMediaService,
-    private _renderer: Renderer2
-  ) {
+  constructor(private _elementRef: ElementRef,
+              private _yqMediaMatchService: YqMatchMediaService,
+              private _renderer: Renderer2) {
     // Set the private defaults
     this._unsubscribeAll = new Subject();
   }
@@ -84,8 +75,6 @@ export class InnerScrollDirective implements OnInit, OnDestroy {
 
   /**
    * Add the class name
-   *
-   * @private
    */
   private _addClass(): void {
     // Add the inner-scroll class
@@ -94,10 +83,8 @@ export class InnerScrollDirective implements OnInit, OnDestroy {
 
   /**
    * Remove the class name
-   * @private
    */
   private _removeClass(): void {
-
     // Remove the inner-scroll class
     this._renderer.removeClass(this._grandParent, 'inner-scroll');
   }

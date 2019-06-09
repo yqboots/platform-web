@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 
-import {AppConfig} from '@yq/core/types';
+import {AppConfig} from '@yq/core';
 
 import {environment} from 'environments/environment';
 

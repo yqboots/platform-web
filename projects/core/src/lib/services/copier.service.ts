@@ -15,9 +15,6 @@ export class YqCopierService {
 
   /**
    * Copy the text value to the clipboard
-   *
-   * @param {string} text
-   * @returns {boolean}
    */
   copyText(text: string): boolean {
     this.createTextareaAndSelect(text);
@@ -31,8 +28,6 @@ export class YqCopierService {
   /**
    * Creates a hidden textarea element, sets its value from `text` property,
    * and makes a selection on it.
-   *
-   * @param {string} text
    */
   private createTextareaAndSelect(text: string): void {
     // Create a fake element to hold the contents to copy
@@ -59,8 +54,6 @@ export class YqCopierService {
 
   /**
    * Remove the text area from the DOM
-   *
-   * @private
    */
   private _removeFake(): void {
     if (this.textarea) {

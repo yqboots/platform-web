@@ -10,14 +10,7 @@ export class YqMatchMediaService {
   activeMediaQuery: string;
   onMediaChange: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  /**
-   * Constructor
-   *
-   * @param {MediaObserver} _mediaObserver
-   */
-  constructor(
-    private _mediaObserver: MediaObserver
-  ) {
+  constructor(private _mediaObserver: MediaObserver) {
     // Set the defaults
     this.activeMediaQuery = '';
 
@@ -32,8 +25,6 @@ export class YqMatchMediaService {
 
   /**
    * Initialize
-   *
-   * @private
    */
   private _init(): void {
     this._mediaObserver.media$
@@ -48,5 +39,4 @@ export class YqMatchMediaService {
         }
       });
   }
-
 }
