@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatRippleModule} from '@angular/material/core';
@@ -14,6 +16,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {YqSharedModule} from '@yq/core';
 import {YqWidgetModule} from '@yq/components';
@@ -26,6 +29,10 @@ import {EcommerceOrdersComponent} from '@yq/extensions/e-commerce/orders/orders.
 import {EcommerceOrdersService} from '@yq/extensions/e-commerce/orders/orders.service';
 import {EcommerceOrderComponent} from '@yq/extensions/e-commerce/order/order.component';
 import {EcommerceOrderService} from '@yq/extensions/e-commerce/order/order.service';
+import {ECommerceFakeDbService} from './e-commerce-fake-db.service';
+
+import {environment} from 'environments/environment';
+import {CalendarFakeDbService} from '../calendar/calendar-fake-db.service';
 
 const routes: Routes = [
   {
@@ -73,7 +80,14 @@ const routes: Routes = [
     EcommerceOrderComponent
   ],
   imports: [
+    HttpClientModule,
+
     RouterModule.forChild(routes),
+
+    !environment.production ? InMemoryWebApiModule.forFeature(ECommerceFakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
     MatButtonModule,
     MatChipsModule,

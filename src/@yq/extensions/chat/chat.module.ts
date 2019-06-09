@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -11,6 +12,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {YqSharedModule} from '@yq/core';
 
@@ -23,6 +25,9 @@ import {ChatUserSidenavComponent} from '@yq/extensions/chat/sidenavs/left/user/u
 import {ChatLeftSidenavComponent} from '@yq/extensions/chat/sidenavs/left/left.component';
 import {ChatRightSidenavComponent} from '@yq/extensions/chat/sidenavs/right/right.component';
 import {ChatContactSidenavComponent} from '@yq/extensions/chat/sidenavs/right/contact/contact.component';
+import {ChatFakeDbService} from './chat-fake-db.service';
+
+import {environment} from 'environments/environment';
 
 const routes: Routes = [
   {
@@ -47,7 +52,14 @@ const routes: Routes = [
     ChatContactSidenavComponent
   ],
   imports: [
+    HttpClientModule,
+
     RouterModule.forChild(routes),
+
+    !environment.production ? InMemoryWebApiModule.forFeature(ChatFakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
     MatButtonModule,
     MatCardModule,

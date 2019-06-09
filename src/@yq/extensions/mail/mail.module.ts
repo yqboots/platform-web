@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRippleModule} from '@angular/material/core';
@@ -11,6 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {TranslateModule} from '@ngx-translate/core';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {YqSharedModule} from '@yq/core';
 import {YqSidebarModule} from '@yq/components';
@@ -22,6 +25,9 @@ import {MailListItemComponent} from '@yq/extensions/mail/mail-list/mail-list-ite
 import {MailDetailsComponent} from '@yq/extensions/mail/mail-details/mail-details.component';
 import {MailMainSidebarComponent} from '@yq/extensions/mail/sidebars/main/main-sidebar.component';
 import {MailComposeDialogComponent} from '@yq/extensions/mail/dialogs/compose/compose.component';
+import {MailFakeDbService} from './mail-fake-db.service';
+
+import {environment} from 'environments/environment';
 
 const routes: Routes = [
   {
@@ -82,7 +88,14 @@ const routes: Routes = [
     MailComposeDialogComponent
   ],
   imports: [
+    HttpClientModule,
+
     RouterModule.forChild(routes),
+
+    !environment.production ? InMemoryWebApiModule.forFeature(MailFakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
     MatButtonModule,
     MatCheckboxModule,

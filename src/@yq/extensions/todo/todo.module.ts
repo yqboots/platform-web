@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRippleModule} from '@angular/material/core';
@@ -10,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxDnDModule} from '@swimlane/ngx-dnd';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {YqSharedModule} from '@yq/core';
 import {YqSidebarModule} from '@yq/components';
@@ -20,6 +23,9 @@ import {TodoMainSidebarComponent} from '@yq/extensions/todo/sidebars/main/main-s
 import {TodoListItemComponent} from '@yq/extensions/todo/todo-list/todo-list-item/todo-list-item.component';
 import {TodoListComponent} from '@yq/extensions/todo/todo-list/todo-list.component';
 import {TodoDetailsComponent} from '@yq/extensions/todo/todo-details/todo-details.component';
+import {TodoFakeDbService} from './todo-fake-db.service';
+
+import {environment} from 'environments/environment';
 
 const routes: Routes = [
   {
@@ -79,7 +85,14 @@ const routes: Routes = [
     TodoDetailsComponent
   ],
   imports: [
+    HttpClientModule,
+
     RouterModule.forChild(routes),
+
+    !environment.production ? InMemoryWebApiModule.forFeature(TodoFakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
     MatButtonModule,
     MatCheckboxModule,

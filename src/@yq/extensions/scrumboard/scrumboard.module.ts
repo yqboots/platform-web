@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
@@ -16,6 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgxDnDModule} from '@swimlane/ngx-dnd';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {YqSharedModule} from '@yq/core';
 import {YqConfirmDialogModule, YqMaterialColorPickerModule} from '@yq/components';
@@ -33,6 +36,9 @@ import {ScrumboardLabelSelectorComponent} from '@yq/extensions/scrumboard/board/
 import {ScrumboardEditBoardNameComponent} from '@yq/extensions/scrumboard/board/edit-board-name/edit-board-name.component';
 import {ScrumboardBoardSettingsSidenavComponent} from '@yq/extensions/scrumboard/board/sidenavs/settings/settings.component';
 import {ScrumboardBoardColorSelectorComponent} from '@yq/extensions/scrumboard/board/sidenavs/settings/board-color-selector/board-color-selector.component';
+import {ScrumboardFakeDbService} from './scrumboard-fake-db.service';
+
+import {environment} from 'environments/environment';
 
 const routes: Routes = [
   {
@@ -71,7 +77,14 @@ const routes: Routes = [
     ScrumboardBoardColorSelectorComponent
   ],
   imports: [
+    HttpClientModule,
+
     RouterModule.forChild(routes),
+
+    !environment.production ? InMemoryWebApiModule.forFeature(ScrumboardFakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }) : [],
 
     MatButtonModule,
     MatCheckboxModule,
