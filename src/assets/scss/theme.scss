@@ -1,10 +1,10 @@
-@import "src/@yq/components/countdown/countdown.theme";
-@import "src/@yq/components/material-color-picker/material-color-picker.theme";
-@import "src/@yq/components/search-bar/search-bar.theme";
-@import "src/@yq/components/shortcuts/shortcuts.theme";
-@import "src/@yq/components/sidebar/sidebar.theme";
-@import "src/@yq/components/theme-options/theme-options.theme";
-@import "src/@yq/components/widget/widget.theme";
+@import "projects/components/src/lib/countdown/countdown.theme";
+@import "projects/components/src/lib/material-color-picker/material-color-picker.theme";
+@import "projects/components/src/lib/search-bar/search-bar.theme";
+@import "projects/components/src/lib/shortcuts/shortcuts.theme";
+@import "projects/components/src/lib/sidebar/sidebar.theme";
+@import "projects/components/src/lib/theme-options/theme-options.theme";
+@import "projects/components/src/lib/widget/widget.theme";
 
 @mixin yq-core-theme($theme) {
 

@@ -10,7 +10,7 @@ import {ChartsModule} from 'ng2-charts';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 import {YqSharedModule} from '@yq/core';
-import {YqWidgetModule} from '@yq/components/widget/widget.module';
+import {YqWidgetModule} from '@yq/components';
 
 import {AnalyticsDashboardComponent} from '@yq/extensions/dashboards/analytics/analytics.component';
 import {AnalyticsDashboardService} from '@yq/extensions/dashboards/analytics/analytics.service';

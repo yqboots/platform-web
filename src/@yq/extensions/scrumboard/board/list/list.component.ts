@@ -6,7 +6,7 @@ import {takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {YqConfirmDialogComponent} from '@yq/components/confirm-dialog/confirm-dialog.component';
+import {YqConfirmDialogComponent} from '@yq/components';
 
 import {ScrumboardService} from '@yq/extensions/scrumboard/scrumboard.service';
 import {Card} from '@yq/extensions/scrumboard/card.model';

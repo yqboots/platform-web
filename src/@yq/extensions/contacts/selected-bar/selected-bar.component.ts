@@ -3,7 +3,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqConfirmDialogComponent} from '@yq/components/confirm-dialog/confirm-dialog.component';
+import {YqConfirmDialogComponent} from '@yq/components';
 
 import {ContactsService} from '@yq/extensions/contacts/contacts.service';
 

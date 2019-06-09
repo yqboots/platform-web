@@ -5,7 +5,7 @@ export class KeysPipe implements PipeTransform {
   /**
    * Transform
    */
-  transform(value: any, args: string[]): any {
+  transform(value: any, args?: string[]): any {
     const keys: any[] = [];
 
     for (const key in value) {

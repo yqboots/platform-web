@@ -2,7 +2,7 @@ import {Directive, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqMatchMediaService} from '../../services';
+import {YqMatchMediaService} from '../../services/match-media.service';
 
 @Directive({
   selector: '.inner-scroll'

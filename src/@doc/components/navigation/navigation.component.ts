@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {YqNavigationService} from '@yq/components/navigation/navigation.service';
+import {YqNavigationService} from '@yq/components';
 
 @Component({
   selector: 'docs-components-navigation',

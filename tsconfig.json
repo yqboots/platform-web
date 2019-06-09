@@ -34,11 +34,11 @@
       "@yq/core/*": [
         "../dist/@yq/core/*"
       ],
-      "components": [
-        "../dist/components"
+      "@yq/components": [
+        "../dist/@yq/components"
       ],
-      "components/*": [
-        "../dist/components/*"
+      "@yq/components/*": [
+        "../dist/@yq/components/*"
       ],
       "extensions": [
         "../dist/extensions"

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
+import {YqSidebarService} from '@yq/components';
 
 @Component({
   selector: 'simple-right-sidebar-4',

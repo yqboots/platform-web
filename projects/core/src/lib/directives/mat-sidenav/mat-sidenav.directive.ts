@@ -4,7 +4,7 @@ import {MediaObserver} from '@angular/flex-layout';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
-import {YqMatchMediaService} from '../../services';
+import {YqMatchMediaService} from '../../services/match-media.service';
 import {MatSidenavHelperService} from './mat-sidenav.service';
 
 @Directive({

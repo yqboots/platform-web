@@ -17,7 +17,8 @@ import {takeUntil} from 'rxjs/operators';
 
 import {PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
 
-import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
+import {YqSidebarService} from '@yq/components';
+
 import {ChatPanelService} from 'app/layout/components/chat-panel/chat-panel.service';
 
 @Component({

@@ -4,9 +4,9 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import * as shape from 'd3-shape';
 
 import {yqAnimations} from '@yq/core';
+import {YqSidebarService} from '@yq/components';
 
 import {ProjectDashboardService} from '@yq/extensions/dashboards/project/project.service';
-import {YqSidebarService} from '@yq/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'project-dashboard',
