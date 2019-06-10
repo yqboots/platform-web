@@ -81,18 +81,17 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
-@import "src/@yq/extensions/academy/academy.theme";
-@import "src/@yq/extensions/calendar/calendar.theme";
-@import "src/@yq/extensions/chat/chat.theme";
-@import "src/@yq/extensions/contacts/contacts.theme";
-@import "src/@yq/extensions/project/project.theme";
-@import "src/@yq/extensions/e-commerce/orders/orders.theme";
-@import "src/@yq/extensions/e-commerce/products/products.theme";
-@import "src/@yq/extensions/file-manager/file-manager.theme";
-@import "src/@yq/extensions/mail/mail.theme";
-@import "src/@yq/extensions/mail-ngrx/mail.theme";
-@import "src/@yq/extensions/scrumboard/scrumboard.theme";
-@import "src/@yq/extensions/todo/todo.theme";
+@import "projects/extensions/src/lib/academy/academy.theme";
+@import "projects/extensions/src/lib//calendar/calendar.theme";
+@import "projects/extensions/src/lib//chat/chat.theme";
+@import "projects/extensions/src/lib//contacts/contacts.theme";
+@import "projects/extensions/src/lib//project/project.theme";
+@import "projects/extensions/src/lib//e-commerce/orders/orders.theme";
+@import "projects/extensions/src/lib//e-commerce/products/products.theme";
+@import "projects/extensions/src/lib//file-manager/file-manager.theme";
+@import "projects/extensions/src/lib//mail/mail.theme";
+@import "projects/extensions/src/lib//scrumboard/scrumboard.theme";
+@import "projects/extensions/src/lib//todo/todo.theme";
 
 @import "src/@showcase/pages/authentication/login/login.theme";
 @import "src/@showcase/pages/authentication/login-2/login-2.theme";
@@ -140,7 +139,6 @@ $typography: mat-typography-config(
   @include e-commerce-products-theme($theme);
   @include file-manager-theme($theme);
   @include mail-theme($theme);
-  @include mail-ngrx-theme($theme);
   @include scrumboard-theme($theme);
   @include todo-theme($theme);
 

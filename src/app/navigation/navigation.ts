@@ -99,20 +99,6 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         }
       },
       {
-        id: 'mail-ngrx',
-        title: 'Mail Ngrx',
-        translate: 'NAV.MAIL_NGRX.TITLE',
-        type: 'item',
-        icon: 'email',
-        url: '/exts/mail-ngrx',
-        badge: {
-          title: '13',
-          translate: 'NAV.MAIL_NGRX.BADGE',
-          bg: '#EC0C8E',
-          fg: '#FFFFFF'
-        }
-      },
-      {
         id: 'chat',
         title: 'Chat',
         translate: 'NAV.CHAT',

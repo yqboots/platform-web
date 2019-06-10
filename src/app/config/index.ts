@@ -45,12 +45,12 @@ const _appRouteConfigs: Routes = [];
 if (environment.production) {
   _appRouteConfigs.push({
     path: 'exts',
-    loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
+    loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
   });
 } else {
   _appRouteConfigs.push({
     path: 'exts',
-    loadChildren: () => import('@yq/extensions/extensions.module').then(m => m.ExtensionsModule)
+    loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
   });
   _appRouteConfigs.push({
     path: 'pages',

@@ -19,9 +19,6 @@
       "dom"
     ],
     "paths": {
-      "@yq": [
-        "@yq/"
-      ],
       "@docs": [
         "@doc/"
       ],
@@ -40,11 +37,11 @@
       "@yq/components/*": [
         "../dist/@yq/components/*"
       ],
-      "extensions": [
-        "../dist/extensions"
+      "@yq/extensions": [
+        "../dist/@yq/extensions"
       ],
-      "extensions/*": [
-        "../dist/extensions/*"
+      "@yq/extensions/*": [
+        "../dist/@yq/extensions/*"
       ],
       "docs": [
         "../dist/docs"
