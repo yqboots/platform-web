@@ -21,13 +21,13 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'analytics',
             title: 'Analytics',
             type: 'item',
-            url: '/exts/dashboards/analytics'
+            url: '/exts/analytics'
           },
           {
             id: 'project',
             title: 'Project',
             type: 'item',
-            url: '/exts/dashboards/project'
+            url: '/exts/project'
           }
         ]
       },

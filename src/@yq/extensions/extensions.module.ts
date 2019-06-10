@@ -5,12 +5,12 @@ import {YqSharedModule} from '@yq/core';
 
 const routes = [
   {
-    path: 'dashboards/analytics',
-    loadChildren: () => import('@yq/extensions/dashboards/analytics/analytics.module').then(m => m.AnalyticsDashboardModule)
+    path: 'analytics',
+    loadChildren: () => import('@yq/extensions/analytics/analytics.module').then(m => m.AnalyticsDashboardModule)
   },
   {
-    path: 'dashboards/project',
-    loadChildren: () => import('@yq/extensions/dashboards/project/project.module').then(m => m.ProjectDashboardModule)
+    path: 'project',
+    loadChildren: () => import('@yq/extensions/project/project.module').then(m => m.ProjectDashboardModule)
   },
   {
     path: 'mail',

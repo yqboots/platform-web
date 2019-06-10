@@ -71,7 +71,7 @@ if (environment.production) {
 }
 _appRouteConfigs.push({
   path: '**',
-  redirectTo: 'exts/dashboards/analytics'
+  redirectTo: 'exts/analytics'
 });
 
 export const appRouteConfigs = _appRouteConfigs;

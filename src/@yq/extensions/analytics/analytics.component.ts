@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 import {yqAnimations} from '@yq/core';
 
-import {AnalyticsDashboardService} from '@yq/extensions/dashboards/analytics/analytics.service';
+import {AnalyticsDashboardService} from '@yq/extensions/analytics/analytics.service';
 
 @Component({
   selector: 'analytics-dashboard',
