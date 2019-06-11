@@ -93,38 +93,8 @@ $typography: mat-typography-config(
 @import "projects/extensions/src/lib//scrumboard/scrumboard.theme";
 @import "projects/extensions/src/lib//todo/todo.theme";
 
-@import "projects/showcase/src/lib/pages/authentication/login/login.theme";
-@import "projects/showcase/src/lib/pages/authentication/login-2/login-2.theme";
-@import "projects/showcase/src/lib/pages/authentication/register/register.theme";
-@import "projects/showcase/src/lib/pages/authentication/register-2/register-2.theme";
-@import "projects/showcase/src/lib/pages/authentication/reset-password/reset-password.theme";
-@import "projects/showcase/src/lib/pages/authentication/reset-password-2/reset-password-2.theme";
-@import "projects/showcase/src/lib/pages/authentication/forgot-password/forgot-password.theme";
-@import "projects/showcase/src/lib/pages/authentication/forgot-password-2/forgot-password-2.theme";
-@import "projects/showcase/src/lib/pages/authentication/lock/lock.theme";
-@import "projects/showcase/src/lib/pages/authentication/mail-confirm/mail-confirm.theme";
-@import "projects/showcase/src/lib/pages/coming-soon/coming-soon.theme";
-@import "projects/showcase/src/lib/pages/errors/404/error-404.theme";
-@import "projects/showcase/src/lib/pages/errors/500/error-500.theme";
-@import "projects/showcase/src/lib/pages/maintenance/maintenance.theme";
-@import "projects/showcase/src/lib/pages/pricing/style-1/style-1.theme";
-@import "projects/showcase/src/lib/pages/pricing/style-2/style-2.theme";
-@import "projects/showcase/src/lib/pages/pricing/style-3/style-3.theme";
-@import "projects/showcase/src/lib/pages/profile/tabs/about/about.theme";
-@import "projects/showcase/src/lib/pages/profile/tabs/photos-videos/photos-videos.theme";
-@import "projects/showcase/src/lib/pages/profile/tabs/timeline/timeline.theme";
-@import "projects/showcase/src/lib/pages/search/classic/search-classic.theme";
-@import "projects/showcase/src/lib/pages/search/modern/search-modern.theme";
-@import "projects/showcase/src/lib/pages/faq/faq.theme";
-@import "projects/showcase/src/lib/pages/knowledge-base/knowledge-base.theme";
-
-@import "projects/showcase/src/lib/ui/cards/cards.theme";
-
-@import "projects/showcase/src/lib/material/example-viewer/example-viewer.theme";
-
 // Define a mixin for easier access
 @mixin components-theme($theme) {
-
   // Layout components
   @include chat-panel-theme($theme);
   @include toolbar-theme($theme);
@@ -141,38 +111,6 @@ $typography: mat-typography-config(
   @include mail-theme($theme);
   @include scrumboard-theme($theme);
   @include todo-theme($theme);
-
-  // Pages
-  @include login-theme($theme);
-  @include login-2-theme($theme);
-  @include register-theme($theme);
-  @include register-2-theme($theme);
-  @include reset-password-theme($theme);
-  @include reset-password-2-theme($theme);
-  @include forgot-password-theme($theme);
-  @include forgot-password-2-theme($theme);
-  @include lock-theme($theme);
-  @include mail-confirm-theme($theme);
-  @include coming-soon-theme($theme);
-  @include error-404-theme($theme);
-  @include error-500-theme($theme);
-  @include maintenance-theme($theme);
-  @include pricing-style-1-theme($theme);
-  @include pricing-style-2-theme($theme);
-  @include pricing-style-3-theme($theme);
-  @include profile-about-theme($theme);
-  @include profile-photos-videos-theme($theme);
-  @include profile-timeline-theme($theme);
-  @include search-classic-theme($theme);
-  @include search-modern-theme($theme);
-  @include faq-theme($theme);
-  @include knowledge-base-theme($theme);
-
-  // UI
-  @include ui-cards-theme($theme);
-
-  // Example Viewer
-  @include example-viewer-theme($theme);
 }
 
 // -----------------------------------------------------------------------------------------------------

@@ -2,24 +2,26 @@ export const locale = {
   lang: 'zh',
   data: {
     'NAV': {
-      'APPLICATIONS': 'Programlar',
-      'DASHBOARDS': 'Kontrol Paneli',
-      'CALENDAR': 'Takvim',
-      'ECOMMERCE': 'E-Ticaret',
-      'ACADEMY': 'Akademi',
+      'APPLICATIONS': '应用程序',
+      'DASHBOARDS': '仪表盘',
+      'ANALYTICS': '站点',
+      'PROJECTS': '项目',
+      'CALENDAR': '日历',
+      'ECOMMERCE': '电子商务',
+      'ACADEMY': '学院',
       'MAIL': {
-        'TITLE': 'Posta',
+        'TITLE': '邮箱',
         'BADGE': '15'
       },
       'MAIL_NGRX': {
-        'TITLE': 'Posta Ngrx',
+        'TITLE': '邮箱Ngrx版',
         'BADGE': '13'
       },
-      'CHAT': 'Sohbet',
-      'FILE_MANAGER': 'Dosya Yöneticisi',
-      'CONTACTS': 'Kişiler',
-      'TODO': 'Yapılacaklar',
-      'SCRUMBOARD': 'Proje'
+      'CHAT': '即时通讯',
+      'FILE_MANAGER': '文件管理',
+      'CONTACTS': '联系人',
+      'TODO': '待办事项',
+      'SCRUMBOARD': 'Scrum看板'
     }
   }
 };

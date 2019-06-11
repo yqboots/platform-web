@@ -2,8 +2,6 @@ import {Routes} from '@angular/router';
 
 import {AppConfig} from '@yq/core';
 
-import {environment} from 'environments/environment';
-
 /**
  * Default App Configuration
  */
@@ -42,25 +40,10 @@ export const appConfig: AppConfig = {
 };
 
 const _appRouteConfigs: Routes = [];
-if (environment.production) {
-  _appRouteConfigs.push({
-    path: 'exts',
-    loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
-  });
-} else {
-  _appRouteConfigs.push({
-    path: 'exts',
-    loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
-  });
-  _appRouteConfigs.push({
-    path: 'showcase',
-    loadChildren: () => import('../main/showcase/showcase.module').then(m => m.ShowcaseModule)
-  });
-  _appRouteConfigs.push({
-    path: 'documentation',
-    loadChildren: () => import('../main/documentation/documentation.module').then(m => m.DocumentationModule)
-  });
-}
+_appRouteConfigs.push({
+  path: 'exts',
+  loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
+});
 _appRouteConfigs.push({
   path: '**',
   redirectTo: 'exts/analytics'

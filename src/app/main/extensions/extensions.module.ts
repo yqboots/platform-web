@@ -9,7 +9,7 @@ const routes = [
     loadChildren: () => import('@yq/extensions').then(m => m.AnalyticsDashboardModule)
   },
   {
-    path: 'project',
+    path: 'projects',
     loadChildren: () => import('@yq/extensions').then(m => m.ProjectDashboardModule)
   },
   {

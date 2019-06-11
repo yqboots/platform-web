@@ -36,18 +36,6 @@
       ],
       "@yq/extensions/*": [
         "../dist/@yq/extensions/*"
-      ],
-      "@yq/docs": [
-        "../dist/@yq/docs"
-      ],
-      "@yq/docs/*": [
-        "../dist/@yq/docs/*"
-      ],
-      "@yq/showcase": [
-        "../dist/@yq/showcase"
-      ],
-      "@yq/showcase/*": [
-        "../dist/@yq/showcase/*"
       ]
     }
   }
