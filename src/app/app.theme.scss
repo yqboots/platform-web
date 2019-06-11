@@ -93,34 +93,34 @@ $typography: mat-typography-config(
 @import "projects/extensions/src/lib//scrumboard/scrumboard.theme";
 @import "projects/extensions/src/lib//todo/todo.theme";
 
-@import "src/@showcase/pages/authentication/login/login.theme";
-@import "src/@showcase/pages/authentication/login-2/login-2.theme";
-@import "src/@showcase/pages/authentication/register/register.theme";
-@import "src/@showcase/pages/authentication/register-2/register-2.theme";
-@import "src/@showcase/pages/authentication/reset-password/reset-password.theme";
-@import "src/@showcase/pages/authentication/reset-password-2/reset-password-2.theme";
-@import "src/@showcase/pages/authentication/forgot-password/forgot-password.theme";
-@import "src/@showcase/pages/authentication/forgot-password-2/forgot-password-2.theme";
-@import "src/@showcase/pages/authentication/lock/lock.theme";
-@import "src/@showcase/pages/authentication/mail-confirm/mail-confirm.theme";
-@import "src/@showcase/pages/coming-soon/coming-soon.theme";
-@import "src/@showcase/pages/errors/404/error-404.theme";
-@import "src/@showcase/pages/errors/500/error-500.theme";
-@import "src/@showcase/pages/maintenance/maintenance.theme";
-@import "src/@showcase/pages/pricing/style-1/style-1.theme";
-@import "src/@showcase/pages/pricing/style-2/style-2.theme";
-@import "src/@showcase/pages/pricing/style-3/style-3.theme";
-@import "src/@showcase/pages/profile/tabs/about/about.theme";
-@import "src/@showcase/pages/profile/tabs/photos-videos/photos-videos.theme";
-@import "src/@showcase/pages/profile/tabs/timeline/timeline.theme";
-@import "src/@showcase/pages/search/classic/search-classic.theme";
-@import "src/@showcase/pages/search/modern/search-modern.theme";
-@import "src/@showcase/pages/faq/faq.theme";
-@import "src/@showcase/pages/knowledge-base/knowledge-base.theme";
+@import "projects/showcase/src/lib/pages/authentication/login/login.theme";
+@import "projects/showcase/src/lib/pages/authentication/login-2/login-2.theme";
+@import "projects/showcase/src/lib/pages/authentication/register/register.theme";
+@import "projects/showcase/src/lib/pages/authentication/register-2/register-2.theme";
+@import "projects/showcase/src/lib/pages/authentication/reset-password/reset-password.theme";
+@import "projects/showcase/src/lib/pages/authentication/reset-password-2/reset-password-2.theme";
+@import "projects/showcase/src/lib/pages/authentication/forgot-password/forgot-password.theme";
+@import "projects/showcase/src/lib/pages/authentication/forgot-password-2/forgot-password-2.theme";
+@import "projects/showcase/src/lib/pages/authentication/lock/lock.theme";
+@import "projects/showcase/src/lib/pages/authentication/mail-confirm/mail-confirm.theme";
+@import "projects/showcase/src/lib/pages/coming-soon/coming-soon.theme";
+@import "projects/showcase/src/lib/pages/errors/404/error-404.theme";
+@import "projects/showcase/src/lib/pages/errors/500/error-500.theme";
+@import "projects/showcase/src/lib/pages/maintenance/maintenance.theme";
+@import "projects/showcase/src/lib/pages/pricing/style-1/style-1.theme";
+@import "projects/showcase/src/lib/pages/pricing/style-2/style-2.theme";
+@import "projects/showcase/src/lib/pages/pricing/style-3/style-3.theme";
+@import "projects/showcase/src/lib/pages/profile/tabs/about/about.theme";
+@import "projects/showcase/src/lib/pages/profile/tabs/photos-videos/photos-videos.theme";
+@import "projects/showcase/src/lib/pages/profile/tabs/timeline/timeline.theme";
+@import "projects/showcase/src/lib/pages/search/classic/search-classic.theme";
+@import "projects/showcase/src/lib/pages/search/modern/search-modern.theme";
+@import "projects/showcase/src/lib/pages/faq/faq.theme";
+@import "projects/showcase/src/lib/pages/knowledge-base/knowledge-base.theme";
 
-@import "src/@showcase/ui/cards/cards.theme";
+@import "projects/showcase/src/lib/ui/cards/cards.theme";
 
-@import "src/@showcase/material/example-viewer/example-viewer.theme";
+@import "projects/showcase/src/lib/material/example-viewer/example-viewer.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {

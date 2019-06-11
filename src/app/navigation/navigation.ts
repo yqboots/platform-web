@@ -171,61 +171,61 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'login',
             title: 'Login',
             type: 'item',
-            url: '/pages/auth/login'
+            url: '/showcase/pages/auth/login'
           },
           {
             id: 'login-v2',
             title: 'Login v2',
             type: 'item',
-            url: '/pages/auth/login-2'
+            url: '/showcase/pages/auth/login-2'
           },
           {
             id: 'register',
             title: 'Register',
             type: 'item',
-            url: '/pages/auth/register'
+            url: '/showcase/pages/auth/register'
           },
           {
             id: 'register-v2',
             title: 'Register v2',
             type: 'item',
-            url: '/pages/auth/register-2'
+            url: '/showcase/pages/auth/register-2'
           },
           {
             id: 'forgot-password',
             title: 'Forgot Password',
             type: 'item',
-            url: '/pages/auth/forgot-password'
+            url: '/showcase/pages/auth/forgot-password'
           },
           {
             id: 'forgot-password-v2',
             title: 'Forgot Password v2',
             type: 'item',
-            url: '/pages/auth/forgot-password-2'
+            url: '/showcase/pages/auth/forgot-password-2'
           },
           {
             id: 'reset-password',
             title: 'Reset Password',
             type: 'item',
-            url: '/pages/auth/reset-password'
+            url: '/showcase/pages/auth/reset-password'
           },
           {
             id: 'reset-password-v2',
             title: 'Reset Password v2',
             type: 'item',
-            url: '/pages/auth/reset-password-2'
+            url: '/showcase/pages/auth/reset-password-2'
           },
           {
             id: 'lock-screen',
             title: 'Lock Screen',
             type: 'item',
-            url: '/pages/auth/lock'
+            url: '/showcase/pages/auth/lock'
           },
           {
             id: 'mail-confirmation',
             title: 'Mail Confirmation',
             type: 'item',
-            url: '/pages/auth/mail-confirm'
+            url: '/showcase/pages/auth/mail-confirm'
           }
         ]
       },
@@ -234,7 +234,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Coming Soon',
         type: 'item',
         icon: 'alarm',
-        url: '/pages/coming-soon'
+        url: '/showcase/pages/coming-soon'
       },
       {
         id: 'errors',
@@ -246,13 +246,13 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: '404',
             title: '404',
             type: 'item',
-            url: '/pages/errors/error-404'
+            url: '/showcase/pages/errors/error-404'
           },
           {
             id: '500',
             title: '500',
             type: 'item',
-            url: '/pages/errors/error-500'
+            url: '/showcase/pages/errors/error-500'
           }
         ]
       },
@@ -266,13 +266,13 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'modern',
             title: 'Modern',
             type: 'item',
-            url: '/pages/invoices/modern'
+            url: '/showcase/pages/invoices/modern'
           },
           {
             id: 'compact',
             title: 'Compact',
             type: 'item',
-            url: '/pages/invoices/compact'
+            url: '/showcase/pages/invoices/compact'
           }
         ]
       },
@@ -281,7 +281,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Maintenance',
         type: 'item',
         icon: 'build',
-        url: '/pages/maintenance'
+        url: '/showcase/pages/maintenance'
       },
       {
         id: 'pricing',
@@ -293,19 +293,19 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'style-1',
             title: 'Style 1',
             type: 'item',
-            url: '/pages/pricing/style-1'
+            url: '/showcase/pages/pricing/style-1'
           },
           {
             id: 'style-2',
             title: 'Style 2',
             type: 'item',
-            url: '/pages/pricing/style-2'
+            url: '/showcase/pages/pricing/style-2'
           },
           {
             id: 'style-3',
             title: 'Style 3',
             type: 'item',
-            url: '/pages/pricing/style-3'
+            url: '/showcase/pages/pricing/style-3'
           }
         ]
       },
@@ -314,7 +314,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Profile',
         type: 'item',
         icon: 'person',
-        url: '/pages/profile'
+        url: '/showcase/pages/profile'
       },
       {
         id: 'search',
@@ -326,13 +326,13 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'search-classic',
             title: 'Classic',
             type: 'item',
-            url: '/pages/search/classic'
+            url: '/showcase/pages/search/classic'
           },
           {
             id: 'search-modern',
             title: 'Modern',
             type: 'item',
-            url: '/pages/search/modern'
+            url: '/showcase/pages/search/modern'
           }
         ]
       },
@@ -341,14 +341,14 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Faq',
         type: 'item',
         icon: 'help',
-        url: '/pages/faq'
+        url: '/showcase/pages/faq'
       },
       {
         id: 'knowledge-base',
         title: 'Knowledge Base',
         type: 'item',
         icon: 'import_contacts',
-        url: '/pages/knowledge-base'
+        url: '/showcase/pages/knowledge-base'
       }
     ]
   },
@@ -363,35 +363,35 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Cards',
         type: 'item',
         icon: 'crop_portrait',
-        url: '/ui/cards'
+        url: '/showcase/ui/cards'
       },
       {
         id: 'forms',
         title: 'Forms',
         type: 'item',
         icon: 'web_asset',
-        url: '/ui/forms'
+        url: '/showcase/ui/forms'
       },
       {
         id: 'icons',
         title: 'Icons',
         type: 'item',
         icon: 'photo',
-        url: '/ui/icons'
+        url: '/showcase/ui/icons'
       },
       {
         id: 'typography',
         title: 'Typography',
         type: 'item',
         icon: 'text_fields',
-        url: '/ui/typography'
+        url: '/showcase/ui/typography'
       },
       {
         id: 'helper-classes',
         title: 'Helper Classes',
         type: 'item',
         icon: 'help',
-        url: '/ui/helper-classes'
+        url: '/showcase/ui/helper-classes'
       },
       {
         id: 'page-layouts',
@@ -413,73 +413,73 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
                 id: 'full-width-1',
                 title: 'Full Width #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/full-width-1'
+                url: '/showcase/ui/page-layouts/carded/full-width-1'
               },
               {
                 id: 'full-width-2',
                 title: 'Full Width #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/full-width-2'
+                url: '/showcase/ui/page-layouts/carded/full-width-2'
               },
               {
                 id: 'full-width-tabbed-1',
                 title: 'Full Width Tabbed #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/full-width-tabbed-1'
+                url: '/showcase/ui/page-layouts/carded/full-width-tabbed-1'
               },
               {
                 id: 'full-width-tabbed-2',
                 title: 'Full Width Tabbed #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/full-width-tabbed-2'
+                url: '/showcase/ui/page-layouts/carded/full-width-tabbed-2'
               },
               {
                 id: 'left-sidebar-1',
                 title: 'Left Sidebar #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/left-sidebar-1'
+                url: '/showcase/ui/page-layouts/carded/left-sidebar-1'
               },
               {
                 id: 'left-sidebar-2',
                 title: 'Left Sidebar #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/left-sidebar-2'
+                url: '/showcase/ui/page-layouts/carded/left-sidebar-2'
               },
               {
                 id: 'left-sidebar-tabbed-1',
                 title: 'Left Sidebar Tabbed #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/left-sidebar-tabbed-1'
+                url: '/showcase/ui/page-layouts/carded/left-sidebar-tabbed-1'
               },
               {
                 id: 'left-sidebar-tabbed-2',
                 title: 'Left Sidebar Tabbed #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/left-sidebar-tabbed-2'
+                url: '/showcase/ui/page-layouts/carded/left-sidebar-tabbed-2'
               },
               {
                 id: 'right-sidebar-1',
                 title: 'Right Sidebar #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/right-sidebar-1'
+                url: '/showcase/ui/page-layouts/carded/right-sidebar-1'
               },
               {
                 id: 'right-sidebar-2',
                 title: 'Right Sidebar #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/right-sidebar-2'
+                url: '/showcase/ui/page-layouts/carded/right-sidebar-2'
               },
               {
                 id: 'right-sidebar-tabbed-1',
                 title: 'Right Sidebar Tabbed #1',
                 type: 'item',
-                url: '/ui/page-layouts/carded/right-sidebar-tabbed-1'
+                url: '/showcase/ui/page-layouts/carded/right-sidebar-tabbed-1'
               },
               {
                 id: 'right-sidebar-tabbed-2',
                 title: 'Right Sidebar Tabbed #2',
                 type: 'item',
-                url: '/ui/page-layouts/carded/right-sidebar-tabbed-2'
+                url: '/showcase/ui/page-layouts/carded/right-sidebar-tabbed-2'
               }
             ]
           },
@@ -497,61 +497,61 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
                 id: 'full-width-1',
                 title: 'Full Width #1',
                 type: 'item',
-                url: '/ui/page-layouts/simple/full-width-1'
+                url: '/showcase/ui/page-layouts/simple/full-width-1'
               },
               {
                 id: 'full-width-tabbed-1',
                 title: 'Full Width Tabbed #1',
                 type: 'item',
-                url: '/ui/page-layouts/simple/full-width-tabbed-1'
+                url: '/showcase/ui/page-layouts/simple/full-width-tabbed-1'
               },
               {
                 id: 'left-sidebar-1',
                 title: 'Left Sidebar #1',
                 type: 'item',
-                url: '/ui/page-layouts/simple/left-sidebar-1'
+                url: '/showcase/ui/page-layouts/simple/left-sidebar-1'
               },
               {
                 id: 'left-sidebar-2',
                 title: 'Left Sidebar #2',
                 type: 'item',
-                url: '/ui/page-layouts/simple/left-sidebar-2'
+                url: '/showcase/ui/page-layouts/simple/left-sidebar-2'
               },
               {
                 id: 'left-sidebar-3',
                 title: 'Left Sidebar #3',
                 type: 'item',
-                url: '/ui/page-layouts/simple/left-sidebar-3'
+                url: '/showcase/ui/page-layouts/simple/left-sidebar-3'
               },
               {
                 id: 'left-sidebar-4',
                 title: 'Left Sidebar #4',
                 type: 'item',
-                url: '/ui/page-layouts/simple/left-sidebar-4'
+                url: '/showcase/ui/page-layouts/simple/left-sidebar-4'
               },
               {
                 id: 'right-sidebar-1',
                 title: 'Right Sidebar #1',
                 type: 'item',
-                url: '/ui/page-layouts/simple/right-sidebar-1'
+                url: '/showcase/ui/page-layouts/simple/right-sidebar-1'
               },
               {
                 id: 'right-sidebar-2',
                 title: 'Right Sidebar #2',
                 type: 'item',
-                url: '/ui/page-layouts/simple/right-sidebar-2'
+                url: '/showcase/ui/page-layouts/simple/right-sidebar-2'
               },
               {
                 id: 'right-sidebar-3',
                 title: 'Right Sidebar #3',
                 type: 'item',
-                url: '/ui/page-layouts/simple/right-sidebar-3'
+                url: '/showcase/ui/page-layouts/simple/right-sidebar-3'
               },
               {
                 id: 'right-sidebar-4',
                 title: 'Right Sidebar #4',
                 type: 'item',
-                url: '/ui/page-layouts/simple/right-sidebar-4'
+                url: '/showcase/ui/page-layouts/simple/right-sidebar-4'
               }
             ]
           },
@@ -559,7 +559,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'blank',
             title: 'Blank',
             type: 'item',
-            url: '/ui/page-layouts/blank'
+            url: '/showcase/ui/page-layouts/blank'
           }
         ]
       },
@@ -568,7 +568,7 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
         title: 'Colors',
         type: 'item',
         icon: 'color_lens',
-        url: '/ui/colors'
+        url: '/showcase/ui/colors'
       }
     ]
   },
@@ -588,55 +588,55 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'autocomplete',
             title: 'Autocomplete',
             type: 'item',
-            url: '/angular-material-elements/autocomplete'
+            url: '/showcase/materials/autocomplete'
           },
           {
             id: 'checkbox',
             title: 'Checkbox',
             type: 'item',
-            url: '/angular-material-elements/checkbox'
+            url: '/showcase/materials/checkbox'
           },
           {
             id: 'datepicker',
             title: 'Datepicker',
             type: 'item',
-            url: '/angular-material-elements/datepicker'
+            url: '/showcase/materials/datepicker'
           },
           {
             id: 'form-field',
             title: 'Form field',
             type: 'item',
-            url: '/angular-material-elements/form-field'
+            url: '/showcase/materials/form-field'
           },
           {
             id: 'input',
             title: 'Input',
             type: 'item',
-            url: '/angular-material-elements/input'
+            url: '/showcase/materials/input'
           },
           {
             id: 'radio-button',
             title: 'Radio button',
             type: 'item',
-            url: '/angular-material-elements/radio-button'
+            url: '/showcase/materials/radio-button'
           },
           {
             id: 'select',
             title: 'Select',
             type: 'item',
-            url: '/angular-material-elements/select'
+            url: '/showcase/materials/select'
           },
           {
             id: 'slider',
             title: 'Slider',
             type: 'item',
-            url: '/angular-material-elements/slider'
+            url: '/showcase/materials/slider'
           },
           {
             id: 'slide-toggle',
             title: 'Slide toggle',
             type: 'item',
-            url: '/angular-material-elements/slide-toggle'
+            url: '/showcase/materials/slide-toggle'
           }
         ]
       },
@@ -650,19 +650,19 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'menu',
             title: 'Menu',
             type: 'item',
-            url: '/angular-material-elements/menu'
+            url: '/showcase/materials/menu'
           },
           {
             id: 'sidenav',
             title: 'Sidebar',
             type: 'item',
-            url: '/angular-material-elements/sidenav'
+            url: '/showcase/materials/sidenav'
           },
           {
             id: 'toolbar',
             title: 'Toolbar',
             type: 'item',
-            url: '/angular-material-elements/toolbar'
+            url: '/showcase/materials/toolbar'
           }
         ]
       },
@@ -676,67 +676,67 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'badge',
             title: 'Badge',
             type: 'item',
-            url: '/angular-material-elements/badge'
+            url: '/showcase/materials/badge'
           },
           {
             id: 'bottom-sheet',
             title: 'Bottom Sheet',
             type: 'item',
-            url: '/angular-material-elements/bottom-sheet'
+            url: '/showcase/materials/bottom-sheet'
           },
           {
             id: 'card',
             title: 'Card',
             type: 'item',
-            url: '/angular-material-elements/card'
+            url: '/showcase/materials/card'
           },
           {
             id: 'divider',
             title: 'Divider',
             type: 'item',
-            url: '/angular-material-elements/divider'
+            url: '/showcase/materials/divider'
           },
           {
             id: 'elevation',
             title: 'Elevation',
             type: 'item',
-            url: '/angular-material-elements/elevation'
+            url: '/showcase/materials/elevation'
           },
           {
             id: 'expansion-panel',
             title: 'Expansion Panel',
             type: 'item',
-            url: '/angular-material-elements/expansion-panel'
+            url: '/showcase/materials/expansion-panel'
           },
           {
             id: 'grid-list',
             title: 'Grid list',
             type: 'item',
-            url: '/angular-material-elements/grid-list'
+            url: '/showcase/materials/grid-list'
           },
           {
             id: 'list',
             title: 'List',
             type: 'item',
-            url: '/angular-material-elements/list'
+            url: '/showcase/materials/list'
           },
           {
             id: 'stepper',
             title: 'Stepper',
             type: 'item',
-            url: '/angular-material-elements/stepper'
+            url: '/showcase/materials/stepper'
           },
           {
             id: 'tabs',
             title: 'Tabs',
             type: 'item',
-            url: '/angular-material-elements/tabs'
+            url: '/showcase/materials/tabs'
           },
           {
             id: 'tree',
             title: 'Tree',
             type: 'item',
-            url: '/angular-material-elements/tree'
+            url: '/showcase/materials/tree'
           }
         ]
       },
@@ -750,43 +750,43 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'button',
             title: 'Button',
             type: 'item',
-            url: '/angular-material-elements/button'
+            url: '/showcase/materials/button'
           },
           {
             id: 'button-toggle',
             title: 'Button toggle',
             type: 'item',
-            url: '/angular-material-elements/button-toggle'
+            url: '/showcase/materials/button-toggle'
           },
           {
             id: 'chips',
             title: 'Chips',
             type: 'item',
-            url: '/angular-material-elements/chips'
+            url: '/showcase/materials/chips'
           },
           {
             id: 'icon',
             title: 'icon',
             type: 'item',
-            url: '/angular-material-elements/icon'
+            url: '/showcase/materials/icon'
           },
           {
             id: 'progress-spinner',
             title: 'Progress spinner',
             type: 'item',
-            url: '/angular-material-elements/progress-spinner'
+            url: '/showcase/materials/progress-spinner'
           },
           {
             id: 'progress-bar',
             title: 'Progress bar',
             type: 'item',
-            url: '/angular-material-elements/progress-bar'
+            url: '/showcase/materials/progress-bar'
           },
           {
             id: 'ripples',
             title: 'Ripples',
             type: 'item',
-            url: '/angular-material-elements/ripples'
+            url: '/showcase/materials/ripples'
           }
         ]
       },
@@ -800,19 +800,19 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'dialog',
             title: 'Dialog',
             type: 'item',
-            url: '/angular-material-elements/dialog'
+            url: '/showcase/materials/dialog'
           },
           {
             id: 'snackbar',
             title: 'Snackbar',
             type: 'item',
-            url: '/angular-material-elements/snackbar'
+            url: '/showcase/materials/snackbar'
           },
           {
             id: 'tooltip',
             title: 'Tooltip',
             type: 'item',
-            url: '/angular-material-elements/tooltip'
+            url: '/showcase/materials/tooltip'
           }
         ]
       },
@@ -826,19 +826,19 @@ export const navigation: AppNavigation[] = environment.production ? [] : [
             id: 'paginator',
             title: 'Paginator',
             type: 'item',
-            url: '/angular-material-elements/paginator'
+            url: '/showcase/materials/paginator'
           },
           {
             id: 'sort-header',
             title: 'Sort header',
             type: 'item',
-            url: '/angular-material-elements/sort-header'
+            url: '/showcase/materials/sort-header'
           },
           {
             id: 'table',
             title: 'Table',
             type: 'item',
-            url: '/angular-material-elements/table'
+            url: '/showcase/materials/table'
           }
         ]
       }

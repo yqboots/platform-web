@@ -53,20 +53,12 @@ if (environment.production) {
     loadChildren: () => import('../main/extensions/extensions.module').then(m => m.ExtensionsModule)
   });
   _appRouteConfigs.push({
-    path: 'pages',
-    loadChildren: () => import('@showcase/pages/pages.module').then(m => m.PagesModule)
-  });
-  _appRouteConfigs.push({
-    path: 'ui',
-    loadChildren: () => import('@showcase/ui/ui.module').then(m => m.UIModule)
-  });
-  _appRouteConfigs.push({
-    path: 'angular-material-elements',
-    loadChildren: () => import('@showcase/material/materials.module').then(m => m.MaterialsModule)
+    path: 'showcase',
+    loadChildren: () => import('../main/showcase/showcase.module').then(m => m.ShowcaseModule)
   });
   _appRouteConfigs.push({
     path: 'documentation',
-    loadChildren: () => import('@doc/documentation.module').then(m => m.DocumentationModule)
+    loadChildren: () => import('../main/documentation/documentation.module').then(m => m.DocumentationModule)
   });
 }
 _appRouteConfigs.push({
