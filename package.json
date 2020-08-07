@@ -55,7 +55,7 @@
     "ngx-cookie-service": "2.2.0",
     "ngx-perfect-scrollbar": "7.2.1",
     "perfect-scrollbar": "1.4.0",
-    "prismjs": "1.16.0",
+    "prismjs": "1.21.0",
     "rxjs": "6.5.2",
     "tslib": "^1.9.3",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
